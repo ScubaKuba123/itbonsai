@@ -131,6 +131,27 @@ document.querySelectorAll('[data-lang]').forEach((button) => button.addEventList
 }));
 setLanguage(localStorage.getItem('bonsai-language') || 'pl');
 
+const bonsaiStage = document.getElementById('bonsaiStage');
+const bonsaiParticles = document.getElementById('bonsaiParticles');
+const reduceBonsaiMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (bonsaiStage && bonsaiParticles && !reduceBonsaiMotion) {
+  for (let i = 0; i < 24; i += 1) {
+    const particle = document.createElement('span');
+    particle.className = 'bonsai-particle';
+    particle.style.left = `${18 + Math.random() * 64}%`;
+    particle.style.top = `${32 + Math.random() * 48}%`;
+    particle.style.setProperty('--duration', `${6 + Math.random() * 6}s`);
+    particle.style.setProperty('--delay', `${-Math.random() * 10}s`);
+    particle.style.setProperty('--drift', `${-42 + Math.random() * 84}px`);
+    bonsaiParticles.appendChild(particle);
+  }
+  bonsaiStage.addEventListener('pointermove', (event) => {
+    const rect = bonsaiStage.getBoundingClientRect();
+    bonsaiStage.style.setProperty('--mx', `${((event.clientX - rect.left) / rect.width) * 100}%`);
+    bonsaiStage.style.setProperty('--my', `${((event.clientY - rect.top) / rect.height) * 100}%`);
+  });
+}
+
 document.querySelector('#contact-form').addEventListener('submit', (event) => {
   event.preventDefault();
   const toast = document.querySelector('.toast');
