@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>SEO Check | BonsAi Studio</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 70% 10%,#102719,#03100b 52%,#010805);color:#f5f2e9;font:16px/1.6 system-ui,sans-serif}.tool{width:min(100%,680px);padding:clamp(28px,6vw,56px);border:1px solid rgba(255,255,255,.12);border-radius:32px;background:rgba(12,28,19,.72);backdrop-filter:blur(20px);box-shadow:0 28px 80px rgba(0,0,0,.35)}.eyebrow{color:#f4d51e;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem}h1{margin:12px 0;font-size:clamp(2.5rem,8vw,5rem);line-height:.95;letter-spacing:-.06em;font-weight:500}p{color:#aab7ad}form{display:grid;gap:16px;margin-top:32px}label{font-size:.78rem;color:#bec9c0}input{display:block;width:100%;margin-top:7px;padding:15px 17px;border:1px solid rgba(255,255,255,.14);border-radius:14px;background:#06110c;color:#fff;font:inherit}input:focus{outline:2px solid #f4d51e;outline-offset:2px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}button,a.button{border:0;border-radius:999px;padding:15px 20px;background:#f4d51e;color:#07100b;font-weight:750;cursor:pointer;text-decoration:none;transition:.25s}button:hover,a.button:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(244,213,30,.2)}button.secondary{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.14)}.note{margin:26px 0 0;font-size:.78rem}.back{display:inline-block;margin-bottom:26px;color:#f4d51e;text-decoration:none}@media(max-width:520px){.actions>*{width:100%}}
+  </style>
+</head>
+<body>
+  <main class="tool">
+    <a class="back" href="index.html">← Wróć do BonsAi Studio</a>
+    <div class="eyebrow">Bezpłatne narzędzie</div>
+    <h1>SEO Check</h1>
+    <p>Sprawdź widoczność domeny dla wybranej frazy oraz zobacz, czy Google indeksuje Twoją stronę.</p>
+    <form id="seo-form">
+      <label>Adres strony<input id="domain" type="text" inputmode="url" placeholder="np. itbonsai.pl" required></label>
+      <label>Fraza kluczowa<input id="keyword" type="text" placeholder="np. strony internetowe Gdańsk" required></label>
+      <div class="actions"><button type="submit">Sprawdź pozycję ↗</button><button class="secondary" id="index-check" type="button">Sprawdź indeksację</button></div>
+    </form>
+    <p class="note">Wynik otworzy się w Google. Dla dokładnego, historycznego monitoringu pozycji potrzebne jest Google Search Console lub zewnętrzne API.</p>
+  </main>
+  <script>
+    const cleanDomain=value=>value.trim().replace(/^https?:\/\//,'').replace(/^www\./,'').split('/')[0];
+    const domain=document.querySelector('#domain');
+    document.querySelector('#seo-form').addEventListener('submit',event=>{event.preventDefault();const site=cleanDomain(domain.value);const keyword=document.querySelector('#keyword').value.trim();if(site&&keyword)window.open(`https://www.google.com/search?q=${encodeURIComponent(keyword+' site:'+site)}`,'_blank','noopener');});
+    document.querySelector('#index-check').addEventListener('click',()=>{const site=cleanDomain(domain.value);if(!site){domain.focus();return;}window.open(`https://www.google.com/search?q=${encodeURIComponent('site:'+site)}`,'_blank','noopener');});
+  </script>
+</body>
+</html>
