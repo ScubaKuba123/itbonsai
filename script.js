@@ -21,8 +21,10 @@ const revealObserver = new IntersectionObserver((entries) => entries.forEach((en
 }), { threshold: .12 });
 document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
 
-document.querySelector('#about .section-index').textContent = '04 / O nas';
-document.querySelector('.faq .section-index').textContent = '05 / FAQ';
+const aboutIndex = document.querySelector('#about .section-index');
+const faqIndex = document.querySelector('.faq .section-index');
+if (aboutIndex) aboutIndex.textContent = '04 / O nas';
+if (faqIndex) faqIndex.textContent = '05 / FAQ';
 
 const translations = {
   '04 / O nas': ['04 / About', '04 / 私たち'], '05 / FAQ': ['05 / FAQ', '05 / よくある質問'],
@@ -98,9 +100,10 @@ function translateAttributes(lang) {
   }[lang];
   nav.setAttribute('aria-label', values[0]);
   menu.setAttribute('aria-label', values[1]);
-  document.querySelector('.language-switcher').setAttribute('aria-label', values[2]);
-  document.querySelector('.social-links').setAttribute('aria-label', values[3]);
-  document.querySelector('#about img').alt = values[4];
+  document.querySelector('.language-switcher')?.setAttribute('aria-label', values[2]);
+  document.querySelector('.social-links')?.setAttribute('aria-label', values[3]);
+  const aboutImage = document.querySelector('#about img');
+  if (aboutImage) aboutImage.alt = values[4];
 }
 
 function setLanguage(lang) {
@@ -134,3 +137,25 @@ document.querySelectorAll('[data-lang]').forEach((button) => button.addEventList
   }
 }));
 setLanguage(localStorage.getItem('bonsai-language') || 'pl');
+
+document.querySelectorAll('[data-bonsai-particles]').forEach((container) => {
+  if (container.childElementCount) return;
+  for (let index = 0; index < 12; index += 1) {
+    const particle = document.createElement('span');
+    particle.className = 'production-particle';
+    particle.style.left = `${54 + Math.random() * 35}%`;
+    particle.style.top = `${48 + Math.random() * 32}%`;
+    particle.style.setProperty('--particle-duration', `${5.4 + Math.random() * 3}s`);
+    particle.style.setProperty('--particle-delay', `${-Math.random() * 7}s`);
+    particle.style.setProperty('--particle-drift', `${-18 + Math.random() * 36}px`);
+    container.appendChild(particle);
+  }
+});
+
+const animatedHero = document.querySelector('[data-bonsai-hero]');
+if (animatedHero && 'IntersectionObserver' in window) {
+  const heroObserver = new IntersectionObserver(([entry]) => {
+    animatedHero.classList.toggle('is-offscreen', !entry.isIntersecting);
+  }, { threshold: 0.08 });
+  heroObserver.observe(animatedHero);
+}
