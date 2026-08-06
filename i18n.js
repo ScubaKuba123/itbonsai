@@ -1,4 +1,4 @@
-(() => {
+(async () => {
   const copy = {
     en: {
       Start: "Home",
@@ -130,8 +130,31 @@
       "Minimalistyczna strona usługowa": "Minimal service website",
       "Interfejs PL / EN / JP": "PL / EN / JP interface",
       "Rozbudowany landing page": "Extended landing page",
+      "Aura Morska": "Sea Aura",
+      "Interaktywna strona z animacją fal i piasku":
+        "An interactive website with animated waves and sand",
+      "Otwórz projekt ↗": "Open project ↗",
+      "Ekskluzywny sklep z zabawkami": "Luxury toy store",
+      "Filmowy e-commerce z interaktywnym terrarium":
+        "Cinematic e-commerce with an interactive terrarium",
+      "Ewolucja BonsAi": "BonsAi Evolution",
+      "Interaktywna opowieść od kropli rosy do AI":
+        "An interactive story from a drop of dew to AI",
       "Współpraca, którą klienci pamiętają.":
         "A collaboration clients remember.",
+      "Najważniejszy efekt to rozwiązanie, które działa sprawnie i wspiera biznes także po publikacji.":
+        "The most important outcome is a solution that works smoothly and supports the business after launch.",
+      "„Dzięki Kube, wszystko działa szybko i sprawnie.”":
+        "“Thanks, Kuba. Everything works quickly and smoothly.”",
+      "Karol — CEO firmy eventowej w Gdyni":
+        "Karol — CEO of an event company in Gdynia",
+      "„Zawsze stara się upiększyć twój biznes.”":
+        "“He always strives to make your business look better.”",
+      "Aga — Twórca Studia Ceramiki w Gdańsku":
+        "Aga — Founder of a ceramics studio in Gdańsk",
+      "„Strona mojej restauracji wygląda absolutnie fantastycznie.”":
+        "“My restaurant website looks absolutely fantastic.”",
+      "Kacper — Manager restauracji": "Kacper — Restaurant Manager",
       "Strona, aplikacja czy automatyzacja?":
         "Website, application or automation?",
       "W czym możemy pomóc?": "How can we help?",
@@ -242,6 +265,7 @@
       "Technologia z praktycznym, ludzkim podejściem.":
         "実務的で人に寄り添うテクノロジー。",
       "Założyciel BonsAi Studio": "BonsAi Studio 代表",
+      "Front-end development": "フロントエンド開発",
       "Bezpośrednio od pomysłu do wdrożenia.": "アイデアから公開まで直接対応。",
       "Praktyka biznesowa": "事業運営経験",
       "Polska i Japonia": "ポーランドと日本",
@@ -270,7 +294,30 @@
       "Minimalistyczna strona usługowa": "ミニマルなサービスサイト",
       "Interfejs PL / EN / JP": "PL・EN・JPインターフェース",
       "Rozbudowany landing page": "充実したランディングページ",
+      "Aura Morska": "海のオーラ",
+      "Interaktywna strona z animacją fal i piasku":
+        "波と砂のアニメーションを使ったインタラクティブサイト",
+      "Otwórz projekt ↗": "プロジェクトを見る ↗",
+      "Ekskluzywny sklep z zabawkami": "高級玩具ストア",
+      "Filmowy e-commerce z interaktywnym terrarium":
+        "インタラクティブなテラリウムを備えた映像的ECサイト",
+      "Ewolucja BonsAi": "BonsAiの進化",
+      "Interaktywna opowieść od kropli rosy do AI":
+        "一滴の露からAIまでを描くインタラクティブストーリー",
       "Współpraca, którą klienci pamiętają.": "記憶に残るパートナーシップ。",
+      "Najważniejszy efekt to rozwiązanie, które działa sprawnie i wspiera biznes także po publikacji.":
+        "公開後もスムーズに機能し、ビジネスを支え続けることが最も大切な成果です。",
+      "„Dzięki Kube, wszystko działa szybko i sprawnie.”":
+        "「ありがとう、Kuba。すべてが速く、スムーズに動いています。」",
+      "Karol — CEO firmy eventowej w Gdyni":
+        "Karol — グディニャのイベント会社CEO",
+      "„Zawsze stara się upiększyć twój biznes.”":
+        "「いつもビジネスをより魅力的に見せようとしてくれます。」",
+      "Aga — Twórca Studia Ceramiki w Gdańsku":
+        "Aga — グダニスクの陶芸スタジオ創設者",
+      "„Strona mojej restauracji wygląda absolutnie fantastycznie.”":
+        "「私のレストランのウェブサイトは本当に素晴らしいです。」",
+      "Kacper — Manager restauracji": "Kacper — レストランマネージャー",
       "Strona, aplikacja czy automatyzacja?": "サイト、アプリ、自動化のご相談",
       "W czym możemy pomóc?": "ご相談内容",
       "Imię i nazwisko": "お名前",
@@ -284,6 +331,18 @@
       "Wróć na stronę główną": "ホームへ戻る",
     },
   };
+
+  try {
+    const generated = await fetch("missing-translations.json", {
+      cache: "force-cache",
+    }).then((response) => (response.ok ? response.json() : null));
+    if (generated) {
+      copy.en = { ...(generated.en || {}), ...copy.en };
+      copy.ja = { ...(generated.ja || {}), ...copy.ja };
+    }
+  } catch {
+    // The curated core dictionary above remains available offline.
+  }
 
   const originals = new WeakMap();
   const nodes = [];
@@ -317,17 +376,61 @@
   const titleOriginal = document.title;
   const meta = document.querySelector('meta[name="description"]');
   const metaOriginal = meta?.content || "";
+  const translatedAttributes = ["alt", "placeholder", "aria-label", "title"];
+  const attributeOriginals = new WeakMap();
+  const attributedElements = [
+    ...document.querySelectorAll(
+      translatedAttributes.map((name) => `[${name}]`).join(","),
+    ),
+  ];
+  attributedElements.forEach((element) => {
+    const values = {};
+    translatedAttributes.forEach((name) => {
+      if (element.hasAttribute(name)) values[name] = element.getAttribute(name);
+    });
+    attributeOriginals.set(element, values);
+  });
   function setLanguage(lang) {
     const locale = ["pl", "en", "ja"].includes(lang) ? lang : "pl";
+    const missing = [];
     nodes.forEach((node) => {
       const source = originals.get(node);
-      const key = source.trim();
+      const key = source.trim().replace(/\s+/g, " ");
       const translated = copy[locale]?.[key];
-      node.textContent = source.replace(
-        key,
-        locale === "pl" || !translated ? key : translated,
-      );
+      if (
+        locale !== "pl" &&
+        !translated &&
+        /[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż]/.test(key)
+      )
+        missing.push(key);
+      const leading = source.match(/^\s*/)?.[0] || "";
+      const trailing = source.match(/\s*$/)?.[0] || "";
+      node.textContent = `${leading}${
+        locale === "pl" || !translated ? key : translated
+      }${trailing}`;
     });
+    attributedElements.forEach((element) => {
+      const values = attributeOriginals.get(element);
+      translatedAttributes.forEach((name) => {
+        const source = values[name];
+        if (!source) return;
+        const translated = copy[locale]?.[source];
+        if (
+          locale !== "pl" &&
+          !translated &&
+          /[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż]/.test(source)
+        )
+          missing.push(source);
+        element.setAttribute(
+          name,
+          locale === "pl" || !translated ? source : translated,
+        );
+      });
+    });
+    window.__i18nMissing = [...new Set(missing)];
+    document.documentElement.dataset.i18nMissing = JSON.stringify(
+      window.__i18nMissing,
+    );
     document.documentElement.lang = locale;
     document.title =
       locale === "pl"

@@ -158,13 +158,24 @@
           </p>
         </div>
         <div class="hero-art production-bonsai" data-bonsai-hero>
-          <iframe
-            class="bonsai-fixed-frame"
-            src="assets/bonsai-hero-fixed.html"
-            title="Animowane cyfrowe drzewko BonsAi Studio"
-            tabindex="-1"
+          <picture
+            ><img
+              src="assets/bonsai-hero-restored.webp"
+              alt="Pełne cyfrowe drzewko bonsai BonsAi Studio"
+              width="1100"
+              height="1100"
+              fetchpriority="high"
+              decoding="async"
+          /></picture>
+          <div class="production-rings" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="production-scan" aria-hidden="true"></div>
+          <div
+            class="production-particles"
+            data-bonsai-particles
             aria-hidden="true"
-          ></iframe>
+          ></div>
         </div>
       </section>
 
