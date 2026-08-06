@@ -3225,3 +3225,33 @@ body:after {
     height: 100%;
   }
 }
+
+/* Final gallery framing: show each verified landscape project immediately. */
+.live-preview-card {
+  height: clamp(500px, 48vw, 650px);
+  background: #010403;
+}
+.live-preview-card img {
+  top: 6%;
+  height: 58%;
+  object-fit: contain;
+  object-position: center;
+  animation: gallery-preview-drift 10s ease-in-out infinite alternate;
+}
+.live-preview-card:nth-child(2) img {
+  animation-delay: -3.3s;
+}
+.live-preview-card:nth-child(3) img {
+  animation-delay: -6.6s;
+}
+@media (max-width: 900px) {
+  .live-preview-card {
+    height: min(112vw, 620px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .live-preview-card img {
+    top: 6%;
+    height: 58%;
+  }
+}
