@@ -2571,6 +2571,10 @@ body:after {
   grid-template-columns: minmax(0, 52%) minmax(420px, 48%);
 }
 .production-bonsai {
+  --tree-rotate-x: 0deg;
+  --tree-rotate-y: 0deg;
+  --tree-light-x: 50%;
+  --tree-light-y: 45%;
   position: relative;
   align-self: stretch;
   min-height: 620px;
@@ -2579,6 +2583,13 @@ body:after {
   border-radius: var(--radius-lg);
   background: #020303;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.34);
+}
+.production-bonsai picture {
+  transform: perspective(1100px) rotateX(var(--tree-rotate-x))
+    rotateY(var(--tree-rotate-y));
+  transform-style: preserve-3d;
+  transition: transform 180ms ease-out;
+  will-change: transform;
 }
 .production-bonsai picture,
 .production-bonsai picture img,
@@ -2598,7 +2609,9 @@ body:after {
   will-change: clip-path, transform, filter, opacity;
 }
 .production-bonsai.is-growing picture img {
-  animation: production-tree-grow 3.4s cubic-bezier(0.18, 0.72, 0.16, 1) both;
+  animation:
+    production-tree-grow 3.4s cubic-bezier(0.18, 0.72, 0.16, 1) both,
+    production-tree-breathe 6s ease-in-out 3.4s infinite;
 }
 @keyframes production-tree-grow {
   0% {
@@ -2625,12 +2638,29 @@ body:after {
     filter: none;
   }
 }
+@keyframes production-tree-breathe {
+  0%,
+  100% {
+    transform: scale(1.015);
+    filter: saturate(0.92) brightness(0.94);
+  }
+  50% {
+    transform: scale(1.035);
+    filter: saturate(1.02) brightness(1.03)
+      drop-shadow(0 0 16px rgba(222, 236, 108, 0.12));
+  }
+}
 .production-bonsai:after {
   content: "";
   position: absolute;
   z-index: 4;
   inset: 0;
   background:
+    radial-gradient(
+      circle at var(--tree-light-x) var(--tree-light-y),
+      rgba(165, 221, 91, 0.1),
+      transparent 30%
+    ),
     linear-gradient(90deg, rgba(2, 10, 7, 0.8), transparent 24%),
     radial-gradient(circle at 66% 48%, transparent 35%, rgba(0, 0, 0, 0.38) 88%);
   pointer-events: none;
@@ -3075,11 +3105,13 @@ body:after {
   mix-blend-mode: screen;
 }
 .production-bonsai:has(img[src*="bonsai-hero-restored"]):after {
-  background: radial-gradient(
-    circle at 50% 48%,
-    transparent 45%,
-    rgba(0, 0, 0, 0.32) 92%
-  );
+  background:
+    radial-gradient(
+      circle at var(--tree-light-x) var(--tree-light-y),
+      rgba(165, 221, 91, 0.11),
+      transparent 30%
+    ),
+    radial-gradient(circle at 50% 48%, transparent 45%, rgba(0, 0, 0, 0.32) 92%);
 }
 .production-bonsai:has(img[src*="bonsai-hero-restored"]) .production-rings {
   left: 7%;
