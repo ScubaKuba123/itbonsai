@@ -3143,6 +3143,14 @@ body:after {
   background: #010403;
   animation: gallery-preview-drift 10s ease-in-out infinite alternate;
 }
+.live-preview-card .preview-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  background: #010403;
+}
 .live-preview-card:nth-child(2) img {
   animation-delay: -3.3s;
 }
