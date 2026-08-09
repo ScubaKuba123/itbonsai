@@ -11,6 +11,7 @@
       "Bezpłatna analiza": "Free analysis",
       "Bezpłatna analiza strony": "Free website analysis",
       Galeria: "Gallery",
+      Podglądy: "Previews",
       Opinie: "Testimonials",
       "Twój projekt": "Your project",
       "Strony internetowe, aplikacje i automatyzacje AI dla firm.":
@@ -180,6 +181,7 @@
       "Bezpłatna analiza": "無料分析",
       "Bezpłatna analiza strony": "ウェブサイト無料分析",
       Galeria: "ギャラリー",
+      Podglądy: "プレビュー",
       Opinie: "お客様の声",
       "Twój projekt": "あなたのプロジェクト",
       "Strony internetowe, aplikacje i automatyzacje AI dla firm.":
