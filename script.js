@@ -37,3 +37,24 @@ if ("IntersectionObserver" in window) {
     .querySelectorAll(".reveal")
     .forEach((element) => element.classList.add("visible"));
 }
+
+document.querySelectorAll(".interactive-preview").forEach((card) => {
+  const media = card.querySelector(".site-showcase-media");
+  if (!media) return;
+
+  const startPreview = () => {
+    if (card.classList.contains("preview-loaded")) return;
+    const frame = document.createElement("iframe");
+    frame.src = card.dataset.previewSrc;
+    frame.title = card.dataset.previewTitle || "Podgląd strony";
+    frame.loading = "lazy";
+    frame.referrerPolicy = "strict-origin-when-cross-origin";
+    frame.allow = "fullscreen";
+    frame.addEventListener("load", () => card.classList.add("preview-ready"), { once: true });
+    media.prepend(frame);
+    card.classList.add("preview-loaded");
+  };
+
+  media.addEventListener("pointerenter", startPreview, { once: true });
+  media.addEventListener("focus", startPreview, { once: true });
+});

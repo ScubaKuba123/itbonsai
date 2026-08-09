@@ -58,78 +58,65 @@
         aria-labelledby="gallery-title"
       >
         <div class="page-section-head">
-          <p class="section-index">Galeria</p>
+          <p class="section-index">Galeria naszych stron</p>
           <div>
-            <h2 id="gallery-title">Podglądy stron i kierunków wizualnych.</h2>
+            <h2 id="gallery-title">Sześć stron. Sześć różnych kierunków.</h2>
             <p>
-              Wybrane kompozycje pokazujące nasze podejście do hierarchii,
-              typografii i prezentacji marki.
+              Najedź na wybrany projekt, aby uruchomić podgląd na żywo. Każdą
+              stronę możesz też otworzyć w nowej karcie.
             </p>
           </div>
         </div>
         <div class="preview-gallery live-preview-gallery">
-          <a
-            class="preview-card preview-card-wide live-preview-card"
-            href="assets/aura-morska.mp4?v=3"
-            target="_blank"
-            rel="noopener"
-          >
-            <video
-              class="preview-video"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="auto"
-            >
-              <source src="assets/aura-morska.mp4?v=3" type="video/mp4" />
-            </video>
-            <span class="preview-caption">
-              <strong>Aura Morska</strong
-              ><span>Interaktywna strona z animacją fal i piasku</span>
-              <em>Otwórz projekt ↗</em></span
-            >
-          </a>
-          <a
-            class="preview-card live-preview-card"
-            style="--preview-image: url(&quot;assets/gallery-app-2.webp&quot;)"
-            href="https://ai.studio/apps/26b80531-98d0-4bdf-8161-25e3b71b311e?fullscreenApplet=true"
-            target="_blank"
-            rel="noopener"
-          >
-            <img
-              src="assets/gallery-app-2.webp"
-              alt="Podgląd ekskluzywnego sklepu z zabawkami z terrarium"
-              loading="lazy"
-              width="1265"
-              height="709"
-            />
-            <span class="preview-caption">
-              <strong>Ekskluzywny sklep z zabawkami</strong
-              ><span>Filmowy e-commerce z interaktywnym terrarium</span>
-              <em>Otwórz projekt ↗</em></span
-            >
-          </a>
-          <a
-            class="preview-card live-preview-card"
-            style="--preview-image: url(&quot;assets/gallery-app-3.webp&quot;)"
-            href="https://ai.studio/apps/dca01d22-62a2-4005-8a5d-160c23d6c9dd?fullscreenApplet=true"
-            target="_blank"
-            rel="noopener"
-          >
-            <img
-              src="assets/gallery-app-3.webp"
-              alt="Podgląd animowanej historii wzrostu drzewka BonsAi Studio"
-              loading="lazy"
-              width="1280"
-              height="675"
-            />
-            <span class="preview-caption">
-              <strong>Ewolucja BonsAi</strong
-              ><span>Interaktywna opowieść od kropli rosy do AI</span>
-              <em>Otwórz projekt ↗</em></span
-            >
-          </a>
+          <article class="site-showcase-card">
+            <a class="site-showcase-media" href="assets/aura-morska.mp4?v=3" target="_blank" rel="noopener">
+              <video class="preview-video" autoplay muted loop playsinline preload="metadata">
+                <source src="assets/aura-morska.mp4?v=3" type="video/mp4" />
+              </video>
+              <span class="showcase-state">Animowany podgląd</span>
+            </a>
+            <div class="site-showcase-copy"><div><strong>Aura Morska</strong><span>Interaktywna strona z animacją fal i piasku</span></div><a href="assets/aura-morska.mp4?v=3" target="_blank" rel="noopener" aria-label="Otwórz projekt Aura Morska">Otwórz projekt ↗</a></div>
+          </article>
+
+          <article class="site-showcase-card">
+            <a class="site-showcase-media" href="https://ai.studio/apps/26b80531-98d0-4bdf-8161-25e3b71b311e?fullscreenApplet=true" target="_blank" rel="noopener">
+              <img src="assets/gallery-app-2.webp" alt="Podgląd ekskluzywnego sklepu z zabawkami z terrarium" loading="lazy" width="1265" height="709" />
+              <span class="showcase-state">Koncepcja interaktywna</span>
+            </a>
+            <div class="site-showcase-copy"><div><strong>Ekskluzywny sklep z zabawkami</strong><span>Filmowy e-commerce z interaktywnym terrarium</span></div><a href="https://ai.studio/apps/26b80531-98d0-4bdf-8161-25e3b71b311e?fullscreenApplet=true" target="_blank" rel="noopener" aria-label="Otwórz ekskluzywny sklep z zabawkami">Otwórz projekt ↗</a></div>
+          </article>
+
+          <article class="site-showcase-card">
+            <a class="site-showcase-media" href="https://ai.studio/apps/dca01d22-62a2-4005-8a5d-160c23d6c9dd?fullscreenApplet=true" target="_blank" rel="noopener">
+              <img src="assets/gallery-app-3.webp" alt="Podgląd animowanej historii wzrostu drzewka BonsAi Studio" loading="lazy" width="1280" height="675" />
+              <span class="showcase-state">Koncepcja interaktywna</span>
+            </a>
+            <div class="site-showcase-copy"><div><strong>Ewolucja BonsAi</strong><span>Interaktywna opowieść od kropli rosy do AI</span></div><a href="https://ai.studio/apps/dca01d22-62a2-4005-8a5d-160c23d6c9dd?fullscreenApplet=true" target="_blank" rel="noopener" aria-label="Otwórz projekt Ewolucja BonsAi">Otwórz projekt ↗</a></div>
+          </article>
+
+          <article class="site-showcase-card interactive-preview" data-preview-src="https://itbonsai.website/" data-preview-title="Ogniem i Kopem — podgląd strony">
+            <div class="site-showcase-media combat-preview" tabindex="0" role="group" aria-label="Podgląd strony Ogniem i Kopem. Najedź kursorem, aby uruchomić stronę.">
+              <div class="showcase-poster"><small>KICKBOXING · MUAY THAI · SOPOT</small><b>Siła.<br />Technika.<br />Charakter.</b></div>
+              <span class="showcase-state live-state">Podgląd na żywo po najechaniu</span>
+            </div>
+            <div class="site-showcase-copy"><div><strong>Ogniem i Kopem</strong><span>Dynamiczna strona klubu sportów walki</span></div><a href="https://itbonsai.website/" target="_blank" rel="noopener" aria-label="Otwórz stronę Ogniem i Kopem">Otwórz stronę ↗</a></div>
+          </article>
+
+          <article class="site-showcase-card interactive-preview" data-preview-src="https://itbonsai.site/" data-preview-title="BonsAi Studio — podgląd strony">
+            <div class="site-showcase-media bonsai-preview" tabindex="0" role="group" aria-label="Podgląd strony BonsAi Studio. Najedź kursorem, aby uruchomić stronę.">
+              <div class="showcase-poster"><img src="assets/itbonsai-logo.png" alt="Logo BonsAi Studio" width="180" height="180" /><b>BonsAi Studio</b><small>Cyfrowa architektura dla ambitnych firm</small></div>
+              <span class="showcase-state live-state">Podgląd na żywo po najechaniu</span>
+            </div>
+            <div class="site-showcase-copy"><div><strong>BonsAi Studio</strong><span>Wielojęzyczna strona premium dla studia cyfrowego</span></div><a href="https://itbonsai.site/" target="_blank" rel="noopener" aria-label="Otwórz stronę BonsAi Studio">Otwórz stronę ↗</a></div>
+          </article>
+
+          <article class="site-showcase-card">
+            <a class="site-showcase-media" href="https://seamonk.jp/" target="_blank" rel="noopener">
+              <img src="assets/seamonk-home.jpg" alt="Strona główna SeaMonk.jp — szkoły nurkowania w Japonii" loading="lazy" width="1600" height="1200" />
+              <span class="showcase-state">Opublikowana realizacja</span>
+            </a>
+            <div class="site-showcase-copy"><div><strong>SeaMonk.jp</strong><span>Wielojęzyczna strona szkoły nurkowania w Japonii</span></div><a href="https://seamonk.jp/" target="_blank" rel="noopener" aria-label="Otwórz stronę SeaMonk.jp">Otwórz stronę ↗</a></div>
+          </article>
         </div>
       </section>
 
@@ -302,6 +289,7 @@
       </div>
       <p>studio@itbonsai.pl<br />© 2026 BonsAi Studio</p>
     </footer>
+    <script src="script.js" defer></script>
     <script src="i18n.js" defer></script>
   </body>
 </html>
