@@ -39,7 +39,9 @@ if ("IntersectionObserver" in window) {
 }
 
 document.querySelectorAll(".interactive-preview").forEach((card) => {
-  const media = card.querySelector(".site-showcase-media");
+  const media = card.querySelector(
+    ".featured-website-media, .site-showcase-media",
+  );
   if (!media) return;
 
   const startPreview = () => {
