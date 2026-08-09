@@ -653,6 +653,9 @@ footer div {
   align-items: center;
   gap: clamp(30px, 5vw, 76px);
 }
+.featured-website > * {
+  min-width: 0;
+}
 .featured-website:nth-child(even) .featured-website-media {
   order: 2;
 }
@@ -667,6 +670,7 @@ footer div {
   box-shadow: 0 30px 78px rgba(0, 0, 0, .34);
   isolation: isolate;
   transition: transform 420ms cubic-bezier(.2,.8,.2,1), border-color 420ms ease, box-shadow 420ms ease;
+  width: 100%;
 }
 .featured-website-media::after {
   content: "";
