@@ -88,7 +88,6 @@
       "Chcę taką aplikację": "I want an application like this",
       Cennik: "Pricing",
       "Jasny budżet. Konkretne zasady.": "A clear budget. Clear terms.",
-      Start: "Starter",
       "Strona firmowa": "Company website",
       "Najczęściej wybierany": "Most popular",
       "Strona firmowa Pro": "Company Website Pro",
@@ -103,6 +102,7 @@
       "Technologia z praktycznym, ludzkim podejściem.":
         "Technology with a practical, human approach.",
       "Założyciel BonsAi Studio": "Founder of BonsAi Studio",
+      "Jakub Mierosławski łączy doświadczenie front-end developera z praktyką przedsiębiorcy i prowadzeniem SeaMonk.jp — szkoły nurkowania działającej w Japonii. Dzięki temu patrzy na stronę lub aplikację nie tylko jak na kod, ale jak na narzędzie codziennej pracy firmy.": "Jakub Mierosławski combines front-end development expertise with hands-on experience as an entrepreneur and owner of SeaMonk.jp, a diving school in Japan. This allows him to see a website or application not merely as code, but as a practical tool supporting everyday business.",
       "Bezpośrednio od pomysłu do wdrożenia.": "Directly from idea to launch.",
       "Front-end development": "Front-end development",
       "Praktyka biznesowa": "Business experience",
@@ -156,6 +156,10 @@
       Rozwiązanie: "Solution",
       Efekt: "Outcome",
       "Otwórz SeaMonk.jp": "Open SeaMonk.jp",
+      "01 / Pełna realizacja": "01 / Published project",
+      "Siła.": "Strength.",
+      "Technika.": "Technique.",
+      "Charakter.": "Character.",
       "Firma Eventowa": "Event Company",
       "Chcę usprawnić firmę": "I want to streamline my business",
       "Podglądy stron i kierunków wizualnych.":
@@ -298,7 +302,6 @@
       "Masz pomysł na aplikację?": "アプリのアイデアがありますか？",
       "Chcę taką aplikację": "このようなアプリを相談する",
       "Jasny budżet. Konkretne zasady.": "明確な予算と条件。",
-      Start: "スターター",
       "Strona firmowa": "企業サイト",
       "Najczęściej wybierany": "人気プラン",
       "Strona firmowa Pro": "企業サイト Pro",
@@ -312,6 +315,7 @@
       "Technologia z praktycznym, ludzkim podejściem.":
         "実務的で人に寄り添うテクノロジー。",
       "Założyciel BonsAi Studio": "BonsAi Studio 代表",
+      "Jakub Mierosławski łączy doświadczenie front-end developera z praktyką przedsiębiorcy i prowadzeniem SeaMonk.jp — szkoły nurkowania działającej w Japonii. Dzięki temu patrzy na stronę lub aplikację nie tylko jak na kod, ale jak na narzędzie codziennej pracy firmy.": "Jakub Mierosławskiは、フロントエンド開発の専門知識と、起業家として日本のダイビングスクールSeaMonk.jpを運営する実務経験を兼ね備えています。そのため、ウェブサイトやアプリを単なるコードではなく、日々の事業を支える実用的なツールとして設計します。",
       "Front-end development": "フロントエンド開発",
       "Bezpośrednio od pomysłu do wdrożenia.": "アイデアから公開まで直接対応。",
       "Praktyka biznesowa": "事業運営経験",
@@ -366,6 +370,10 @@
       Rozwiązanie: "解決策",
       Efekt: "成果",
       "Otwórz SeaMonk.jp": "SeaMonk.jpを見る",
+      "01 / Pełna realizacja": "01 / 公開済みプロジェクト",
+      "Siła.": "強さ。",
+      "Technika.": "技術。",
+      "Charakter.": "人格。",
       "Firma Eventowa": "イベント会社",
       "Chcę usprawnić firmę": "業務改善を相談する",
       "Podglądy stron i kierunków wizualnych.":
