@@ -3149,6 +3149,11 @@ body:after {
 .gallery-intro {
   max-width: 720px;
 }
+@media (max-width: 1100px) {
+  .home-production-hero {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 900px) {
   .home-production-hero {
     grid-template-columns: 1fr;
