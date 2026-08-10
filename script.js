@@ -40,7 +40,7 @@ if ("IntersectionObserver" in window) {
 
 document.querySelectorAll(".interactive-preview").forEach((card) => {
   const media = card.querySelector(
-    ".featured-website-media, .site-showcase-media",
+    ".featured-website-media, .site-showcase-media, .portfolio-project-media",
   );
   if (!media) return;
 

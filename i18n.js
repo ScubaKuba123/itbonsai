@@ -457,6 +457,8 @@
       cache: "force-cache",
     }).then((response) => (response.ok ? response.json() : null));
     if (expanded) {
+      copy.en = { ...(expanded.en || {}), ...copy.en };
+      copy.ja = { ...(expanded.ja || {}), ...copy.ja };
       copy.de = expanded.de || {};
       copy.es = expanded.es || {};
       copy.uk = expanded.uk || {};
