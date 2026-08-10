@@ -453,7 +453,7 @@
   }
 
   try {
-    const expanded = await fetch("translations-extra.json", {
+    const expanded = await fetch("translations-extra.json?v=translations-2", {
       cache: "force-cache",
     }).then((response) => (response.ok ? response.json() : null));
     if (expanded) {
@@ -772,7 +772,9 @@
       es: "BonsAi Studio — Soluciones digitales",
       uk: "BonsAi Studio — Цифрові рішення",
     };
-    document.title = locale === "pl" ? titleOriginal : titleOriginal.replace(/^[^|—]+/, titleLabels[locale]);
+    const translatedTitle = copy[locale]?.[titleOriginal];
+    const separator = titleOriginal.includes("|") ? " | BonsAi Studio" : " — BonsAi Studio";
+    document.title = locale === "pl" ? titleOriginal : translatedTitle || `${titleLabels[locale]}${separator}`;
     const metaDescriptions = {
       en: "BonsAi Studio creates websites, applications, SEO and AI automation for growing businesses.",
       ja: "BonsAi Studioは、成長する企業のためにウェブサイト、アプリ、SEO、AI自動化を提供します。",
