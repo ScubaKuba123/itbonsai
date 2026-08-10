@@ -2129,8 +2129,9 @@ select:hover {
 
 /* Elegant custom forest atmosphere. */
 body {
-  background: #082015 url("assets/forest-background.jpg") center top/cover fixed
+  background: #0b3b33 url("assets/forest-background.jpg") center top/cover fixed
     no-repeat;
+  background-blend-mode: soft-light;
 }
 body:after {
   content: "";
@@ -2140,9 +2141,9 @@ body:after {
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    rgba(5, 30, 18, 0.14),
-    rgba(4, 24, 14, 0.56) 64%,
-    #07180f 100%
+    rgba(5, 43, 37, 0.12),
+    rgba(5, 38, 32, 0.48) 64%,
+    #082b25 100%
   );
 }
 .section,
@@ -3043,7 +3044,10 @@ body:after {
   height: 430px;
 }
 .home-paths {
-  padding-top: 80px;
+  padding-top: 72px;
+}
+.home-paths .topic-grid {
+  margin-top: 0;
 }
 
 /* Dedicated subpages. */
