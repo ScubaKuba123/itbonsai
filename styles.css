@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap");
 :root {
-  --bg: #06110c;
+  --bg: #0a1d13;
   --panel: #0c1912;
   --panel2: #101f16;
   --text: #f3f0e7;
@@ -2110,7 +2110,7 @@ select:hover {
 
 /* Elegant custom forest atmosphere. */
 body {
-  background: #020805 url("assets/forest-background.jpg") center top/cover fixed
+  background: #082015 url("assets/forest-background.jpg") center top/cover fixed
     no-repeat;
 }
 body:after {
@@ -2121,9 +2121,9 @@ body:after {
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    rgba(1, 8, 5, 0.28),
-    rgba(1, 8, 5, 0.76) 64%,
-    #020805 100%
+    rgba(5, 30, 18, 0.14),
+    rgba(4, 24, 14, 0.56) 64%,
+    #07180f 100%
   );
 }
 .section,
