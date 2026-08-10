@@ -472,11 +472,15 @@
       copy.de = expanded.de || {};
       copy.es = expanded.es || {};
       copy.uk = expanded.uk || {};
+      copy.fr = expanded.fr || {};
+      copy.zh = expanded.zh || {};
     }
   } catch {
     copy.de ||= {};
     copy.es ||= {};
     copy.uk ||= {};
+    copy.fr ||= {};
+    copy.zh ||= {};
   }
 
   Object.assign(copy.en, {
