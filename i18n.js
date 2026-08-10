@@ -683,9 +683,11 @@
   document.body.appendChild(switcher);
 
   const pickerTrigger = switcher.querySelector(".language-picker-trigger");
+  const pickerMenu = switcher.querySelector(".language-picker-menu");
   const closePicker = () => {
     switcher.classList.remove("open");
     pickerTrigger.setAttribute("aria-expanded", "false");
+    pickerMenu.scrollTop = 0;
   };
   pickerTrigger.addEventListener("click", () => {
     const open = !switcher.classList.contains("open");
