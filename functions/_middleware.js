@@ -1,4 +1,9 @@
 export async function onRequest(context) {
+  const url = new URL(context.request.url);
+  if (url.pathname === "/cennik" || url.pathname === "/cennik.html") {
+    return Response.redirect(`${url.origin}/#contact`, 301);
+  }
+
   const response = await context.next();
   const cookie = context.request.headers.get("Cookie") || "";
 
