@@ -631,6 +631,21 @@ footer div {
     transform: none;
   }
 }
+html[lang="de"] .portfolio-signature .flagship-copy h2,
+html[lang="de"] .portfolio-signature .portfolio-project-copy h3,
+html[lang="de"] .portfolio-signature .client-voices h2 {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+html[lang="de"] .portfolio-signature .flagship-facts section {
+  grid-template-columns: 145px minmax(0, 1fr);
+}
+@media (max-width: 620px) {
+  html[lang="de"] .portfolio-signature .flagship-facts section {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* Portfolio hierarchy: websites first, supporting concepts second. */
 .portfolio-heading {
