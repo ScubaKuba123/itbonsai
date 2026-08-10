@@ -452,6 +452,21 @@
     // The curated core dictionary above remains available offline.
   }
 
+  try {
+    const expanded = await fetch("translations-extra.json", {
+      cache: "force-cache",
+    }).then((response) => (response.ok ? response.json() : null));
+    if (expanded) {
+      copy.de = expanded.de || {};
+      copy.es = expanded.es || {};
+      copy.uk = expanded.uk || {};
+    }
+  } catch {
+    copy.de ||= {};
+    copy.es ||= {};
+    copy.uk ||= {};
+  }
+
   Object.assign(copy.en, {
     "Prosty cennik.": "Simple pricing.",
     "Dobry start dla Twojej firmy.": "A strong start for your business.",
@@ -597,6 +612,31 @@
     "* Dotyczy standardowych domen i hostingu. Szczegóły ustalamy przed rozpoczęciem projektu.": "* 標準的なドメインとホスティングが対象です。詳細は制作開始前に確認します。",
   });
 
+  Object.assign(copy.en, {
+    "01 / WWW": "01 / Websites",
+    "02 / Aplikacje": "02 / Applications",
+    "03 / SEO": "03 / SEO",
+    "04 / AI": "04 / AI",
+    "05 / Marka": "05 / Brand",
+    "Cyfrowa architektura dla ambitnych firm": "Digital architecture for ambitious businesses",
+    "02 / Aplikacja": "02 / Application",
+    "03 / Automatyzacja": "03 / Automation",
+    "Podgląd strony Ogniem i Kopem. Najedź kursorem, aby uruchomić stronę.": "Ogniem i Kopem website preview. Hover to activate the website.",
+    "Podgląd strony BonsAi Studio. Najedź kursorem, aby uruchomić stronę.": "BonsAi Studio website preview. Hover to activate the website.",
+  });
+  Object.assign(copy.ja, {
+    "01 / WWW": "01 / ウェブサイト",
+    "02 / Aplikacje": "02 / アプリ",
+    "03 / SEO": "03 / SEO",
+    "04 / AI": "04 / AI",
+    "05 / Marka": "05 / ブランド",
+    "Cyfrowa architektura dla ambitnych firm": "意欲的な企業のためのデジタル設計",
+    "02 / Aplikacja": "02 / アプリ",
+    "03 / Automatyzacja": "03 / 自動化",
+    "Podgląd strony Ogniem i Kopem. Najedź kursorem, aby uruchomić stronę.": "Ogniem i Kopemサイトのプレビュー。カーソルを合わせると操作できます。",
+    "Podgląd strony BonsAi Studio. Najedź kursorem, aby uruchomić stronę.": "BonsAi Studioサイトのプレビュー。カーソルを合わせると操作できます。",
+  });
+
   const originals = new WeakMap();
   const nodes = [];
   const walker = document.createTreeWalker(
@@ -616,15 +656,46 @@
     nodes.push(walker.currentNode);
   }
 
-  let switcher = document.querySelector(".language-switcher");
-  if (!switcher) {
-    switcher = document.createElement("div");
-    switcher.className = "site-language-switcher";
-    switcher.setAttribute("aria-label", "Wybór języka");
-    switcher.innerHTML =
-      '<button type="button" data-lang="pl">PL</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="ja">JP</button>';
-    document.body.appendChild(switcher);
-  }
+  const languageOptions = [
+    { locale: "pl", flag: "🇵🇱", code: "PL", label: "Polski" },
+    { locale: "en", flag: "🇬🇧", code: "EN", label: "English" },
+    { locale: "ja", flag: "🇯🇵", code: "JP", label: "日本語" },
+    { locale: "de", flag: "🇩🇪", code: "DE", label: "Deutsch" },
+    { locale: "es", flag: "🇪🇸", code: "ES", label: "Español" },
+    { locale: "uk", flag: "🇺🇦", code: "UA", label: "Українська" },
+  ];
+  let switcher = document.querySelector(".language-switcher, .site-language-switcher");
+  if (!switcher) switcher = document.createElement("div");
+  switcher.className = "site-language-switcher language-picker";
+  switcher.setAttribute("aria-label", "Wybór języka");
+  switcher.innerHTML = `
+    <button class="language-picker-trigger" type="button" aria-expanded="false" aria-controls="language-picker-menu" aria-label="Otwórz wybór języka">
+      <span class="language-picker-globe" aria-hidden="true">🌐</span>
+      <span class="language-picker-current-flag" aria-hidden="true">🇵🇱</span>
+      <span class="language-picker-current-code">PL</span>
+      <span class="language-picker-chevron" aria-hidden="true">⌄</span>
+    </button>
+    <div class="language-picker-menu" id="language-picker-menu" role="group" aria-label="Wybór języka">
+      ${languageOptions.map(({ locale, flag, code, label }) => `<button type="button" data-lang="${locale}" aria-label="${label}"><span aria-hidden="true">${flag}</span><span>${label}</span><small>${code}</small></button>`).join("")}
+    </div>`;
+  document.body.appendChild(switcher);
+
+  const pickerTrigger = switcher.querySelector(".language-picker-trigger");
+  const closePicker = () => {
+    switcher.classList.remove("open");
+    pickerTrigger.setAttribute("aria-expanded", "false");
+  };
+  pickerTrigger.addEventListener("click", () => {
+    const open = !switcher.classList.contains("open");
+    switcher.classList.toggle("open", open);
+    pickerTrigger.setAttribute("aria-expanded", String(open));
+  });
+  document.addEventListener("click", (event) => {
+    if (!switcher.contains(event.target)) closePicker();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closePicker();
+  });
 
   const titleOriginal = document.title;
   const meta = document.querySelector('meta[name="description"]');
@@ -635,7 +706,7 @@
     ...document.querySelectorAll(
       translatedAttributes.map((name) => `[${name}]`).join(","),
     ),
-  ];
+  ].filter((element) => !element.closest(".language-picker"));
   attributedElements.forEach((element) => {
     const values = {};
     translatedAttributes.forEach((name) => {
@@ -643,16 +714,21 @@
     });
     attributeOriginals.set(element, values);
   });
-  function setLanguage(lang) {
-    const locale = ["pl", "en", "ja"].includes(lang) ? lang : "pl";
+  function setLanguage(lang, { persist = true } = {}) {
+    const locale = languageOptions.some((option) => option.locale === lang) ? lang : "en";
     const missing = [];
+    const nonTranslatable = new Set([
+      "Bons", "Ai", "Studio", "BonsAi Studio", "SeaMonk.jp", "Cafe App", "KICKBOXING · MUAY THAI · SOPOT", "studio@itbonsai.pl",
+      "WhatsApp", "Facebook", "LinkedIn", "Google", "Google Maps", "SEO", "AI", "UX/UI", "PL", "EN", "JP",
+      "Mobile-first", "Living system", "f", "in",
+    ]);
     nodes.forEach((node) => {
       const source = originals.get(node);
       const key = source.trim().replace(/\s+/g, " ");
       const translated = copy[locale]?.[key];
       if (
         locale !== "pl" &&
-        !translated &&
+        !translated && !nonTranslatable.has(key) &&
         /[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż]/.test(key)
       )
         missing.push(key);
@@ -670,7 +746,7 @@
         const translated = copy[locale]?.[source];
         if (
           locale !== "pl" &&
-          !translated &&
+          !translated && !nonTranslatable.has(source) &&
           /[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż]/.test(source)
         )
           missing.push(source);
@@ -685,33 +761,70 @@
       window.__i18nMissing,
     );
     document.documentElement.lang = locale;
-    document.title =
-      locale === "pl"
-        ? titleOriginal
-        : titleOriginal.replace(
-            /^[^|—]+/,
-            locale === "en"
-              ? "BonsAi Studio — Digital solutions"
-              : "BonsAi Studio — デジタルソリューション",
-          );
-    if (meta)
-      meta.content =
-        locale === "pl"
-          ? metaOriginal
-          : locale === "en"
-            ? "BonsAi Studio creates websites, applications, SEO and AI automation for growing businesses."
-            : "BonsAi Studioは、成長する企業のためにウェブサイト、アプリ、SEO、AI自動化を提供します。";
+    const titleLabels = {
+      en: "BonsAi Studio — Digital solutions",
+      ja: "BonsAi Studio — デジタルソリューション",
+      de: "BonsAi Studio — Digitale Lösungen",
+      es: "BonsAi Studio — Soluciones digitales",
+      uk: "BonsAi Studio — Цифрові рішення",
+    };
+    document.title = locale === "pl" ? titleOriginal : titleOriginal.replace(/^[^|—]+/, titleLabels[locale]);
+    const metaDescriptions = {
+      en: "BonsAi Studio creates websites, applications, SEO and AI automation for growing businesses.",
+      ja: "BonsAi Studioは、成長する企業のためにウェブサイト、アプリ、SEO、AI自動化を提供します。",
+      de: "BonsAi Studio entwickelt Websites, Anwendungen, SEO und KI-Automatisierung für wachsende Unternehmen.",
+      es: "BonsAi Studio crea sitios web, aplicaciones, SEO y automatización con IA para empresas en crecimiento.",
+      uk: "BonsAi Studio створює сайти, застосунки, SEO та ШІ-автоматизацію для бізнесу, що розвивається.",
+    };
+    if (meta) meta.content = locale === "pl" ? metaOriginal : metaDescriptions[locale];
     document.querySelectorAll("[data-lang]").forEach((button) => {
       const active = button.dataset.lang === locale;
       button.classList.toggle("active", active);
       button.setAttribute("aria-pressed", String(active));
     });
-    localStorage.setItem("bonsai-language", locale);
+    const selected = languageOptions.find((option) => option.locale === locale);
+    const pickerLabels = {
+      pl: { choose: "Wybór języka", open: "Otwórz wybór języka", current: "Język" },
+      en: { choose: "Language selection", open: "Open language selection", current: "Language" },
+      ja: { choose: "言語を選択", open: "言語選択を開く", current: "言語" },
+      de: { choose: "Sprachauswahl", open: "Sprachauswahl öffnen", current: "Sprache" },
+      es: { choose: "Selección de idioma", open: "Abrir selector de idioma", current: "Idioma" },
+      uk: { choose: "Вибір мови", open: "Відкрити вибір мови", current: "Мова" },
+    }[locale];
+    switcher.setAttribute("aria-label", pickerLabels.choose);
+    switcher.querySelector(".language-picker-menu").setAttribute("aria-label", pickerLabels.choose);
+    switcher.querySelector(".language-picker-current-flag").textContent = selected.flag;
+    switcher.querySelector(".language-picker-current-code").textContent = selected.code;
+    pickerTrigger.setAttribute("aria-label", `${pickerLabels.current}: ${selected.label}. ${pickerLabels.open}`);
+    if (persist) localStorage.setItem("bonsai-language", locale);
   }
   document
     .querySelectorAll("[data-lang]")
     .forEach((button) =>
-      button.addEventListener("click", () => setLanguage(button.dataset.lang)),
+      button.addEventListener("click", () => {
+        setLanguage(button.dataset.lang);
+        closePicker();
+      }),
     );
-  setLanguage(localStorage.getItem("bonsai-language") || "pl");
+
+  const countryToLanguage = (country) => {
+    const code = country?.toUpperCase();
+    if (code === "PL") return "pl";
+    if (code === "JP") return "ja";
+    if (["DE", "AT", "CH", "LI"].includes(code)) return "de";
+    if (["ES", "MX", "AR", "BO", "CL", "CO", "CR", "CU", "DO", "EC", "GT", "HN", "NI", "PA", "PE", "PR", "PY", "SV", "UY", "VE"].includes(code)) return "es";
+    if (code === "UA") return "uk";
+    return null;
+  };
+  const browserLanguage = () => {
+    for (const language of navigator.languages || [navigator.language]) {
+      const locale = language?.toLowerCase().split("-")[0];
+      if (locale === "jp") return "ja";
+      if (languageOptions.some((option) => option.locale === locale)) return locale;
+    }
+    return "en";
+  };
+  const country = document.cookie.match(/(?:^|;\s*)bonsai-country=([^;]+)/)?.[1];
+  const savedLanguage = localStorage.getItem("bonsai-language");
+  setLanguage(savedLanguage || countryToLanguage(country) || browserLanguage(), { persist: Boolean(savedLanguage) });
 })();

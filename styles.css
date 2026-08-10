@@ -3219,45 +3219,133 @@ body:after {
     text-align: left;
   }
 }
-.site-language-switcher {
+body .site-language-switcher {
   position: fixed;
   z-index: 1200;
   right: 18px;
-  top: 110px;
+  top: 106px;
+  width: max-content;
+  font-family: Manrope, sans-serif;
+}
+.language-picker-trigger {
   display: flex;
-  gap: 3px;
-  padding: 5px;
-  border: 1px solid var(--soft-border);
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 7px 12px;
+  border: 1px solid rgba(211, 230, 209, 0.2);
   border-radius: 999px;
   background: rgba(4, 14, 9, 0.9);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
-}
-.site-language-switcher button {
-  min-width: 38px;
-  min-height: 36px;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--muted);
-  font: 700 11px/1 Manrope;
-  cursor: pointer;
-}
-.site-language-switcher button:hover,
-.site-language-switcher button:focus-visible {
   color: var(--text);
+  font: 800 12px/1 Manrope, sans-serif;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+.language-picker-trigger:hover {
+  transform: translateY(-2px);
+  border-color: rgba(238, 214, 55, 0.55);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.35), 0 0 22px rgba(238, 214, 55, 0.08);
+}
+.language-picker button:focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 2px;
 }
-.site-language-switcher button.active {
+.language-picker-globe,
+.language-picker-current-flag {
+  font-size: 17px;
+  line-height: 1;
+}
+.language-picker-chevron {
+  color: var(--gold);
+  font-size: 15px;
+  transition: transform 180ms ease;
+}
+.language-picker.open .language-picker-chevron {
+  transform: rotate(180deg);
+}
+.language-picker-menu {
+  position: absolute;
+  top: calc(100% + 9px);
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(132px, 1fr));
+  gap: 5px;
+  width: 286px;
+  padding: 8px;
+  border: 1px solid rgba(211, 230, 209, 0.18);
+  border-radius: 18px;
+  background: rgba(4, 14, 9, 0.96);
+  backdrop-filter: blur(22px);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.44);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px) scale(0.98);
+  transform-origin: top right;
+  transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+}
+.language-picker.open .language-picker-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+.language-picker-menu button {
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 8px 9px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--text);
+  font: 700 12px/1.2 Manrope, sans-serif;
+  text-align: left;
+  cursor: pointer;
+  transition: background 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+.language-picker-menu button:hover {
+  border-color: rgba(211, 230, 209, 0.16);
+  background: rgba(255, 255, 255, 0.055);
+  transform: translateY(-1px);
+}
+.language-picker-menu button small {
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+.language-picker-menu button.active {
   background: var(--gold);
   color: #071008;
 }
+.language-picker-menu button.active small {
+  color: #071008;
+}
 @media (max-width: 900px) {
-  .site-language-switcher {
+  body .site-language-switcher {
     top: auto;
     right: 14px;
-    bottom: 78px;
+    bottom: 76px;
+  }
+  .language-picker-menu {
+    top: auto;
+    bottom: calc(100% + 9px);
+    transform-origin: bottom right;
+    transform: translateY(6px) scale(0.98);
+  }
+  .language-picker.open .language-picker-menu {
+    transform: translateY(0) scale(1);
+  }
+}
+@media (max-width: 420px) {
+  .language-picker-menu {
+    width: min(286px, calc(100vw - 28px));
+    grid-template-columns: 1fr;
+    max-height: min(390px, calc(100vh - 160px));
+    overflow-y: auto;
   }
 }
 .bonsai-fixed-frame {
