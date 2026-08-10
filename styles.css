@@ -641,6 +641,11 @@ html[lang="de"] .portfolio-signature .client-voices h2 {
 html[lang="de"] .portfolio-signature .flagship-facts section {
   grid-template-columns: 145px minmax(0, 1fr);
 }
+html[lang="de"] :is(h1, h2, h3, .champion-poster strong, .mori-poster strong) {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
 @media (max-width: 620px) {
   html[lang="de"] .portfolio-signature .flagship-facts section {
     grid-template-columns: 1fr;
