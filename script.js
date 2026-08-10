@@ -1,5 +1,35 @@
-const menu = document.querySelector(".menu");
-const nav = document.querySelector(".nav");
+const header = document.querySelector(".header");
+let nav = header?.querySelector(".nav");
+
+if (header && !nav) {
+  nav = document.createElement("nav");
+  header.appendChild(nav);
+}
+
+if (header && nav) {
+  nav.className = "nav projects-nav";
+  nav.setAttribute("aria-label", "Główna nawigacja");
+  nav.innerHTML = `
+    <a href="index.html">Start</a>
+    <a href="uslugi.html">Usługi</a>
+    <a href="realizacje.html">Portfolio</a>
+    <a href="cennik.html">Cennik</a>
+    <a href="o-nas.html">O nas</a>
+    <a class="nav-cta" href="index.html#contact">Kontakt</a>`;
+
+  header.querySelector(":scope > .button-small")?.remove();
+  if (!header.querySelector(".menu")) {
+    const menuButton = document.createElement("button");
+    menuButton.className = "menu";
+    menuButton.type = "button";
+    menuButton.setAttribute("aria-label", "Otwórz menu");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.innerHTML = "<span></span><span></span>";
+    header.appendChild(menuButton);
+  }
+}
+
+const menu = header?.querySelector(".menu");
 
 if (menu && nav) {
   menu.addEventListener("click", () => {

@@ -463,7 +463,7 @@
   }
 
   try {
-    const expanded = await fetch("translations-extra.json?v=translations-3", {
+    const expanded = await fetch("translations-extra.json?v=translations-5", {
       cache: "force-cache",
     }).then((response) => (response.ok ? response.json() : null));
     if (expanded) {
@@ -675,6 +675,8 @@
     { locale: "de", flag: "de", code: "DE", label: "Deutsch" },
     { locale: "es", flag: "es", code: "ES", label: "Español" },
     { locale: "uk", flag: "ua", code: "UA", label: "Українська" },
+    { locale: "fr", flag: "fr", code: "FR", label: "Français" },
+    { locale: "zh", flag: "cn", code: "中文", label: "中文" },
   ];
   let switcher = document.querySelector(".language-switcher, .site-language-switcher");
   if (!switcher) switcher = document.createElement("div");
@@ -781,6 +783,8 @@
       de: "BonsAi Studio — Digitale Lösungen",
       es: "BonsAi Studio — Soluciones digitales",
       uk: "BonsAi Studio — Цифрові рішення",
+      fr: "BonsAi Studio — Solutions numériques",
+      zh: "BonsAi Studio — 数字化解决方案",
     };
     const translatedTitle = copy[locale]?.[titleOriginal];
     const separator = titleOriginal.includes("|") ? " | BonsAi Studio" : " — BonsAi Studio";
@@ -791,6 +795,8 @@
       de: "BonsAi Studio entwickelt Websites, Anwendungen, SEO und KI-Automatisierung für wachsende Unternehmen.",
       es: "BonsAi Studio crea sitios web, aplicaciones, SEO y automatización con IA para empresas en crecimiento.",
       uk: "BonsAi Studio створює сайти, застосунки, SEO та ШІ-автоматизацію для бізнесу, що розвивається.",
+      fr: "BonsAi Studio crée des sites web, des applications, du SEO et des automatisations IA pour les entreprises en croissance.",
+      zh: "BonsAi Studio 为成长型企业打造网站、应用程序、SEO 和 AI 自动化解决方案。",
     };
     if (meta) meta.content = locale === "pl" ? metaOriginal : metaDescriptions[locale];
     document.querySelectorAll("[data-lang]").forEach((button) => {
@@ -806,6 +812,8 @@
       de: { choose: "Sprachauswahl", open: "Sprachauswahl öffnen", current: "Sprache" },
       es: { choose: "Selección de idioma", open: "Abrir selector de idioma", current: "Idioma" },
       uk: { choose: "Вибір мови", open: "Відкрити вибір мови", current: "Мова" },
+      fr: { choose: "Choix de la langue", open: "Ouvrir le choix de la langue", current: "Langue" },
+      zh: { choose: "语言选择", open: "打开语言选择", current: "语言" },
     }[locale];
     switcher.setAttribute("aria-label", pickerLabels.choose);
     switcher.querySelector(".language-picker-menu").setAttribute("aria-label", pickerLabels.choose);
@@ -830,6 +838,8 @@
     if (["DE", "AT", "CH", "LI"].includes(code)) return "de";
     if (["ES", "MX", "AR", "BO", "CL", "CO", "CR", "CU", "DO", "EC", "GT", "HN", "NI", "PA", "PE", "PR", "PY", "SV", "UY", "VE"].includes(code)) return "es";
     if (code === "UA") return "uk";
+    if (["FR", "BE", "LU", "MC", "SN", "CI", "CM", "MA", "TN"].includes(code)) return "fr";
+    if (["CN", "SG"].includes(code)) return "zh";
     return null;
   };
   const browserLanguage = () => {

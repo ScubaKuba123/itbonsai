@@ -1238,6 +1238,39 @@ html[lang="ja"] h1 {
   }
 }
 
+/* One predictable mobile navigation on every page. */
+@media (max-width: 900px) {
+  .header .projects-nav:not(.mobile-open) {
+    display: none;
+  }
+  .header .menu {
+    display: grid;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    z-index: 3;
+    flex: 0 0 44px;
+    place-content: center;
+    margin-left: auto;
+  }
+  .header .projects-nav.mobile-open {
+    display: flex;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 14px;
+  }
+  .header .projects-nav.mobile-open a {
+    display: flex !important;
+    justify-content: center;
+    padding: 13px 16px;
+  }
+}
+
 /* Conversion and trust improvements. */
 .header {
   position: sticky;
@@ -3295,6 +3328,8 @@ body .site-language-switcher {
 .flag-de { background: linear-gradient(#171717 0 33.33%, #d62424 33.33% 66.66%, #f5c840 66.66%); }
 .flag-es { background: linear-gradient(#a91425 0 25%, #f3c63a 25% 75%, #a91425 75%); }
 .flag-ua { background: linear-gradient(#1769b0 0 50%, #ffd542 50%); }
+.flag-fr { background: linear-gradient(90deg, #173f8f 0 33.33%, #fff 33.33% 66.66%, #e33b45 66.66%); }
+.flag-cn { background: radial-gradient(circle at 30% 32%, #ffdf45 0 9%, transparent 10%), #de2910; }
 .flag-jp { background: radial-gradient(circle at center, #bc002d 0 31%, transparent 33%), #fff; }
 .flag-gb {
   background:
@@ -3606,6 +3641,18 @@ body .site-language-switcher {
   padding: clamp(42px, 6vw, 82px);
 }
 .champion-poster { background: radial-gradient(circle at 78% 22%, rgba(238, 214, 55, 0.25), transparent 24%), linear-gradient(145deg, #16130b, #050705 60%); }
+.champion-poster > img {
+  position: absolute;
+  inset: 50% auto auto 63%;
+  width: min(54%, 430px);
+  height: auto;
+  transform: translate(-50%, -50%);
+  opacity: 0.7;
+  filter: drop-shadow(0 24px 46px rgba(0, 0, 0, 0.6));
+}
+.champion-poster > span,
+.champion-poster > strong,
+.champion-poster > small { position: relative; z-index: 1; }
 .champion-poster span,
 .champion-poster small,
 .mori-poster span,
@@ -3616,6 +3663,15 @@ body .site-language-switcher {
 .mori-media { background-image: linear-gradient(90deg, rgba(2, 10, 7, 0.9), rgba(2, 10, 7, 0.14)), url("assets/forest-background.jpg"); background-size: cover; background-position: center; }
 .mori-poster strong { font-family: Georgia, serif; font-weight: 400; letter-spacing: -0.055em; }
 .mori-poster small { color: #b7c7b5; }
+.automation-media > img,
+.cafe-media > img {
+  width: 100%;
+  height: 100%;
+  min-height: 650px;
+  object-fit: cover;
+}
+.automation-media > img { object-position: center; }
+.cafe-media > img { object-position: center; }
 .client-voices {
   display: grid;
   grid-template-columns: minmax(300px, 0.7fr) minmax(0, 1.3fr);
@@ -4286,4 +4342,34 @@ body .site-language-switcher {
   .site-showcase-media,
   .site-showcase-media > img,
   .site-showcase-media iframe { transition: none; }
+}
+
+@media (max-width: 900px) {
+  .header .projects-nav:not(.mobile-open) { display: none; }
+  .header .menu {
+    display: grid;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    z-index: 3;
+    flex: 0 0 44px;
+    place-content: center;
+    margin-left: auto;
+  }
+  .header .projects-nav.mobile-open {
+    display: flex;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 14px;
+  }
+  .header .projects-nav.mobile-open a {
+    display: flex !important;
+    justify-content: center;
+    padding: 13px 16px;
+  }
 }
