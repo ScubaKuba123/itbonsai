@@ -164,6 +164,11 @@
       "Siła.": "Strength.",
       "Technika.": "Technique.",
       "Charakter.": "Character.",
+      "Kickboxing · Muay Thai · Sopot": "Kickboxing · Muay Thai · Sopot",
+      "Podgląd strony Morscy Wojownicy. Najedź kursorem lub wybierz element, aby uruchomić stronę.": "Morscy Wojownicy website preview. Hover or select the panel to load the website.",
+      "Morscy Wojownicy — podgląd strony": "Morscy Wojownicy — website preview",
+      "Dynamiczna strona klubu kickboxingu i Muay Thai w Sopocie. Mocna typografia, czytelna oferta treningów i wyraźne wezwania do zapisania się na pierwszy trening.": "A dynamic website for a kickboxing and Muay Thai club in Sopot. Bold typography, a clear training offer and strong calls to book a first session.",
+      "Otwórz Morskich Wojowników ↗": "Open Morscy Wojownicy ↗",
       "Firma Eventowa": "Event Company",
       "Chcę usprawnić firmę": "I want to streamline my business",
       "Podglądy stron i kierunków wizualnych.":
@@ -382,6 +387,11 @@
       "Siła.": "強さ。",
       "Technika.": "技術。",
       "Charakter.": "人格。",
+      "Kickboxing · Muay Thai · Sopot": "キックボクシング・ムエタイ・ソポト",
+      "Podgląd strony Morscy Wojownicy. Najedź kursorem lub wybierz element, aby uruchomić stronę.": "Morscy Wojownicyのサイトプレビューです。カーソルを合わせるか選択するとサイトが読み込まれます。",
+      "Morscy Wojownicy — podgląd strony": "Morscy Wojownicy — サイトプレビュー",
+      "Dynamiczna strona klubu kickboxingu i Muay Thai w Sopocie. Mocna typografia, czytelna oferta treningów i wyraźne wezwania do zapisania się na pierwszy trening.": "ソポトのキックボクシングとムエタイクラブのダイナミックなサイトです。力強いタイポグラフィ、分かりやすいトレーニング案内、体験予約への明確な導線を備えています。",
+      "Otwórz Morskich Wojowników ↗": "Morscy Wojownicyを見る ↗",
       "Firma Eventowa": "イベント会社",
       "Chcę usprawnić firmę": "業務改善を相談する",
       "Podglądy stron i kierunków wizualnych.":
@@ -453,7 +463,7 @@
   }
 
   try {
-    const expanded = await fetch("translations-extra.json?v=translations-2", {
+    const expanded = await fetch("translations-extra.json?v=translations-3", {
       cache: "force-cache",
     }).then((response) => (response.ok ? response.json() : null));
     if (expanded) {
@@ -722,7 +732,7 @@
     const locale = languageOptions.some((option) => option.locale === lang) ? lang : "en";
     const missing = [];
     const nonTranslatable = new Set([
-      "Bons", "Ai", "Studio", "BonsAi Studio", "SeaMonk.jp", "Ocean", "Champion Club", "Mori Retreat", "Cafe App", "KICKBOXING · MUAY THAI · SOPOT", "studio@itbonsai.pl",
+      "Bons", "Ai", "Studio", "BonsAi Studio", "SeaMonk.jp", "Ocean", "Morscy Wojownicy", "Mori Retreat", "Cafe App", "KICKBOXING · MUAY THAI · SOPOT", "studio@itbonsai.pl",
       "WhatsApp", "Facebook", "LinkedIn", "Google", "Google Maps", "SEO", "AI", "UX/UI", "PL", "EN", "JP",
       "Mobile-first", "Living system", "f", "in",
     ]);

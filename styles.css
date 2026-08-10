@@ -2422,6 +2422,9 @@ body:after {
   .projects-nav a:nth-child(n + 2):not(.nav-cta) {
     display: none;
   }
+  .projects-nav.mobile-open a {
+    display: flex !important;
+  }
 }
 @media (max-width: 580px) {
   .projects-page {
