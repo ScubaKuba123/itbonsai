@@ -3631,6 +3631,12 @@ body .site-language-switcher {
   .client-voices-rail { border-left: 0; border-top: 1px solid var(--soft-border); }
 }
 @media (max-width: 620px) {
+  .portfolio-signature .site-language-switcher {
+    position: fixed;
+    top: auto;
+    right: 14px;
+    bottom: 76px;
+  }
   .portfolio-main { width: calc(100% - 24px); padding-top: 94px; }
   .portfolio-hero { padding: 72px 4px 76px; gap: 42px; }
   .portfolio-hero h1 { font-size: clamp(3.35rem, 17vw, 5.1rem); }
