@@ -34,12 +34,6 @@
     <meta name="twitter:image:alt" content="BonsAi Studio — websites, apps and AI automation" />
     <meta name="theme-color" content="#06110c" />
     <link rel="canonical" href="https://itbonsai.pl/" />
-    <link
-      rel="preload"
-      as="image"
-      href="assets/bonsai-hero-production.webp"
-      type="image/webp"
-    />
     <link rel="stylesheet" href="styles.css?v=site-16" />
     <script
       async
@@ -86,7 +80,7 @@
         aria-label="BonsAi Studio — strona główna"
         ><img
           class="brand-logo"
-          src="assets/itbonsai-logo.png"
+          src="assets/itbonsai-logo-96.webp"
           alt="Logo BonsAi Studio"
           width="48"
           height="48"
@@ -172,10 +166,12 @@
           <div class="bonsai-stage">
             <div class="bonsai-halo"></div>
             <img
-              src="assets/bonsai-hero-animated.jpg"
+              src="assets/bonsai-hero-animated-768.webp"
+              srcset="assets/bonsai-hero-animated-768.webp 768w, assets/bonsai-hero-animated.jpg 1254w"
+              sizes="(max-width: 700px) 92vw, 623px"
               alt=""
-              width="1254"
-              height="1254"
+              width="768"
+              height="768"
               fetchpriority="high"
               decoding="async"
             />
@@ -382,7 +378,7 @@
       <a class="brand" href="index.html"
         ><img
           class="brand-logo"
-          src="assets/itbonsai-logo.png"
+          src="assets/itbonsai-logo-96.webp"
           alt="Logo BonsAi Studio"
           width="48"
           height="48"
