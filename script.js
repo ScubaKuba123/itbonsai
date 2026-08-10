@@ -13,7 +13,6 @@ if (header && nav) {
     <a href="index.html">Start</a>
     <a href="uslugi.html">Usługi</a>
     <a href="realizacje.html">Portfolio</a>
-    <a href="cennik.html">Cennik</a>
     <a href="o-nas.html">O nas</a>
     <a class="nav-cta" href="index.html#contact">Kontakt</a>`;
 
