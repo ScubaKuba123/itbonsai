@@ -4413,7 +4413,7 @@ body .site-language-switcher {
 .seamonk-gallery-grid img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1600 / 725;
   object-fit: cover;
   transition: transform .55s cubic-bezier(.2,.7,.2,1);
 }
