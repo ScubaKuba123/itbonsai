@@ -3258,6 +3258,29 @@ body .site-language-switcher {
   font-size: 17px;
   line-height: 1;
 }
+.language-flag {
+  display: inline-block;
+  width: 22px;
+  height: 15px;
+  flex: 0 0 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+.flag-pl { background: linear-gradient(#fff 0 50%, #dc143c 50%); }
+.flag-de { background: linear-gradient(#171717 0 33.33%, #d62424 33.33% 66.66%, #f5c840 66.66%); }
+.flag-es { background: linear-gradient(#a91425 0 25%, #f3c63a 25% 75%, #a91425 75%); }
+.flag-ua { background: linear-gradient(#1769b0 0 50%, #ffd542 50%); }
+.flag-jp { background: radial-gradient(circle at center, #bc002d 0 31%, transparent 33%), #fff; }
+.flag-gb {
+  background:
+    linear-gradient(33deg, transparent 42%, #fff 43% 49%, #c8102e 50% 54%, #fff 55% 61%, transparent 62%),
+    linear-gradient(-33deg, transparent 42%, #fff 43% 49%, #c8102e 50% 54%, #fff 55% 61%, transparent 62%),
+    linear-gradient(90deg, transparent 38%, #fff 38% 44%, #c8102e 44% 56%, #fff 56% 62%, transparent 62%),
+    linear-gradient(transparent 34%, #fff 34% 42%, #c8102e 42% 58%, #fff 58% 66%, transparent 66%),
+    #1d3563;
+}
 .language-picker-chevron {
   color: var(--gold);
   font-size: 15px;

@@ -659,12 +659,12 @@
   }
 
   const languageOptions = [
-    { locale: "pl", flag: "🇵🇱", code: "PL", label: "Polski" },
-    { locale: "en", flag: "🇬🇧", code: "EN", label: "English" },
-    { locale: "ja", flag: "🇯🇵", code: "JP", label: "日本語" },
-    { locale: "de", flag: "🇩🇪", code: "DE", label: "Deutsch" },
-    { locale: "es", flag: "🇪🇸", code: "ES", label: "Español" },
-    { locale: "uk", flag: "🇺🇦", code: "UA", label: "Українська" },
+    { locale: "pl", flag: "pl", code: "PL", label: "Polski" },
+    { locale: "en", flag: "gb", code: "EN", label: "English" },
+    { locale: "ja", flag: "jp", code: "JP", label: "日本語" },
+    { locale: "de", flag: "de", code: "DE", label: "Deutsch" },
+    { locale: "es", flag: "es", code: "ES", label: "Español" },
+    { locale: "uk", flag: "ua", code: "UA", label: "Українська" },
   ];
   let switcher = document.querySelector(".language-switcher, .site-language-switcher");
   if (!switcher) switcher = document.createElement("div");
@@ -673,12 +673,12 @@
   switcher.innerHTML = `
     <button class="language-picker-trigger" type="button" aria-expanded="false" aria-controls="language-picker-menu" aria-label="Otwórz wybór języka">
       <span class="language-picker-globe" aria-hidden="true">🌐</span>
-      <span class="language-picker-current-flag" aria-hidden="true">🇵🇱</span>
+      <span class="language-picker-current-flag language-flag flag-pl" aria-hidden="true"></span>
       <span class="language-picker-current-code">PL</span>
       <span class="language-picker-chevron" aria-hidden="true">⌄</span>
     </button>
     <div class="language-picker-menu" id="language-picker-menu" role="group" aria-label="Wybór języka">
-      ${languageOptions.map(({ locale, flag, code, label }) => `<button type="button" data-lang="${locale}" aria-label="${label}"><span aria-hidden="true">${flag}</span><span>${label}</span><small>${code}</small></button>`).join("")}
+      ${languageOptions.map(({ locale, flag, code, label }) => `<button type="button" data-lang="${locale}" aria-label="${label}"><span class="language-flag flag-${flag}" aria-hidden="true"></span><span>${label}</span><small>${code}</small></button>`).join("")}
     </div>`;
   document.body.appendChild(switcher);
 
@@ -720,14 +720,14 @@
     const locale = languageOptions.some((option) => option.locale === lang) ? lang : "en";
     const missing = [];
     const nonTranslatable = new Set([
-      "Bons", "Ai", "Studio", "BonsAi Studio", "SeaMonk.jp", "Cafe App", "KICKBOXING · MUAY THAI · SOPOT", "studio@itbonsai.pl",
+      "Bons", "Ai", "Studio", "BonsAi Studio", "SeaMonk.jp", "Ocean", "Champion Club", "Mori Retreat", "Cafe App", "KICKBOXING · MUAY THAI · SOPOT", "studio@itbonsai.pl",
       "WhatsApp", "Facebook", "LinkedIn", "Google", "Google Maps", "SEO", "AI", "UX/UI", "PL", "EN", "JP",
       "Mobile-first", "Living system", "f", "in",
     ]);
     nodes.forEach((node) => {
       const source = originals.get(node);
       const key = source.trim().replace(/\s+/g, " ");
-      const translated = copy[locale]?.[key];
+      const translated = nonTranslatable.has(key) ? null : copy[locale]?.[key];
       if (
         locale !== "pl" &&
         !translated && !nonTranslatable.has(key) &&
@@ -745,7 +745,7 @@
       translatedAttributes.forEach((name) => {
         const source = values[name];
         if (!source) return;
-        const translated = copy[locale]?.[source];
+        const translated = nonTranslatable.has(source) ? null : copy[locale]?.[source];
         if (
           locale !== "pl" &&
           !translated && !nonTranslatable.has(source) &&
@@ -795,7 +795,7 @@
     }[locale];
     switcher.setAttribute("aria-label", pickerLabels.choose);
     switcher.querySelector(".language-picker-menu").setAttribute("aria-label", pickerLabels.choose);
-    switcher.querySelector(".language-picker-current-flag").textContent = selected.flag;
+    switcher.querySelector(".language-picker-current-flag").className = `language-picker-current-flag language-flag flag-${selected.flag}`;
     switcher.querySelector(".language-picker-current-code").textContent = selected.code;
     pickerTrigger.setAttribute("aria-label", `${pickerLabels.current}: ${selected.label}. ${pickerLabels.open}`);
     if (persist) localStorage.setItem("bonsai-language", locale);
