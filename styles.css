@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap");
 :root {
-  --bg: #0a1d13;
-  --panel: #0c1912;
-  --panel2: #101f16;
-  --text: #f3f0e7;
-  --muted: #9da99f;
-  --green: #72a85f;
+  --bg: #0f493f;
+  --panel: #124b42;
+  --panel2: #17584d;
+  --text: #f5f7f2;
+  --muted: #b8cbc5;
+  --green: #67c7ac;
   --gold: #b58a47;
-  --blue: #59aebb;
-  --line: #23342a;
+  --blue: #59c6c8;
+  --line: #356c61;
   --max: 1200px;
 }
 * {
@@ -1700,9 +1700,9 @@ body {
   --radius-sm: 14px;
   --radius-md: 22px;
   --radius-lg: 32px;
-  --glass: rgba(11, 27, 18, 0.68);
-  --glass-strong: rgba(10, 24, 17, 0.86);
-  --soft-border: rgba(211, 224, 213, 0.12);
+  --glass: rgba(17, 73, 63, 0.7);
+  --glass-strong: rgba(11, 58, 50, 0.9);
+  --soft-border: rgba(190, 231, 220, 0.17);
 }
 html {
   scroll-behavior: smooth;
@@ -1724,7 +1724,7 @@ body {
   padding: 0 18px 0 14px;
   border: 1px solid var(--soft-border);
   border-radius: 24px;
-  background: rgba(6, 18, 12, 0.74);
+  background: rgba(7, 46, 40, 0.82);
   backdrop-filter: blur(20px) saturate(1.25);
   box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
 }
@@ -1843,8 +1843,8 @@ select,
   border-radius: var(--radius-lg);
   background: linear-gradient(
     145deg,
-    rgba(17, 36, 24, 0.66),
-    rgba(7, 19, 13, 0.48)
+    rgba(24, 83, 71, 0.78),
+    rgba(8, 52, 44, 0.7)
   );
   backdrop-filter: blur(18px);
   box-shadow: 0 14px 45px rgba(0, 0, 0, 0.14);
@@ -1882,7 +1882,7 @@ select,
 input,
 textarea,
 select {
-  background: rgba(2, 10, 7, 0.62);
+  background: rgba(5, 42, 36, 0.78);
   border-color: var(--soft-border);
 }
 input:hover,
@@ -1903,7 +1903,7 @@ select:hover {
 .proof span {
   border: 1px solid var(--soft-border) !important;
   border-radius: var(--radius-sm);
-  background: rgba(11, 27, 18, 0.5);
+  background: rgba(15, 70, 60, 0.68);
   backdrop-filter: blur(12px);
 }
 @media (max-width: 1100px) {
@@ -2129,9 +2129,9 @@ select:hover {
 
 /* Elegant custom forest atmosphere. */
 body {
-  background: #0b3b33 url("assets/forest-background.jpg") center top/cover fixed
+  background: #125248 url("assets/forest-background.jpg") center top/cover fixed
     no-repeat;
-  background-blend-mode: soft-light;
+  background-blend-mode: luminosity;
 }
 body:after {
   content: "";
@@ -2141,9 +2141,9 @@ body:after {
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    rgba(5, 43, 37, 0.12),
-    rgba(5, 38, 32, 0.48) 64%,
-    #082b25 100%
+    rgba(13, 89, 77, 0.04),
+    rgba(9, 69, 59, 0.27) 64%,
+    #0b4038 100%
   );
 }
 .section,
@@ -2157,8 +2157,8 @@ body:after {
 .about-photo {
   background: linear-gradient(
     145deg,
-    rgba(13, 29, 19, 0.82),
-    rgba(5, 16, 10, 0.74)
+    rgba(23, 84, 72, 0.84),
+    rgba(8, 53, 45, 0.78)
   );
 }
 
