@@ -12,6 +12,7 @@ if (header && nav) {
   nav.innerHTML = `
     <a href="index.html">Start</a>
     <a href="uslugi.html">Usługi</a>
+    <a href="dla-biznesu.html">Dla biznesu</a>
     <a href="realizacje.html">Portfolio</a>
     <a href="o-nas.html">O nas</a>
     <a class="nav-cta" href="index.html#contact">Kontakt</a>`;

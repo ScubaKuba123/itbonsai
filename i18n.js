@@ -494,6 +494,19 @@
     copy.zh ||= {};
   }
 
+  try {
+    const businessTranslations = await fetch("dla-biznesu-translations.json?v=3", {
+      cache: "force-cache",
+    }).then((response) => (response.ok ? response.json() : null));
+    if (businessTranslations) {
+      Object.entries(businessTranslations).forEach(([locale, entries]) => {
+        copy[locale] = { ...(entries || {}), ...(copy[locale] || {}) };
+      });
+    }
+  } catch {
+    // The Polish source copy remains available if the optional file cannot load.
+  }
+
   Object.assign(copy.en, {
     "Prosty cennik.": "Simple pricing.",
     "Dobry start dla Twojej firmy.": "A strong start for your business.",
@@ -750,7 +763,7 @@
     const missing = [];
     const nonTranslatable = new Set([
       "Bons", "Ai", "Studio", "BonsAi Studio", "SeaMonk.jp", "Ocean", "Morscy Wojownicy", "Mori Retreat", "Cafe App", "KICKBOXING · MUAY THAI · SOPOT", "studio@itbonsai.pl",
-      "WhatsApp", "Facebook", "LinkedIn", "Google", "Google Maps", "SEO", "AI", "Prosta obsługa", "PL", "EN", "JP",
+      "WhatsApp", "Facebook", "LinkedIn", "Google", "Google Maps", "SEO", "AI", "PL", "EN", "JP",
       "Mobile-first", "Living system", "f", "in",
     ]);
     nodes.forEach((node) => {
