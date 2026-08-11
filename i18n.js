@@ -474,7 +474,7 @@
   }
 
   try {
-    const expanded = await fetch("translations-extra.json?v=translations-7", {
+    const expanded = await fetch("translations-extra.json?v=translations-8", {
       cache: "force-cache",
     }).then((response) => (response.ok ? response.json() : null));
     if (expanded) {
@@ -495,7 +495,7 @@
   }
 
   try {
-    const businessTranslations = await fetch("dla-biznesu-translations.json?v=4", {
+    const businessTranslations = await fetch("dla-biznesu-translations.json?v=5", {
       cache: "force-cache",
     }).then((response) => (response.ok ? response.json() : null));
     if (businessTranslations) {
