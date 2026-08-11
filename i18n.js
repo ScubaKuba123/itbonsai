@@ -495,12 +495,12 @@
   }
 
   try {
-    const businessTranslations = await fetch("dla-biznesu-translations.json?v=3", {
+    const businessTranslations = await fetch("dla-biznesu-translations.json?v=4", {
       cache: "force-cache",
     }).then((response) => (response.ok ? response.json() : null));
     if (businessTranslations) {
       Object.entries(businessTranslations).forEach(([locale, entries]) => {
-        copy[locale] = { ...(entries || {}), ...(copy[locale] || {}) };
+        copy[locale] = { ...(copy[locale] || {}), ...(entries || {}) };
       });
     }
   } catch {
