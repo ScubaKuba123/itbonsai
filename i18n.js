@@ -21,6 +21,7 @@
       "Zobacz realizacje": "View our work",
       "Odpowiedź zwykle w 24h · Jasna wycena przed startem · Dobrze działa na telefonie":
         "Usually replies within 24h · Clear quote before we start · Works well on mobile",
+      "Dobrze działa na telefonie": "Works well on mobile",
       "Nie publikujemy strony ani aplikacji bez Twojej akceptacji.":
         "We never publish a website or application without your approval.",
       "Strony i aplikacje": "Websites and applications",
@@ -30,6 +31,9 @@
       "Dla kogo": "Who we help",
       "Wszystko, czego potrzebuje Twoja firma, w jednym miejscu.":
         "Everything your business needs, in one place.",
+      "Wszystko, czego potrzebuje Twoja firma,":
+        "Everything your business needs,",
+      "w jednym miejscu.": "in one place.",
       "Tworzymy strony, aplikacje i proste automatyzacje, które pomagają zdobywać klientów i oszczędzać czas.":
         "We build websites, apps and simple automation that help you win customers and save time.",
       "Usługi lokalne": "Local services",
@@ -49,6 +53,8 @@
         "Bookings and simple tools that make everyday work easier.",
       "Mniej przepisywania danych, szybsze odpowiedzi i więcej czasu.":
         "Less data entry, faster replies and more time for your business.",
+      "Strona szkoły nurkowania w Japonii, dostępna w kilku językach. Klienci łatwo poznają ofertę i szybko przechodzą do kontaktu.":
+        "A multilingual website for a diving school in Japan. Customers can quickly understand the offer and get in touch.",
       "Cennik i zasady": "Pricing and terms",
       "Pakiety, terminy, poprawki, płatności, hosting i wsparcie.":
         "Packages, timelines, revisions, payments, hosting and support.",
@@ -249,6 +255,7 @@
       "Zobacz realizacje": "制作実績を見る",
       "Odpowiedź zwykle w 24h · Jasna wycena przed startem · Dobrze działa na telefonie":
         "通常24時間以内に返信・明確な見積もり・モバイルファースト",
+      "Dobrze działa na telefonie": "スマートフォンでも快適",
       "Nie publikujemy strony ani aplikacji bez Twojej akceptacji.":
         "お客様の承認なしにサイトやアプリを公開することはありません。",
       "Strony i aplikacje": "ウェブサイトとアプリ",
@@ -258,6 +265,8 @@
       "Dla kogo": "対象となる企業",
       "Wszystko, czego potrzebuje Twoja firma, w jednym miejscu.":
         "ビジネスに必要なものを、一か所にまとめます。",
+      "Wszystko, czego potrzebuje Twoja firma,": "ビジネスに必要なものを、",
+      "w jednym miejscu.": "一か所にまとめます。",
       "Tworzymy strony, aplikacje i proste automatyzacje, które pomagają zdobywać klientów i oszczędzać czas.":
         "集客と時間の節約に役立つウェブサイト、アプリ、シンプルな自動化を制作します。",
       "Usługi lokalne": "地域サービス",
@@ -277,6 +286,8 @@
         "予約とシンプルなツールで、日々の仕事を楽にします。",
       "Mniej przepisywania danych, szybsze odpowiedzi i więcej czasu.":
         "データ入力を減らし、返信を速め、時間を増やします。",
+      "Strona szkoły nurkowania w Japonii, dostępna w kilku językach. Klienci łatwo poznają ofertę i szybko przechodzą do kontaktu.":
+        "日本のダイビングスクール向け多言語サイトです。お客様がサービスを理解し、すぐに問い合わせできます。",
       "Cennik i zasady": "料金と条件",
       "Pakiety, terminy, poprawki, płatności, hosting i wsparcie.":
         "プラン、納期、修正、支払い、ホスティング、サポート。",
