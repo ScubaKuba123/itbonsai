@@ -19,8 +19,8 @@
       "Projektujemy cyfrowe rozwiązania, które pomagają zdobywać więcej zapytań, budować profesjonalny wizerunek i ograniczać ręczną pracę.":
         "We design digital solutions that generate more enquiries, build a professional image and reduce manual work.",
       "Zobacz realizacje": "View our work",
-      "Odpowiedź zwykle w 24h · Jasna wycena przed startem · Mobile-first":
-        "Usually replies within 24h · Clear quote before we start · Mobile-first",
+      "Odpowiedź zwykle w 24h · Jasna wycena przed startem · Dobrze działa na telefonie":
+        "Usually replies within 24h · Clear quote before we start · Works well on mobile",
       "Nie publikujemy strony ani aplikacji bez Twojej akceptacji.":
         "We never publish a website or application without your approval.",
       "Strony i aplikacje": "Websites and applications",
@@ -28,10 +28,10 @@
       "Automatyzacje AI": "AI automation",
       "Bezpośredni kontakt": "Direct contact",
       "Dla kogo": "Who we help",
-      "Jedna cyfrowa architektura dla firm, które chcą rosnąć mądrzej.":
-        "One digital architecture for businesses that want to grow smarter.",
-      "Łączymy stronę, aplikację, widoczność i automatyzację w spójny system zamiast zestawu przypadkowych narzędzi.":
-        "We connect your website, application, visibility and automation into one coherent system.",
+      "Wszystko, czego potrzebuje Twoja firma, w jednym miejscu.":
+        "Everything your business needs, in one place.",
+      "Tworzymy strony, aplikacje i proste automatyzacje, które pomagają zdobywać klientów i oszczędzać czas.":
+        "We build websites, apps and simple automation that help you win customers and save time.",
       "Usługi lokalne": "Local services",
       Turystyka: "Tourism",
       Gastronomia: "Hospitality",
@@ -45,10 +45,10 @@
       "Więcej zapytań, lepsza widoczność i profesjonalny wizerunek.":
         "More enquiries, better visibility and a professional image.",
       "Tworzenie aplikacji": "Application development",
-      "Panele, systemy rezerwacji i narzędzia dopasowane do pracy zespołu.":
-        "Dashboards, booking systems and tools tailored to your team.",
-      "Mniej powtarzalnych czynności i płynniejszy przepływ informacji.":
-        "Less repetitive work and a smoother flow of information.",
+      "Rezerwacje i proste narzędzia, które ułatwiają codzienną pracę.":
+        "Bookings and simple tools that make everyday work easier.",
+      "Mniej przepisywania danych, szybsze odpowiedzi i więcej czasu.":
+        "Less data entry, faster replies and more time for your business.",
       "Cennik i zasady": "Pricing and terms",
       "Pakiety, terminy, poprawki, płatności, hosting i wsparcie.":
         "Packages, timelines, revisions, payments, hosting and support.",
@@ -61,13 +61,13 @@
       "Aplikacje dla firm": "Business applications",
       "Widoczność w Google": "Google visibility",
       Marketing: "Marketing",
-      "Spójny język wizualny, komunikacja i komponenty cyfrowe, dzięki którym firma wygląda profesjonalnie na każdym ekranie.":
-        "A coherent visual language, communication and digital components that make your company look professional on every screen.",
+      "Dbamy o wygląd i komunikację, dzięki którym firma prezentuje się profesjonalnie na każdym ekranie.":
+        "We improve your look and message so your business feels professional on every screen.",
       "Aplikacje dla biznesu": "Business applications",
       "Narzędzia dopasowane do pracy Twojej firmy.":
         "Tools tailored to the way your company works.",
-      "Tworzymy aplikacje webowe, które porządkują procesy, skracają obsługę i dają zespołowi jedno czytelne miejsce pracy.":
-        "We build web applications that organise processes, shorten service time and give your team one clear workspace.",
+      "Tworzymy proste aplikacje, które porządkują pracę, przyspieszają obsługę klientów i trzymają ważne informacje w jednym miejscu.":
+        "We build simple apps that organise work, speed up customer service and keep important information in one place.",
       "Panel klienta": "Client portal",
       "Obsługa bez chaosu": "Service without chaos",
       Rezerwacje: "Bookings",
@@ -80,10 +80,10 @@
       "Jak pracujemy": "How we work",
       "Od problemu do działającego narzędzia.":
         "From a problem to a working tool.",
-      "Analiza procesu": "Process analysis",
-      "UX/UI i prototyp": "UX/UI and prototype",
-      Wdrożenie: "Development",
-      "Rozwój i wsparcie": "Growth and support",
+      "Poznanie potrzeb": "Understanding your needs",
+      "Prosty projekt": "Simple design",
+      "Budowa i testy": "Build and testing",
+      "Wsparcie po starcie": "Support after launch",
       "Masz pomysł na aplikację?": "Have an application idea?",
       "Chcę taką aplikację": "I want an application like this",
       Cennik: "Pricing",
@@ -103,8 +103,8 @@
         "Technology with a practical, human approach.",
       "Założyciel BonsAi Studio": "Founder of BonsAi Studio",
       "Jakub Mierosławski łączy doświadczenie front-end developera z praktyką przedsiębiorcy i prowadzeniem SeaMonk.jp — szkoły nurkowania działającej w Japonii. Dzięki temu patrzy na stronę lub aplikację nie tylko jak na kod, ale jak na narzędzie codziennej pracy firmy.": "Jakub Mierosławski combines front-end development expertise with hands-on experience as an entrepreneur and owner of SeaMonk.jp, a diving school in Japan. This allows him to see a website or application not merely as code, but as a practical tool supporting everyday business.",
-      "Bezpośrednio od pomysłu do wdrożenia.": "Directly from idea to launch.",
-      "Front-end development": "Front-end development",
+      "Od pomysłu do gotowego rozwiązania.": "From your idea to a ready solution.",
+      "Strony i aplikacje": "Websites and apps",
       "Praktyka biznesowa": "Business experience",
       "Polska i Japonia": "Poland and Japan",
       "Zasady współpracy": "How we work together",
@@ -247,7 +247,7 @@
       "Projektujemy cyfrowe rozwiązania, które pomagają zdobywać więcej zapytań, budować profesjonalny wizerunek i ograniczać ręczną pracę.":
         "お問い合わせを増やし、信頼感を高め、手作業を減らすデジタルソリューションを設計します。",
       "Zobacz realizacje": "制作実績を見る",
-      "Odpowiedź zwykle w 24h · Jasna wycena przed startem · Mobile-first":
+      "Odpowiedź zwykle w 24h · Jasna wycena przed startem · Dobrze działa na telefonie":
         "通常24時間以内に返信・明確な見積もり・モバイルファースト",
       "Nie publikujemy strony ani aplikacji bez Twojej akceptacji.":
         "お客様の承認なしにサイトやアプリを公開することはありません。",
@@ -256,10 +256,10 @@
       "Automatyzacje AI": "AI自動化",
       "Bezpośredni kontakt": "直接対応",
       "Dla kogo": "対象となる企業",
-      "Jedna cyfrowa architektura dla firm, które chcą rosnąć mądrzej.":
-        "賢く成長したい企業のための統合デジタル基盤。",
-      "Łączymy stronę, aplikację, widoczność i automatyzację w spójny system zamiast zestawu przypadkowych narzędzi.":
-        "ウェブサイト、アプリ、検索対策、自動化を一つの仕組みに統合します。",
+      "Wszystko, czego potrzebuje Twoja firma, w jednym miejscu.":
+        "ビジネスに必要なものを、一か所にまとめます。",
+      "Tworzymy strony, aplikacje i proste automatyzacje, które pomagają zdobywać klientów i oszczędzać czas.":
+        "集客と時間の節約に役立つウェブサイト、アプリ、シンプルな自動化を制作します。",
       "Usługi lokalne": "地域サービス",
       Turystyka: "観光",
       Gastronomia: "飲食",
@@ -273,10 +273,10 @@
       "Więcej zapytań, lepsza widoczność i profesjonalny wizerunek.":
         "お問い合わせ増加、検索での可視性、プロフェッショナルな印象。",
       "Tworzenie aplikacji": "アプリ開発",
-      "Panele, systemy rezerwacji i narzędzia dopasowane do pracy zespołu.":
-        "管理画面、予約システム、チーム業務に合うツール。",
-      "Mniej powtarzalnych czynności i płynniejszy przepływ informacji.":
-        "反復作業を減らし、情報をスムーズに連携。",
+      "Rezerwacje i proste narzędzia, które ułatwiają codzienną pracę.":
+        "予約とシンプルなツールで、日々の仕事を楽にします。",
+      "Mniej przepisywania danych, szybsze odpowiedzi i więcej czasu.":
+        "データ入力を減らし、返信を速め、時間を増やします。",
       "Cennik i zasady": "料金と条件",
       "Pakiety, terminy, poprawki, płatności, hosting i wsparcie.":
         "プラン、納期、修正、支払い、ホスティング、サポート。",
@@ -288,11 +288,11 @@
       "Aplikacje dla firm": "企業向けアプリ",
       "Widoczność w Google": "Google検索対策",
       Marketing: "マーケティング",
-      "Spójny język wizualny, komunikacja i komponenty cyfrowe, dzięki którym firma wygląda profesjonalnie na każdym ekranie.":
+      "Dbamy o wygląd i komunikację, dzięki którym firma prezentuje się profesjonalnie na każdym ekranie.":
         "一貫したビジュアルとコミュニケーションで、あらゆる画面上のブランド品質を高めます。",
       "Aplikacje dla biznesu": "ビジネスアプリ",
       "Narzędzia dopasowane do pracy Twojej firmy.": "業務に合わせたツール。",
-      "Tworzymy aplikacje webowe, które porządkują procesy, skracają obsługę i dają zespołowi jedno czytelne miejsce pracy.":
+      "Tworzymy proste aplikacje, które porządkują pracę, przyspieszają obsługę klientów i trzymają ważne informacje w jednym miejscu.":
         "業務を整理し、対応時間を短縮し、チームの仕事を一か所にまとめるウェブアプリを開発します。",
       "Panel klienta": "顧客ポータル",
       "Obsługa bez chaosu": "混乱のない顧客対応",
@@ -304,10 +304,10 @@
       "Wygodniejsza usługa": "より便利な顧客体験",
       "Jak pracujemy": "制作の流れ",
       "Od problemu do działającego narzędzia.": "課題から使えるツールへ。",
-      "Analiza procesu": "業務分析",
-      "UX/UI i prototyp": "UX/UIとプロトタイプ",
-      Wdrożenie: "開発・実装",
-      "Rozwój i wsparcie": "改善とサポート",
+      "Poznanie potrzeb": "ご要望の確認",
+      "Prosty projekt": "わかりやすい設計",
+      "Budowa i testy": "制作とテスト",
+      "Wsparcie po starcie": "公開後のサポート",
       "Masz pomysł na aplikację?": "アプリのアイデアがありますか？",
       "Chcę taką aplikację": "このようなアプリを相談する",
       "Jasny budżet. Konkretne zasady.": "明確な予算と条件。",
@@ -325,8 +325,8 @@
         "実務的で人に寄り添うテクノロジー。",
       "Założyciel BonsAi Studio": "BonsAi Studio 代表",
       "Jakub Mierosławski łączy doświadczenie front-end developera z praktyką przedsiębiorcy i prowadzeniem SeaMonk.jp — szkoły nurkowania działającej w Japonii. Dzięki temu patrzy na stronę lub aplikację nie tylko jak na kod, ale jak na narzędzie codziennej pracy firmy.": "Jakub Mierosławskiは、フロントエンド開発の専門知識と、起業家として日本のダイビングスクールSeaMonk.jpを運営する実務経験を兼ね備えています。そのため、ウェブサイトやアプリを単なるコードではなく、日々の事業を支える実用的なツールとして設計します。",
-      "Front-end development": "フロントエンド開発",
-      "Bezpośrednio od pomysłu do wdrożenia.": "アイデアから公開まで直接対応。",
+      "Strony i aplikacje": "ウェブサイトとアプリ",
+      "Od pomysłu do gotowego rozwiązania.": "アイデアから公開まで直接対応。",
       "Praktyka biznesowa": "事業運営経験",
       "Polska i Japonia": "ポーランドと日本",
       "Zasady współpracy": "制作方針",
@@ -739,7 +739,7 @@
     const missing = [];
     const nonTranslatable = new Set([
       "Bons", "Ai", "Studio", "BonsAi Studio", "SeaMonk.jp", "Ocean", "Morscy Wojownicy", "Mori Retreat", "Cafe App", "KICKBOXING · MUAY THAI · SOPOT", "studio@itbonsai.pl",
-      "WhatsApp", "Facebook", "LinkedIn", "Google", "Google Maps", "SEO", "AI", "UX/UI", "PL", "EN", "JP",
+      "WhatsApp", "Facebook", "LinkedIn", "Google", "Google Maps", "SEO", "AI", "Prosta obsługa", "PL", "EN", "JP",
       "Mobile-first", "Living system", "f", "in",
     ]);
     nodes.forEach((node) => {
