@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap");
 :root {
-  --bg: #14594e;
-  --panel: #175f53;
-  --panel2: #1b695c;
+  --bg: #176a5d;
+  --panel: #1b7163;
+  --panel2: #207d6d;
   --text: #f5f7f2;
-  --muted: #c5d7d2;
-  --green: #72d2b7;
+  --muted: #d0dfda;
+  --green: #7bdcc0;
   --gold: #b58a47;
   --blue: #59c6c8;
-  --line: #468177;
+  --line: #57978c;
   --max: 1200px;
 }
 * {
@@ -1700,9 +1700,9 @@ body {
   --radius-sm: 14px;
   --radius-md: 22px;
   --radius-lg: 32px;
-  --glass: rgba(22, 91, 79, 0.72);
-  --glass-strong: rgba(13, 70, 61, 0.9);
-  --soft-border: rgba(202, 239, 229, 0.21);
+  --glass: rgba(26, 107, 92, 0.74);
+  --glass-strong: rgba(16, 82, 71, 0.9);
+  --soft-border: rgba(211, 242, 234, 0.24);
 }
 html {
   scroll-behavior: smooth;
@@ -1724,7 +1724,7 @@ body {
   padding: 0 18px 0 14px;
   border: 1px solid var(--soft-border);
   border-radius: 24px;
-  background: rgba(10, 63, 55, 0.84);
+  background: rgba(13, 78, 68, 0.86);
   backdrop-filter: blur(20px) saturate(1.25);
   box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
 }
@@ -1843,8 +1843,8 @@ select,
   border-radius: var(--radius-lg);
   background: linear-gradient(
     145deg,
-    rgba(30, 104, 90, 0.8),
-    rgba(11, 69, 59, 0.72)
+    rgba(35, 120, 104, 0.82),
+    rgba(14, 82, 71, 0.74)
   );
   backdrop-filter: blur(18px);
   box-shadow: 0 14px 45px rgba(0, 0, 0, 0.14);
@@ -1882,7 +1882,7 @@ select,
 input,
 textarea,
 select {
-  background: rgba(8, 57, 49, 0.8);
+  background: rgba(11, 70, 61, 0.82);
   border-color: var(--soft-border);
 }
 input:hover,
@@ -1903,7 +1903,7 @@ select:hover {
 .proof span {
   border: 1px solid var(--soft-border) !important;
   border-radius: var(--radius-sm);
-  background: rgba(21, 91, 78, 0.72);
+  background: rgba(27, 108, 93, 0.74);
   backdrop-filter: blur(12px);
 }
 @media (max-width: 1100px) {
@@ -2129,7 +2129,7 @@ select:hover {
 
 /* Elegant custom forest atmosphere. */
 body {
-  background: #17675a url("assets/forest-background.jpg") center top/cover fixed
+  background: #1b7869 url("assets/forest-background.jpg") center top/cover fixed
     no-repeat;
   background-blend-mode: luminosity;
 }
@@ -2141,9 +2141,9 @@ body:after {
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    rgba(19, 111, 96, 0.02),
-    rgba(13, 86, 74, 0.2) 64%,
-    #105047 100%
+    rgba(25, 128, 110, 0.01),
+    rgba(17, 102, 88, 0.16) 64%,
+    #145f54 100%
   );
 }
 .section,
@@ -2157,8 +2157,8 @@ body:after {
 .about-photo {
   background: linear-gradient(
     145deg,
-    rgba(30, 106, 91, 0.86),
-    rgba(11, 70, 60, 0.8)
+    rgba(36, 123, 106, 0.87),
+    rgba(14, 83, 72, 0.81)
   );
 }
 
