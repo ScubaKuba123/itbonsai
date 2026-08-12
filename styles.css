@@ -4605,9 +4605,9 @@ body .site-language-switcher {
 body,
 body.seamonk-page,
 body.portfolio-signature {
-  background-color: #42a996;
+  background-color: #68cbb8;
   background-image:
-    linear-gradient(rgba(48, 158, 139, 0.52), rgba(34, 137, 120, 0.64)),
+    linear-gradient(rgba(103, 205, 184, 0.68), rgba(66, 177, 155, 0.72)),
     url("assets/forest-background.jpg");
   background-position: center top;
   background-size: cover;
@@ -4619,15 +4619,15 @@ body:after,
 body.seamonk-page:after {
   background: linear-gradient(
     180deg,
-    rgba(83, 188, 167, 0.15),
-    rgba(46, 157, 137, 0.3) 58%,
-    rgba(31, 126, 111, 0.5) 100%
+    rgba(139, 226, 208, 0.25),
+    rgba(82, 190, 168, 0.36) 58%,
+    rgba(50, 155, 136, 0.48) 100%
   );
 }
 .header,
 .seamonk-page .header {
-  background: rgba(24, 111, 96, 0.88);
-  border-color: rgba(225, 250, 242, 0.31);
+  background: rgba(39, 137, 119, 0.9);
+  border-color: rgba(235, 255, 249, 0.4);
 }
 .service,
 .case,
@@ -4636,15 +4636,15 @@ body.seamonk-page:after {
 .about-photo {
   background: linear-gradient(
     145deg,
-    rgba(52, 151, 132, 0.93),
-    rgba(27, 119, 104, 0.9)
+    rgba(76, 174, 154, 0.94),
+    rgba(42, 141, 123, 0.92)
   );
 }
 .portfolio-signature .portfolio-hero-note,
 .portfolio-signature .flagship-media,
 .portfolio-signature .portfolio-project,
 .portfolio-signature .client-voices {
-  background-color: rgba(20, 101, 87, 0.9);
+  background-color: rgba(32, 127, 109, 0.92);
 }
 @media (max-width: 900px) {
   body,
