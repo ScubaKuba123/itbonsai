@@ -70,14 +70,14 @@
     "04 / BonsAI Garden": "04 / BonsAI Garden",
     "BonsAI City — wirtualne biuro łączące zespół, dokumenty i klientów": "BonsAI City - a virtual office connecting your team, documents and clients",
     "BonsAI Garden — czytelny panel zarządzania najważniejszymi obszarami firmy": "BonsAI Garden - a clear panel for managing the most important areas of the company",
-    "03 / BonsAI Mail": "03 / BonsAI Mail",
+    "BonsAI Office": "BonsAI Office",
     "Skrzynka odbiorcza, którą rozumiesz jednym spojrzeniem.": "An inbox you understand at a glance.",
     "Każda gałąź reprezentuje inną skrzynkę lub kanał, a liczba liści pokazuje, ile czeka tam nowych wiadomości. Kolor drzewa zmienia się wraz z liczbą nieprzeczytanych spraw.": "Each branch represents a different inbox or channel, while the leaves show how many new messages are waiting there. The tree changes colour as the number of unread items grows.",
     "Od razu widzisz, która skrzynka wymaga uwagi.": "See immediately which inbox needs attention.",
     "E-mail, wiadomości i social media w jednym widoku.": "Email, messages and social media in one view.",
     "Mniej przełączania, mniej przeoczonych odpowiedzi.": "Less switching and fewer missed replies.",
     "Drzewko pokazuje stan Twojej komunikacji bez otwierania każdej aplikacji.": "The tree shows the state of your communication without opening every app.",
-    "BonsAI Mail — drzewko pokazujące liczbę nowych wiadomości w każdej skrzynce": "BonsAI Mail — a tree showing the number of new messages in each inbox"
+    "BonsAI Office — drzewko pokazujące liczbę nowych wiadomości w każdej skrzynce": "BonsAI Office — a tree showing the number of new messages in each inbox"
   },
   "ja": {
     "Dla biznesu": "ビジネス向け",
@@ -150,14 +150,14 @@
     "04 / BonsAI Garden": "04 / BonsAI Garden",
     "BonsAI City — wirtualne biuro łączące zespół, dokumenty i klientów": "BonsAI City - チーム、ドキュメント、クライアントをつなぐ仮想オフィス",
     "BonsAI Garden — czytelny panel zarządzania najważniejszymi obszarami firmy": "BonsAI Garden - 会社の最も重要な領域を管理するための明確なパネル",
-    "03 / BonsAI Mail": "03 / BonsAI Mail",
+    "BonsAI Office": "BonsAI Office",
     "Skrzynka odbiorcza, którą rozumiesz jednym spojrzeniem.": "ひと目で状況がわかる受信トレイ。",
     "Każda gałąź reprezentuje inną skrzynkę lub kanał, a liczba liści pokazuje, ile czeka tam nowych wiadomości. Kolor drzewa zmienia się wraz z liczbą nieprzeczytanych spraw.": "枝はそれぞれ別の受信箱や連絡チャネルを表し、葉の数は新着メッセージの件数を示します。未読が増えると木の色も変化します。",
     "Od razu widzisz, która skrzynka wymaga uwagi.": "注意が必要な受信箱がすぐにわかります。",
     "E-mail, wiadomości i social media w jednym widoku.": "メール、メッセージ、SNSを一つの画面で確認できます。",
     "Mniej przełączania, mniej przeoczonych odpowiedzi.": "アプリの切り替えと返信漏れを減らします。",
     "Drzewko pokazuje stan Twojej komunikacji bez otwierania każdej aplikacji.": "各アプリを開かなくても、木を見るだけで連絡状況がわかります。",
-    "BonsAI Mail — drzewko pokazujące liczbę nowych wiadomości w każdej skrzynce": "BonsAI Mail — 各受信箱の新着メッセージ数を示す木"
+    "BonsAI Office — drzewko pokazujące liczbę nowych wiadomości w każdej skrzynce": "BonsAI Office — 各受信箱の新着メッセージ数を示す木"
   },
   "de": {
     "Dla biznesu": "Für Unternehmen",
@@ -230,14 +230,14 @@
     "04 / BonsAI Garden": "04 / BonsAI Garden",
     "BonsAI City — wirtualne biuro łączące zespół, dokumenty i klientów": "BonsAI City – ein virtuelles Büro, das Ihr Team, Dokumente und Kunden verbindet",
     "BonsAI Garden — czytelny panel zarządzania najważniejszymi obszarami firmy": "BonsAI Garden – ein übersichtliches Panel zur Verwaltung der wichtigsten Unternehmensbereiche",
-    "03 / BonsAI Mail": "03 / BonsAI Mail",
+    "BonsAI Office": "BonsAI Office",
     "Skrzynka odbiorcza, którą rozumiesz jednym spojrzeniem.": "Ein Posteingang, den Sie auf einen Blick verstehen.",
     "Każda gałąź reprezentuje inną skrzynkę lub kanał, a liczba liści pokazuje, ile czeka tam nowych wiadomości. Kolor drzewa zmienia się wraz z liczbą nieprzeczytanych spraw.": "Jeder Ast steht für ein anderes Postfach oder einen anderen Kanal. Die Blätter zeigen, wie viele neue Nachrichten dort warten. Mit der Zahl der ungelesenen Vorgänge ändert der Baum seine Farbe.",
     "Od razu widzisz, która skrzynka wymaga uwagi.": "Sie sehen sofort, welches Postfach Aufmerksamkeit braucht.",
     "E-mail, wiadomości i social media w jednym widoku.": "E-Mail, Nachrichten und soziale Medien in einer Ansicht.",
     "Mniej przełączania, mniej przeoczonych odpowiedzi.": "Weniger Wechsel und weniger übersehene Antworten.",
     "Drzewko pokazuje stan Twojej komunikacji bez otwierania każdej aplikacji.": "Der Baum zeigt den Stand Ihrer Kommunikation, ohne jede App öffnen zu müssen.",
-    "BonsAI Mail — drzewko pokazujące liczbę nowych wiadomości w każdej skrzynce": "BonsAI Mail — ein Baum, der neue Nachrichten in jedem Postfach anzeigt"
+    "BonsAI Office — drzewko pokazujące liczbę nowych wiadomości w każdej skrzynce": "BonsAI Office — ein Baum, der neue Nachrichten in jedem Postfach anzeigt"
   },
   "es": {
     "Dla biznesu": "Para negocios",
@@ -310,14 +310,14 @@
     "04 / BonsAI Garden": "04 / BonsAI Garden",
     "BonsAI City — wirtualne biuro łączące zespół, dokumenty i klientów": "BonsAI Office: una oficina virtual que conecta a su equipo, documentos y clientes",
     "BonsAI Garden — czytelny panel zarządzania najważniejszymi obszarami firmy": "BonsAI City: un panel claro para gestionar las áreas más importantes de la empresa",
-    "03 / BonsAI Mail": "03 / BonsAI Mail",
+    "BonsAI Office": "BonsAI Office",
     "Skrzynka odbiorcza, którą rozumiesz jednym spojrzeniem.": "Una bandeja de entrada que entiendes de un vistazo.",
     "Każda gałąź reprezentuje inną skrzynkę lub kanał, a liczba liści pokazuje, ile czeka tam nowych wiadomości. Kolor drzewa zmienia się wraz z liczbą nieprzeczytanych spraw.": "Cada rama representa una bandeja o canal diferente y las hojas muestran cuántos mensajes nuevos esperan allí. El árbol cambia de color cuando aumenta el número de asuntos sin leer.",
     "Od razu widzisz, która skrzynka wymaga uwagi.": "Ves al instante qué bandeja necesita atención.",
     "E-mail, wiadomości i social media w jednym widoku.": "Correo, mensajes y redes sociales en una sola vista.",
     "Mniej przełączania, mniej przeoczonych odpowiedzi.": "Menos cambios entre aplicaciones y menos respuestas olvidadas.",
     "Drzewko pokazuje stan Twojej komunikacji bez otwierania każdej aplikacji.": "El árbol muestra el estado de tu comunicación sin abrir cada aplicación.",
-    "BonsAI Mail — drzewko pokazujące liczbę nowych wiadomości w każdej skrzynce": "BonsAI Mail — un árbol que muestra los mensajes nuevos de cada bandeja"
+    "BonsAI Office — drzewko pokazujące liczbę nowych wiadomości w każdej skrzynce": "BonsAI Office — un árbol que muestra los mensajes nuevos de cada bandeja"
   },
   "uk": {
     "Dla biznesu": "Для бізнесу",
@@ -390,14 +390,14 @@
     "04 / BonsAI Garden": "04 / BonsAI Garden",
     "BonsAI City — wirtualne biuro łączące zespół, dokumenty i klientów": "BonsAI City - віртуальний офіс, який об'єднує вашу команду, документи та клієнтів",
     "BonsAI Garden — czytelny panel zarządzania najważniejszymi obszarami firmy": "BonsAI Garden - зрозуміла панель для управління найважливішими напрямками компанії",
-    "03 / BonsAI Mail": "03 / BonsAI Mail",
+    "BonsAI Office": "BonsAI Office",
     "Skrzynka odbiorcza, którą rozumiesz jednym spojrzeniem.": "Вхідні повідомлення, які зрозумілі з першого погляду.",
     "Każda gałąź reprezentuje inną skrzynkę lub kanał, a liczba liści pokazuje, ile czeka tam nowych wiadomości. Kolor drzewa zmienia się wraz z liczbą nieprzeczytanych spraw.": "Кожна гілка представляє окрему скриньку або канал, а кількість листків показує, скільки там нових повідомлень. Колір дерева змінюється зі збільшенням кількості непрочитаних справ.",
     "Od razu widzisz, która skrzynka wymaga uwagi.": "Одразу видно, яка скринька потребує уваги.",
     "E-mail, wiadomości i social media w jednym widoku.": "Електронна пошта, повідомлення та соціальні мережі в одному вікні.",
     "Mniej przełączania, mniej przeoczonych odpowiedzi.": "Менше перемикань і менше пропущених відповідей.",
     "Drzewko pokazuje stan Twojej komunikacji bez otwierania każdej aplikacji.": "Дерево показує стан комунікації без необхідності відкривати кожну програму.",
-    "BonsAI Mail — drzewko pokazujące liczbę nowych wiadomości w każdej skrzynce": "BonsAI Mail — дерево, що показує кількість нових повідомлень у кожній скриньці"
+    "BonsAI Office — drzewko pokazujące liczbę nowych wiadomości w każdej skrzynce": "BonsAI Office — дерево, що показує кількість нових повідомлень у кожній скриньці"
   },
   "fr": {
     "Dla biznesu": "Pour les affaires",
@@ -470,14 +470,14 @@
     "04 / BonsAI Garden": "04 / BonsAI Garden",
     "BonsAI City — wirtualne biuro łączące zespół, dokumenty i klientów": "BonsAI City - un bureau virtuel connectant votre équipe, vos documents et vos clients",
     "BonsAI Garden — czytelny panel zarządzania najważniejszymi obszarami firmy": "BonsAI Garden - un panneau clair pour gérer les domaines les plus importants de l'entreprise",
-    "03 / BonsAI Mail": "03 / BonsAI Mail",
+    "BonsAI Office": "BonsAI Office",
     "Skrzynka odbiorcza, którą rozumiesz jednym spojrzeniem.": "Une boîte de réception comprise en un coup d'œil.",
     "Każda gałąź reprezentuje inną skrzynkę lub kanał, a liczba liści pokazuje, ile czeka tam nowych wiadomości. Kolor drzewa zmienia się wraz z liczbą nieprzeczytanych spraw.": "Chaque branche représente une boîte ou un canal différent, et les feuilles indiquent combien de nouveaux messages y attendent. La couleur de l'arbre évolue avec le nombre d'éléments non lus.",
     "Od razu widzisz, która skrzynka wymaga uwagi.": "Voyez immédiatement quelle boîte demande votre attention.",
     "E-mail, wiadomości i social media w jednym widoku.": "E-mails, messages et réseaux sociaux dans une seule vue.",
     "Mniej przełączania, mniej przeoczonych odpowiedzi.": "Moins de changements d'application et moins de réponses oubliées.",
     "Drzewko pokazuje stan Twojej komunikacji bez otwierania każdej aplikacji.": "L'arbre montre l'état de vos communications sans ouvrir chaque application.",
-    "BonsAI Mail — drzewko pokazujące liczbę nowych wiadomości w każdej skrzynce": "BonsAI Mail — un arbre indiquant les nouveaux messages de chaque boîte de réception"
+    "BonsAI Office — drzewko pokazujące liczbę nowych wiadomości w każdej skrzynce": "BonsAI Office — un arbre indiquant les nouveaux messages de chaque boîte de réception"
   },
   "zh": {
     "Dla biznesu": "面向企业",
@@ -550,13 +550,13 @@
     "04 / BonsAI Garden": "04 / BonsAI Garden",
     "BonsAI City — wirtualne biuro łączące zespół, dokumenty i klientów": "BonsAI City - 连接您的团队、文档和客户的虚拟办公室",
     "BonsAI Garden — czytelny panel zarządzania najważniejszymi obszarami firmy": "BonsAI Garden - 用于管理公司最重要领域的清晰面板",
-    "03 / BonsAI Mail": "03 / BonsAI Mail",
+    "BonsAI Office": "BonsAI Office",
     "Skrzynka odbiorcza, którą rozumiesz jednym spojrzeniem.": "一眼就能看懂的收件箱。",
     "Każda gałąź reprezentuje inną skrzynkę lub kanał, a liczba liści pokazuje, ile czeka tam nowych wiadomości. Kolor drzewa zmienia się wraz z liczbą nieprzeczytanych spraw.": "每根树枝代表一个不同的收件箱或沟通渠道，叶片数量显示其中有多少条新消息。未读事项越多，树的颜色也会随之变化。",
     "Od razu widzisz, która skrzynka wymaga uwagi.": "立即看出哪个收件箱需要处理。",
     "E-mail, wiadomości i social media w jednym widoku.": "在一个界面查看邮件、消息和社交媒体。",
     "Mniej przełączania, mniej przeoczonych odpowiedzi.": "减少应用切换，也减少遗漏回复。",
     "Drzewko pokazuje stan Twojej komunikacji bez otwierania każdej aplikacji.": "无需逐个打开应用，看树就能了解沟通状态。",
-    "BonsAI Mail — drzewko pokazujące liczbę nowych wiadomości w każdej skrzynce": "BonsAI Mail — 用树形界面显示各收件箱的新消息数量"
+    "BonsAI Office — drzewko pokazujące liczbę nowych wiadomości w każdej skrzynce": "BonsAI Office — 用树形界面显示各收件箱的新消息数量"
   }
 }
