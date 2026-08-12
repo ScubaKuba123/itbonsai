@@ -487,6 +487,44 @@
     copy[locale]["Strony, aplikacje i automatyzacje, które pomagają firmom rosnąć."] = value;
   });
 
+  const teamAbout = {
+    en: {
+      "Jesteśmy zespołem projektantów, programistów i specjalistów od automatyzacji, którzy łączą technologię z praktycznym doświadczeniem biznesowym.": "We are a team of designers, developers and automation specialists combining technology with practical business experience.",
+      "Zespół od pomysłu do gotowego rozwiązania.": "A team that takes you from idea to finished solution.",
+      "BonsAi Studio to zespół łączący projektowanie, programowanie, SEO, automatyzację i marketing. Wspólnie tworzymy rozwiązania, które są nie tylko estetyczne, ale przede wszystkim pomagają firmom sprawniej pracować, zdobywać klientów i rozwijać sprzedaż.": "BonsAi Studio is a team combining design, development, SEO, automation and marketing. Together, we create solutions that look great and, above all, help companies work more efficiently, win customers and grow sales.",
+      "Wiemy, jak ważne są szybki kontakt, jasna oferta, wygodna obsługa klienta i systemy, które nie wymagają technicznej wiedzy. Projektujemy rozwiązania dla ludzi, którzy chcą prowadzić biznes sprawniej, wyglądać profesjonalnie i odzyskać czas.": "We know the value of fast communication, a clear offer, convenient customer service and systems that require no technical expertise. We design solutions for people who want to run their business efficiently, look professional and regain time.",
+      "Przy każdym projekcie masz bezpośredni kontakt z naszym zespołem. Wspólnie poznajemy potrzeby firmy, planujemy rozwiązanie i odpowiadamy za jego wykonanie — bez anonimowych działów i obietnic bez pokrycia.": "With every project, you have direct contact with our team. Together, we understand your business, plan the solution and take responsibility for delivery—without anonymous departments or empty promises."
+    },
+    de: {
+      "Jesteśmy zespołem projektantów, programistów i specjalistów od automatyzacji, którzy łączą technologię z praktycznym doświadczeniem biznesowym.": "Wir sind ein Team aus Designern, Entwicklern und Automatisierungsexperten, das Technologie mit praktischer Geschäftserfahrung verbindet.",
+      "Zespół od pomysłu do gotowego rozwiązania.": "Ein Team von der Idee bis zur fertigen Lösung."
+    },
+    es: {
+      "Jesteśmy zespołem projektantów, programistów i specjalistów od automatyzacji, którzy łączą technologię z praktycznym doświadczeniem biznesowym.": "Somos un equipo de diseñadores, desarrolladores y especialistas en automatización que combina tecnología con experiencia empresarial práctica.",
+      "Zespół od pomysłu do gotowego rozwiązania.": "Un equipo desde la idea hasta la solución final."
+    },
+    uk: {
+      "Jesteśmy zespołem projektantów, programistów i specjalistów od automatyzacji, którzy łączą technologię z praktycznym doświadczeniem biznesowym.": "Ми — команда дизайнерів, розробників і фахівців з автоматизації, яка поєднує технології з практичним бізнес-досвідом.",
+      "Zespół od pomysłu do gotowego rozwiązania.": "Команда від ідеї до готового рішення."
+    },
+    fr: {
+      "Jesteśmy zespołem projektantów, programistów i specjalistów od automatyzacji, którzy łączą technologię z praktycznym doświadczeniem biznesowym.": "Nous sommes une équipe de designers, développeurs et spécialistes de l’automatisation qui associe technologie et expérience concrète de l’entreprise.",
+      "Zespół od pomysłu do gotowego rozwiązania.": "Une équipe, de l’idée à la solution finale."
+    },
+    zh: {
+      "Jesteśmy zespołem projektantów, programistów i specjalistów od automatyzacji, którzy łączą technologię z praktycznym doświadczeniem biznesowym.": "我们是一支由设计师、开发人员和自动化专家组成的团队，将技术与实际商业经验相结合。",
+      "Zespół od pomysłu do gotowego rozwiązania.": "从创意到完整解决方案的专业团队。"
+    },
+    ja: {
+      "Jesteśmy zespołem projektantów, programistów i specjalistów od automatyzacji, którzy łączą technologię z praktycznym doświadczeniem biznesowym.": "私たちは、テクノロジーと実践的なビジネス経験を組み合わせるデザイナー、開発者、業務自動化の専門家チームです。",
+      "Zespół od pomysłu do gotowego rozwiązania.": "アイデアから完成したソリューションまで支えるチームです。"
+    }
+  };
+  Object.entries(teamAbout).forEach(([locale, entries]) => {
+    copy[locale] ||= {};
+    Object.assign(copy[locale], entries);
+  });
+
   try {
     const expanded = await fetch("translations-extra.json?v=translations-9", {
       cache: "force-cache",
