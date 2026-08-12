@@ -32,6 +32,12 @@ if (header && nav) {
 const menu = header?.querySelector(".menu");
 
 if (menu && nav) {
+  const closeMobileMenu = () => {
+    menu.setAttribute("aria-expanded", "false");
+    menu.classList.remove("open");
+    nav.classList.remove("mobile-open");
+  };
+
   menu.addEventListener("click", () => {
     const open = menu.getAttribute("aria-expanded") === "true";
     menu.setAttribute("aria-expanded", String(!open));
@@ -40,12 +46,20 @@ if (menu && nav) {
   });
 
   nav.querySelectorAll("a").forEach((link) =>
-    link.addEventListener("click", () => {
-      menu.setAttribute("aria-expanded", "false");
-      menu.classList.remove("open");
-      nav.classList.remove("mobile-open");
-    }),
+    link.addEventListener("click", closeMobileMenu),
   );
+
+  document.addEventListener("pointerdown", (event) => {
+    if (
+      menu.getAttribute("aria-expanded") === "true" &&
+      !nav.contains(event.target) &&
+      !menu.contains(event.target)
+    ) closeMobileMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMobileMenu();
+  });
 }
 
 if ("IntersectionObserver" in window) {

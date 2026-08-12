@@ -712,7 +712,6 @@
   switcher.setAttribute("aria-label", "Wybór języka");
   switcher.innerHTML = `
     <button class="language-picker-trigger" type="button" aria-expanded="false" aria-controls="language-picker-menu" aria-label="Otwórz wybór języka">
-      <span class="language-picker-globe" aria-hidden="true">🌐</span>
       <span class="language-picker-current-flag language-flag flag-pl" aria-hidden="true"></span>
       <span class="language-picker-current-code">PL</span>
       <span class="language-picker-chevron" aria-hidden="true">⌄</span>
@@ -720,7 +719,9 @@
     <div class="language-picker-menu" id="language-picker-menu" role="group" aria-label="Wybór języka">
       ${languageOptions.map(({ locale, flag, code, label }) => `<button type="button" data-lang="${locale}" aria-label="${label}"><span class="language-flag flag-${flag}" aria-hidden="true"></span><span>${label}</span><small>${code}</small></button>`).join("")}
     </div>`;
-  document.body.appendChild(switcher);
+  const mobileMenuButton = document.querySelector(".header .menu");
+  if (mobileMenuButton) mobileMenuButton.before(switcher);
+  else document.body.appendChild(switcher);
 
   const pickerTrigger = switcher.querySelector(".language-picker-trigger");
   const pickerMenu = switcher.querySelector(".language-picker-menu");
