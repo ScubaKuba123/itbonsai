@@ -470,10 +470,6 @@
     zh: "帮助企业成长的网站、应用和自动化解决方案。",
     ja: "企業の成長を支えるウェブサイト、アプリ、業務自動化。",
   };
-  Object.entries(rebuiltHero).forEach(([locale, value]) => {
-    copy[locale]["Strony, aplikacje i automatyzacje, które pomagają firmom rosnąć."] = value;
-  });
-
   try {
     const generated = await fetch("missing-translations.json", {
       cache: "force-cache",
@@ -485,6 +481,11 @@
   } catch {
     // The curated core dictionary above remains available offline.
   }
+
+  Object.entries(rebuiltHero).forEach(([locale, value]) => {
+    copy[locale] ||= {};
+    copy[locale]["Strony, aplikacje i automatyzacje, które pomagają firmom rosnąć."] = value;
+  });
 
   try {
     const expanded = await fetch("translations-extra.json?v=translations-9", {
