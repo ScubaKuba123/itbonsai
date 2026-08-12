@@ -495,7 +495,7 @@
   }
 
   try {
-    const businessTranslations = await fetch("dla-biznesu-translations.json?v=6", {
+    const businessTranslations = await fetch("dla-biznesu-translations.json?v=7", {
       cache: "force-cache",
     }).then((response) => (response.ok ? response.json() : null));
     if (businessTranslations) {
@@ -764,7 +764,7 @@
     const nonTranslatable = new Set([
       "Bons", "Ai", "Studio", "BonsAi Studio", "SeaMonk.jp", "Ocean", "Morscy Wojownicy", "Mori Retreat", "Cafe App", "KICKBOXING · MUAY THAI · SOPOT", "studio@itbonsai.pl",
       "WhatsApp", "Facebook", "LinkedIn", "Google", "Google Maps", "SEO", "AI", "PL", "EN", "JP",
-      "Mobile-first", "Living system", "f", "in",
+      "Mobile-first", "Living system", "BonsAI Mail", "BonsAI Mountain", "BonsAI City", "BonsAI Garden", "f", "in",
     ]);
     nodes.forEach((node) => {
       const source = originals.get(node);

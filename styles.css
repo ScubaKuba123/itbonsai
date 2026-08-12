@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600&display=swap");
 :root {
   --bg: #176a5d;
   --panel: #1b7163;
@@ -2540,7 +2540,7 @@ body:after {
 }
 .privacy-link { width: fit-content; color: var(--text-soft); font-size: .86rem; text-underline-offset: .25rem; }
 .business-hero { max-width: 1180px; margin: 0 auto; padding: clamp(8.5rem,14vw,12rem) 1.5rem clamp(4.5rem,8vw,7rem); display: grid; grid-template-columns: minmax(0,1.1fr) minmax(18rem,.9fr); gap: clamp(2rem,7vw,7rem); align-items: end; }
-.business-hero h1 { max-width: 12ch; margin: .65rem 0 1.5rem; font-size: clamp(3.35rem,7vw,7rem); line-height: .92; letter-spacing: -.065em; }
+.business-hero h1 { max-width: 11.5ch; margin: .65rem 0 1.5rem; font-family: "Fraunces", Georgia, serif; font-size: clamp(3.35rem,7vw,7rem); font-weight: 500; line-height: .93; letter-spacing: -.055em; text-wrap: balance; }
 .business-hero-copy { max-width: 34rem; padding-bottom: .45rem; }
 .business-hero-copy p { margin: 0 0 1.6rem; color: var(--text-soft); font-size: clamp(1.05rem,1.5vw,1.25rem); line-height: 1.65; }
 .business-proof { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.7rem; }
