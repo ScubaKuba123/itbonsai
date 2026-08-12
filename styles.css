@@ -4774,3 +4774,160 @@ body.seamonk-page:after {
     background-attachment: scroll;
   }
 }
+
+/* Homepage composition matched to the approved light editorial reference.
+   The client's circular logo, bonsai model and existing tree animations remain intact. */
+body:has(.home-production-hero) {
+  --home-ink: #0a4338;
+  --home-mist: #d9f1eb;
+  --home-paper: #f8fbf7;
+  background-color: var(--home-mist);
+  background-image:
+    linear-gradient(180deg, rgba(230, 248, 244, .95), rgba(192, 231, 222, .92) 33%, rgba(239, 248, 245, .96) 100%),
+    url("assets/forest-background.jpg");
+  background-blend-mode: normal, soft-light;
+  color: var(--home-ink);
+}
+body:has(.home-production-hero):after {
+  background: linear-gradient(180deg, rgba(226, 246, 241, .18), rgba(189, 226, 218, .2));
+}
+body:has(.home-production-hero) .header {
+  position: sticky;
+  top: 18px;
+  width: min(calc(100% - 36px), 1320px);
+  height: 72px;
+  margin: 18px auto 0;
+  padding: 0 18px;
+  border: 1px solid rgba(210, 239, 231, .24);
+  border-radius: 22px;
+  background: rgba(7, 66, 55, .96);
+  box-shadow: 0 18px 52px rgba(7, 66, 55, .2);
+}
+body:has(.home-production-hero) .brand {
+  color: #f5fffb;
+}
+body:has(.home-production-hero) .brand-logo {
+  width: 44px;
+  height: 44px;
+  padding: 2px;
+  object-fit: cover;
+  border: 1px solid rgba(232, 209, 60, .78);
+  border-radius: 50%;
+  background: #071d19;
+  box-shadow: 0 0 0 4px rgba(238, 216, 58, .07);
+}
+body:has(.home-production-hero) .nav { color: rgba(239, 251, 247, .76); }
+body:has(.home-production-hero) .header .social-links { display: none; }
+body:has(.home-production-hero) .header .header-tools { margin-left: 0; }
+body:has(.home-production-hero) .nav a:hover,
+body:has(.home-production-hero) .nav a:focus-visible { color: #fff; }
+body:has(.home-production-hero) .home-production-hero {
+  min-height: min(830px, calc(100svh - 90px));
+  max-width: 1320px;
+  grid-template-columns: minmax(0, .88fr) minmax(500px, 1.12fr);
+  gap: clamp(28px, 5vw, 82px);
+  padding: clamp(48px, 5.5vw, 82px) 28px clamp(82px, 8vw, 116px);
+  overflow: visible;
+}
+body:has(.home-production-hero) .home-production-hero:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -12%;
+  bottom: 8%;
+  width: 72%;
+  height: 68%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(85, 167, 147, .2), transparent 68%);
+  filter: blur(24px);
+}
+body:has(.home-production-hero) .home-production-hero .hero-copy h1 {
+  max-width: 9.4ch;
+  margin-bottom: 28px;
+  color: var(--home-ink);
+  font-size: clamp(3.45rem, 5.25vw, 5.7rem);
+  line-height: .94;
+  letter-spacing: -.064em;
+}
+body:has(.home-production-hero) .home-production-hero .hero-copy h1 em {
+  color: #14846b;
+}
+body:has(.home-production-hero) .home-production-hero .hero-copy > p:not(.hero-trust):not(.safety-promise) {
+  max-width: 48ch;
+  color: #315e55;
+}
+body:has(.home-production-hero) .hero-trust,
+body:has(.home-production-hero) .safety-promise { color: #426d64; }
+body:has(.home-production-hero) .text-link { color: #0b5c4c; }
+body:has(.home-production-hero) .hero-art.animated-bonsai {
+  height: clamp(560px, 66vw, 720px);
+  margin-top: -34px;
+}
+body:has(.home-production-hero) .bonsai-stage {
+  width: min(100%, 650px);
+  filter: drop-shadow(0 38px 55px rgba(5, 57, 46, .24));
+}
+body:has(.home-production-hero) .bonsai-stage > img {
+  mix-blend-mode: normal;
+  mask-image: radial-gradient(circle, #000 61%, rgba(0,0,0,.97) 69%, transparent 77%);
+}
+body:has(.home-production-hero) > main > .proof {
+  max-width: none;
+  padding-inline: max(28px, calc((100vw - 1264px) / 2));
+  border-color: rgba(10, 67, 56, .16);
+  background: rgba(247, 252, 249, .7);
+}
+body:has(.home-production-hero) > main > .proof b { color: var(--home-ink); }
+body:has(.home-production-hero) .audience.section {
+  color: var(--home-ink);
+}
+body:has(.home-production-hero) .audience .lead,
+body:has(.home-production-hero) .audience-list { color: #416b62; }
+body:has(.home-production-hero) .audience-list { border-color: rgba(10,67,56,.2); }
+body:has(.home-production-hero) .audience-list span { border-color: rgba(10,67,56,.2); }
+body:has(.home-production-hero) .home-featured {
+  color: var(--home-ink);
+  background: linear-gradient(180deg, rgba(219, 241, 236, .96), rgba(199, 230, 223, .98));
+}
+body:has(.home-production-hero) .home-featured .section-head > p:not(.section-index) { color: #416b62; }
+body:has(.home-production-hero) .form-honeypot {
+  position: fixed !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 900px) {
+  body:has(.home-production-hero) .header {
+    top: 10px;
+    width: calc(100% - 20px);
+    margin-top: 10px;
+    border-radius: 18px;
+  }
+  body:has(.home-production-hero) .home-production-hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 92px 20px 70px;
+  }
+  body:has(.home-production-hero) .home-production-hero .hero-copy h1 {
+    max-width: 10ch;
+    font-size: clamp(3.05rem, 13vw, 5.2rem);
+  }
+  body:has(.home-production-hero) .hero-art.animated-bonsai {
+    height: min(105vw, 570px);
+    min-height: 390px;
+    margin-top: -24px;
+  }
+}
+
+@media (max-width: 520px) {
+  body:has(.home-production-hero) .brand > span { display: none; }
+  body:has(.home-production-hero) .brand-logo { width: 42px; height: 42px; }
+  body:has(.home-production-hero) .home-production-hero { padding-inline: 18px; }
+  body:has(.home-production-hero) .home-production-hero .hero-copy h1 {
+    font-size: clamp(2.9rem, 14vw, 4.15rem);
+  }
+}
