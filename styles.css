@@ -1124,6 +1124,130 @@ footer { max-width: 1320px; }
   }
 }
 
+/* Clean conversion pass: white controls and white content tiles. */
+body:has(.home-production-hero) .button,
+body:has(.home-production-hero) .button-small,
+body:has(.home-production-hero) .hero-cta,
+body:has(.home-production-hero) .contact-form .button {
+  border: 1px solid rgba(9, 91, 74, .14);
+  background: #fff;
+  color: #075b4a;
+  box-shadow: 0 12px 34px rgba(5, 67, 54, .12);
+}
+body:has(.home-production-hero) .button:hover,
+body:has(.home-production-hero) .button:focus-visible {
+  border-color: rgba(9, 91, 74, .32);
+  background: #f4fffb;
+  color: #064b3e;
+  box-shadow: 0 18px 42px rgba(5, 67, 54, .17);
+}
+body:has(.home-production-hero) .home-production-hero {
+  min-height: 720px;
+  align-items: center;
+  padding-top: 36px;
+  padding-bottom: 58px;
+}
+body:has(.home-production-hero) .home-production-hero .hero-copy {
+  align-self: center;
+  padding-top: 0;
+}
+body:has(.home-production-hero) .home-production-hero .hero-copy h1 {
+  max-width: 10.2ch;
+  font-size: clamp(3.35rem, 4.75vw, 5.15rem);
+  line-height: .96;
+}
+body:has(.home-production-hero) .hero-art.animated-bonsai {
+  height: clamp(510px, 50vw, 650px);
+  margin-top: 0;
+}
+body:has(.home-production-hero) .home-paths {
+  padding-block: clamp(70px, 8vw, 110px);
+  background: rgba(232, 247, 242, .96);
+}
+body:has(.home-production-hero) .home-paths .topic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  padding: 0 28px;
+}
+body:has(.home-production-hero) .home-paths .topic-grid a,
+body:has(.home-production-hero) .home-paths .topic-grid a:last-child {
+  display: flex;
+  min-height: 280px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: clamp(28px, 3vw, 42px);
+  border: 1px solid rgba(9, 91, 74, .12);
+  border-radius: 24px;
+  background: #fff;
+  color: #0a4338;
+  box-shadow: 0 18px 45px rgba(6, 74, 60, .09);
+}
+body:has(.home-production-hero) .home-paths .topic-grid a:hover {
+  transform: translateY(-6px);
+  border-color: rgba(9, 91, 74, .28);
+  box-shadow: 0 26px 60px rgba(6, 74, 60, .14);
+}
+body:has(.home-production-hero) .home-paths .topic-grid a > span {
+  color: #16836c;
+  font-weight: 700;
+}
+body:has(.home-production-hero) .home-paths .topic-grid h3 {
+  font-size: clamp(1.55rem, 2.3vw, 2.35rem);
+}
+body:has(.home-production-hero) .home-paths .topic-grid p {
+  margin-top: auto;
+  color: #426d64;
+}
+body:has(.home-production-hero) .home-featured .case {
+  padding: 14px;
+  border: 1px solid rgba(9, 91, 74, .12);
+  background: #fff;
+  color: #0a4338;
+  box-shadow: 0 24px 65px rgba(6, 74, 60, .12);
+}
+body:has(.home-production-hero) .home-featured .case-image { border-radius: 24px; }
+body:has(.home-production-hero) .home-featured .case-copy {
+  color: #0a4338;
+}
+body:has(.home-production-hero) .home-featured .case-copy span { color: #426d64; }
+body:has(.home-production-hero) .home-featured .case-copy a { color: #08715c; }
+body:has(.home-production-hero) .contact {
+  background: #fff;
+  color: #0a4338;
+  box-shadow: 0 28px 80px rgba(6, 74, 60, .14);
+}
+body:has(.home-production-hero) .contact-copy p,
+body:has(.home-production-hero) .contact-copy a,
+body:has(.home-production-hero) .contact-guarantee { color: #426d64; }
+body:has(.home-production-hero) .contact-form {
+  border: 1px solid rgba(9, 91, 74, .12);
+  background: #f1faf6;
+  color: #0a4338;
+}
+body:has(.home-production-hero) .contact-form input,
+body:has(.home-production-hero) .contact-form select,
+body:has(.home-production-hero) .contact-form textarea {
+  border-color: rgba(9, 91, 74, .18);
+  background: #fff;
+  color: #0a4338;
+}
+
+@media (max-width: 900px) {
+  body:has(.home-production-hero) .home-production-hero {
+    min-height: auto;
+    padding-top: 70px;
+  }
+  body:has(.home-production-hero) .home-paths .topic-grid {
+    grid-template-columns: 1fr;
+    padding-inline: 18px;
+  }
+  body:has(.home-production-hero) .home-paths .topic-grid a {
+    min-height: 220px;
+  }
+}
+
 /* Brand update: luminous bonsai yellow, owner portrait and supplied logo. */
 :root {
   --gold: #f4d51e;
