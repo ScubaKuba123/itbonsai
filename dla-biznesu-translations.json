@@ -115,7 +115,16 @@
     "Ludzie wsp??pracuj? w City.": "People collaborate in City.",
     "Cele rosn? na Mountain.": "Goals grow on Mountain.",
     "Praca odbywa si? w Office.": "Work happens in Office.",
-    "Wszystko ??czy si? przez Garden.": "Everything connects through Garden."
+    "Wszystko ??czy si? przez Garden.": "Everything connects through Garden.",
+    "BonsAI City to wspólna cyfrowa przestrzeń, w której ludzie, projekty, dokumenty, spotkania i obowiązki znajdują się w jednym czytelnym środowisku.": "BonsAI City is a shared digital workspace where people, projects, documents, meetings and responsibilities live in one clear environment.",
+    "Zamiast szukać w różnych czatach, folderach i narzędziach, każda osoba widzi informacje potrzebne do swojej pracy.": "Instead of searching through different chats, folders and tools, every person sees the information they actually need for their work.",
+    "BonsAI Mountain zamienia ambitne cele w etapy, małe działania i czytelne priorytety na każdy dzień.": "BonsAI Mountain transforms ambitious goals into milestones, small actions and clear daily priorities.",
+    "Zamiast patrzeć na ogromny projekt lub niekończącą się listę zadań, zawsze wiesz, jaki jest następny sensowny krok i jak wysoko już dotarłeś.": "Instead of staring at a huge project or an endless task list, you always know what the next useful step is and how far you have already climbed.",
+    "BonsAI Office łączy najważniejsze elementy dnia w jednej prostej przestrzeni: zadania, kalendarz, notatki, spotkania, dokumenty, projekty i sprawy wymagające uwagi.": "BonsAI Office brings the essential parts of everyday work into one simple workspace: tasks, schedule, notes, meetings, documents, projects and the things waiting for your attention.",
+    "Usuwa zbędne ekrany i menu, aby można było otworzyć Office, zrozumieć swój dzień i od razu rozpocząć pracę.": "It is designed to remove unnecessary screens and menus so you can open your Office, understand your day and start working immediately.",
+    "BonsAI Garden łączy używane narzędzia w jedną spokojną warstwę informacji, działań i automatyzacji.": "BonsAI Garden connects the digital tools you already use and turns them into one calm layer of information, actions and automation.",
+    "E-mail, kalendarz, wiadomości, social media, pliki i inne usługi mogą zasilać jeden Garden. Zamiast pokazywać wszystko, BonsAI wskazuje to, co naprawdę wymaga Twojej uwagi.": "Email, calendar, messages, social media, files and other services can feed into one Garden. Instead of showing everything that happened, BonsAI identifies what actually needs your attention.",
+    "Ty wybierasz aplikacje i funkcje należące do Twojego Garden. Reszta nie przeszkadza w pracy.": "You choose which apps and functions belong in your Garden. The rest stays out of the way."
   },
   "ja": {
     "Dla biznesu": "ビジネス向け",
@@ -233,7 +242,16 @@
     "Ludzie wsp??pracuj? w City.": "人々はシティで協力します。",
     "Cele rosn? na Mountain.": "マウンテンでは目標が成長します。",
     "Praca odbywa si? w Office.": "仕事はOfficeで行われます。",
-    "Wszystko ??czy si? przez Garden.": "すべてはガーデンを通じてつながります。"
+    "Wszystko ??czy si? przez Garden.": "すべてはガーデンを通じてつながります。",
+    "BonsAI City to wspólna cyfrowa przestrzeń, w której ludzie, projekty, dokumenty, spotkania i obowiązki znajdują się w jednym czytelnym środowisku.": "BonsAI City は、人々、プロジェクト、ドキュメント、会議、責任が 1 つの明確な環境に存在する共有デジタル ワークスペースです。",
+    "Zamiast szukać w różnych czatach, folderach i narzędziach, każda osoba widzi informacje potrzebne do swojej pracy.": "さまざまなチャット、フォルダー、ツールを検索する代わりに、すべての人が自分の仕事に実際に必要な情報を確認できます。",
+    "BonsAI Mountain zamienia ambitne cele w etapy, małe działania i czytelne priorytety na każdy dzień.": "BonsAI Mountain は、野心的な目標をマイルストーン、小さな行動、明確な毎日の優先事項に変換します。",
+    "Zamiast patrzeć na ogromny projekt lub niekończącą się listę zadań, zawsze wiesz, jaki jest następny sensowny krok i jak wysoko już dotarłeś.": "大規模なプロジェクトや終わりのないタスク リストを見つめる代わりに、次に役立つステップが何か、すでにどこまで到達したかを常に把握できます。",
+    "BonsAI Office łączy najważniejsze elementy dnia w jednej prostej przestrzeni: zadania, kalendarz, notatki, spotkania, dokumenty, projekty i sprawy wymagające uwagi.": "BonsAI Office は、タスク、スケジュール、メモ、会議、文書、プロジェクトなど、日常業務の重要な部分を 1 つのシンプルなワークスペースにまとめます。",
+    "Usuwa zbędne ekrany i menu, aby można było otworzyć Office, zrozumieć swój dzień i od razu rozpocząć pracę.": "不要な画面やメニューを削除するように設計されているため、Office を開いて一日を把握し、すぐに作業を開始できます。",
+    "BonsAI Garden łączy używane narzędzia w jedną spokojną warstwę informacji, działań i automatyzacji.": "BonsAI Garden は、すでに使用しているデジタル ツールを接続し、それらを情報、アクション、自動化の 1 つの穏やかなレイヤーに変えます。",
+    "E-mail, kalendarz, wiadomości, social media, pliki i inne usługi mogą zasilać jeden Garden. Zamiast pokazywać wszystko, BonsAI wskazuje to, co naprawdę wymaga Twojej uwagi.": "電子メール、カレンダー、メッセージ、ソーシャル メディア、ファイル、その他のサービスを 1 つの Garden にフィードできます。 BonsAI は、起こったことすべてを表示するのではなく、実際に注意が必要なものを特定します。",
+    "Ty wybierasz aplikacje i funkcje należące do Twojego Garden. Reszta nie przeszkadza w pracy.": "Garden にどのアプリや機能を含めるかはあなたが選択します。残りは邪魔になりません。"
   },
   "de": {
     "Dla biznesu": "Für Unternehmen",
@@ -351,7 +369,16 @@
     "Ludzie wsp??pracuj? w City.": "Menschen arbeiten in der Stadt zusammen.",
     "Cele rosn? na Mountain.": "Am Berg wachsen Ziele.",
     "Praca odbywa si? w Office.": "Die Arbeit findet im Büro statt.",
-    "Wszystko ??czy si? przez Garden.": "Alles verbindet sich durch den Garten."
+    "Wszystko ??czy si? przez Garden.": "Alles verbindet sich durch den Garten.",
+    "BonsAI City to wspólna cyfrowa przestrzeń, w której ludzie, projekty, dokumenty, spotkania i obowiązki znajdują się w jednym czytelnym środowisku.": "BonsAI City ist ein gemeinsamer digitaler Arbeitsbereich, in dem Menschen, Projekte, Dokumente, Besprechungen und Verantwortlichkeiten in einer übersichtlichen Umgebung leben.",
+    "Zamiast szukać w różnych czatach, folderach i narzędziach, każda osoba widzi informacje potrzebne do swojej pracy.": "Anstatt verschiedene Chats, Ordner und Tools zu durchsuchen, sieht jeder die Informationen, die er tatsächlich für seine Arbeit benötigt.",
+    "BonsAI Mountain zamienia ambitne cele w etapy, małe działania i czytelne priorytety na każdy dzień.": "BonsAI Mountain verwandelt ehrgeizige Ziele in Meilensteine, kleine Maßnahmen und klare tägliche Prioritäten.",
+    "Zamiast patrzeć na ogromny projekt lub niekończącą się listę zadań, zawsze wiesz, jaki jest następny sensowny krok i jak wysoko już dotarłeś.": "Anstatt auf ein riesiges Projekt oder eine endlose Aufgabenliste zu starren, wissen Sie immer, was der nächste sinnvolle Schritt ist und wie weit Sie bereits geklettert sind.",
+    "BonsAI Office łączy najważniejsze elementy dnia w jednej prostej przestrzeni: zadania, kalendarz, notatki, spotkania, dokumenty, projekty i sprawy wymagające uwagi.": "BonsAI Office vereint die wesentlichen Teile der täglichen Arbeit in einem einfachen Arbeitsbereich: Aufgaben, Zeitpläne, Notizen, Besprechungen, Dokumente, Projekte und die Dinge, die auf Ihre Aufmerksamkeit warten.",
+    "Usuwa zbędne ekrany i menu, aby można było otworzyć Office, zrozumieć swój dzień i od razu rozpocząć pracę.": "Es wurde entwickelt, um unnötige Bildschirme und Menüs zu entfernen, sodass Sie Ihr Büro öffnen, Ihren Tag verstehen und sofort mit der Arbeit beginnen können.",
+    "BonsAI Garden łączy używane narzędzia w jedną spokojną warstwę informacji, działań i automatyzacji.": "BonsAI Garden verbindet die digitalen Tools, die Sie bereits verwenden, und verwandelt sie in eine einheitliche Ebene aus Informationen, Aktionen und Automatisierung.",
+    "E-mail, kalendarz, wiadomości, social media, pliki i inne usługi mogą zasilać jeden Garden. Zamiast pokazywać wszystko, BonsAI wskazuje to, co naprawdę wymaga Twojej uwagi.": "E-Mail, Kalender, Nachrichten, soziale Medien, Dateien und andere Dienste können in einen Garten eingespeist werden. Anstatt alles zu zeigen, was passiert ist, identifiziert BonsAI, was tatsächlich Ihre Aufmerksamkeit erfordert.",
+    "Ty wybierasz aplikacje i funkcje należące do Twojego Garden. Reszta nie przeszkadza w pracy.": "Sie entscheiden, welche Apps und Funktionen in Ihren Garten gehören. Der Rest bleibt aus dem Weg."
   },
   "es": {
     "Dla biznesu": "Para negocios",
@@ -469,7 +496,16 @@
     "Ludzie wsp??pracuj? w City.": "La gente colabora en la ciudad.",
     "Cele rosn? na Mountain.": "Los goles crecen en la Montaña.",
     "Praca odbywa si? w Office.": "El trabajo ocurre en Office.",
-    "Wszystko ??czy si? przez Garden.": "Todo se conecta a través del Jardín."
+    "Wszystko ??czy si? przez Garden.": "Todo se conecta a través del Jardín.",
+    "BonsAI City to wspólna cyfrowa przestrzeń, w której ludzie, projekty, dokumenty, spotkania i obowiązki znajdują się w jednym czytelnym środowisku.": "BonsAI City es un espacio de trabajo digital compartido donde personas, proyectos, documentos, reuniones y responsabilidades conviven en un entorno claro.",
+    "Zamiast szukać w różnych czatach, folderach i narzędziach, każda osoba widzi informacje potrzebne do swojej pracy.": "En lugar de buscar en diferentes chats, carpetas y herramientas, cada persona ve la información que realmente necesita para su trabajo.",
+    "BonsAI Mountain zamienia ambitne cele w etapy, małe działania i czytelne priorytety na każdy dzień.": "BonsAI Mountain transforma objetivos ambiciosos en hitos, pequeñas acciones y prioridades diarias claras.",
+    "Zamiast patrzeć na ogromny projekt lub niekończącą się listę zadań, zawsze wiesz, jaki jest następny sensowny krok i jak wysoko już dotarłeś.": "En lugar de mirar fijamente un proyecto enorme o una lista interminable de tareas, siempre sabrás cuál es el siguiente paso útil y hasta dónde has llegado.",
+    "BonsAI Office łączy najważniejsze elementy dnia w jednej prostej przestrzeni: zadania, kalendarz, notatki, spotkania, dokumenty, projekty i sprawy wymagające uwagi.": "BonsAI Office reúne las partes esenciales del trabajo diario en un espacio de trabajo simple: tareas, horarios, notas, reuniones, documentos, proyectos y todo lo que espera su atención.",
+    "Usuwa zbędne ekrany i menu, aby można było otworzyć Office, zrozumieć swój dzień i od razu rozpocząć pracę.": "Está diseñado para eliminar pantallas y menús innecesarios para que pueda abrir Office, comprender su día y comenzar a trabajar de inmediato.",
+    "BonsAI Garden łączy używane narzędzia w jedną spokojną warstwę informacji, działań i automatyzacji.": "BonsAI Garden conecta las herramientas digitales que ya utiliza y las convierte en una capa tranquila de información, acciones y automatización.",
+    "E-mail, kalendarz, wiadomości, social media, pliki i inne usługi mogą zasilać jeden Garden. Zamiast pokazywać wszystko, BonsAI wskazuje to, co naprawdę wymaga Twojej uwagi.": "El correo electrónico, el calendario, los mensajes, las redes sociales, los archivos y otros servicios pueden alimentar un solo Jardín. En lugar de mostrar todo lo que sucedió, BonsAI identifica lo que realmente necesita tu atención.",
+    "Ty wybierasz aplikacje i funkcje należące do Twojego Garden. Reszta nie przeszkadza w pracy.": "Tú eliges qué aplicaciones y funciones pertenecen a tu Garden. El resto se mantiene al margen."
   },
   "uk": {
     "Dla biznesu": "Для бізнесу",
@@ -587,7 +623,16 @@
     "Ludzie wsp??pracuj? w City.": "Люди співпрацюють у місті.",
     "Cele rosn? na Mountain.": "Цілі ростуть на горі.",
     "Praca odbywa si? w Office.": "Робота відбувається в офісі.",
-    "Wszystko ??czy si? przez Garden.": "Усе з’єднується через Garden."
+    "Wszystko ??czy si? przez Garden.": "Усе з’єднується через Garden.",
+    "BonsAI City to wspólna cyfrowa przestrzeń, w której ludzie, projekty, dokumenty, spotkania i obowiązki znajdują się w jednym czytelnym środowisku.": "BonsAI City — це спільний цифровий робочий простір, де люди, проекти, документи, зустрічі та обов’язки живуть в одному зрозумілому середовищі.",
+    "Zamiast szukać w różnych czatach, folderach i narzędziach, każda osoba widzi informacje potrzebne do swojej pracy.": "Замість пошуку в різних чатах, папках і інструментах кожна людина бачить інформацію, яка їй дійсно потрібна для роботи.",
+    "BonsAI Mountain zamienia ambitne cele w etapy, małe działania i czytelne priorytety na każdy dzień.": "BonsAI Mountain перетворює амбітні цілі на віхи, маленькі дії та чіткі щоденні пріоритети.",
+    "Zamiast patrzeć na ogromny projekt lub niekończącą się listę zadań, zawsze wiesz, jaki jest następny sensowny krok i jak wysoko już dotarłeś.": "Замість того, щоб дивитися на величезний проект чи нескінченний список завдань, ви завжди знаєте, який наступний корисний крок і як далеко ви вже піднялися.",
+    "BonsAI Office łączy najważniejsze elementy dnia w jednej prostej przestrzeni: zadania, kalendarz, notatki, spotkania, dokumenty, projekty i sprawy wymagające uwagi.": "BonsAI Office об’єднує важливі частини повсякденної роботи в одному простому робочому просторі: завдання, розклад, нотатки, зустрічі, документи, проекти та речі, які чекають на вашу увагу.",
+    "Usuwa zbędne ekrany i menu, aby można było otworzyć Office, zrozumieć swój dzień i od razu rozpocząć pracę.": "Він призначений для видалення непотрібних екранів і меню, щоб ви могли відкрити свій офіс, зрозуміти свій день і негайно почати працювати.",
+    "BonsAI Garden łączy używane narzędzia w jedną spokojną warstwę informacji, działań i automatyzacji.": "BonsAI Garden поєднує цифрові інструменти, які ви вже використовуєте, і перетворює їх на один спокійний рівень інформації, дій і автоматизації.",
+    "E-mail, kalendarz, wiadomości, social media, pliki i inne usługi mogą zasilać jeden Garden. Zamiast pokazywać wszystko, BonsAI wskazuje to, co naprawdę wymaga Twojej uwagi.": "Електронна пошта, календар, повідомлення, соціальні медіа, файли та інші служби можуть об’єднуватися в один сад. Замість того, щоб показувати все, що сталося, BonsAI визначає, що насправді потребує вашої уваги.",
+    "Ty wybierasz aplikacje i funkcje należące do Twojego Garden. Reszta nie przeszkadza w pracy.": "Ви вибираєте, які програми та функції належать до вашого саду. Решта залишається осторонь."
   },
   "fr": {
     "Dla biznesu": "Pour les affaires",
@@ -705,7 +750,16 @@
     "Ludzie wsp??pracuj? w City.": "Les gens collaborent dans City.",
     "Cele rosn? na Mountain.": "Les objectifs grandissent sur Mountain.",
     "Praca odbywa si? w Office.": "Le travail se déroule dans Office.",
-    "Wszystko ??czy si? przez Garden.": "Tout se connecte via Garden."
+    "Wszystko ??czy si? przez Garden.": "Tout se connecte via Garden.",
+    "BonsAI City to wspólna cyfrowa przestrzeń, w której ludzie, projekty, dokumenty, spotkania i obowiązki znajdują się w jednym czytelnym środowisku.": "BonsAI City est un espace de travail numérique partagé où les personnes, les projets, les documents, les réunions et les responsabilités vivent dans un environnement clair.",
+    "Zamiast szukać w różnych czatach, folderach i narzędziach, każda osoba widzi informacje potrzebne do swojej pracy.": "Au lieu de chercher dans différents chats, dossiers et outils, chaque personne voit les informations dont elle a réellement besoin pour son travail.",
+    "BonsAI Mountain zamienia ambitne cele w etapy, małe działania i czytelne priorytety na każdy dzień.": "BonsAI Mountain transforme des objectifs ambitieux en jalons, en petites actions et en priorités quotidiennes claires.",
+    "Zamiast patrzeć na ogromny projekt lub niekończącą się listę zadań, zawsze wiesz, jaki jest następny sensowny krok i jak wysoko już dotarłeś.": "Au lieu de regarder un projet énorme ou une liste de tâches interminable, vous savez toujours quelle est la prochaine étape utile et jusqu'où vous avez déjà gravi.",
+    "BonsAI Office łączy najważniejsze elementy dnia w jednej prostej przestrzeni: zadania, kalendarz, notatki, spotkania, dokumenty, projekty i sprawy wymagające uwagi.": "BonsAI Office rassemble les parties essentielles du travail quotidien dans un seul espace de travail simple : tâches, planning, notes, réunions, documents, projets et tout ce qui attend votre attention.",
+    "Usuwa zbędne ekrany i menu, aby można było otworzyć Office, zrozumieć swój dzień i od razu rozpocząć pracę.": "Il est conçu pour supprimer les écrans et menus inutiles afin que vous puissiez ouvrir votre Office, comprendre votre journée et commencer à travailler immédiatement.",
+    "BonsAI Garden łączy używane narzędzia w jedną spokojną warstwę informacji, działań i automatyzacji.": "BonsAI Garden connecte les outils numériques que vous utilisez déjà et les transforme en une seule couche d'informations, d'actions et d'automatisation.",
+    "E-mail, kalendarz, wiadomości, social media, pliki i inne usługi mogą zasilać jeden Garden. Zamiast pokazywać wszystko, BonsAI wskazuje to, co naprawdę wymaga Twojej uwagi.": "Les e-mails, calendriers, messages, réseaux sociaux, fichiers et autres services peuvent alimenter un seul jardin. Au lieu de montrer tout ce qui s'est passé, BonsAI identifie ce qui nécessite réellement votre attention.",
+    "Ty wybierasz aplikacje i funkcje należące do Twojego Garden. Reszta nie przeszkadza w pracy.": "Vous choisissez quelles applications et fonctions appartiennent à votre jardin. Le reste reste à l’écart."
   },
   "zh": {
     "Dla biznesu": "面向企业",
@@ -823,6 +877,15 @@
     "Ludzie wsp??pracuj? w City.": "人们在城市中合作。",
     "Cele rosn? na Mountain.": "目标在山上成长。",
     "Praca odbywa si? w Office.": "工作在办公室进行。",
-    "Wszystko ??czy si? przez Garden.": "一切都通过花园连接起来。"
+    "Wszystko ??czy si? przez Garden.": "一切都通过花园连接起来。",
+    "BonsAI City to wspólna cyfrowa przestrzeń, w której ludzie, projekty, dokumenty, spotkania i obowiązki znajdują się w jednym czytelnym środowisku.": "BonsAI City 是一个共享的数字工作空间，人员、项目、文档、会议和职责都生活在一个清晰的环境中。",
+    "Zamiast szukać w różnych czatach, folderach i narzędziach, każda osoba widzi informacje potrzebne do swojej pracy.": "每个人都可以看到他们工作实际需要的信息，而不是搜索不同的聊天、文件夹和工具。",
+    "BonsAI Mountain zamienia ambitne cele w etapy, małe działania i czytelne priorytety na każdy dzień.": "BonsAI Mountain 将雄心勃勃的目标转化为里程碑、小行动和明确的日常优先事项。",
+    "Zamiast patrzeć na ogromny projekt lub niekończącą się listę zadań, zawsze wiesz, jaki jest następny sensowny krok i jak wysoko już dotarłeś.": "您不必盯着一个巨大的项目或无休止的任务清单，您总是知道下一个有用的步骤是什么以及您已经爬了多远。",
+    "BonsAI Office łączy najważniejsze elementy dnia w jednej prostej przestrzeni: zadania, kalendarz, notatki, spotkania, dokumenty, projekty i sprawy wymagające uwagi.": "BonsAI Office 将日常工作的基本部分整合到一个简单的工作空间中：任务、日程、笔记、会议、文档、项目以及等待您关注的事物。",
+    "Usuwa zbędne ekrany i menu, aby można było otworzyć Office, zrozumieć swój dzień i od razu rozpocząć pracę.": "它旨在删除不必要的屏幕和菜单，以便您可以打开 Office，了解您的一天并立即开始工作。",
+    "BonsAI Garden łączy używane narzędzia w jedną spokojną warstwę informacji, działań i automatyzacji.": "BonsAI Garden 连接您已经使用的数字工具，并将它们转变为一层平静的信息、操作和自动化层。",
+    "E-mail, kalendarz, wiadomości, social media, pliki i inne usługi mogą zasilać jeden Garden. Zamiast pokazywać wszystko, BonsAI wskazuje to, co naprawdę wymaga Twojej uwagi.": "电子邮件、日历、消息、社交媒体、文件和其他服务都可以输入到一个花园中。 BonsAI 不会显示发生的所有事情，而是识别真正需要您注意的内容。",
+    "Ty wybierasz aplikacje i funkcje należące do Twojego Garden. Reszta nie przeszkadza w pracy.": "您可以选择哪些应用程序和功能属于您的 Garden。其余的不受影响。"
   }
 }
