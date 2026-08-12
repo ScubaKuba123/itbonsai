@@ -16,6 +16,8 @@
       "Twój projekt": "Your project",
       "Strony internetowe, aplikacje i automatyzacje AI dla firm.":
         "Websites, applications and AI automation for businesses.",
+      "Strony, aplikacje i automatyzacje, które pomagają firmom rosnąć.":
+        "Websites, apps and automation that help businesses grow.",
       "Projektujemy cyfrowe rozwiązania, które pomagają zdobywać więcej zapytań, budować profesjonalny wizerunek i ograniczać ręczną pracę.":
         "We design digital solutions that generate more enquiries, build a professional image and reduce manual work.",
       "Zobacz realizacje": "View our work",
@@ -460,6 +462,17 @@
       "Wróć na stronę główną": "ホームへ戻る",
     },
   };
+  const rebuiltHero = {
+    de: "Websites, Apps und Automatisierung, die Unternehmen beim Wachstum unterstützen.",
+    es: "Sitios web, aplicaciones y automatizaciones que ayudan a crecer a las empresas.",
+    uk: "Сайти, застосунки й автоматизація, які допомагають бізнесу зростати.",
+    fr: "Des sites, applications et automatisations qui font grandir les entreprises.",
+    zh: "帮助企业成长的网站、应用和自动化解决方案。",
+    ja: "企業の成長を支えるウェブサイト、アプリ、業務自動化。",
+  };
+  Object.entries(rebuiltHero).forEach(([locale, value]) => {
+    copy[locale]["Strony, aplikacje i automatyzacje, które pomagają firmom rosnąć."] = value;
+  });
 
   try {
     const generated = await fetch("missing-translations.json", {

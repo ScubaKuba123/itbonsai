@@ -104,3 +104,33 @@ document.querySelectorAll(".interactive-preview").forEach((card) => {
   media.addEventListener("pointerenter", startPreview, { once: true });
   media.addEventListener("focus", startPreview, { once: true });
 });
+
+// A restrained interaction layer: physical feedback without distracting from content.
+const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+if (finePointer.matches && !reducedMotion.matches) {
+  document.querySelectorAll(".button").forEach((button) => {
+    button.addEventListener("pointermove", (event) => {
+      const rect = button.getBoundingClientRect();
+      const x = (event.clientX - rect.left - rect.width / 2) * 0.1;
+      const y = (event.clientY - rect.top - rect.height / 2) * 0.14;
+      button.style.setProperty("--magnetic-x", `${x}px`);
+      button.style.setProperty("--magnetic-y", `${y}px`);
+    });
+    button.addEventListener("pointerleave", () => {
+      button.style.removeProperty("--magnetic-x");
+      button.style.removeProperty("--magnetic-y");
+    });
+  });
+
+  const heroArt = document.querySelector(".home-production-hero .hero-art");
+  heroArt?.addEventListener("pointermove", (event) => {
+    const rect = heroArt.getBoundingClientRect();
+    heroArt.style.setProperty("--pointer-x", `${((event.clientX - rect.left) / rect.width - 0.5) * 14}px`);
+    heroArt.style.setProperty("--pointer-y", `${((event.clientY - rect.top) / rect.height - 0.5) * 10}px`);
+  });
+  heroArt?.addEventListener("pointerleave", () => {
+    heroArt.style.removeProperty("--pointer-x");
+    heroArt.style.removeProperty("--pointer-y");
+  });
+}
