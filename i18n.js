@@ -525,46 +525,6 @@
     Object.assign(copy[locale], entries);
   });
 
-  const homepageEditorial = {
-    en: {
-      "Kompleksowe wsparcie cyfrowe dla Twojego biznesu.": "Complete digital support for your business.",
-      "Łączymy projektowanie, technologię i marketing, aby tworzyć rozwiązania, które pomagają zdobywać klientów i oszczędzać czas.": "We combine design, technology and marketing to create solutions that help you win customers and save time.",
-      "Zobacz wszystkie usługi": "View all services",
-      "Strony internetowe": "Websites",
-      "Szybkie i czytelne strony, które budują zaufanie i pomagają zdobywać zapytania.": "Fast, clear websites that build trust and generate enquiries.",
-      "Aplikacje dla firm": "Business applications",
-      "Proste narzędzia dopasowane do sposobu, w jaki naprawdę pracuje Twoja firma.": "Simple tools tailored to the way your company actually works.",
-      "Powtarzalne zadania wykonują się automatycznie, a zespół odzyskuje czas.": "Repetitive tasks run automatically, giving your team more time.",
-      "SEO i marketing": "SEO and marketing",
-      "Lepsza widoczność w Google i jasna komunikacja, która prowadzi klienta do kontaktu.": "Better Google visibility and clear messaging that leads customers to contact you.",
-      "Firmy, które nam zaufały, rosną razem z nami.": "Companies that trust us grow with us.",
-      "Pracujemy zespołowo, jasno komunikujemy postęp i dbamy o rozwiązania, które sprawdzają się po uruchomieniu.": "We work as a team, communicate progress clearly and build solutions that perform after launch.",
-      "Karol — CEO firmy eventowej w Gdyni": "Karol — CEO of an events company in Gdynia"
-    },
-    de: {
-      "Kompleksowe wsparcie cyfrowe dla Twojego biznesu.": "Umfassende digitale Unterstützung für Ihr Unternehmen.", "Zobacz wszystkie usługi": "Alle Leistungen ansehen", "Strony internetowe": "Websites", "Aplikacje dla firm": "Business-Apps", "SEO i marketing": "SEO und Marketing", "Firmy, które nam zaufały, rosną razem z nami.": "Unternehmen, die uns vertrauen, wachsen mit uns."
-    },
-    es: {
-      "Kompleksowe wsparcie cyfrowe dla Twojego biznesu.": "Soporte digital completo para tu negocio.", "Zobacz wszystkie usługi": "Ver todos los servicios", "Strony internetowe": "Sitios web", "Aplikacje dla firm": "Aplicaciones para empresas", "SEO i marketing": "SEO y marketing", "Firmy, które nam zaufały, rosną razem z nami.": "Las empresas que confían en nosotros crecen con nosotros."
-    },
-    uk: {
-      "Kompleksowe wsparcie cyfrowe dla Twojego biznesu.": "Комплексна цифрова підтримка вашого бізнесу.", "Zobacz wszystkie usługi": "Переглянути всі послуги", "Strony internetowe": "Вебсайти", "Aplikacje dla firm": "Застосунки для бізнесу", "SEO i marketing": "SEO та маркетинг", "Firmy, które nam zaufały, rosną razem z nami.": "Компанії, які нам довіряють, розвиваються разом з нами."
-    },
-    fr: {
-      "Kompleksowe wsparcie cyfrowe dla Twojego biznesu.": "Un accompagnement numérique complet pour votre entreprise.", "Zobacz wszystkie usługi": "Voir tous les services", "Strony internetowe": "Sites internet", "Aplikacje dla firm": "Applications professionnelles", "SEO i marketing": "SEO et marketing", "Firmy, które nam zaufały, rosną razem z nami.": "Les entreprises qui nous font confiance grandissent avec nous."
-    },
-    zh: {
-      "Kompleksowe wsparcie cyfrowe dla Twojego biznesu.": "为您的企业提供全面的数字化支持。", "Zobacz wszystkie usługi": "查看所有服务", "Strony internetowe": "网站建设", "Aplikacje dla firm": "企业应用", "SEO i marketing": "SEO 与营销", "Firmy, które nam zaufały, rosną razem z nami.": "信任我们的企业与我们共同成长。"
-    },
-    ja: {
-      "Kompleksowe wsparcie cyfrowe dla Twojego biznesu.": "ビジネスを支える総合的なデジタルサポート。", "Zobacz wszystkie usługi": "すべてのサービスを見る", "Strony internetowe": "ウェブサイト制作", "Aplikacje dla firm": "企業向けアプリ", "SEO i marketing": "SEO・マーケティング", "Firmy, które nam zaufały, rosną razem z nami.": "私たちを信頼する企業と共に成長します。"
-    }
-  };
-  Object.entries(homepageEditorial).forEach(([locale, entries]) => {
-    copy[locale] ||= {};
-    Object.assign(copy[locale], entries);
-  });
-
   try {
     const expanded = await fetch("translations-extra.json?v=translations-9", {
       cache: "force-cache",
