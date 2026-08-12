@@ -495,7 +495,7 @@
   }
 
   try {
-    const businessTranslations = await fetch("dla-biznesu-translations.json?v=10", {
+    const businessTranslations = await fetch("dla-biznesu-translations.json?v=11", {
       cache: "force-cache",
     }).then((response) => (response.ok ? response.json() : null));
     if (businessTranslations) {
