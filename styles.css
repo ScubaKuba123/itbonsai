@@ -4452,6 +4452,39 @@ body .site-language-switcher {
   margin: 0 auto;
   padding: 110px 24px;
 }
+
+/* SeaMonk case study: a brighter, calmer forest canvas with preserved contrast. */
+.seamonk-page {
+  background-color: #258d7b;
+  background-blend-mode: soft-light;
+}
+.seamonk-page:after {
+  background: linear-gradient(
+    180deg,
+    rgba(45, 155, 135, 0.18),
+    rgba(31, 132, 114, 0.28) 58%,
+    rgba(24, 112, 98, 0.5) 100%
+  );
+}
+.seamonk-page .header {
+  background: rgba(24, 104, 91, 0.9);
+}
+.seamonk-page .content-hero,
+.seamonk-page .project-detail,
+.seamonk-page .seamonk-gallery,
+.seamonk-page .seamonk-value {
+  text-shadow: 0 1px 18px rgba(3, 24, 20, 0.16);
+}
+.seamonk-page .seamonk-gallery-grid figure {
+  background: rgba(31, 117, 102, 0.96);
+  box-shadow: 0 24px 60px rgba(0, 35, 29, 0.16);
+}
+.seamonk-page .seamonk-browser-bar {
+  background: rgba(20, 85, 74, 0.96);
+}
+.seamonk-page .seamonk-screen {
+  background: #0f4e44;
+}
 .seamonk-gallery-heading {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
