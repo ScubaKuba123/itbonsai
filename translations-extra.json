@@ -547,7 +547,15 @@
     "automatyczne przypomnienia i informacje o statusie,": "automatische Erinnerungen und Statusinformationen,",
     "szybsze wyszukiwanie odpowiedzi dla klientów.": "schnellere Suche nach Antworten für Kunden.",
     "Ustalamy, co system może zrobić sam, a co zawsze musi zatwierdzić człowiek. Dzięki temu zachowujesz kontrolę nad danymi i komunikacją.": "Wir legen fest, was das System alleine leisten kann und was immer von einem Menschen freigegeben werden muss. Dadurch behalten Sie die Kontrolle über Daten und Kommunikation.",
-    "Projekt UX/UI dla urządzeń mobilnych": "UX/UI-Design für mobile Geräte"
+    "Projekt UX/UI dla urządzeń mobilnych": "UX/UI-Design für mobile Geräte",
+    "Pierwsze wrażenie": "Erster Eindruck",
+    "Wyrazisty zachód słońca i logo od razu budują charakter marki.": "Ein markanter Sonnenuntergang und ein Logo machen den Charakter der Marke sofort deutlich.",
+    "Czytelna oferta": "Klares Angebot",
+    "Kursy i poziomy doświadczenia można szybko porównać.": "Kurse und Erfahrungsniveaus können schnell verglichen werden.",
+    "Prosty wybór": "Einfache Wahl",
+    "Jednodniowe aktywności opisane są bez zbędnych komplikacji.": "Eintägige Aktivitäten werden ohne unnötige Komplexität erklärt.",
+    "Łatwa rezerwacja": "Einfache Buchung",
+    "Najważniejsze informacje i formularz znajdują się obok siebie.": "Wichtige Informationen und das Buchungsformular liegen nebeneinander."
   },
   "es": {
     "Dobrze działa na telefonie": "Funciona bien en el teléfono",
@@ -1097,7 +1105,15 @@
     "automatyczne przypomnienia i informacje o statusie,": "recordatorios automáticos e información de estado,",
     "szybsze wyszukiwanie odpowiedzi dla klientów.": "búsqueda más rápida de respuestas para los clientes.",
     "Ustalamy, co system może zrobić sam, a co zawsze musi zatwierdzić człowiek. Dzięki temu zachowujesz kontrolę nad danymi i komunikacją.": "Determinamos qué puede hacer el sistema por sí solo y qué debe ser aprobado siempre por un humano. Esto le permite mantener el control sobre los datos y la comunicación.",
-    "Projekt UX/UI dla urządzeń mobilnych": "Diseño UX/UI para dispositivos móviles"
+    "Projekt UX/UI dla urządzeń mobilnych": "Diseño UX/UI para dispositivos móviles",
+    "Pierwsze wrażenie": "Primera impresión",
+    "Wyrazisty zachód słońca i logo od razu budują charakter marki.": "Una llamativa puesta de sol y un logotipo establecen inmediatamente el carácter de la marca.",
+    "Czytelna oferta": "Oferta clara",
+    "Kursy i poziomy doświadczenia można szybko porównać.": "Los cursos y niveles de experiencia se pueden comparar rápidamente.",
+    "Prosty wybór": "elección sencilla",
+    "Jednodniowe aktywności opisane są bez zbędnych komplikacji.": "Las actividades de un día se explican sin complejidades innecesarias.",
+    "Łatwa rezerwacja": "Reserva fácil",
+    "Najważniejsze informacje i formularz znajdują się obok siebie.": "La información esencial y el formulario de reserva se encuentran uno al lado del otro."
   },
   "uk": {
     "Dobrze działa na telefonie": "Добре працює на телефоні",
@@ -1647,7 +1663,15 @@
     "automatyczne przypomnienia i informacje o statusie,": "автоматичні нагадування та інформація про статус,",
     "szybsze wyszukiwanie odpowiedzi dla klientów.": "швидкий пошук відповідей для клієнтів.",
     "Ustalamy, co system może zrobić sam, a co zawsze musi zatwierdzić człowiek. Dzięki temu zachowujesz kontrolę nad danymi i komunikacją.": "Ми визначаємо, що система може зробити сама, а що завжди має схвалювати людина. Це дозволяє зберегти контроль над даними та зв’язком.",
-    "Projekt UX/UI dla urządzeń mobilnych": "UX/UI-дизайн для мобільних пристроїв"
+    "Projekt UX/UI dla urządzeń mobilnych": "UX/UI-дизайн для мобільних пристроїв",
+    "Pierwsze wrażenie": "Перше враження",
+    "Wyrazisty zachód słońca i logo od razu budują charakter marki.": "Яскравий захід сонця та логотип одразу стверджують характер бренду.",
+    "Czytelna oferta": "Чітка пропозиція",
+    "Kursy i poziomy doświadczenia można szybko porównać.": "Курси та рівень досвіду можна швидко порівняти.",
+    "Prosty wybór": "Простий вибір",
+    "Jednodniowe aktywności opisane są bez zbędnych komplikacji.": "Одноденні заходи пояснюються без зайвих складнощів.",
+    "Łatwa rezerwacja": "Легке бронювання",
+    "Najważniejsze informacje i formularz znajdują się obok siebie.": "Основна інформація та форма бронювання розташовані поруч."
   },
   "en": {
     "Portfolio": "Portfolio",
@@ -1811,7 +1835,15 @@
     "automatyczne przypomnienia i informacje o statusie,": "automatic reminders and status information,",
     "szybsze wyszukiwanie odpowiedzi dla klientów.": "faster search for answers for customers.",
     "Ustalamy, co system może zrobić sam, a co zawsze musi zatwierdzić człowiek. Dzięki temu zachowujesz kontrolę nad danymi i komunikacją.": "We determine what the system can do on its own and what must always be approved by a human. This allows you to maintain control over data and communication.",
-    "Projekt UX/UI dla urządzeń mobilnych": "Mobile UX/UI design"
+    "Projekt UX/UI dla urządzeń mobilnych": "Mobile UX/UI design",
+    "Pierwsze wrażenie": "First impression",
+    "Wyrazisty zachód słońca i logo od razu budują charakter marki.": "A striking sunset and logo immediately establish the brand's character.",
+    "Czytelna oferta": "Clear offer",
+    "Kursy i poziomy doświadczenia można szybko porównać.": "Courses and experience levels can be compared quickly.",
+    "Prosty wybór": "Simple choice",
+    "Jednodniowe aktywności opisane są bez zbędnych komplikacji.": "One-day activities are explained without unnecessary complexity.",
+    "Łatwa rezerwacja": "Easy booking",
+    "Najważniejsze informacje i formularz znajdują się obok siebie.": "Essential information and the booking form sit side by side."
   },
   "ja": {
     "Portfolio": "ポートフォリオ",
@@ -1975,7 +2007,15 @@
     "automatyczne przypomnienia i informacje o statusie,": "自動リマインダーとステータス情報、",
     "szybsze wyszukiwanie odpowiedzi dla klientów.": "顧客の答えをより迅速に検索できます。",
     "Ustalamy, co system może zrobić sam, a co zawsze musi zatwierdzić człowiek. Dzięki temu zachowujesz kontrolę nad danymi i komunikacją.": "システムが独自に実行できることと、常に人間の承認が必要なものを決定します。これにより、データと通信の制御を維持できます。",
-    "Projekt UX/UI dla urządzeń mobilnych": "モバイル向けUX/UIデザイン"
+    "Projekt UX/UI dla urządzeń mobilnych": "モバイル向けUX/UIデザイン",
+    "Pierwsze wrażenie": "第一印象",
+    "Wyrazisty zachód słońca i logo od razu budują charakter marki.": "印象的な夕日とロゴは、ブランドの特徴を即座に確立します。",
+    "Czytelna oferta": "明確なオファー",
+    "Kursy i poziomy doświadczenia można szybko porównać.": "コースや経験値をすぐに比較できます。",
+    "Prosty wybór": "シンプルな選択",
+    "Jednodniowe aktywności opisane są bez zbędnych komplikacji.": "1 日のアクティビティを不必要に複雑にすることなく説明します。",
+    "Łatwa rezerwacja": "簡単予約",
+    "Najważniejsze informacje i formularz znajdują się obok siebie.": "重要な情報と予約フォームが並べて表示されます。"
   },
   "fr": {
     "Dobrze działa na telefonie": "Fonctionne bien au téléphone",
@@ -2529,7 +2569,15 @@
     "automatyczne przypomnienia i informacje o statusie,": "rappels automatiques et informations d'état,",
     "szybsze wyszukiwanie odpowiedzi dla klientów.": "recherche plus rapide de réponses pour les clients.",
     "Ustalamy, co system może zrobić sam, a co zawsze musi zatwierdzić człowiek. Dzięki temu zachowujesz kontrolę nad danymi i komunikacją.": "Nous déterminons ce que le système peut faire tout seul et ce qui doit toujours être approuvé par un humain. Cela vous permet de garder le contrôle des données et de la communication.",
-    "Projekt UX/UI dla urządzeń mobilnych": "Conception UX/UI pour appareils mobiles"
+    "Projekt UX/UI dla urządzeń mobilnych": "Conception UX/UI pour appareils mobiles",
+    "Pierwsze wrażenie": "Première impression",
+    "Wyrazisty zachód słońca i logo od razu budują charakter marki.": "Un coucher de soleil saisissant et un logo établissent immédiatement le caractère de la marque.",
+    "Czytelna oferta": "Offre claire",
+    "Kursy i poziomy doświadczenia można szybko porównać.": "Les cours et les niveaux d’expérience peuvent être comparés rapidement.",
+    "Prosty wybór": "Choix simple",
+    "Jednodniowe aktywności opisane są bez zbędnych komplikacji.": "Les activités d'une journée sont expliquées sans complexité inutile.",
+    "Łatwa rezerwacja": "Réservation facile",
+    "Najważniejsze informacje i formularz znajdują się obok siebie.": "Les informations essentielles et le formulaire de réservation se côtoient."
   },
   "zh": {
     "Dobrze działa na telefonie": "在手机上运行良好",
@@ -3083,6 +3131,14 @@
     "automatyczne przypomnienia i informacje o statusie,": "自动提醒和状态信息，",
     "szybsze wyszukiwanie odpowiedzi dla klientów.": "更快地为客户搜索答案。",
     "Ustalamy, co system może zrobić sam, a co zawsze musi zatwierdzić człowiek. Dzięki temu zachowujesz kontrolę nad danymi i komunikacją.": "我们决定系统可以自己做什么，以及什么必须始终得到人类的批准。这使您可以保持对数据和通信的控制。",
-    "Projekt UX/UI dla urządzeń mobilnych": "移动设备 UX/UI 设计"
+    "Projekt UX/UI dla urządzeń mobilnych": "移动设备 UX/UI 设计",
+    "Pierwsze wrażenie": "第一印象",
+    "Wyrazisty zachód słońca i logo od razu budują charakter marki.": "引人注目的日落和标志立即确立了品牌的特色。",
+    "Czytelna oferta": "明确报价",
+    "Kursy i poziomy doświadczenia można szybko porównać.": "可以快速比较课程和经验水平。",
+    "Prosty wybór": "简单的选择",
+    "Jednodniowe aktywności opisane są bez zbędnych komplikacji.": "一日活动的解释没有不必要的复杂性。",
+    "Łatwa rezerwacja": "轻松预订",
+    "Najważniejsze informacje i formularz znajdują się obok siebie.": "基本信息和预订表格并排放置。"
   }
 }

@@ -4466,24 +4466,50 @@ body .site-language-switcher {
 .seamonk-gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
+  gap: 30px;
 }
 .seamonk-gallery-grid figure {
   margin: 0;
   overflow: hidden;
   border: 1px solid var(--soft-border);
   border-radius: 26px;
-  background: rgba(7, 20, 13, .68);
+  background: color-mix(in srgb, var(--surface) 94%, #071b18);
+  box-shadow: 0 24px 60px rgba(0, 18, 15, .2);
+}
+.seamonk-gallery-featured { grid-column: 1 / -1; }
+.seamonk-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--soft-border);
+  background: rgba(4, 18, 15, .92);
+}
+.seamonk-browser-bar i { width: 8px; height: 8px; border-radius: 50%; background: rgba(232, 243, 235, .3); }
+.seamonk-browser-bar i:first-child { background: #e6c833; }
+.seamonk-browser-bar span { margin-left: 7px; color: rgba(232, 243, 235, .65); font: 700 .68rem/1 Manrope,sans-serif; letter-spacing: .08em; }
+.seamonk-screen {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  padding: clamp(10px, 1.4vw, 18px);
+  background: #061814;
 }
 .seamonk-gallery-grid img {
   display: block;
   width: 100%;
-  aspect-ratio: 1600 / 725;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 8px;
   transition: transform .55s cubic-bezier(.2,.7,.2,1);
 }
-.seamonk-gallery-grid figure:hover img { transform: scale(1.018); }
-.seamonk-gallery-grid figcaption { padding: 18px 22px 21px; color: var(--muted); }
+.seamonk-gallery-grid figure:hover img { transform: scale(1.008); }
+.seamonk-gallery-grid figcaption { display: grid; gap: 5px; padding: 18px 22px 21px; }
+.seamonk-gallery-grid figcaption strong { color: var(--text); font-size: 1rem; }
+.seamonk-gallery-grid figcaption span { color: var(--muted); line-height: 1.55; }
 .seamonk-value {
   display: grid;
   grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr);
@@ -4515,7 +4541,11 @@ body .site-language-switcher {
 }
 @media (max-width: 560px) {
   .seamonk-gallery-grid { grid-template-columns: 1fr; gap: 18px; }
+  .seamonk-gallery-featured { grid-column: auto; }
   .seamonk-gallery-grid figure { border-radius: 20px; }
+  .seamonk-screen { aspect-ratio: 4 / 3; padding: 8px; }
+  .seamonk-browser-bar { min-height: 36px; padding-inline: 12px; }
+  .seamonk-gallery-grid figcaption { padding: 15px 17px 18px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .seamonk-gallery-grid img { transition: none; }

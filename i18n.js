@@ -474,7 +474,7 @@
   }
 
   try {
-    const expanded = await fetch("translations-extra.json?v=translations-8", {
+    const expanded = await fetch("translations-extra.json?v=translations-9", {
       cache: "force-cache",
     }).then((response) => (response.ok ? response.json() : null));
     if (expanded) {
