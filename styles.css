@@ -5008,6 +5008,10 @@ body:not(.seamonk-page) .business-product-copy > p,
 body:not(.seamonk-page) .business-final-cta > p {
   color: #496c63;
 }
+body:not(.seamonk-page) .hero-trust,
+body:not(.seamonk-page) .safety-promise {
+  color: #496c63 !important;
+}
 body:not(.seamonk-page) .audience-list span,
 body:not(.seamonk-page) .values span,
 body:not(.seamonk-page) .business-proof span {
