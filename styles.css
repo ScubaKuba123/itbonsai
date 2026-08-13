@@ -5034,3 +5034,59 @@ body:not(.seamonk-page) .text-link:hover {
 .portfolio-signature .flagship-media .portfolio-status {
   color: #f4d51e;
 }
+
+/* Natural studio typography: editorial headlines, highly legible supporting copy. */
+body {
+  font-family: "Manrope", "Noto Sans JP", sans-serif;
+}
+h1,
+h2,
+.portfolio-project-copy h3,
+.champion-poster strong,
+.mori-poster strong {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -.047em;
+}
+h3,
+h4,
+.brand,
+.nav,
+.button {
+  font-family: "Manrope", "Noto Sans JP", sans-serif;
+}
+body:not(.seamonk-page) {
+  --text: #073d33;
+  --muted: #345c52;
+}
+body:not(.seamonk-page) main p,
+body:not(.seamonk-page) main li,
+body:not(.seamonk-page) main figcaption,
+body:not(.seamonk-page) main .lead,
+body:not(.seamonk-page) .hero-trust,
+body:not(.seamonk-page) .safety-promise,
+body:not(.seamonk-page) .about-story-copy > p,
+body:not(.seamonk-page) .business-product-copy > p,
+body:not(.seamonk-page) .business-final-cta > p {
+  color: #345c52 !important;
+}
+body:not(.seamonk-page) main h1,
+body:not(.seamonk-page) main h2,
+body:not(.seamonk-page) main h3,
+body:not(.seamonk-page) main h4,
+body:not(.seamonk-page) main strong {
+  color: #073d33;
+}
+body:not(.seamonk-page) main .section-index,
+body:not(.seamonk-page) main .profile-link,
+body:not(.seamonk-page) main .text-link,
+body:not(.seamonk-page) main .page-card > span {
+  color: #0d6652;
+}
+html[lang="ja"] h1,
+html[lang="ja"] h2,
+html[lang="zh"] h1,
+html[lang="zh"] h2 {
+  font-family: "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
+  letter-spacing: -.035em;
+}
