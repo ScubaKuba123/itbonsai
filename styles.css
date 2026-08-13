@@ -4979,3 +4979,54 @@ body.portfolio-signature:after {
 .portfolio-signature .portfolio-hero-note {
   background: #f5faf8;
 }
+
+/* Accessible green typography on the new daylight background. */
+body:not(.seamonk-page) main p,
+body:not(.seamonk-page) main li,
+body:not(.seamonk-page) main figcaption,
+body:not(.seamonk-page) main .lead {
+  color: #496c63;
+}
+body:not(.seamonk-page) main h1,
+body:not(.seamonk-page) main h2,
+body:not(.seamonk-page) main h3,
+body:not(.seamonk-page) main h4,
+body:not(.seamonk-page) main strong {
+  color: #0b4438;
+}
+body:not(.seamonk-page) main .section-index,
+body:not(.seamonk-page) main .profile-link,
+body:not(.seamonk-page) main .text-link,
+body:not(.seamonk-page) main .page-card > span {
+  color: #126a57;
+}
+body:not(.seamonk-page) .hero-trust,
+body:not(.seamonk-page) .safety-promise,
+body:not(.seamonk-page) .audience-list span,
+body:not(.seamonk-page) .about-story-copy > p,
+body:not(.seamonk-page) .business-product-copy > p,
+body:not(.seamonk-page) .business-final-cta > p {
+  color: #496c63;
+}
+body:not(.seamonk-page) .audience-list span,
+body:not(.seamonk-page) .values span,
+body:not(.seamonk-page) .business-proof span {
+  color: #155f50;
+}
+body:not(.seamonk-page) .profile-link:hover,
+body:not(.seamonk-page) .text-link:hover {
+  color: #084c3e;
+}
+/* Text placed over photos and dark project previews remains light. */
+.portfolio-signature .portfolio-project-media,
+.portfolio-signature .portfolio-project-media span,
+.portfolio-signature .flagship-media,
+.portfolio-signature .flagship-media span,
+.portfolio-signature .champion-poster,
+.portfolio-signature .mori-poster {
+  color: #fff;
+}
+.portfolio-signature .portfolio-project-media .portfolio-project-index,
+.portfolio-signature .flagship-media .portfolio-status {
+  color: #f4d51e;
+}
