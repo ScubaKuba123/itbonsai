@@ -1,2 +1,13 @@
-.vercel
-.env*
+.vercel/
+.wrangler/
+.env
+.env.*
+*.local
+.DS_Store
+*.log
+logs/
+.cache/
+node_modules/
+dist/
+build/
+.next/
