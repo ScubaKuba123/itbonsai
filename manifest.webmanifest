@@ -1,0 +1,15 @@
+{
+  "name": "BonsAI Studio",
+  "short_name": "BonsAI",
+  "description": "Strony internetowe, SEO, automatyzacje AI i rozwiązania cyfrowe dla firm.",
+  "lang": "pl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fffefa",
+  "theme_color": "#1e2229",
+  "icons": [
+    { "src": "/assets/favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

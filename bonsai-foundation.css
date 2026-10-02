@@ -1,0 +1,762 @@
+/* Module 01. Canonical visual tokens + explicit legacy-component adapters.
+   Load last. Layout, content, assets, routes and application logic stay owned
+   by the original files. Remove this link to reverse the visual foundation. */
+:root {
+  --dna-paper: #fafcfb;
+  --dna-surface: #ffffff;
+  --dna-wash: #eef7f6;
+  --dna-ink: #17342f;
+  --dna-muted: #526a66;
+  --dna-deep: #123b37;
+  --dna-teal: #007f83;
+  --dna-teal-hover: #00666a;
+  --dna-mint: #63dcd0;
+  --dna-nature: #627b55;
+  --dna-gold: #b69b64;
+  --dna-line: #cbded9;
+  --dna-line-strong: #799d96;
+  --dna-on-dark: #f5fbf9;
+  --dna-muted-on-dark: #cee2dc;
+  --dna-display: 'Trirong', Georgia, serif;
+  --dna-body: 'DM Sans', Arial, sans-serif;
+  --dna-radius-small: 6px;
+  --dna-radius-card: 12px;
+  --dna-radius-button: 999px;
+  --dna-shadow: 0 6px 24px rgb(18 59 55 / 5%);
+  --dna-shadow-menu: 0 12px 32px rgb(18 59 55 / 12%);
+  --dna-section-space: clamp(48px, 6vw, 88px);
+  --dna-stack-space: clamp(24px, 3vw, 40px);
+  --dna-motion-fast: 140ms;
+  --dna-motion-standard: 240ms;
+  --dna-motion-slow: 480ms;
+  --dna-motion-cinematic: 1200ms;
+  --dna-ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+/* One token vocabulary, with aliases for the existing static page families. */
+body.bonsai-dna {
+  --paper: var(--dna-paper); --white: var(--dna-paper);
+  --ink: var(--dna-ink); --muted: var(--dna-muted);
+  --green: var(--dna-deep); --green2: var(--dna-teal);
+  --forest: var(--dna-deep); --forest-2: var(--dna-teal);
+  --mist: var(--dna-wash); --rule: var(--dna-line); --accent: var(--dna-teal);
+  --gold: var(--dna-gold);
+  --studio-paper: var(--dna-paper); --studio-ink: var(--dna-ink);
+  --studio-muted: var(--dna-muted); --studio-accent: var(--dna-teal);
+  --studio-accent-hover: var(--dna-teal-hover); --studio-deep: var(--dna-deep);
+  --studio-line: var(--dna-line); --studio-wash: var(--dna-wash);
+  --studio-radius: var(--dna-radius-card);
+  --editorial-ink: var(--dna-ink); --editorial-muted: var(--dna-muted);
+  --season-ink: var(--dna-ink); --season-muted: var(--dna-muted);
+  --season-line: var(--dna-line); --season-green: var(--dna-teal);
+  --season-paper: var(--dna-paper); --forest-paper: var(--dna-paper);
+  background: var(--dna-paper);
+  color: var(--dna-ink);
+  font-family: var(--dna-body);
+  line-height: 1.65;
+}
+.bonsai-dna :is(button, input, select, textarea) { font-family: var(--dna-body); }
+.bonsai-dna :is(h1, h2) { font-family: var(--dna-display); font-weight: 500; }
+.bonsai-dna :is(h2, h3) { text-wrap: pretty; }
+.bonsai-dna :is(.page-hero h1, .content-hero h1, .svc-hero h1, .editorial-intro h1) {
+  font-size: clamp(38px, 4.5vw, 68px); line-height: 1.14; letter-spacing: -.04em;
+}
+.bonsai-dna :is(.lead, .svc-lead, .intro-description, .season-lead) {
+  color: var(--dna-muted); line-height: 1.75; max-width: 60ch;
+}
+.bonsai-dna :is(.section-index, .svc-label, .editorial-label, .season-eyebrow,
+  .eyebrow, .service-intro h2 em, .season-hero h1 em) { color: var(--dna-teal); }
+
+/* Bright neutral surfaces, with the existing forest reserved for quiet depth.
+   No homepage tree/energy selector is included in this background adapter. */
+.bonsai-dna :is(.services, .svc-promises, .svc-offer, .svc-process,
+  .editorial-intro, .business-system, .cooperation-process) {
+  background: var(--dna-paper);
+}
+.bonsai-dna :is(.svc-promises, .svc-offer, .business-system) { background: var(--dna-wash); }
+.bonsai-dna :is(.page-hero, .content-hero, .business-hero) {
+  background-color: var(--dna-wash);
+  background-image: none;
+  border-radius: var(--dna-radius-card);
+}
+.bonsai-dna .forest-divider {
+  background: linear-gradient(var(--dna-paper), rgb(250 252 251 / 82%) 40%, rgb(238 247 246 / 88%) 75%, var(--dna-paper)),
+    var(--forest-photo) center 60% / cover;
+}
+.bonsai-dna .services::before { background: none; }
+.bonsai-dna .service-intro { border-color: var(--dna-line); }
+.bonsai-dna .service-intro .branch { color: var(--dna-nature); }
+
+/* Shared navigation: keep dimensions, links, mobile disclosure and language UI. */
+.bonsai-dna #bonsai-header {
+  background: var(--dna-paper); color: var(--dna-ink);
+  border-color: var(--dna-line); border-radius: var(--dna-radius-card); box-shadow: none;
+}
+.bonsai-dna #bonsai-header :is(.bonsai-wordmark, .bonsai-navigation > a, .bonsai-menu) { color: var(--dna-ink); }
+.bonsai-dna #bonsai-header .bonsai-wordmark > span { color: var(--dna-teal); }
+.bonsai-dna #bonsai-header .bonsai-navigation > a:hover {
+  background: var(--dna-wash); color: var(--dna-teal-hover);
+}
+.bonsai-dna #bonsai-header .bonsai-navigation > a[aria-current='page'] { text-decoration-color: var(--dna-teal); }
+.bonsai-dna #bonsai-header :is(.bonsai-price-link, .bonsai-pricing-shortcut) {
+  border-color: var(--dna-line-strong); color: var(--dna-deep); background: var(--dna-wash);
+}
+.bonsai-dna #bonsai-header :is(.bonsai-price-link, .bonsai-pricing-shortcut)[aria-current='page'] {
+  background: var(--dna-teal); border-color: var(--dna-teal); color: white;
+}
+.bonsai-dna #bonsai-header .language-picker-trigger {
+  background: var(--dna-surface); border-color: var(--dna-line); color: var(--dna-ink);
+}
+.bonsai-dna #bonsai-header .language-picker-menu {
+  background: var(--dna-surface); color: var(--dna-ink); border-color: var(--dna-line); box-shadow: var(--dna-shadow-menu);
+}
+.bonsai-dna #bonsai-header .language-picker-menu button { color: var(--dna-ink); }
+.bonsai-dna #bonsai-header .language-picker-menu button:is(:hover, .active) { background: var(--dna-wash); }
+
+/* Only two card variants. Existing compositions, image crops and content stay. */
+.bonsai-dna :is(.page-card, .offer-card, .project-card, .price-card, .svc-card,
+  .season-card, .service-map article, .contact-form, .season-included) {
+  --card-accent: var(--dna-teal); --card-wash: var(--dna-wash);
+  background: var(--dna-surface); color: var(--dna-ink);
+  border: 1px solid var(--dna-line); border-radius: var(--dna-radius-card);
+  box-shadow: var(--dna-shadow);
+  transition: border-color var(--dna-motion-standard) var(--dna-ease), box-shadow var(--dna-motion-standard) var(--dna-ease);
+}
+.bonsai-dna :is(.page-card, .offer-card, .project-card, .svc-card, .season-card, .service-map article):hover {
+  transform: none; border-color: var(--dna-line-strong); box-shadow: var(--dna-shadow);
+}
+.bonsai-dna :is(.service-map article h3, .svc-card h3, .page-card h2, .offer-card h2, .project-card h2) {
+  color: inherit; font-family: var(--dna-display); font-weight: 500; line-height: 1.3;
+}
+.bonsai-dna :is(.service-map article p, .svc-card p, .page-card p, .offer-card p, .project-card p) {
+  color: var(--dna-muted); line-height: 1.7;
+}
+.bonsai-dna :is(.service-map article::before, .svc-card-top, .page-card > span, .offer-card > span) { color: var(--dna-teal); }
+.bonsai-dna :is(.service-map article:first-of-type, .price-card.featured, .content-cta) {
+  background: var(--dna-deep); color: var(--dna-on-dark); border-color: var(--dna-deep);
+  border-radius: var(--dna-radius-card); box-shadow: none;
+}
+.bonsai-dna :is(.service-map article:first-of-type, .price-card.featured, .content-cta) :is(h2, h3) { color: var(--dna-on-dark); }
+.bonsai-dna :is(.service-map article:first-of-type, .price-card.featured, .content-cta) p { color: var(--dna-muted-on-dark); }
+.bonsai-dna .service-map article:first-of-type::before { color: var(--dna-mint); }
+.bonsai-dna :is(.forest-card-icon, .benefit-icon, .service-map .icon) {
+  background: var(--dna-wash); color: var(--dna-teal); border-color: var(--dna-line);
+  border-radius: var(--dna-radius-card); box-shadow: none;
+}
+.bonsai-dna :is(.svc-card img, .svc-card > a:first-of-type) { background: var(--dna-wash); }
+.bonsai-dna .entry-kohaku { background: var(--dna-wash); }
+.bonsai-dna :is(.svc-contact, .editorial-ending) {
+  background: var(--dna-wash); color: var(--dna-ink);
+  border-color: var(--dna-line); border-radius: var(--dna-radius-card); box-shadow: none;
+}
+.bonsai-dna :is(.values, .proof, .stats) > span { background: var(--dna-wash); border-color: var(--dna-line); color: var(--dna-ink); }
+
+/* Existing legacy CTA declarations include !important. Keep the exception
+   confined to this adapter instead of spreading it to layout or typography. */
+.bonsai-dna :is(.button, .svc-button, .editorial-contact, .season-primary) {
+  background: var(--dna-teal) !important; color: #fff !important;
+  border: 1px solid var(--dna-teal); border-radius: var(--dna-radius-button);
+  min-height: 48px; padding: 13px 24px; gap: 16px;
+  font-family: var(--dna-body); font-weight: 600; font-size: 14px; line-height: 1.4;
+  box-shadow: none; text-decoration: none;
+  transition: background-color var(--dna-motion-standard) var(--dna-ease), border-color var(--dna-motion-standard) var(--dna-ease);
+}
+.bonsai-dna :is(.button, .svc-button, .editorial-contact, .season-primary):hover {
+  background: var(--dna-teal-hover) !important; border-color: var(--dna-teal-hover); transform: none; box-shadow: none;
+}
+.bonsai-dna :is(.button, .svc-button, .editorial-contact, .season-primary)::before { display: none; }
+.bonsai-dna .content-cta .button { background: var(--dna-mint) !important; color: var(--dna-deep) !important; border-color: var(--dna-mint); }
+.bonsai-dna .svc-button-outline {
+  background: transparent !important; color: var(--dna-teal) !important; border-color: var(--dna-line-strong);
+}
+.bonsai-dna :is(.svc-text-link, .entry-link, .profile-link, .text-link, .pricing-text-link) {
+  color: var(--dna-teal); text-underline-offset: 5px; text-decoration-thickness: 1px;
+}
+.bonsai-dna :is(.svc-text-link, .entry-link, .profile-link, .text-link):hover { color: var(--dna-teal-hover); text-decoration: underline; }
+.bonsai-dna :is(.svc-text-link, .entry-link):hover > span { transform: none; }
+.bonsai-dna .season-cta { background: var(--dna-wash); color: var(--dna-deep); border-color: var(--dna-line); border-radius: var(--dna-radius-button); }
+.bonsai-dna .season-cta:hover { background: #deefec; border-color: var(--dna-line-strong); }
+.bonsai-dna .portfolio-filters button { color: var(--dna-muted); border-color: var(--dna-line-strong); }
+.bonsai-dna .portfolio-filters button[aria-pressed='true'] { background: var(--dna-teal); color: white; border-color: var(--dna-teal); }
+
+/* Normalise section rhythm without changing column structures or hero media. */
+.bonsai-dna :is(.services, .svc-offer, .svc-process) { padding-block: var(--dna-section-space); }
+.bonsai-dna :is(.page-section, .about-story, .content-section, .case-study, .project-feature, .privacy-content) { margin-block: var(--dna-section-space); }
+.bonsai-dna :is(.svc-promises, .editorial-entry) { padding-block: var(--dna-stack-space); }
+.bonsai-dna :is(.contact-form input, .contact-form select, .contact-form textarea) {
+  border-color: var(--dna-line-strong); background: var(--dna-surface); color: var(--dna-ink);
+  border-radius: var(--dna-radius-small); min-height: 48px; font-size: 16px;
+}
+.bonsai-dna :is(.contact-form label, .contact-details h2) { color: var(--dna-ink); }
+.bonsai-dna .contact-details { border-color: var(--dna-line); }
+.bonsai-dna .contact-form :is(input, textarea)::placeholder { color: var(--dna-muted); opacity: 1; }
+.bonsai-dna :is(.site-footer, .svc-footer) { background: var(--dna-paper); color: var(--dna-ink); border-top: 1px solid var(--dna-line); }
+.bonsai-dna .site-footer :is(.brand strong, .brand strong span, .brand small, .footer-contact strong, .footer-nav strong, .footer-contact a, .footer-nav a) { color: var(--dna-ink); }
+.bonsai-dna .site-footer :is(.footer-brand-block p, .footer-legal) { color: var(--dna-muted); border-color: var(--dna-line); }
+/* The Garden destination and its separate promotional component are untouched. */
+
+.bonsai-dna :is(a, button, input, select, textarea, summary):focus-visible,
+.bonsai-dna #bonsai-header :is(a, button):focus-visible {
+  outline: 3px solid var(--dna-teal); outline-offset: 4px;
+  box-shadow: 0 0 0 2px var(--dna-surface);
+}
+.bonsai-dna #bonsai-header .language-picker-menu button:focus-visible { outline-offset: -3px; }
+@media (max-width: 1100px) {
+  .bonsai-dna #bonsai-header .bonsai-navigation { background: var(--dna-surface); border-color: var(--dna-line); box-shadow: var(--dna-shadow-menu); }
+}
+@media (max-width: 600px) {
+  .bonsai-dna :is(.page-hero h1, .content-hero h1, .svc-hero h1, .editorial-intro h1) { font-size: 38px; letter-spacing: -.035em; }
+  .bonsai-dna :is(.button, .svc-button, .editorial-contact, .season-primary) { max-width: 100%; min-width: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.bonsai-dna {
+    --dna-motion-fast: 0ms; --dna-motion-standard: 0ms;
+    --dna-motion-slow: 0ms; --dna-motion-cinematic: 0ms;
+    scroll-behavior: auto;
+  }
+}
+
+/* Low-budget visual polish: one quiet system for the existing homepage and
+   shared sections. Layout, content, assets and routes deliberately remain intact. */
+:root {
+  --dna-paper: #fbfdfc;
+  --dna-surface: #fffefa;
+  --dna-wash: #eff8f7;
+  --dna-ink: #102a35;
+  --dna-muted: #5b6d73;
+  --dna-deep: #0b4245;
+  --dna-teal: #008b8d;
+  --dna-teal-hover: #006f73;
+  --dna-mint: #77ddd2;
+  --dna-nature: #627957;
+  --dna-gold: #c6ad74;
+  --dna-line: #d6e8e4;
+  --dna-line-strong: #97beb8;
+  --dna-shadow: 0 8px 26px rgb(16 42 53 / 6%);
+  --dna-shadow-menu: 0 16px 40px rgb(16 42 53 / 10%);
+}
+
+/* Refined, light navigation and restrained controls. */
+.bonsai-dna #bonsai-header {
+  background: rgb(251 253 252 / 82%);
+  border-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: blur(10px);
+}
+.bonsai-dna #bonsai-header :is(.bonsai-price-link, .bonsai-pricing-shortcut) {
+  background: var(--dna-mint);
+  border-color: var(--dna-mint);
+  color: var(--dna-deep);
+  border-radius: var(--dna-radius-button);
+}
+.bonsai-dna #bonsai-header .bonsai-navigation > a[aria-current='page'] {
+  color: var(--dna-deep);
+  text-decoration-thickness: 2px;
+}
+
+/* Keep the existing bonsai art, while integrating it into a pale natural field. */
+.bonsai-dna.bonsai-shared-home .hero {
+  background: linear-gradient(135deg, #fffefa 0%, #f3faf9 54%, #e6f3ef 100%);
+}
+.bonsai-dna.bonsai-shared-home .hero::before {
+  background:
+    radial-gradient(ellipse at 74% 40%, rgb(119 221 210 / 18%), transparent 28%),
+    linear-gradient(135deg, #fffefa 0%, #f5fbfa 57%, #e8f3ef 100%);
+}
+.bonsai-dna.bonsai-shared-home .hero-image {
+  border: 0;
+  box-shadow: none;
+  filter: saturate(.84) contrast(1.01);
+}
+.bonsai-dna.bonsai-shared-home .hero-image::before {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+  opacity: .14;
+  mix-blend-mode: screen;
+  background:
+    radial-gradient(ellipse at 78% 58%, rgb(92 225 215 / 34%), transparent 8%),
+    radial-gradient(ellipse at 81% 72%, rgb(92 225 215 / 24%), transparent 7%);
+  filter: blur(5px);
+  animation: itbonsai-energy-flow 9s ease-in-out infinite;
+}
+.bonsai-dna.bonsai-shared-home .hero-image::after {
+  background: linear-gradient(90deg, #fffefa 0%, rgb(255 254 250 / 90%) 14%, rgb(255 254 250 / 20%) 37%, transparent 58%);
+}
+.bonsai-dna.bonsai-shared-home .animated-hero { animation: none; }
+@keyframes itbonsai-energy-flow { 0%,100% { opacity: .08; } 50% { opacity: .2; } }
+
+/* Remove the visual noise from the legacy hero and services decoration. */
+.bonsai-dna.bonsai-shared-home :is(.hero-rings, .hero-scan, .hero-particles, .tech-lines, .contact-orbit, .service-intro .branch) { display: none; }
+
+/* Shared cards and sections: bright paper, quiet lines, no gaming-like contrast. */
+.bonsai-dna :is(.services, .portfolio, .contact) { background: var(--dna-paper); }
+.bonsai-dna .services { background: linear-gradient(135deg, #fbfdfc 0%, #edf8f6 100%); }
+.bonsai-dna .portfolio { background: linear-gradient(135deg, #eef8f6, #fbfdfc); }
+.bonsai-dna .contact { background: var(--dna-wash); }
+.bonsai-dna .service-map article,
+.bonsai-dna .service-map article:first-of-type {
+  background: rgb(255 254 250 / 92%);
+  color: var(--dna-ink);
+  border-color: var(--dna-line);
+  box-shadow: var(--dna-shadow);
+}
+.bonsai-dna .service-map article:first-of-type :is(h2, h3) { color: var(--dna-ink); }
+.bonsai-dna .service-map article:first-of-type p { color: var(--dna-muted); }
+.bonsai-dna .service-map article:first-of-type::before { color: var(--dna-teal); }
+.bonsai-dna .service-map article:hover { border-color: var(--dna-line-strong); box-shadow: var(--dna-shadow); }
+
+@media (prefers-reduced-motion: reduce) {
+  .bonsai-dna.bonsai-shared-home .hero-image::before { animation: none; }
+}
+@media (max-width: 600px) {
+  .bonsai-dna.bonsai-shared-home .hero-image::before { display: none; }
+}
+
+/* Focused homepage and portfolio polish — keeps the existing page structure intact. */
+.bonsai-dna.bonsai-shared-home .hero-image {
+  background-image: url("assets/hero-bonsai.webp");
+  background-position: 66% 52%;
+  filter: saturate(.78) contrast(1.02) brightness(1.02);
+}
+
+/* Homepage hero correction: a layered architectural coast around the existing bonsai asset. */
+.bonsai-dna.bonsai-shared-home .hero {
+  isolation: isolate;
+  min-height: 820px;
+  height: min(920px, 100vh);
+  background:
+    linear-gradient(90deg, rgb(255 254 250 / 98%) 0%, rgb(255 254 250 / 93%) 37%, rgb(244 250 247 / 36%) 61%, rgb(228 244 241 / 12%) 100%),
+    url("assets/ocean-sunset-v2.webp") center bottom / cover no-repeat;
+}
+.bonsai-dna.bonsai-shared-home .hero::before {
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 68% 35%, rgb(236 252 246 / 62%), transparent 32%),
+    linear-gradient(180deg, rgb(255 254 250 / 25%) 0%, transparent 53%, rgb(236 249 246 / 32%) 100%);
+}
+.bonsai-dna.bonsai-shared-home .hero::after { display: none; }
+.bonsai-dna.bonsai-shared-home .hero-architecture {
+  position: absolute;
+  z-index: 1;
+  inset: 0 0 0 auto;
+  width: min(29vw, 380px);
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgb(105 70 39 / 12%), rgb(47 28 17 / 48%)),
+    repeating-linear-gradient(90deg, rgb(79 48 28 / 82%) 0 12px, rgb(166 112 70 / 72%) 12px 18px, rgb(74 43 24 / 76%) 18px 27px);
+  box-shadow: inset 30px 0 50px rgb(30 47 42 / 12%);
+}
+.bonsai-dna.bonsai-shared-home .hero-architecture::before {
+  content: '';
+  position: absolute;
+  top: -22px;
+  left: -45%;
+  width: 160%;
+  height: 140px;
+  transform: rotate(-8deg);
+  background: repeating-linear-gradient(90deg, #b67d4a 0 36px, #8c5931 36px 45px, #d09a61 45px 52px);
+  box-shadow: 0 16px 30px rgb(38 25 16 / 28%);
+}
+.bonsai-dna.bonsai-shared-home .hero-platform {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  width: min(66vw, 980px);
+  height: 142px;
+  background:
+    linear-gradient(180deg, rgb(82 52 32 / 10%), rgb(42 26 17 / 34%)),
+    repeating-linear-gradient(0deg, #a6784e 0 31px, #7f5838 31px 35px, #b7895e 35px 66px);
+  clip-path: polygon(9% 20%, 100% 0, 100% 100%, 0 100%, 0 48%);
+  box-shadow: inset 0 20px 34px rgb(57 36 23 / 20%);
+}
+.bonsai-dna.bonsai-shared-home .hero-image {
+  z-index: 3;
+  top: 76px;
+  right: 1.5%;
+  bottom: 76px;
+  width: min(63%, 940px);
+  background-image: url("assets/hero-bonsai-white.webp");
+  background-position: 73% center;
+  background-size: cover;
+  mix-blend-mode: multiply;
+  filter: saturate(.92) contrast(1.05) brightness(1.01);
+}
+.bonsai-dna.bonsai-shared-home .hero-image::before {
+  opacity: .26;
+  background:
+    radial-gradient(ellipse at 71% 61%, rgb(36 232 220 / 72%), transparent 5%),
+    radial-gradient(ellipse at 65% 47%, rgb(36 232 220 / 45%), transparent 4%);
+  filter: blur(7px);
+  animation-duration: 7s;
+}
+.bonsai-dna.bonsai-shared-home .hero-image::after {
+  background: linear-gradient(90deg, rgb(255 254 250 / 88%) 0%, rgb(255 254 250 / 20%) 24%, transparent 48%);
+}
+.bonsai-dna.bonsai-shared-home .hero-copy {
+  z-index: 5;
+  padding-top: clamp(154px, 18vh, 205px);
+}
+.bonsai-dna.bonsai-shared-home .hero h1 {
+  max-width: 660px;
+  font-size: clamp(3.55rem, 5vw, 5.75rem);
+  line-height: .98;
+  letter-spacing: -.06em;
+}
+.bonsai-dna.bonsai-shared-home .hero p { max-width: 550px; }
+.bonsai-dna.bonsai-shared-home .hero-actions { display: flex; align-items: center; gap: 17px; }
+.bonsai-dna.bonsai-shared-home .button.gold {
+  min-width: 228px;
+  border-radius: 999px;
+  background: linear-gradient(120deg, #087f7d, #21b8ad);
+  box-shadow: 0 12px 28px rgb(8 127 125 / 20%);
+}
+.bonsai-dna.bonsai-shared-home .hero-secondary-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 54px;
+  padding: 0 20px;
+  border: 1px solid rgb(10 45 51 / 32%);
+  border-radius: 999px;
+  color: var(--dna-ink);
+  font-weight: 650;
+  background: rgb(255 255 255 / 44%);
+}
+.bonsai-dna.bonsai-shared-home .hero-credentials {
+  display: flex;
+  gap: 0;
+  margin: 42px 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 625px;
+}
+.bonsai-dna.bonsai-shared-home .hero-credentials li {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  padding: 0 22px;
+  border-left: 1px solid rgb(10 45 51 / 19%);
+}
+.bonsai-dna.bonsai-shared-home .hero-credentials li:first-child { padding-left: 0; border-left: 0; }
+.bonsai-dna.bonsai-shared-home .hero-credentials strong { color: #087f7d; font-size: .83rem; }
+.bonsai-dna.bonsai-shared-home .hero-credentials span { color: #53646a; font-size: .72rem; line-height: 1.35; }
+
+@media (max-width: 900px) {
+  .bonsai-dna.bonsai-shared-home .hero { min-height: 780px; height: 820px; }
+  .bonsai-dna.bonsai-shared-home .hero-architecture { width: 28vw; opacity: .7; }
+  .bonsai-dna.bonsai-shared-home .hero-image { top: 95px; right: -17%; bottom: 92px; width: 65%; background-position: 74% center; }
+  .bonsai-dna.bonsai-shared-home .hero-image::after { background: linear-gradient(90deg, #fffefa 0%, rgb(255 254 250 / 84%) 39%, rgb(255 254 250 / 16%) 64%, transparent 78%); }
+  .bonsai-dna.bonsai-shared-home .hero-copy { padding-top: 145px; }
+  .bonsai-dna.bonsai-shared-home .hero h1 { font-size: clamp(3rem, 7.2vw, 4.4rem); max-width: 510px; }
+}
+@media (max-width: 600px) {
+  .bonsai-dna.bonsai-shared-home .hero { min-height: 970px; height: 970px; background-position: 56% bottom; }
+  .bonsai-dna.bonsai-shared-home .hero::before { background: linear-gradient(180deg, rgb(255 254 250 / 96%) 0 44%, rgb(255 254 250 / 54%) 67%, rgb(238 249 246 / 10%) 100%); }
+  .bonsai-dna.bonsai-shared-home .hero-architecture { display: none; }
+  .bonsai-dna.bonsai-shared-home .hero-platform { width: 100%; height: 92px; clip-path: polygon(0 17%, 100% 0, 100% 100%, 0 100%); }
+  .bonsai-dna.bonsai-shared-home .hero-image { top: 680px; right: -15%; bottom: 55px; width: 119%; opacity: 1; background-position: 70% center; }
+  .bonsai-dna.bonsai-shared-home .hero-copy { width: calc(100% - 44px); padding-top: 122px; }
+  .bonsai-dna.bonsai-shared-home .hero h1 { max-width: 330px; font-size: clamp(2.72rem, 12vw, 3.45rem); }
+  .bonsai-dna.bonsai-shared-home .hero p { margin: 18px 0 22px; font-size: .92rem; }
+  .bonsai-dna.bonsai-shared-home .hero-actions { gap: 10px; }
+  .bonsai-dna.bonsai-shared-home .button.gold { min-width: 0; padding: 15px 18px; font-size: .8rem; }
+  .bonsai-dna.bonsai-shared-home .hero-secondary-cta { min-height: 48px; padding: 0 13px; font-size: .76rem; gap: 8px; }
+  .bonsai-dna.bonsai-shared-home .hero-credentials { margin-top: 24px; max-width: 320px; }
+  .bonsai-dna.bonsai-shared-home .hero-credentials li { padding: 0 10px; }
+  .bonsai-dna.bonsai-shared-home .hero-credentials span { font-size: .62rem; }
+}
+
+.bonsai-dna.editorial-portfolio .editorial-entries {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  padding: 0 clamp(22px, 5.6vw, 88px) 72px;
+}
+
+.bonsai-dna.editorial-portfolio .editorial-entry {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100%;
+  padding: 0;
+  gap: 0;
+  background: rgb(255 255 255 / 88%);
+  border: 1px solid rgb(10 45 51 / 10%);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgb(10 45 51 / 5%);
+}
+
+.bonsai-dna.editorial-portfolio .editorial-entry::before,
+.bonsai-dna.editorial-portfolio .editorial-entry::after { display: none; }
+
+.bonsai-dna.editorial-portfolio .editorial-entry .entry-visual {
+  order: 0;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-self: auto;
+  background: #e8eeea;
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.bonsai-dna.editorial-portfolio .editorial-entry .entry-visual > a,
+.bonsai-dna.editorial-portfolio .editorial-entry .entry-visual > a > img:not(.fiku-mobile):not(.seamonk-mark) {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.bonsai-dna.editorial-portfolio .editorial-entry .entry-visual > a > img:not(.fiku-mobile):not(.seamonk-mark) {
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center;
+}
+
+.bonsai-dna.editorial-portfolio .editorial-entry .entry-heading {
+  order: 1;
+  width: auto;
+  margin: 0;
+  padding: 18px 20px 0;
+}
+
+.bonsai-dna.editorial-portfolio .editorial-entry .entry-heading h2 {
+  margin: 0;
+  color: var(--dna-ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1.15rem, 1.5vw, 1.45rem);
+  font-weight: 650;
+  letter-spacing: -.035em;
+}
+
+.bonsai-dna.editorial-portfolio .editorial-entry .entry-meta {
+  margin-top: 7px;
+  color: #65737a;
+  font-size: .67rem;
+}
+
+.bonsai-dna.editorial-portfolio .editorial-entry .entry-detail {
+  order: 2;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: auto;
+  margin: 0;
+  padding: 10px 20px 20px;
+}
+
+.bonsai-dna.editorial-portfolio .editorial-entry .entry-detail p {
+  margin: 0;
+  color: #53646a;
+  font-size: .87rem;
+  line-height: 1.5;
+}
+
+.bonsai-dna.editorial-portfolio .editorial-entry .entry-link {
+  margin-top: auto;
+  padding-top: 16px;
+  color: #087d82;
+  font-size: .78rem;
+}
+
+.bonsai-dna.editorial-portfolio .editorial-entry .entry-number,
+.bonsai-dna.editorial-portfolio .editorial-entry .entry-note,
+.bonsai-dna.editorial-portfolio .editorial-entry .entry-visual .fiku-mobile { display: none; }
+
+.bonsai-dna.editorial-portfolio .editorial-entry.entry-kohaku {
+  background: rgb(255 255 255 / 88%);
+  color: var(--dna-ink);
+}
+
+@media (max-width: 980px) {
+  .bonsai-dna.editorial-portfolio .editorial-entries { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .bonsai-dna.editorial-portfolio .editorial-entries { grid-template-columns: 1fr; gap: 16px; padding-bottom: 46px; }
+  .bonsai-dna.editorial-portfolio .editorial-entry .entry-visual { aspect-ratio: 16 / 9; }
+}
+
+/* Approved ITBonsai hero artwork. Keep it as an image so its scene is never reconstructed or cropped on desktop. */
+.bonsai-dna.bonsai-shared-home .hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 800px;
+  height: calc(100svh - 84px);
+  overflow: hidden;
+  background: #eff7f6;
+}
+
+.bonsai-dna.bonsai-shared-home .hero::before,
+.bonsai-dna.bonsai-shared-home .hero::after { display: none; }
+
+.bonsai-dna.bonsai-shared-home .hero-art {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #eff7f6;
+}
+
+.bonsai-dna.bonsai-shared-home .hero-art,
+.bonsai-dna.bonsai-shared-home .hero-art picture,
+.bonsai-dna.bonsai-shared-home .hero-art img { width: 100%; height: 100%; }
+
+.bonsai-dna.bonsai-shared-home .hero-art img {
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+
+.bonsai-dna.bonsai-shared-home :is(.hero-image, .hero-rings, .hero-scan, .hero-particles, .tech-lines, .hero-architecture, .hero-platform) { display: none; }
+
+.bonsai-dna.bonsai-shared-home .hero-copy {
+  position: relative;
+  z-index: 1;
+  width: min(1290px, 88vw);
+  margin: auto;
+  padding-top: clamp(136px, 16vh, 192px);
+}
+
+.bonsai-dna.bonsai-shared-home .hero-eyebrow {
+  margin: 0 0 17px;
+  color: #078e90;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .34em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.bonsai-dna.bonsai-shared-home .hero h1 {
+  max-width: 730px;
+  margin: 0;
+  color: #10283a;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(3.4rem, 4.65vw, 5.1rem);
+  font-weight: 650;
+  letter-spacing: -.07em;
+  line-height: .97;
+  text-shadow: none;
+}
+
+.bonsai-dna.bonsai-shared-home .hero h1 span { color: #078e90; }
+
+.bonsai-dna.bonsai-shared-home .hero-copy > p:not(.hero-eyebrow) {
+  max-width: 555px;
+  margin: 23px 0 28px;
+  color: #40535f;
+  font-size: 1rem;
+  line-height: 1.52;
+  text-shadow: 0 1px 14px rgb(255 255 255 / 86%);
+}
+
+.bonsai-dna.bonsai-shared-home .hero-actions { display: flex; align-items: center; gap: 16px; }
+
+.bonsai-dna.bonsai-shared-home .button.gold {
+  min-width: 218px;
+  padding: 17px 24px;
+  border-radius: 999px;
+  background: linear-gradient(115deg, #008e90, #28c9c0);
+  box-shadow: 0 10px 24px rgb(0 122 124 / 19%);
+}
+
+.bonsai-dna.bonsai-shared-home .hero-secondary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 22px;
+  border: 1px solid rgb(16 40 58 / 38%);
+  border-radius: 999px;
+  color: #10283a;
+  font-size: .88rem;
+  font-weight: 650;
+  background: rgb(255 255 255 / 42%);
+}
+
+@media (max-width: 900px) {
+  .bonsai-dna.bonsai-shared-home .hero { min-height: 780px; height: calc(100svh - 84px); }
+  .bonsai-dna.bonsai-shared-home .hero-art img { object-fit: cover; object-position: 84% center; }
+  .bonsai-dna.bonsai-shared-home .hero-art::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgb(247 251 250 / 96%) 0%, rgb(247 251 250 / 88%) 45%, rgb(247 251 250 / 26%) 66%, transparent 82%);
+  }
+  .bonsai-dna.bonsai-shared-home .hero-copy { padding-top: 134px; }
+  .bonsai-dna.bonsai-shared-home .hero h1 { max-width: 530px; font-size: clamp(3rem, 7vw, 4.15rem); }
+  .bonsai-dna.bonsai-shared-home .hero-copy > p:not(.hero-eyebrow) { max-width: 438px; font-size: .91rem; }
+}
+
+@media (max-width: 600px) {
+  .bonsai-dna.bonsai-shared-home .hero { min-height: 810px; height: 810px; }
+  .bonsai-dna.bonsai-shared-home .hero-art { inset: auto 0 0; height: 306px; }
+  .bonsai-dna.bonsai-shared-home .hero-art::after { display: none; }
+  .bonsai-dna.bonsai-shared-home .hero-art img { object-fit: cover; object-position: 75% center; }
+  .bonsai-dna.bonsai-shared-home .hero-copy { width: calc(100% - 42px); padding-top: 104px; }
+  .bonsai-dna.bonsai-shared-home .hero-eyebrow { margin-bottom: 13px; font-size: .57rem; letter-spacing: .25em; }
+  .bonsai-dna.bonsai-shared-home .hero h1 { max-width: 330px; font-size: clamp(2.55rem, 11.5vw, 3.25rem); }
+  .bonsai-dna.bonsai-shared-home .hero-copy > p:not(.hero-eyebrow) { margin: 17px 0 21px; max-width: 320px; font-size: .84rem; }
+  .bonsai-dna.bonsai-shared-home .hero-actions { gap: 10px; }
+  .bonsai-dna.bonsai-shared-home .button.gold { min-width: 0; padding: 14px 16px; font-size: .75rem; }
+  .bonsai-dna.bonsai-shared-home .hero-secondary-cta { min-height: 47px; padding: 0 14px; font-size: .72rem; }
+}
+
+/* Living Landscape: two large, non-repeating garden washes with a clean reading corridor. */
+body.bonsai-dna.forest-theme {
+ --dna-paper:#f7faf8; --dna-wash:#eef6f0;
+ background-color:#f7faf8;
+ background-image:linear-gradient(90deg,#eff7f0dd 0%,#f7faf8f5 24%,#f7faf8fc 50%,#f7faf8f5 76%,#edf6efdb 100%),url('assets/forest-sage-20260919.webp'),url('assets/motif-zen.webp');
+ background-position:center,center 700px,center bottom;
+ background-size:100% 100%,auto 2200px,auto 2300px;
+ background-repeat:no-repeat;
+ background-attachment:scroll;
+}
+body.bonsai-dna main,
+body.bonsai-dna main :is(.services,.garden-featured,.garden-projects,.portfolio-toolbar,.portfolio-filters,.svc-promises,.svc-offer,.svc-process,.business-system,.business-products,.cooperation-process,.about-story,.page-section,.page-grid,.contact-strip,.contact-section,.contact) {
+ background-color:transparent!important; background-image:none!important;
+}
+body.bonsai-dna .forest-divider {
+ display:block; height:100px; min-height:0; margin:0; pointer-events:none;
+ background:linear-gradient(#f7faf8,#edf6eee0 40%,#edf6eeda 65%,#f7faf8),url('assets/forest-sage-20260919.webp') center 65%/cover no-repeat;
+}
+body.bonsai-dna :is(.site-footer,.svc-footer) { background:#f7faf8; border-top:1px solid #d6e4da; }
+@media(max-width:600px) {
+ body.bonsai-dna.forest-theme { background-size:100% 100%,auto 2200px,auto 2300px; }
+ body.bonsai-dna .forest-divider { height:64px; }
+}
+
+
+/* Responsive QA: readable copy and usable controls without changing desktop art direction. */
+@media(max-width:1100px) {
+ body.bonsai-dna.forest-theme :is(.button,.svc-button,.season-cta,.garden-project-link,.garden-preview-toggle) { font-size:15px!important; min-height:44px; }
+ body.bonsai-dna.forest-theme :is(.service-map article p,.garden-project-copy>p:not(.garden-kicker),.garden-journey p,.cooperation-steps p,.svc-principles p,.season-description,.season-scope) { font-size:16px; line-height:1.65; }
+ body.bonsai-dna.forest-theme .contact-form { grid-template-columns:minmax(0,1fr); }
+ body.bonsai-dna.forest-theme .contact-form :is(input,select,textarea) { min-width:0; max-width:100%; font-size:16px; }
+ body.bonsai-dna.forest-theme .season-photo img { transform:none; object-fit:contain; }
+ body.bonsai-dna.forest-theme .garden-journey { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ body.bonsai-dna.forest-theme .garden-journey li::after { display:none; }
+ body.bonsai-dna.forest-theme :is(.portfolio-filters button,.editorial-filters button,footer a,.contact-details>a,.contact-social a) { min-height:44px; display:inline-flex; align-items:center; }
+ body.bonsai-dna.forest-theme :is(.portfolio-filters,.editorial-filters) { flex-wrap:wrap; }
+ body.bonsai-dna.forest-theme :is(a,button,input,select,textarea,summary):focus-visible { outline:2px solid #007f83; outline-offset:4px; }
+}
+@media(max-width:600px) {
+ body.bonsai-dna.forest-theme .garden-journey { grid-template-columns:1fr; }
+ body.bonsai-dna.forest-theme .svc-process ol { grid-template-columns:1fr; }
+ body.bonsai-dna.forest-theme .contact-details h2 { font-size:clamp(30px,8.5vw,38px); line-height:1.15; }
+ body.bonsai-dna.forest-theme .contact-page { margin-block:40px; }
+ body.bonsai-dna.forest-theme .contact-form { padding:22px; }
+ body.bonsai-dna.forest-theme .season-eyebrow { font-size:11px; }
+}

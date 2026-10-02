@@ -1,0 +1,124 @@
+:root { --season-ink:#213d32; --season-muted:#536657; --season-line:#d1ddc9; --season-green:#365e45; --season-paper:#f4f8ef; }
+.pricing-page { color:var(--season-ink); font-family:'DM Sans',sans-serif; }
+.pricing-page *, .pricing-page *::before, .pricing-page *::after { box-sizing:border-box; }
+.pricing-page :is(a,button):focus-visible { outline:3px solid #72ab55; outline-offset:5px; }
+.pricing-page .header { width:min(1320px,calc(100% - 48px)); height:76px; margin:24px auto 0; padding:0 24px; border-radius:16px; background:#203c30; gap:20px; }
+.pricing-page .header .brand { min-width:0; flex-shrink:0; }
+.pricing-page .header .brand > span { color:#f4f8ef; font-size:19px; }
+.pricing-page .header .brand > span span { color:#bbd79c; }
+.pricing-page .header .nav { gap:18px; font-size:12px; }
+.pricing-page .header .nav a { min-height:44px; display:flex; align-items:center; white-space:nowrap; }
+.pricing-page .header .nav a[href='/cennik'] { color:#d4edb9; text-decoration:underline; text-underline-offset:7px; }
+.pricing-page .header .nav-cta { background:#c9e1b2!important; color:#213d32!important; border-radius:6px; }
+.pricing-page .header .language-switcher:empty { display:none; }
+.pricing-page .header .language-switcher { margin-left:auto; }
+.pricing-page .language-picker-menu { z-index:60; right:0; }
+.pricing-page .menu { display:none; }
+.pricing-skip { position:fixed; left:16px; top:-80px; padding:14px 20px; z-index:100; background:white; }
+.pricing-skip:focus { top:12px; }
+.season-hero { position:relative; overflow:hidden; min-height:440px; margin-top:22px; padding:54px max(32px,calc((100% - 1216px)/2)) 62px; background:linear-gradient(90deg,#f2f7ebf5 5%,#f2f7ebd9 45%,#edf5e838),linear-gradient(0deg,#f2f7eb,transparent 30%),url('assets/forest-sage-20260919.webp') center 45%/cover; }
+.season-hero-inner { max-width:710px; position:relative; z-index:1; }
+.season-eyebrow { margin:0 0 14px; font-size:10px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:#46623d; }
+.season-hero h1 { margin:0; font:400 clamp(46px,5.6vw,78px)/1.12 'Trirong',Georgia,serif; letter-spacing:-.055em; }
+.season-hero h1 span, .season-hero h1 em { display:block; }
+.season-hero h1 em { color:#487348; font-style:normal; }
+.season-lead { max-width:55ch; margin:22px 0 28px; font-size:16px; line-height:1.8; color:#425b48; }
+.season-primary { display:inline-flex; align-items:center; justify-content:space-between; gap:24px; padding:15px 23px; min-height:50px; border-radius:7px; background:#365e45; color:#fff; font-size:13px; font-weight:600; }
+.season-primary:hover { background:#244a33; }
+.season-trail { display:flex; position:absolute; right:7%; bottom:60px; align-items:center; gap:30px; color:#355c3b; }
+.season-trail::before { content:''; position:absolute; left:20px; right:20px; top:50%; height:1px; background:#52724b66; }
+.season-trail>span { z-index:1; display:grid; place-items:center; width:50px; height:50px; background:#f1f7e9d9; border:1px solid #a8c196; border-radius:50%; }
+.season-packages { max-width:1384px; margin:auto; padding:52px 32px 70px; }
+.season-section-head { display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:end; margin-bottom:20px; }
+.pricing-page h2 { font:400 clamp(30px,3.2vw,44px)/1.2 'Trirong',Georgia,serif; letter-spacing:-.045em; margin:0; }
+.season-section-head>p { font-size:14px; line-height:1.8; color:var(--season-muted); max-width:52ch; margin:0; }
+.season-order { color:#5b6e51; font-size:12px; padding:15px 0; margin:0 0 18px; border-top:1px solid var(--season-line); }
+.season-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; align-items:stretch; }
+.season-card { --card-accent:#537b40; --card-wash:#edf5e4; overflow:hidden; border:1px solid #ccdbc3; border-radius:14px; background:#fffefb; min-width:0; box-shadow:0 10px 30px #344b2610; display:flex; flex-direction:column; }
+.season-lato { --card-accent:#49724d; --card-wash:#e7f0da; }
+.season-jesien { --card-accent:#94613b; --card-wash:#f4ecdf; }
+.season-zima { --card-accent:#55796e; --card-wash:#e6efeb; }
+.season-photo { position:relative; height:190px; overflow:hidden; border-bottom:1px solid var(--season-line); background:var(--card-wash); }
+.season-photo img { width:100%; max-width:none; height:100%; object-fit:cover; object-position:78% center; mix-blend-mode:multiply; transform:scale(1.2); transform-origin:85% 70%; }
+.season-number { position:absolute; left:18px; top:17px; font-size:10px; letter-spacing:.12em; color:var(--card-accent); }
+.season-symbol { position:absolute; display:grid; place-items:center; width:42px; height:42px; bottom:14px; left:16px; border:1px solid #ffffffb3; border-radius:50%; background:#fffefbd9; color:var(--card-accent); }
+.season-card-body { padding:23px 22px; flex:1; display:flex; flex-direction:column; }
+.season-stage { margin:0 0 9px; color:var(--card-accent); font-size:10px; text-transform:uppercase; letter-spacing:.1em; min-height:1.4em; }
+.season-card h3 { font:400 37px/1.15 'Trirong',Georgia,serif; margin:0; letter-spacing:-.04em; }
+.season-description { color:var(--season-muted); font-size:13px; line-height:1.65; margin:12px 0 23px; min-height:65px; }
+.season-services { display:grid; grid-template-rows:repeat(3,1fr); flex:1; }
+.season-service { border-top:1px solid var(--season-line); padding:18px 0 16px; }
+.season-service h4 { display:flex; align-items:center; gap:8px; margin:0 0 12px; font-size:12px; font-weight:500; color:#4d634c; }
+.season-service h4 .forest-icon { width:18px; height:18px; flex-basis:18px; color:var(--card-accent); }
+.season-price { margin:0 0 9px; display:flex; flex-wrap:wrap; align-items:baseline; gap:5px; }
+.season-price small { font-size:11px; color:var(--season-muted); }
+.season-price strong { font-size:28px; font-weight:500; letter-spacing:-.045em; }
+.season-price>span { font-size:10px; color:var(--season-muted); white-space:nowrap; }
+.season-price .custom-price { font-size:20px; line-height:1.3; }
+.season-scope { font-size:12px; line-height:1.65; color:var(--season-muted); margin:0; }
+.season-cta { display:flex; justify-content:space-between; align-items:center; min-height:48px; gap:10px; margin-top:12px; padding:12px 14px; background:var(--card-wash); color:var(--season-ink); font-size:12px; font-weight:600; border:1px solid var(--season-line); border-radius:6px; }
+.season-cta:hover { background:#d9e9cc; border-color:#9eb78d; }
+.season-cta .forest-icon { width:18px; height:18px; flex-basis:18px; }
+.season-included { max-width:1320px; margin:0 auto 56px; padding:40px; background:#f8fbf4e8; border:1px solid var(--season-line); border-radius:14px; }
+.season-included h2 { font-size:34px; }
+.season-benefits { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:40px; margin-top:32px; }
+.benefit-icon { display:grid; place-items:center; width:42px; height:42px; border:1px solid #cbddbd; border-radius:11px; color:#426a39; background:#eaf3de; margin-bottom:16px; }
+.season-benefits h3 { font-size:17px; font-weight:500; margin:0 0 10px; }
+.season-benefits p { max-width:36ch; font-size:13px; line-height:1.75; color:var(--season-muted); margin:0; }
+.season-notes { max-width:1320px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; padding:20px 40px 45px; }
+.season-notes p:not(.season-eyebrow) { font-size:13px; color:var(--season-muted); line-height:1.85; margin:0 0 25px; }
+.pricing-page .site-footer { margin-top:0; }
+@media(max-width:1150px) {
+ .pricing-page .header .nav { gap:10px; font-size:11px; }
+ .pricing-page .header { gap:14px; padding-inline:18px; }
+ .pricing-page .header .brand>span { font-size:17px; }
+ .season-trail { display:none; }
+ .season-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+ .season-photo { height:220px; }
+ .season-description { min-height:45px; }
+ .season-included { margin-inline:32px; }
+}
+@media(max-width:950px) {
+ .pricing-page .header { width:calc(100% - 32px); height:68px; margin-top:16px; }
+ .pricing-page .header .nav { display:none; position:absolute; left:0; right:0; top:78px; background:#203c30; border:1px solid #526749; border-radius:12px; padding:12px; margin:0; font-size:14px; }
+ .pricing-page .header.open .nav { display:flex; flex-direction:column; align-items:stretch; }
+ .pricing-page .header .nav a { padding:12px; }
+ .pricing-page .header .menu { display:block; flex:0 0 40px; width:40px; height:44px; background:none; border:0; color:white; }
+ .pricing-page .header .menu::before { content:none; }
+ .pricing-page .header .menu span { display:block; height:2px; width:22px; margin:6px auto; background:currentColor; }
+ .pricing-page .header .language-switcher { margin-left:auto; }
+ .season-section-head { gap:32px; }
+ .season-hero { padding-inline:32px; }
+ .season-included { padding:30px; }
+ .season-benefits { gap:24px; }
+ .season-notes { gap:36px; }
+}
+@media(max-width:600px) {
+ .pricing-page .header { padding-inline:12px; gap:8px; }
+ .pricing-page .header .brand>span { font-size:15px; }
+ .pricing-page .header .brand-logo { width:34px; height:34px; }
+ .pricing-page .header .brand { gap:8px; margin-right:0; }
+ .pricing-page .header .language-picker-trigger { padding:8px; }
+ .season-hero { margin-top:14px; min-height:0; padding:42px 22px 58px; background-position:65% center; }
+ .season-hero h1 { font-size:46px; }
+ .season-lead { font-size:15px; line-height:1.75; }
+ .season-hero .season-primary { width:100%; }
+ .season-packages { padding:36px 22px 44px; }
+ .season-section-head { grid-template-columns:1fr; gap:18px; }
+ .season-section-head>p { font-size:13px; }
+ .season-grid { grid-template-columns:1fr; gap:24px; }
+ .season-photo { height:200px; }
+ .season-card-body { padding:24px; }
+ .season-description { min-height:0; margin-bottom:20px; }
+ .season-price strong { font-size:30px; }
+ .season-service { padding:18px 0; }
+ .season-cta { font-size:13px; }
+ .season-included { margin:0 22px 35px; padding:28px 24px; }
+ .season-included h2 { font-size:30px; }
+ .season-benefits { grid-template-columns:1fr; gap:26px; }
+ .season-benefits article { display:grid; grid-template-columns:42px 1fr; column-gap:15px; }
+ .benefit-icon { grid-row:1/3; margin:0; }
+ .season-benefits h3 { font-size:16px; }
+ .season-notes { grid-template-columns:1fr; gap:22px; padding:8px 24px 30px; }
+ .season-notes .season-primary { width:100%; }
+}

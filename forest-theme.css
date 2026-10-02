@@ -1,0 +1,36 @@
+/* A shared photographic forest wash. Text and controls remain on clear surfaces. */
+body.forest-theme {
+  --forest-paper: #f2f7eb;
+  --forest-photo: url('assets/forest-sage-20260919.webp');
+  background-color: var(--forest-paper);
+  background-image: linear-gradient(#f2f7ebe3, #eaf3e6d6), var(--forest-photo);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.forest-theme :is(.page-shell, .content-page, .editorial-main) { background-color: transparent; }
+.forest-theme :is(.services, .svc-offer, .svc-promises, .svc-process, .editorial-intro, .business-system, .cooperation-process) {
+  background-color: #f2f7eb;
+  background-image: linear-gradient(105deg, #f6f9f1f5 20%, #edf5e8da 65%, #dcecccba), var(--forest-photo);
+  background-size: cover;
+  background-position: center;
+}
+.forest-theme :is(.page-hero, .content-hero, .business-hero) {
+  background-color: #edf5e7;
+  background-image: linear-gradient(90deg, #f4f8edf7 20%, #edf5e8c7 65%, #e7f0df99), var(--forest-photo);
+  background-size: cover;
+  background-position: center;
+}
+.forest-theme :is(.page-card, .offer-card, .project-card, .svc-card) { background-color: #fffffff2; border-color: #cdddc5; }
+.forest-theme .forest-divider {
+  display: block;
+  width: 100%;
+  height: clamp(150px, 23vw, 310px);
+  background: linear-gradient(#f2f7eb, #edf5e899 35%, #dceccc88 70%, #f2f7eb), var(--forest-photo) center 60% / cover;
+  pointer-events: none;
+}
+.forest-theme :is(.site-footer, .svc-footer) { background-color: #f2f7eb; }
+.forest-icon { width: 24px; height: 24px; flex: 0 0 24px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.forest-card-icon { display: inline-grid; place-items: center; width: 46px; height: 46px; margin-bottom: 16px; border: 1px solid #c9dcbf; border-radius: 14px; background: #eef6e5; color: #32604a; }
+@media(max-width: 700px) { body.forest-theme { background-attachment: scroll; } }
+@media(prefers-reduced-motion: reduce) { .forest-theme { scroll-behavior: auto; } }

@@ -1,0 +1,59 @@
+/* BonsAI Living Landscape: shared entry proportions, no changes to page interiors. */
+body.bonsai-dna .bonsai-entry {
+ position:relative; isolation:isolate; display:flex; align-items:center;
+ width:100%; max-width:none; min-height:820px; height:auto;
+ margin:0 auto 48px; padding:136px max(60px,calc((100vw - 1320px)/2)) 72px;
+ overflow:hidden; background:#f7faf8; border:0; border-radius:0; box-shadow:none; color:#10283a;
+}
+body.bonsai-dna .bonsai-entry::before,
+body.bonsai-dna .bonsai-entry::after { display:none!important; }
+body.bonsai-dna .bonsai-entry .entry-copy { position:relative; z-index:2; width:44%; max-width:620px; padding:0; }
+body.bonsai-dna .bonsai-entry .entry-art {
+ position:absolute; z-index:0; inset:0 0 0 auto; width:60%; height:100%;
+ pointer-events:none; overflow:hidden; border-radius:0;
+ mask-image:linear-gradient(90deg,transparent,#000 23%);
+}
+body.bonsai-dna .entry-art img { display:block; width:100%; height:100%; max-width:none; object-fit:cover; object-position:66% center; transform:none; }
+body.bonsai-dna .entry-art--branch img { object-position:58% center; }
+body.bonsai-dna .entry-art--flow img { object-position:78% center; }
+body.bonsai-dna .entry-art--zen img { object-position:62% center; }
+body.bonsai-dna .entry-art--drop img { object-position:70% center; }
+body.bonsai-dna .bonsai-entry h1 { font-family:var(--dna-display); font-size:clamp(38px,4vw,60px); font-weight:500; letter-spacing:-.045em; line-height:1.12; max-width:660px; margin:18px 0 24px; text-wrap:balance; }
+body.bonsai-dna .bonsai-entry :is(.lead,.svc-lead,.intro-description,.business-hero-copy>p) { font-size:16px; line-height:1.7; color:#405763; max-width:48ch; margin:0 0 26px; }
+body.bonsai-dna .bonsai-entry :is(.intro-line,.business-hero-copy,.svc-hero-copy) { display:block; width:100%; max-width:none; }
+body.bonsai-dna .bonsai-entry :is(.section-index,.editorial-label,.svc-label) { color:#078e90; font-size:11px; line-height:1.6; letter-spacing:.25em; margin:0; text-transform:uppercase; }
+body.bonsai-dna .bonsai-entry .business-proof { gap:18px; margin-top:28px; }
+body.bonsai-dna .bonsai-entry .svc-actions { flex-wrap:wrap; }
+/* The six primary entries share a lightweight floating navigation. */
+body.bonsai-dna:is(:has(.bonsai-entry),.bonsai-shared-home) #bonsai-header {
+ position:absolute; top:0; left:0; right:0; width:min(1440px,100%); height:100px; margin:0 auto;
+ padding:0 max(32px,calc((100% - 1320px)/2)); border:0; background:linear-gradient(#f7faf8d9,#f7faf800); backdrop-filter:none; box-shadow:none;
+}
+@media(max-width:1100px) {
+ body.bonsai-dna .bonsai-entry { min-height:740px; padding:122px 5% 60px; }
+ body.bonsai-dna .bonsai-entry .entry-copy { width:48%; }
+ body.bonsai-dna .bonsai-entry .entry-art { width:57%; mask-image:linear-gradient(90deg,transparent,#000 19%); }
+ body.bonsai-dna .bonsai-entry h1 { font-size:40px; }
+ body.bonsai-dna .bonsai-entry :is(.lead,.svc-lead,.intro-description,.business-hero-copy>p) { font-size:14px; }
+ body.bonsai-dna:is(:has(.bonsai-entry),.bonsai-shared-home) #bonsai-header { height:84px; padding-inline:24px; }
+}
+@media(max-width:600px) {
+ body.bonsai-dna .bonsai-entry { display:flex; flex-direction:column; align-items:stretch; min-height:0; padding:118px 22px 0; margin-bottom:36px; }
+ body.bonsai-dna .bonsai-entry .entry-copy { width:100%; max-width:none; }
+ body.bonsai-dna .bonsai-entry h1 { font-size:36px; text-wrap:pretty; }
+ body.bonsai-dna .bonsai-entry .entry-art { position:relative; order:2; inset:auto; width:calc(100% + 44px); height:300px; margin:18px -22px 0; mask-image:linear-gradient(180deg,transparent,#000 13%); }
+ body.bonsai-dna .entry-art img { object-position:65% center; }
+ body.bonsai-dna .entry-art--flow img { object-position:79% center; }
+ body.bonsai-dna .entry-art--branch img { object-position:58% center; }
+ body.bonsai-dna .bonsai-entry .business-proof { gap:8px; margin-top:20px; flex-wrap:wrap; }
+ body.bonsai-dna .bonsai-entry .business-proof span { padding:8px 11px; font-size:11px; }
+ body.bonsai-dna:is(:has(.bonsai-entry),.bonsai-shared-home) #bonsai-header { padding-inline:16px; }
+}
+
+@media(max-width:1100px) {
+ body.bonsai-dna .bonsai-entry :is(.lead,.svc-lead,.intro-description,.business-hero-copy>p) { font-size:16px; line-height:1.6; }
+}
+@media(max-width:600px) {
+ body.bonsai-dna .bonsai-entry h1 { font-size:clamp(40px,10.8vw,46px); }
+ body.bonsai-dna .bonsai-entry .entry-art { margin-top:24px; }
+}
