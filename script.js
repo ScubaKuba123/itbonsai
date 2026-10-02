@@ -3,21 +3,28 @@ let nav = header?.querySelector(".nav");
 
 if (header && !nav) {
   nav = document.createElement("nav");
+  nav.className = "nav";
   header.appendChild(nav);
 }
 
-if (header && nav) {
-  nav.className = "nav projects-nav";
-  nav.setAttribute("aria-label", "Główna nawigacja");
-  nav.innerHTML = `
-    <a href="index.html">Start</a>
-    <a href="uslugi.html">Usługi</a>
-    <a href="dla-biznesu.html">Dla biznesu</a>
-    <a href="realizacje.html">Portfolio</a>
-    <a href="o-nas.html">O nas</a>
-    <a class="nav-cta" href="index.html#contact">Kontakt</a>`;
+// Unify navigation without destroying page markup: only a missing or empty
+// nav is filled in (progressive enhancement). Existing links, header tools,
+// language switcher and CTA buttons are always preserved.
+const NAV_LINKS = [
+  ["index.html", "Start"],
+  ["uslugi.html", "Usługi"],
+  ["realizacje.html", "Portfolio"],
+  ["o-nas.html", "O nas"],
+];
 
-  header.querySelector(":scope > .button-small")?.remove();
+if (header && nav && nav.querySelectorAll("a").length === 0) {
+  nav.setAttribute("aria-label", "Główna nawigacja");
+  nav.innerHTML = NAV_LINKS.map(
+    ([href, label]) => `<a href="${href}">${label}</a>`,
+  ).join("");
+}
+
+if (header && nav) {
   if (!header.querySelector(".menu")) {
     const menuButton = document.createElement("button");
     menuButton.className = "menu";
@@ -27,6 +34,20 @@ if (header && nav) {
     menuButton.innerHTML = "<span></span><span></span>";
     header.appendChild(menuButton);
   }
+
+  const currentPage = (
+    location.pathname.split("/").pop() || "index.html"
+  ).toLowerCase();
+  nav.querySelectorAll("a").forEach((link) => {
+    const target = (link.getAttribute("href") || "")
+      .split("#")[0]
+      .split("/")
+      .pop()
+      .toLowerCase();
+    if (target && target === currentPage) {
+      link.setAttribute("aria-current", "page");
+    }
+  });
 }
 
 const menu = header?.querySelector(".menu");
@@ -134,3 +155,27 @@ if (finePointer.matches && !reducedMotion.matches) {
     heroArt.style.removeProperty("--pointer-y");
   });
 }
+
+// Homepage hero video: loads only on wide viewports, when motion is allowed
+// and data-saver is off. Otherwise the WebP poster stays (mobile and
+// reduced-motion are poster-only by design).
+(() => {
+  const video = document.querySelector(".hero-video[data-src]");
+  if (!video) return;
+  const motionOK = !window.matchMedia("(prefers-reduced-motion: reduce)")
+    .matches;
+  const wideEnough = window.matchMedia("(min-width: 901px)").matches;
+  const saverOff = !(
+    "connection" in navigator && navigator.connection?.saveData
+  );
+  if (!motionOK || !wideEnough || !saverOff) return;
+  video.muted = true;
+  video.src = video.dataset.src;
+  video.addEventListener(
+    "canplay",
+    () => video.classList.add("is-live"),
+    { once: true },
+  );
+  const play = video.play();
+  if (play && typeof play.catch === "function") play.catch(() => {});
+})();

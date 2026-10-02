@@ -1485,6 +1485,12 @@ footer,
 }
 .footer-meta {
   display: block;
+  padding-bottom: 64px;
+}
+@media (min-width: 901px) {
+  .footer-meta {
+    padding-bottom: 0;
+  }
 }
 .footer-social {
   display: flex;
@@ -3048,7 +3054,12 @@ body:after {
 @media (max-width: 900px) {
   .mobile-whatsapp {
     display: inline-flex;
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
+    padding: 13px max(18px, env(safe-area-inset-right));
+    margin: 0;
   }
+}
   .subtle-bonsai .bonsai-stage {
     width: min(100%, 520px);
   }
@@ -5089,4 +5100,35 @@ html[lang="zh"] h1,
 html[lang="zh"] h2 {
   font-family: "Noto Sans JP", "Yu Gothic", Meiryo, sans-serif;
   letter-spacing: -.035em;
+}
+
+/* ============ UNIFICATION SPRINT editorial-31 ============
+   Homepage hero video layer. The WebP poster <img> always renders;
+   the <video> fades in only when JS loads it (wide viewport, motion
+   allowed, data-saver off). Mobile and reduced-motion stay poster-only.
+   ========================================================== */
+.hero-art .hero-video {
+  position: absolute;
+  inset: 4%;
+  width: 92%;
+  height: 92%;
+  object-fit: cover;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+.hero-art .hero-video.is-live {
+  opacity: 1;
+}
+@media (max-width: 900px) {
+  .hero-art .hero-video {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-art .hero-video {
+    display: none;
+  }
 }

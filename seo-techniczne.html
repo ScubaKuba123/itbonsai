@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#06110c" />
+    <link rel="icon" href="public/favicon.ico" type="image/webp" />
     <title>SEO techniczne dla firm | BonsAi Studio</title>
     <meta
       name="description"
       content="SEO techniczne: indeksowanie, szybkość, struktura, dane uporządkowane i mobilna użyteczność strony firmowej."
     />
     <link rel="canonical" href="https://itbonsai.pl/seo-techniczne.html" />
-    <link rel="stylesheet" href="styles.css?v=editorial-30" />
+    <link rel="stylesheet" href="styles.css?v=editorial-31" />
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-SPBZV7WDPN"
@@ -20,24 +22,77 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-      gtag("config", "G-SPBZV7WDPN");
+      gtag("config", "G-SPBZV7WDPN", { anonymize_ip: true });
     </script>
   </head>
   <body>
-    <header class="header">
-      <a class="brand" href="index.html"
+    <a class="skip" href="#main">Przejdź do treści</a>
+    <header class="header" id="top">
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="BonsAi Studio — strona główna"
         ><img
           class="brand-logo"
-          src="assets/itbonsai-logo.png"
+          src="assets/itbonsai-logo-96.webp"
           alt="Logo BonsAi Studio"
           width="48"
           height="48"
         /><span>Bons<span>Ai</span> Studio</span></a
-      ><a class="button button-small" href="index.html#contact"
-        >Bezpłatna analiza</a
       >
+      <nav class="nav" aria-label="Główna nawigacja">
+        <a href="index.html">Start</a><a href="uslugi.html">Usługi</a
+        ><a href="realizacje.html">Portfolio</a
+        ><a href="o-nas.html">O nas</a>
+        <div class="header-tools">
+          <div
+            class="social-links"
+            role="group"
+            aria-label="Media społecznościowe"
+          >
+            <a
+              href="https://www.facebook.com/itbonsai"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="BonsAi Studio na Facebooku"
+              >f</a
+            ><a
+              href="https://www.linkedin.com/in/bonsai-studio-237749201/?isSelfProfile=true"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="BonsAi Studio na LinkedIn"
+              >in</a
+            >
+          </div>
+          <div class="language-switcher" role="group" aria-label="Wybór języka">
+            <button
+              type="button"
+              data-lang="pl"
+              class="active"
+              aria-pressed="true"
+            >
+              PL</button
+            ><button type="button" data-lang="en" aria-pressed="false">
+              EN</button
+            ><button type="button" data-lang="ja" aria-pressed="false">
+              JP
+            </button>
+          </div>
+        </div>
+      </nav>
+      <a class="button button-small" href="index.html#contact"
+        >Otrzymaj wycenę</a
+      >
+      <button
+        class="menu"
+        type="button"
+        aria-label="Otwórz menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span>
+      </button>
     </header>
-    <main class="content-page">
+    <main class="content-page" id="main">
       <section class="content-hero">
         <p class="section-index">SEO techniczne</p>
         <h1>Fundament widoczności w Google.</h1>
@@ -72,7 +127,47 @@
         </section>
       </article>
     </main>
-    <script src="script.js?v=interactions-4" defer></script>
+    <footer>
+      <a class="brand" href="index.html"
+        ><img
+          class="brand-logo"
+          src="assets/itbonsai-logo-96.webp"
+          alt="Logo BonsAi Studio"
+          width="48"
+          height="48"
+        /><span>Bons<span>Ai</span> Studio</span></a
+      >
+      <p>Strony, aplikacje, SEO i automatyzacje dla firm, które chcą rosnąć.</p>
+      <div class="footer-nav">
+        <a href="uslugi.html">Usługi</a><a href="realizacje.html">Portfolio</a
+        ><a href="o-nas.html">O nas</a>
+      </div>
+      <div class="footer-meta">
+        <div class="footer-social">
+          <a
+            href="https://www.facebook.com/itbonsai"
+            target="_blank"
+            rel="noreferrer"
+            >Facebook ↗</a
+          ><a
+            href="https://www.linkedin.com/in/bonsai-studio-237749201/?isSelfProfile=true"
+            target="_blank"
+            rel="noreferrer"
+            >LinkedIn ↗</a
+          >
+        </div>
+        <p>Gdańsk · Polska<br />© 2026 BonsAi Studio</p>
+      </div>
+    </footer>
+    <a
+      class="mobile-whatsapp"
+      href="https://wa.me/48501476124?text=Dzie%C5%84%20dobry%2C%20chc%C4%99%20porozmawia%C4%87%20o%20projekcie."
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Napisz do BonsAi Studio na WhatsApp"
+      >WhatsApp</a
+    >
+    <script src="script.js?v=interactions-5" defer></script>
     <script src="i18n.js?v=languages-19" defer></script>
   </body>
 </html>
