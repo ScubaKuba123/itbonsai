@@ -1,0 +1,101 @@
+[
+  {
+    "id": "lukka-gdansk",
+    "name": "Lukka Gdańsk",
+    "cat": "web hospitality",
+    "tag": "Gastronomia · Projekt koncepcyjny",
+    "url": "https://lukkagdansk.pl/",
+    "concept": "Włoska kuchnia jako punkt wyjścia do strony restauracji w Gdańsku. Projekt ma pomóc wybrać danie, poznać lokal i przejść do zamówienia.",
+    "development": "Prezentacja kuchni i lokalu, informacje dla gości oraz przejście do zewnętrznego serwisu zamówień. Eksperyment z interaktywną pizzą jest osobnym prototypem, a nie potwierdzoną funkcją wersji produkcyjnej.",
+    "marketing": "Proponowany kierunek: kampanie wokół konkretnych dań i lokalnych okazji. Osobno mierzyć przejścia do menu, kliknięcia telefonu i wyjścia do serwisu zamówień.",
+    "seo": "Proponowane usprawnienia: osobna, indeksowalna strona menu; spójne dane adresowe; poprawne dane Restaurant; optymalizacja zdjęć potraw i zapytań lokalnych. Wyniki wymagają pomiaru w Search Console."
+  },
+  {
+    "id": "seamonk",
+    "name": "SeaMonk.jp",
+    "cat": "web hospitality",
+    "tag": "Okinawa · Turystyka · Archiwum EN / JP",
+    "url": "seamonk-archive.html",
+    "concept": "Pokazać charakter nurkowania na Okinawie i uporządkować ofertę dla turystów oraz odbiorców japońskojęzycznych. Emocja miejsca otwiera drogę do konkretnych informacji.",
+    "development": "Archiwalne ekrany pokazują stronę główną, kursy, aktywności i rezerwację. Wersje angielska i japońska korzystały ze wspólnej struktury oferty. Podgląd prezentuje zachowane ekrany; nie przyjmuje rezerwacji.",
+    "marketing": "Proponowany kierunek: osobne ścieżki dla pierwszego nurkowania i certyfikowanych nurków. Treści z miejsc nurkowych powinny prowadzić do konkretnej aktywności i kontaktu.",
+    "seo": "Proponowane usprawnienia dla odtworzonego serwisu: poprawne hreflang EN / JP, osobne adresy kursów i lokalizacji oraz zweryfikowane dane firmy. Tymczasowe archiwum pozostaje noindex, aby nie konkurować z właściwym serwisem."
+  },
+  {
+    "id": "orbital-studio",
+    "name": "Orbital",
+    "cat": "web",
+    "tag": "Studio kreatywne · Strona internetowa",
+    "url": "https://a-w-omega.vercel.app/",
+    "concept": "Kosmiczny język wizualny dla studia kreatywnego. Ruch i duża typografia budują rozpoznawalność, a oferta ma pozostać łatwa do znalezienia.",
+    "development": "Strona przedstawia charakter studia i zaproszenie do współpracy. Projekt łączy animację, wyrazistą typografię i narrację marki; podgląd pozwala sprawdzić rzeczywisty układ.",
+    "marketing": "Proponowany kierunek: prowadzić kampanie do konkretnej usługi lub case study. Zamiast samego efektu wizualnego pokazywać problem klienta, zakres pracy i zweryfikowany rezultat.",
+    "seo": "Proponowane usprawnienia: dedykowane podstrony usług, tekst dostępny niezależnie od animacji, opisy realizacji odpowiadające intencjom klientów oraz kontrola Core Web Vitals."
+  },
+  {
+    "id": "cafe-app",
+    "name": "Caffe App",
+    "cat": "apps hospitality",
+    "tag": "Gastronomia · Koncepcja aplikacji",
+    "url": "https://itbonsai.pl/cafe-app",
+    "concept": "Połączyć ofertę kawiarni i ścieżkę zamówienia w prostym interfejsie mobilnym. Punktem wyjścia jest wygoda stałego gościa oraz przejrzysty katalog.",
+    "development": "Dostępna dokumentacja opisuje UX/UI, katalog produktów, zamówienia i historię klienta. Poniższy podgląd pokazuje stronę koncepcji; działający backend, płatności i aplikacja produkcyjna nie są potwierdzone.",
+    "marketing": "Proponowany kierunek: kod QR w lokalu, jasna zachęta do ponownego zamówienia i test ścieżki pierwszego zakupu. Mechanizm lojalnościowy wymaga osobnego projektu i wdrożenia.",
+    "seo": "Proponowane usprawnienia: indeksowalna strona kawiarni z menu i lokalizacją oraz strona opisująca aplikację. Ekrany konta i koszyka nie powinny zastępować publicznej treści dla wyszukiwarki."
+  },
+  {
+    "id": "morscy-wojownicy",
+    "name": "Morscy Wojownicy",
+    "cat": "web sport",
+    "tag": "Sopot · Kickboxing / Muay Thai",
+    "url": "https://sea-warriors-sopot.vercel.app/",
+    "concept": "Energia klubu sportów walki połączona z jasną odpowiedzią na pytanie: jak zacząć? Oferta ma być zrozumiała także dla osoby przed pierwszym treningiem.",
+    "development": "Strona łączy ofertę treningów, grafik, cennik i kontakt. Wyraźna typografia oraz sekcje informacyjne prowadzą użytkownika do decyzji o pierwszej wizycie.",
+    "marketing": "Proponowany kierunek: osobne komunikaty dla początkujących i osób z doświadczeniem, lokalne treści treningowe i prosty pomiar zapytań o pierwszy trening.",
+    "seo": "Proponowane usprawnienia: treści pod kickboxing i Muay Thai w Sopocie, aktualny grafik w HTML, spójne dane lokalne oraz odpowiedzi na pytania o sprzęt, poziom i pierwszy trening."
+  },
+  {
+    "id": "mori-retreat",
+    "name": "Mori Retreat",
+    "cat": "web hospitality",
+    "tag": "Wellness · Fikcyjna marka koncepcyjna",
+    "url": "https://itbonsai.site/",
+    "concept": "Leśny pobyt przedstawiony jako doświadczenie ciszy i odpoczynku. Koncepcja opiera się na atmosferze miejsca, przestrzeni i spokojnym rytmie strony.",
+    "development": "Demonstracyjna strona pokazuje domki, doświadczenia, galerię i interfejs wyboru pobytu. Marka jest fikcyjna; dostępność i rezerwacja nie stanowią rzeczywistej oferty noclegowej.",
+    "marketing": "Proponowany kierunek dla realnego obiektu: sezonowe pakiety pobytowe, treści o doświadczeniach na miejscu i kampanie kierowane do konkretnych typów wyjazdu.",
+    "seo": "Demo pozostaje noindex. Dla realnego wdrożenia: osobne strony domków i doświadczeń, unikalna treść lokalna, poprawne dane obiektu oraz szybka wersja mobilna."
+  },
+  {
+    "id": "sklep-z-zabawkami",
+    "name": "FikuMiku",
+    "cat": "ecommerce",
+    "tag": "E-commerce · Zabawki",
+    "url": "https://files-mentioned-by-the-user-bonsai.vercel.app/",
+    "concept": "Pomóc rodzicowi szybko przejść od potrzeby do odpowiedniej zabawki. Kolekcje i kategorie porządkują ofertę zamiast konkurować o uwagę.",
+    "development": "Podgląd przedstawia sklep z prezentacją produktów i kolekcji. Widoczny zakres portfolio obejmuje strukturę oferty i interfejs; nie jest audytem płatności ani realizacji zamówień.",
+    "marketing": "Proponowany kierunek: treści prezentowe według wieku i okazji, kampanie konkretnych kolekcji i pomiar przejść od kategorii do produktu.",
+    "seo": "Proponowane usprawnienia: unikalne opisy kategorii, dane Product wyłącznie z rzeczywistymi cenami i dostępnością, kontrola indeksacji filtrów oraz linkowanie między kolekcjami."
+  },
+  {
+    "id": "ember-olive",
+    "name": "Ember & Olive",
+    "cat": "web hospitality",
+    "tag": "Gastronomia · Restaurant Fish",
+    "url": "https://montostal-redesign.vercel.app/",
+    "concept": "Śródziemnomorska restauracja opowiedziana przez sezonową kuchnię i atmosferę spotkania. Menu oraz rezerwacja powinny być dostępne bez szukania.",
+    "development": "Strona prezentuje menu, prywatne wydarzenia i ścieżkę rezerwacji stolika. Case dotyczy widocznego projektu strony; skuteczność obsługi rezerwacji wymaga osobnej weryfikacji.",
+    "marketing": "Proponowany kierunek: komunikacja sezonowego menu, wydarzeń i spotkań prywatnych. Każda kampania powinna prowadzić do odpowiedniej sekcji i konkretnego działania.",
+    "seo": "Proponowane usprawnienia: menu w HTML, informacje o lokalizacji i godzinach, dane Restaurant zgodne z realną firmą oraz opisy wydarzeń na osobnych adresach."
+  },
+  {
+    "id": "steel-company",
+    "name": "Steel Company",
+    "cat": "web",
+    "tag": "Przemysł · B2B · Koncepcja",
+    "url": "https://steel-company-2.vercel.app/",
+    "concept": "Zbudować czytelną prezentację kompetencji firmy stalowej. Odbiorca B2B potrzebuje konkretnego zakresu usług i dowodów jakości przed kontaktem.",
+    "development": "Projekt organizuje ofertę, realizacje i informacje o jakości wokół zapytania ofertowego. Referencje, certyfikaty i parametry wymagają rzeczywistych materiałów firmy przed publikacją produkcyjną.",
+    "marketing": "Proponowany kierunek: strony dla konkretnych branż i zastosowań, opisy potwierdzonych realizacji oraz formularz zbierający dane potrzebne do wyceny.",
+    "seo": "Proponowane usprawnienia: podstrony usług i materiałów odpowiadające zapytaniom B2B, linkowanie z realizacji do oferty, optymalizacja dokumentów technicznych i spójne nazewnictwo."
+  }
+]
