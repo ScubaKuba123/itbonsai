@@ -31,7 +31,7 @@ body.bonsai-dna .garden-window-bar>span:first-child { font-size:7px; letter-spac
 body.bonsai-dna .garden-window>a { display:block; }
 body.bonsai-dna .garden-window img { display:block; width:100%; height:auto; max-width:100%; object-fit:contain; border:0; border-radius:0; transform:none; }
 body.bonsai-dna .garden-window--live { position:relative; height:480px; background:#062c34; }
-body.bonsai-dna .garden-window--live iframe { display:block; width:100%; height:calc(100% - 40px); border:0; background:#062c34; }
+body.bonsai-dna .garden-window--live iframe { display:block; width:164.5%; height:720px; border:0; background:#062c34; transform:scale(.608); transform-origin:top left; }
 body.bonsai-dna .garden-project-media { min-width:0; }
 body.bonsai-dna .garden-preview-toggle { display:flex; justify-content:space-between; gap:16px; align-items:center; background:transparent; border:0; border-bottom:1px solid var(--dna-line); color:var(--dna-teal); padding:12px 0; min-height:44px; font:500 12px/1.6 var(--dna-body); cursor:pointer; }
 body.bonsai-dna .garden-preview-toggle[aria-expanded="true"] span { transform:rotate(45deg); }
@@ -60,6 +60,7 @@ body.bonsai-dna :is(.garden-project,.services,.cooperation-process) :is(a,button
  body.bonsai-dna .garden-project-copy h2 { font-size:30px; }
  body.bonsai-dna .garden-project-copy > p:not(.garden-kicker) { font-size:14px; }
  body.bonsai-dna .garden-window--live { height:400px; }
+ body.bonsai-dna .garden-window--live iframe { width:160%; height:640px; transform:scale(.625); }
  body.bonsai-dna .cooperation-process .page-section-head { grid-template-columns:1fr; gap:16px; }
  body.bonsai-dna .garden-journey { gap:24px; }
  body.bonsai-dna .garden-journey li:not(:last-child)::after { right:-23px; }
@@ -75,6 +76,7 @@ body.bonsai-dna :is(.garden-project,.services,.cooperation-process) :is(a,button
  body.bonsai-dna .garden-project:nth-child(even) .garden-project-copy { order:0; }
  body.bonsai-dna .garden-project-copy h2 { font-size:35px; }
  body.bonsai-dna .garden-window--live { height:300px; }
+ body.bonsai-dna .garden-window--live iframe { width:200%; height:520px; transform:scale(.5); }
  body.bonsai-dna .garden-featured { padding:52px 6%; }
  body.bonsai-dna .garden-journey { grid-template-columns:1fr; gap:0; margin-top:32px; }
  body.bonsai-dna .garden-journey li { border:0; border-left:1px solid var(--dna-line-strong); padding:0 0 30px 26px; }
