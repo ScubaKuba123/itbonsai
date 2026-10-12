@@ -30,6 +30,8 @@ body.bonsai-dna .garden-window-bar { display:flex; justify-content:space-between
 body.bonsai-dna .garden-window-bar>span:first-child { font-size:7px; letter-spacing:4px; color:#91aaa6; }
 body.bonsai-dna .garden-window>a { display:block; }
 body.bonsai-dna .garden-window img { display:block; width:100%; height:auto; max-width:100%; object-fit:contain; border:0; border-radius:0; transform:none; }
+body.bonsai-dna .garden-window--live { background:#062c34; }
+body.bonsai-dna .garden-window--live iframe { display:block; width:100%; aspect-ratio:16 / 9; border:0; background:#062c34; }
 body.bonsai-dna .garden-project-media { min-width:0; }
 body.bonsai-dna .garden-preview-toggle { display:flex; justify-content:space-between; gap:16px; align-items:center; background:transparent; border:0; border-bottom:1px solid var(--dna-line); color:var(--dna-teal); padding:12px 0; min-height:44px; font:500 12px/1.6 var(--dna-body); cursor:pointer; }
 body.bonsai-dna .garden-preview-toggle[aria-expanded="true"] span { transform:rotate(45deg); }
