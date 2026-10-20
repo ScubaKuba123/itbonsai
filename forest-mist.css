@@ -1,0 +1,31 @@
+/* Approved Forest Mist palette. Scoped to Portfolio and Services. */
+body.bonsai-dna.forest-theme.forest-mist {
+  --mist-top: #fafcf9;
+  --mist-mid: #e1ebe3;
+  --mist-bottom: #bdcec2;
+  --dna-paper: var(--mist-top);
+  --dna-wash: var(--mist-mid);
+  --dna-surface: var(--mist-top);
+  background: linear-gradient(180deg, var(--mist-top) 0%, var(--mist-mid) 48%, var(--mist-bottom) 100%) !important;
+  background-size: 100% 1500px !important;
+  background-repeat: no-repeat !important;
+  background-color: var(--mist-bottom) !important;
+}
+body.bonsai-dna.forest-mist .bonsai-entry { background: transparent !important; }
+body.bonsai-dna.forest-mist .bonsai-entry .entry-art {
+  mask-image: linear-gradient(90deg, transparent, #000 23%), linear-gradient(180deg, #000 73%, transparent 100%);
+  mask-composite: intersect;
+}
+body.bonsai-dna.forest-mist #bonsai-header { background: linear-gradient(var(--mist-top), transparent) !important; }
+body.bonsai-dna.forest-mist :is(.editorial-main, .garden-projects, .editorial-toolbar, .svc-promises, .svc-offer, .svc-process, .cooperation-process, .garden-featured, .site-footer, .svc-footer) {
+  background: transparent !important;
+  background-image: none !important;
+}
+body.bonsai-dna.forest-mist .svc-card { background: rgb(255 255 255 / 30%) !important; }
+body.bonsai-dna.forest-mist .garden-window-bar { background: rgb(255 255 255 / 75%) !important; }
+@media (max-width: 600px) {
+  body.bonsai-dna.forest-mist .bonsai-entry .entry-art {
+    mask-image: linear-gradient(180deg, transparent, #000 13%, #000 80%, transparent);
+    mask-composite: add;
+  }
+}
