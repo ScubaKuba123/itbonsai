@@ -1,5 +1,5 @@
-/* Approved Forest Mist palette. Scoped to Portfolio and Services. */
-body.bonsai-dna.forest-theme.forest-mist {
+/* Approved Forest Mist palette shared by all public pages. */
+body.forest-mist {
   --mist-top: #fafcf9;
   --mist-mid: #e1ebe3;
   --mist-bottom: #bdcec2;
@@ -11,6 +11,12 @@ body.bonsai-dna.forest-theme.forest-mist {
   background-repeat: no-repeat !important;
   background-color: var(--mist-bottom) !important;
 }
+body.bonsai-dna.forest-mist :is(.hero, .page-hero, .content-hero, .business-hero, .season-hero, .season-packages, .season-included, .season-notes, .services, .portfolio, .contact, .content-section, .page-section) {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+body.bonsai-dna.forest-mist .hero-art { background-color: var(--mist-top) !important; }
+body.bonsai-dna.forest-mist .season-card { background-color: rgb(255 255 255 / 72%); }
 body.bonsai-dna.forest-mist .bonsai-entry { background: transparent !important; }
 body.bonsai-dna.forest-mist .bonsai-entry .entry-art {
   mask-image: linear-gradient(90deg, transparent, #000 23%), linear-gradient(180deg, #000 73%, transparent 100%);
@@ -29,3 +35,5 @@ body.bonsai-dna.forest-mist .garden-window-bar { background: rgb(255 255 255 / 7
     mask-composite: add;
   }
 }
+
+body.forest-mist #pakiety { scroll-margin-top: 120px; }
