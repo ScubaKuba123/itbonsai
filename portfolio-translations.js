@@ -1,5 +1,6 @@
 window.bonsaiPortfolioCopy = {
   "en": {
+    "Otwórz pełną stronę ↗": "Open full website ↗",
     "Realizacje": "Work",
     "Wybrane projekty.": "Selected projects.",
     "Cyfrowe rozwiązania stworzone dla realnych potrzeb biznesowych.": "Digital solutions designed around real business needs.",
@@ -39,6 +40,7 @@ window.bonsaiPortfolioCopy = {
     "Podgląd interaktywny — Bangingo": "Interactive preview — Bangingo"
   },
   "ja": {
+    "Otwórz pełną stronę ↗": "サイト全体を開く ↗",
     "Realizacje": "制作実績",
     "Wybrane projekty.": "厳選したプロジェクト。",
     "Cyfrowe rozwiązania stworzone dla realnych potrzeb biznesowych.": "ビジネスの実際のニーズに応えるデジタルソリューション。",
@@ -78,6 +80,7 @@ window.bonsaiPortfolioCopy = {
     "Podgląd interaktywny — Bangingo": "インタラクティブプレビュー — Bangingo"
   },
   "de": {
+    "Otwórz pełną stronę ↗": "Vollständige Website öffnen ↗",
     "Realizacje": "Projekte",
     "Wybrane projekty.": "Ausgewählte Projekte.",
     "Cyfrowe rozwiązania stworzone dla realnych potrzeb biznesowych.": "Digitale Lösungen für konkrete geschäftliche Anforderungen.",
@@ -117,6 +120,7 @@ window.bonsaiPortfolioCopy = {
     "Podgląd interaktywny — Bangingo": "Interaktive Vorschau — Bangingo"
   },
   "es": {
+    "Otwórz pełną stronę ↗": "Abrir sitio completo ↗",
     "Realizacje": "Proyectos",
     "Wybrane projekty.": "Proyectos seleccionados.",
     "Cyfrowe rozwiązania stworzone dla realnych potrzeb biznesowych.": "Soluciones digitales diseñadas para necesidades empresariales reales.",
@@ -156,6 +160,7 @@ window.bonsaiPortfolioCopy = {
     "Podgląd interaktywny — Bangingo": "Vista previa interactiva — Bangingo"
   },
   "uk": {
+    "Otwórz pełną stronę ↗": "Відкрити повний сайт ↗",
     "Realizacje": "Проєкти",
     "Wybrane projekty.": "Вибрані проєкти.",
     "Cyfrowe rozwiązania stworzone dla realnych potrzeb biznesowych.": "Цифрові рішення для реальних потреб бізнесу.",
@@ -195,6 +200,7 @@ window.bonsaiPortfolioCopy = {
     "Podgląd interaktywny — Bangingo": "Інтерактивний перегляд — Bangingo"
   },
   "fr": {
+    "Otwórz pełną stronę ↗": "Ouvrir le site complet ↗",
     "Realizacje": "Réalisations",
     "Wybrane projekty.": "Projets sélectionnés.",
     "Cyfrowe rozwiązania stworzone dla realnych potrzeb biznesowych.": "Des solutions numériques conçues pour des besoins professionnels concrets.",
@@ -234,6 +240,7 @@ window.bonsaiPortfolioCopy = {
     "Podgląd interaktywny — Bangingo": "Aperçu interactif — Bangingo"
   },
   "zh": {
+    "Otwórz pełną stronę ↗": "打开完整网站 ↗",
     "Realizacje": "项目",
     "Wybrane projekty.": "精选项目。",
     "Cyfrowe rozwiązania stworzone dla realnych potrzeb biznesowych.": "围绕实际业务需求打造的数字解决方案。",

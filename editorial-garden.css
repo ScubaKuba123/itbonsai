@@ -94,3 +94,8 @@ body.editorial-portfolio :is(.garden-preview-viewport,.garden-live) iframe { pos
 @media(max-width:600px) {
  body.editorial-portfolio :is(.garden-preview-viewport,.garden-live) { aspect-ratio:390 / 780; }
 }
+
+/* The portfolio owns scrolling; every preview opens its complete project. */
+body.editorial-portfolio .garden-preview-viewport { display:block; cursor:pointer; }
+body.editorial-portfolio .garden-preview-viewport iframe { pointer-events:none; }
+body.editorial-portfolio .garden-preview-link { display:inline-flex; align-items:center; min-height:44px; margin-top:8px; color:var(--dna-teal); border-bottom:1px solid var(--dna-line); font-size:13px; }
