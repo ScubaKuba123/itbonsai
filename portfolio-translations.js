@@ -35,10 +35,10 @@ window.bonsaiPortfolioCopy = {
     "Cafe App — mobilna aplikacja do zamawiania dla kawiarni": "Project preview — Cafe App",
     "Ocean — istniejący materiał wizualny projektu nadmorskiego": "Project preview — Ocean",
     "Lukka Gdańsk — rzeczywisty widok strony restauracji": "Project preview — Lukka Gdańsk",
-    "Trójmiasto · Lifestyle · 10 języków": "Tricity · Lifestyle · 10 languages",
-    "Wielojęzyczna strona atrakcji premium w Trójmieście. Animowana rzeka, jacht i kolaż doświadczeń prowadzą do własnego planu wieczoru. Edycja Sunrise Rose łączy róż, brzoskwinię i morską zieleń.": "A multilingual website for premium experiences in Gdańsk, Sopot and Gdynia. An animated river, yacht and experience collage lead to a personalised evening plan. The Sunrise Rose edition combines rose, peach and sea green.",
-    "Otwórz Bangingo Sunrise Rose w nowej karcie": "Open Bangingo Sunrise Rose in a new tab",
-    "Bangingo Sunrise Rose — rzeczywisty widok strony": "Bangingo Sunrise Rose — actual website view",
+    "Polska · Wyjazdy · 10 języków": "Poland · Private trips · 10 languages",
+    "Strona wyjazdów biznesowych, wypoczynkowych i imprez w Polsce. Siedem ofert, dziesięć języków i rzeka z animowaną wodą. Pearl Aurora łączy perłowe tło, lawendę i miętę.": "A website for business, leisure and party trips in Poland. Seven packages, ten languages and a river with flowing water. Pearl Aurora combines a pearl background, lavender and mint.",
+    "Otwórz Bangingo Pearl Aurora w nowej karcie": "Open Bangingo Pearl Aurora in a new tab",
+    "Bangingo Pearl Aurora — rzeczywisty widok strony": "Bangingo Pearl Aurora — actual website view",
     "Podgląd interaktywny — Bangingo": "Interactive preview — Bangingo"
   },
   "ja": {
@@ -77,10 +77,10 @@ window.bonsaiPortfolioCopy = {
     "Cafe App — mobilna aplikacja do zamawiania dla kawiarni": "プロジェクトのプレビュー — Cafe App",
     "Ocean — istniejący materiał wizualny projektu nadmorskiego": "プロジェクトのプレビュー — Ocean",
     "Lukka Gdańsk — rzeczywisty widok strony restauracji": "プロジェクトのプレビュー — Lukka Gdańsk",
-    "Trójmiasto · Lifestyle · 10 języków": "トリシティ · ライフスタイル · 10言語",
-    "Wielojęzyczna strona atrakcji premium w Trójmieście. Animowana rzeka, jacht i kolaż doświadczeń prowadzą do własnego planu wieczoru. Edycja Sunrise Rose łączy róż, brzoskwinię i morską zieleń.": "グダニスク、ソポト、グディニャの特別な体験を紹介する多言語サイト。流れる川、ヨット、体験のコラージュをたどり、自分だけの夜のプランを作れます。Sunrise Roseはローズ、ピーチ、海のグリーンを組み合わせたデザインです。",
-    "Otwórz Bangingo Sunrise Rose w nowej karcie": "Bangingo Sunrise Roseを新しいタブで開く",
-    "Bangingo Sunrise Rose — rzeczywisty widok strony": "Bangingo Sunrise Rose — 実際のサイト画面",
+    "Polska · Wyjazdy · 10 języków": "ポーランド · 旅のプラン · 10言語",
+    "Strona wyjazdów biznesowych, wypoczynkowych i imprez w Polsce. Siedem ofert, dziesięć języków i rzeka z animowaną wodą. Pearl Aurora łączy perłowe tło, lawendę i miętę.": "ポーランドのビジネス、レジャー、パーティー旅行のサイト。7つのプラン、10言語、流れる川のアニメーション。Pearl Auroraはパールの背景にラベンダーとミントを組み合わせています。",
+    "Otwórz Bangingo Pearl Aurora w nowej karcie": "Bangingo Pearl Auroraを新しいタブで開く",
+    "Bangingo Pearl Aurora — rzeczywisty widok strony": "Bangingo Pearl Aurora — 実際のサイト画面",
     "Podgląd interaktywny — Bangingo": "インタラクティブプレビュー — Bangingo"
   },
   "de": {
@@ -119,10 +119,10 @@ window.bonsaiPortfolioCopy = {
     "Cafe App — mobilna aplikacja do zamawiania dla kawiarni": "Projektvorschau — Cafe App",
     "Ocean — istniejący materiał wizualny projektu nadmorskiego": "Projektvorschau — Ocean",
     "Lukka Gdańsk — rzeczywisty widok strony restauracji": "Projektvorschau — Lukka Gdańsk",
-    "Trójmiasto · Lifestyle · 10 języków": "Dreistadt · Lifestyle · 10 Sprachen",
-    "Wielojęzyczna strona atrakcji premium w Trójmieście. Animowana rzeka, jacht i kolaż doświadczeń prowadzą do własnego planu wieczoru. Edycja Sunrise Rose łączy róż, brzoskwinię i morską zieleń.": "Eine mehrsprachige Website für besondere Erlebnisse in Danzig, Sopot und Gdynia. Ein animierter Fluss, eine Yacht und eine Collage von Aktivitäten führen zum individuellen Abendprogramm. Sunrise Rose verbindet Rosé, Pfirsich und Meeresgrün.",
-    "Otwórz Bangingo Sunrise Rose w nowej karcie": "Bangingo Sunrise Rose in einem neuen Tab öffnen",
-    "Bangingo Sunrise Rose — rzeczywisty widok strony": "Bangingo Sunrise Rose — tatsächliche Website-Ansicht",
+    "Polska · Wyjazdy · 10 języków": "Polen · Privatreisen · 10 Sprachen",
+    "Strona wyjazdów biznesowych, wypoczynkowych i imprez w Polsce. Siedem ofert, dziesięć języków i rzeka z animowaną wodą. Pearl Aurora łączy perłowe tło, lawendę i miętę.": "Eine Website für Geschäfts-, Freizeit- und Partyreisen in Polen. Sieben Angebote, zehn Sprachen und ein Fluss mit bewegtem Wasser. Pearl Aurora verbindet einen perlmuttfarbenen Hintergrund mit Lavendel und Mint.",
+    "Otwórz Bangingo Pearl Aurora w nowej karcie": "Bangingo Pearl Aurora in einem neuen Tab öffnen",
+    "Bangingo Pearl Aurora — rzeczywisty widok strony": "Bangingo Pearl Aurora — tatsächliche Website-Ansicht",
     "Podgląd interaktywny — Bangingo": "Interaktive Vorschau — Bangingo"
   },
   "es": {
@@ -161,10 +161,10 @@ window.bonsaiPortfolioCopy = {
     "Cafe App — mobilna aplikacja do zamawiania dla kawiarni": "Vista del proyecto — Cafe App",
     "Ocean — istniejący materiał wizualny projektu nadmorskiego": "Vista del proyecto — Ocean",
     "Lukka Gdańsk — rzeczywisty widok strony restauracji": "Vista del proyecto — Lukka Gdańsk",
-    "Trójmiasto · Lifestyle · 10 języków": "Triciudad · Lifestyle · 10 idiomas",
-    "Wielojęzyczna strona atrakcji premium w Trójmieście. Animowana rzeka, jacht i kolaż doświadczeń prowadzą do własnego planu wieczoru. Edycja Sunrise Rose łączy róż, brzoskwinię i morską zieleń.": "Un sitio multilingüe de experiencias exclusivas en Gdańsk, Sopot y Gdynia. Un río animado, un yate y un collage de actividades llevan a un plan de noche personalizado. Sunrise Rose combina rosa, melocotón y verde mar.",
-    "Otwórz Bangingo Sunrise Rose w nowej karcie": "Abrir Bangingo Sunrise Rose en una pestaña nueva",
-    "Bangingo Sunrise Rose — rzeczywisty widok strony": "Bangingo Sunrise Rose — vista real del sitio",
+    "Polska · Wyjazdy · 10 języków": "Polonia · Viajes privados · 10 idiomas",
+    "Strona wyjazdów biznesowych, wypoczynkowych i imprez w Polsce. Siedem ofert, dziesięć języków i rzeka z animowaną wodą. Pearl Aurora łączy perłowe tło, lawendę i miętę.": "Una web de viajes de negocios, ocio y fiestas en Polonia. Siete propuestas, diez idiomas y un río con agua en movimiento. Pearl Aurora combina un fondo perlado, lavanda y menta.",
+    "Otwórz Bangingo Pearl Aurora w nowej karcie": "Abrir Bangingo Pearl Aurora en una pestaña nueva",
+    "Bangingo Pearl Aurora — rzeczywisty widok strony": "Bangingo Pearl Aurora — vista real del sitio",
     "Podgląd interaktywny — Bangingo": "Vista previa interactiva — Bangingo"
   },
   "uk": {
@@ -203,10 +203,10 @@ window.bonsaiPortfolioCopy = {
     "Cafe App — mobilna aplikacja do zamawiania dla kawiarni": "Перегляд проєкту — Cafe App",
     "Ocean — istniejący materiał wizualny projektu nadmorskiego": "Перегляд проєкту — Ocean",
     "Lukka Gdańsk — rzeczywisty widok strony restauracji": "Перегляд проєкту — Lukka Gdańsk",
-    "Trójmiasto · Lifestyle · 10 języków": "Тримісто · Lifestyle · 10 мов",
-    "Wielojęzyczna strona atrakcji premium w Trójmieście. Animowana rzeka, jacht i kolaż doświadczeń prowadzą do własnego planu wieczoru. Edycja Sunrise Rose łączy róż, brzoskwinię i morską zieleń.": "Багатомовний сайт преміальних вражень у Гданську, Сопоті та Гдині. Анімована річка, яхта й колаж активностей ведуть до власного плану вечора. Sunrise Rose поєднує рожевий, персиковий і морський зелений.",
-    "Otwórz Bangingo Sunrise Rose w nowej karcie": "Відкрити Bangingo Sunrise Rose у новій вкладці",
-    "Bangingo Sunrise Rose — rzeczywisty widok strony": "Bangingo Sunrise Rose — справжній вигляд сайту",
+    "Polska · Wyjazdy · 10 języków": "Польща · Подорожі · 10 мов",
+    "Strona wyjazdów biznesowych, wypoczynkowych i imprez w Polsce. Siedem ofert, dziesięć języków i rzeka z animowaną wodą. Pearl Aurora łączy perłowe tło, lawendę i miętę.": "Сайт ділових подорожей, відпочинку та вечірок у Польщі. Сім пропозицій, десять мов і річка з анімованою водою. Pearl Aurora поєднує перлинне тло, лаванду й м’яту.",
+    "Otwórz Bangingo Pearl Aurora w nowej karcie": "Відкрити Bangingo Pearl Aurora у новій вкладці",
+    "Bangingo Pearl Aurora — rzeczywisty widok strony": "Bangingo Pearl Aurora — справжній вигляд сайту",
     "Podgląd interaktywny — Bangingo": "Інтерактивний перегляд — Bangingo"
   },
   "fr": {
@@ -245,10 +245,10 @@ window.bonsaiPortfolioCopy = {
     "Cafe App — mobilna aplikacja do zamawiania dla kawiarni": "Aperçu du projet — Cafe App",
     "Ocean — istniejący materiał wizualny projektu nadmorskiego": "Aperçu du projet — Ocean",
     "Lukka Gdańsk — rzeczywisty widok strony restauracji": "Aperçu du projet — Lukka Gdańsk",
-    "Trójmiasto · Lifestyle · 10 języków": "Tricité · Lifestyle · 10 langues",
-    "Wielojęzyczna strona atrakcji premium w Trójmieście. Animowana rzeka, jacht i kolaż doświadczeń prowadzą do własnego planu wieczoru. Edycja Sunrise Rose łączy róż, brzoskwinię i morską zieleń.": "Un site multilingue pour des expériences privilégiées à Gdańsk, Sopot et Gdynia. Une rivière animée, un yacht et un collage d’activités guident vers un programme de soirée personnalisé. Sunrise Rose associe le rose, la pêche et le vert marin.",
-    "Otwórz Bangingo Sunrise Rose w nowej karcie": "Ouvrir Bangingo Sunrise Rose dans un nouvel onglet",
-    "Bangingo Sunrise Rose — rzeczywisty widok strony": "Bangingo Sunrise Rose — aperçu réel du site",
+    "Polska · Wyjazdy · 10 języków": "Pologne · Séjours privés · 10 langues",
+    "Strona wyjazdów biznesowych, wypoczynkowych i imprez w Polsce. Siedem ofert, dziesięć języków i rzeka z animowaną wodą. Pearl Aurora łączy perłowe tło, lawendę i miętę.": "Un site de séjours d’affaires, de détente et de fête en Pologne. Sept offres, dix langues et une rivière animée. Pearl Aurora associe un fond nacré, la lavande et la menthe.",
+    "Otwórz Bangingo Pearl Aurora w nowej karcie": "Ouvrir Bangingo Pearl Aurora dans un nouvel onglet",
+    "Bangingo Pearl Aurora — rzeczywisty widok strony": "Bangingo Pearl Aurora — aperçu réel du site",
     "Podgląd interaktywny — Bangingo": "Aperçu interactif — Bangingo"
   },
   "zh": {
@@ -287,10 +287,10 @@ window.bonsaiPortfolioCopy = {
     "Cafe App — mobilna aplikacja do zamawiania dla kawiarni": "项目预览 — Cafe App",
     "Ocean — istniejący materiał wizualny projektu nadmorskiego": "项目预览 — Ocean",
     "Lukka Gdańsk — rzeczywisty widok strony restauracji": "项目预览 — Lukka Gdańsk",
-    "Trójmiasto · Lifestyle · 10 języków": "三联市 · 生活方式 · 10种语言",
-    "Wielojęzyczna strona atrakcji premium w Trójmieście. Animowana rzeka, jacht i kolaż doświadczeń prowadzą do własnego planu wieczoru. Edycja Sunrise Rose łączy róż, brzoskwinię i morską zieleń.": "展示格但斯克、索波特和格丁尼亚优质体验的多语言网站。流动的河流、游艇与活动拼贴引导访客规划专属夜晚。Sunrise Rose主题融合玫瑰粉、蜜桃色与海绿色。",
-    "Otwórz Bangingo Sunrise Rose w nowej karcie": "在新标签页中打开Bangingo Sunrise Rose",
-    "Bangingo Sunrise Rose — rzeczywisty widok strony": "Bangingo Sunrise Rose — 网站实际画面",
+    "Polska · Wyjazdy · 10 języków": "波兰 · 私人旅行 · 10种语言",
+    "Strona wyjazdów biznesowych, wypoczynkowych i imprez w Polsce. Siedem ofert, dziesięć języków i rzeka z animowaną wodą. Pearl Aurora łączy perłowe tło, lawendę i miętę.": "面向波兰商务、休闲及派对旅行的网站。七种方案、十种语言，以及流动的河水动画。Pearl Aurora将珍珠色背景与薰衣草紫、薄荷绿相结合。",
+    "Otwórz Bangingo Pearl Aurora w nowej karcie": "在新标签页中打开Bangingo Pearl Aurora",
+    "Bangingo Pearl Aurora — rzeczywisty widok strony": "Bangingo Pearl Aurora — 网站实际画面",
     "Podgląd interaktywny — Bangingo": "互动预览 — Bangingo"
   }
 };

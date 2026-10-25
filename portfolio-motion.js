@@ -29,7 +29,7 @@
     const playing = enabled && visible && !document.hidden && interactive?.getAttribute('aria-expanded') !== 'true';
     if (playing && !frame) {
       frame = document.createElement('iframe');
-      frame.title = 'Bangingo Sunrise Rose';
+      frame.title = 'Bangingo Pearl Aurora';
       frame.tabIndex = -1;
       frame.setAttribute('aria-hidden', 'true');
       frame.setAttribute('inert', '');

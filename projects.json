@@ -3,16 +3,16 @@
     "slug": "bangingo",
     "title": "Bangingo",
     "category": "web",
-    "type": "Trójmiasto · Lifestyle · 10 języków",
-    "status": "Sunrise Rose",
-    "description": "Wielojęzyczna strona atrakcji premium w Trójmieście. Animowana rzeka, jacht i kolaż doświadczeń prowadzą do własnego planu wieczoru. Edycja Sunrise Rose łączy róż, brzoskwinię i morską zieleń.",
-    "previewSource": "assets/portfolio/bangingo-sunrise-rose.webp",
+    "type": "Polska · Wyjazdy · 10 języków",
+    "status": "Pearl Aurora",
+    "description": "Strona wyjazdów biznesowych, wypoczynkowych i imprez w Polsce. Siedem ofert, dziesięć języków i rzeka z animowaną wodą. Pearl Aurora łączy perłowe tło, lawendę i miętę.",
+    "previewSource": "assets/portfolio/bangingo-pearl-aurora.jpg",
     "previewWidth": 1425,
     "previewHeight": 891,
-    "externalUrl": "https://bangingo-client-choice.vercel.app/sunrise-rose.html",
+    "externalUrl": "https://bangingo-client-choice.vercel.app/pearl-aurora.html",
     "sourceUrl": "https://github.com/ScubaKuba123/bangingo",
     "interactive": true,
-    "provenance": "Actual browser capture of the Sunrise Rose edition, 2026-10-25."
+    "provenance": "Actual browser capture of the final Pearl Aurora edition, 2026-10-25."
   },
   {
     "slug": "aris",
