@@ -1,5 +1,7 @@
 window.bonsaiPortfolioCopy = {
   "en": {
+    "IN-WEST · Animowany podgląd": "IN-WEST · Animated preview",
+    "Lukka Gdańsk · Animowany podgląd": "Lukka Gdańsk · Animated preview",
     "Otwórz pełną stronę ↗": "Open full website ↗",
     "Realizacje": "Work",
     "Wybrane projekty.": "Selected projects.",
@@ -40,6 +42,8 @@ window.bonsaiPortfolioCopy = {
     "Podgląd interaktywny — Bangingo": "Interactive preview — Bangingo"
   },
   "ja": {
+    "IN-WEST · Animowany podgląd": "IN-WEST · アニメーションプレビュー",
+    "Lukka Gdańsk · Animowany podgląd": "Lukka Gdańsk · アニメーションプレビュー",
     "Otwórz pełną stronę ↗": "サイト全体を開く ↗",
     "Realizacje": "制作実績",
     "Wybrane projekty.": "厳選したプロジェクト。",
@@ -80,6 +84,8 @@ window.bonsaiPortfolioCopy = {
     "Podgląd interaktywny — Bangingo": "インタラクティブプレビュー — Bangingo"
   },
   "de": {
+    "IN-WEST · Animowany podgląd": "IN-WEST · Animierte Vorschau",
+    "Lukka Gdańsk · Animowany podgląd": "Lukka Gdańsk · Animierte Vorschau",
     "Otwórz pełną stronę ↗": "Vollständige Website öffnen ↗",
     "Realizacje": "Projekte",
     "Wybrane projekty.": "Ausgewählte Projekte.",
@@ -120,6 +126,8 @@ window.bonsaiPortfolioCopy = {
     "Podgląd interaktywny — Bangingo": "Interaktive Vorschau — Bangingo"
   },
   "es": {
+    "IN-WEST · Animowany podgląd": "IN-WEST · Vista previa animada",
+    "Lukka Gdańsk · Animowany podgląd": "Lukka Gdańsk · Vista previa animada",
     "Otwórz pełną stronę ↗": "Abrir sitio completo ↗",
     "Realizacje": "Proyectos",
     "Wybrane projekty.": "Proyectos seleccionados.",
@@ -160,6 +168,8 @@ window.bonsaiPortfolioCopy = {
     "Podgląd interaktywny — Bangingo": "Vista previa interactiva — Bangingo"
   },
   "uk": {
+    "IN-WEST · Animowany podgląd": "IN-WEST · Анімований перегляд",
+    "Lukka Gdańsk · Animowany podgląd": "Lukka Gdańsk · Анімований перегляд",
     "Otwórz pełną stronę ↗": "Відкрити повний сайт ↗",
     "Realizacje": "Проєкти",
     "Wybrane projekty.": "Вибрані проєкти.",
@@ -200,6 +210,8 @@ window.bonsaiPortfolioCopy = {
     "Podgląd interaktywny — Bangingo": "Інтерактивний перегляд — Bangingo"
   },
   "fr": {
+    "IN-WEST · Animowany podgląd": "IN-WEST · Aperçu animé",
+    "Lukka Gdańsk · Animowany podgląd": "Lukka Gdańsk · Aperçu animé",
     "Otwórz pełną stronę ↗": "Ouvrir le site complet ↗",
     "Realizacje": "Réalisations",
     "Wybrane projekty.": "Projets sélectionnés.",
@@ -240,6 +252,8 @@ window.bonsaiPortfolioCopy = {
     "Podgląd interaktywny — Bangingo": "Aperçu interactif — Bangingo"
   },
   "zh": {
+    "IN-WEST · Animowany podgląd": "IN-WEST · 动态预览",
+    "Lukka Gdańsk · Animowany podgląd": "Lukka Gdańsk · 动态预览",
     "Otwórz pełną stronę ↗": "打开完整网站 ↗",
     "Realizacje": "项目",
     "Wybrane projekty.": "精选项目。",
