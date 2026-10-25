@@ -9,8 +9,13 @@
     const video = cover.querySelector('video');
     const button = cover.querySelector('button');
     let visible = false;
-    let enabled = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // These explicitly animated previews start muted and retain a visible pause control.
+    // This only controls the two portfolio clips, not motion preferences on client sites.
+    let enabled = true;
     let pending = false;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
     button.hidden = false;
     function label() {
       const text = labels[document.documentElement.lang.split('-')[0]] || labels.en;
@@ -20,6 +25,7 @@
     async function sync() {
       if (!visible || !enabled || document.hidden) { video.pause(); return; }
       if (!video.getAttribute('src')) video.src = video.dataset.src;
+      video.muted = true;
       if (pending || !video.paused) return;
       pending = true;
       try {
@@ -31,7 +37,7 @@
     button.addEventListener('click', () => { enabled = video.paused; sync(); });
     video.addEventListener('play', label);
     video.addEventListener('pause', label);
-    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); }, {threshold:0}).observe(cover);
+    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); }, {threshold:0, rootMargin:'160px 0px'}).observe(cover);
     document.addEventListener('visibilitychange', sync);
     new MutationObserver(label).observe(document.documentElement, {attributes:true, attributeFilter:['lang']});
     label();

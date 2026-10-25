@@ -102,6 +102,6 @@ body.editorial-portfolio .garden-preview-link { display:inline-flex; align-items
 
 body.editorial-portfolio .garden-recorded-link { display:block; }
 body.editorial-portfolio .garden-recorded-link video { display:block; width:100%; height:auto; aspect-ratio:1280 / 900; object-fit:contain; background:var(--dna-paper); pointer-events:none; }
-body.editorial-portfolio .garden-video-control { min-height:32px; border:0; padding:4px 8px; background:transparent; color:var(--dna-deep); font:inherit; cursor:pointer; }
+body.editorial-portfolio .garden-video-control { min-height:44px; border:0; padding:4px 8px; background:transparent; color:var(--dna-deep); font:inherit; cursor:pointer; }
 body.editorial-portfolio .garden-video-control:focus-visible { outline:2px solid var(--dna-teal); outline-offset:2px; }
 body.editorial-portfolio [data-video-preview] .garden-window-bar > span:first-child { font-size:10px; letter-spacing:normal; color:var(--dna-muted); }
