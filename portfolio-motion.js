@@ -40,7 +40,13 @@
       frameHost.append(frame);
       resize();
     }
-    if (frame && ready) frame.contentWindow?.postMessage({type:'bangingo:preview-motion', playing}, source.origin);
+    if (frame && ready) {
+      // A frame can briefly return to same-origin about:blank during navigation.
+      let remoteDocument = false;
+      try { void frame.contentWindow.location.href; }
+      catch { remoteDocument = true; }
+      if (remoteDocument) frame.contentWindow.postMessage({type:'bangingo:preview-motion', playing}, source.origin);
+    }
     cover.dataset.motion = playing ? (ready ? 'playing' : 'loading') : 'paused';
     label();
   }
