@@ -1,7 +1,7 @@
 window.bonsaiPortfolioCopy = {
   "en": {
     "IN-WEST · Animowany podgląd": "IN-WEST · Animated preview",
-    "Lukka Gdańsk · Animowany podgląd": "Lukka Gdańsk · Animated preview",
+    "Lukka Gdańsk · strona na żywo": "Lukka Gdańsk · Live website",
     "Otwórz pełną stronę ↗": "Open full website ↗",
     "Realizacje": "Work",
     "Wybrane projekty.": "Selected projects.",
@@ -43,7 +43,7 @@ window.bonsaiPortfolioCopy = {
   },
   "ja": {
     "IN-WEST · Animowany podgląd": "IN-WEST · アニメーションプレビュー",
-    "Lukka Gdańsk · Animowany podgląd": "Lukka Gdańsk · アニメーションプレビュー",
+    "Lukka Gdańsk · strona na żywo": "Lukka Gdańsk · ライブサイト",
     "Otwórz pełną stronę ↗": "サイト全体を開く ↗",
     "Realizacje": "制作実績",
     "Wybrane projekty.": "厳選したプロジェクト。",
@@ -85,7 +85,7 @@ window.bonsaiPortfolioCopy = {
   },
   "de": {
     "IN-WEST · Animowany podgląd": "IN-WEST · Animierte Vorschau",
-    "Lukka Gdańsk · Animowany podgląd": "Lukka Gdańsk · Animierte Vorschau",
+    "Lukka Gdańsk · strona na żywo": "Lukka Gdańsk · Live-Website",
     "Otwórz pełną stronę ↗": "Vollständige Website öffnen ↗",
     "Realizacje": "Projekte",
     "Wybrane projekty.": "Ausgewählte Projekte.",
@@ -127,7 +127,7 @@ window.bonsaiPortfolioCopy = {
   },
   "es": {
     "IN-WEST · Animowany podgląd": "IN-WEST · Vista previa animada",
-    "Lukka Gdańsk · Animowany podgląd": "Lukka Gdańsk · Vista previa animada",
+    "Lukka Gdańsk · strona na żywo": "Lukka Gdańsk · Sitio web en vivo",
     "Otwórz pełną stronę ↗": "Abrir sitio completo ↗",
     "Realizacje": "Proyectos",
     "Wybrane projekty.": "Proyectos seleccionados.",
@@ -169,7 +169,7 @@ window.bonsaiPortfolioCopy = {
   },
   "uk": {
     "IN-WEST · Animowany podgląd": "IN-WEST · Анімований перегляд",
-    "Lukka Gdańsk · Animowany podgląd": "Lukka Gdańsk · Анімований перегляд",
+    "Lukka Gdańsk · strona na żywo": "Lukka Gdańsk · Живий перегляд сайту",
     "Otwórz pełną stronę ↗": "Відкрити повний сайт ↗",
     "Realizacje": "Проєкти",
     "Wybrane projekty.": "Вибрані проєкти.",
@@ -211,7 +211,7 @@ window.bonsaiPortfolioCopy = {
   },
   "fr": {
     "IN-WEST · Animowany podgląd": "IN-WEST · Aperçu animé",
-    "Lukka Gdańsk · Animowany podgląd": "Lukka Gdańsk · Aperçu animé",
+    "Lukka Gdańsk · strona na żywo": "Lukka Gdańsk · Site en direct",
     "Otwórz pełną stronę ↗": "Ouvrir le site complet ↗",
     "Realizacje": "Réalisations",
     "Wybrane projekty.": "Projets sélectionnés.",
@@ -253,7 +253,7 @@ window.bonsaiPortfolioCopy = {
   },
   "zh": {
     "IN-WEST · Animowany podgląd": "IN-WEST · 动态预览",
-    "Lukka Gdańsk · Animowany podgląd": "Lukka Gdańsk · 动态预览",
+    "Lukka Gdańsk · strona na żywo": "Lukka Gdańsk · 实时网站",
     "Otwórz pełną stronę ↗": "打开完整网站 ↗",
     "Realizacje": "项目",
     "Wybrane projekty.": "精选项目。",
