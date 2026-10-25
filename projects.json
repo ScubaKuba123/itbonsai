@@ -1,5 +1,20 @@
 [
   {
+    "slug": "bangingo",
+    "title": "Bangingo",
+    "category": "web",
+    "type": "Trójmiasto · Lifestyle · 10 języków",
+    "status": "Sunrise Rose",
+    "description": "Wielojęzyczna strona atrakcji premium w Trójmieście. Animowana rzeka, jacht i kolaż doświadczeń prowadzą do własnego planu wieczoru. Edycja Sunrise Rose łączy róż, brzoskwinię i morską zieleń.",
+    "previewSource": "assets/portfolio/bangingo-sunrise-rose.webp",
+    "previewWidth": 1425,
+    "previewHeight": 891,
+    "externalUrl": "https://bangingo-client-choice.vercel.app/sunrise-rose.html",
+    "sourceUrl": "https://github.com/ScubaKuba123/bangingo",
+    "interactive": true,
+    "provenance": "Actual browser capture of the Sunrise Rose edition, 2026-10-25."
+  },
+  {
     "slug": "aris",
     "title": "ARIS — Pracownia ram",
     "category": "web",
