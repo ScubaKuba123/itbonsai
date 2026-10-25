@@ -1,5 +1,19 @@
 [
   {
+    "slug": "aris",
+    "title": "ARIS — Pracownia ram",
+    "category": "web",
+    "type": "Konfigurator 3D · Rzemiosło · PL / EN",
+    "status": "Interaktywny koncept",
+    "description": "Konfigurator oprawy obrazu z animowanym składaniem i rozkładaniem warstw. Wybór ramy, wykończenia, passe-partout i szkła oraz osiem kolorystyk pracowni. Prezentacja w motywie Zorza — głęboki turkus i jasne panele.",
+    "previewSource": "assets/portfolio/aris-zorza.png",
+    "previewWidth": 1440,
+    "previewHeight": 900,
+    "externalUrl": "https://aris-premium-konfigurator.vercel.app/",
+    "interactive": true,
+    "provenance": "Live production screenshot, Zorza theme, 2026-10-25"
+  },
+  {
     "slug": "lukka-gdansk",
     "title": "Lukka Gdańsk",
     "category": "web",
