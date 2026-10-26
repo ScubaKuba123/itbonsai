@@ -28,8 +28,8 @@
 
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
-  // Start on every visit; the visible pause button remains available.
-  let paused = false, visible = false, frame = 0, previous = 0, elapsed = 0;
+  // Autoplay unless the visitor requests reduced motion; keep manual control.
+  let paused = reduced.matches, visible = false, frame = 0, previous = 0, elapsed = 0;
   let width = 1, height = 1, dpr = 1, rx = 0, ry = 0, targetX = 0, targetY = 0;
   const paths = [...hero.querySelectorAll('.living-veins path')].map(path => {
     const length = path.getTotalLength();
@@ -104,6 +104,7 @@
     draw();
   }
   toggle.addEventListener('click', () => { paused = !paused; sync(); });
+  reduced.addEventListener('change', () => { paused = reduced.matches; sync(); });
   finePointer.addEventListener('change', () => { targetX = targetY = 0; });
   stage.addEventListener('pointermove', event => {
     if (paused || reduced.matches || !finePointer.matches || event.pointerType === 'touch') return;
