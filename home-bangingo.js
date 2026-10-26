@@ -3,8 +3,7 @@
   if (!project) return;
   const host = project.querySelector('.bangingo-live-frame');
   const button = project.querySelector('.bangingo-water-toggle');
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  let enabled = !reduced.matches, visible = false, frame;
+  let enabled = true, visible = false, frame;
   const words = {
     pl:['Włącz wodę','Zatrzymaj wodę','Polska · Wyjazdy · Doświadczenia','Wyjazdy i prywatne doświadczenia w Trójmieście. Interaktywna strona z animowaną wodą.'],
     en:['Play water','Pause water','Poland · Trips · Experiences','Trips and private experiences in the Tri-City area. An interactive website with animated water.'],
@@ -44,7 +43,6 @@
   }
   button.hidden=false;
   button.addEventListener('click',()=>{enabled=!enabled;sync();});
-  reduced.addEventListener('change',()=>{enabled=!reduced.matches;sync();});
   new ResizeObserver(()=>host.style.setProperty('--bangingo-scale',host.clientWidth/1440)).observe(host);
   new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;sync();},{threshold:0}).observe(host);
   new MutationObserver(label).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
