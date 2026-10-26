@@ -1,4 +1,8 @@
 /* Isolated from the legacy .header, .site-header and .svc-header styles. */
+/* One complete brand mark in the footer; the Garden shortcut remains text-only. */
+.site-footer .footer-brand-block .brand-logo { width:144px; height:144px; object-fit:contain; border-radius:0; filter:none; }
+.site-footer .footer-brand-block .brand { display:inline-flex; margin-bottom:18px; }
+.site-footer a.footer-garden-button { grid-template-columns:minmax(0,1fr); }
 .pricing-skip, .svc-skip, .portfolio-skip { z-index: 201; }
 #bonsai-header {
  position:relative; z-index:100; display:flex; align-items:center; gap:22px;
