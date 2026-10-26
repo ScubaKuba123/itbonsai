@@ -1,7 +1,7 @@
 window.bonsaiPortfolioCopy = {
   "en": {
-    "Cennik czterech pór roku | BonsAI Studio": "Four-season pricing | BonsAI Studio",
-    "Pakiety Wiosna, Lato, Jesień i Zima. Porównaj ceny stron internetowych, aplikacji i automatyzacji BonsAI Studio.": "Spring, Summer, Autumn and Winter packages. Compare BonsAI Studio website, app and automation prices.",
+    "Cennik stron internetowych i aplikacji | BonsAI Studio": "Website and app pricing | BonsAI Studio",
+    "Strony internetowe od 1 500 zł netto. Porównaj ceny aplikacji i automatyzacji AI, zakres pakietów oraz opiekę techniczną BonsAI Studio.": "Websites from PLN 1,500 excluding VAT. Compare app and AI automation prices, package scope and technical support from BonsAI Studio.",
     "Cennik BonsAI Studio": "BonsAI Studio pricing",
     "Każdy pomysł": "Every idea",
     "ma swój sezon.": "has its season.",
@@ -70,8 +70,8 @@ window.bonsaiPortfolioCopy = {
     "© 2026 BonsAI Studio": "© 2026 BonsAI Studio"
   },
   "ja": {
-    "Cennik czterech pór roku | BonsAI Studio": "四季の料金プラン | BonsAI Studio",
-    "Pakiety Wiosna, Lato, Jesień i Zima. Porównaj ceny stron internetowych, aplikacji i automatyzacji BonsAI Studio.": "春・夏・秋・冬のプラン。BonsAI Studioのウェブサイト、アプリ、業務自動化の料金を比較できます。",
+    "Cennik stron internetowych i aplikacji | BonsAI Studio": "ウェブサイト・アプリ制作料金 | BonsAI Studio",
+    "Strony internetowe od 1 500 zł netto. Porównaj ceny aplikacji i automatyzacji AI, zakres pakietów oraz opiekę techniczną BonsAI Studio.": "ウェブサイト制作は税別1,500 PLNから。BonsAI Studioのアプリ・AI自動化の料金、各プランの作業範囲、技術サポートをご確認ください。",
     "Cennik BonsAI Studio": "BonsAI Studio 料金プラン",
     "Każdy pomysł": "どんなアイデアにも、",
     "ma swój sezon.": "ふさわしい季節がある。",
@@ -140,8 +140,8 @@ window.bonsaiPortfolioCopy = {
     "© 2026 BonsAI Studio": "© 2026 BonsAI Studio"
   },
   "de": {
-    "Cennik czterech pór roku | BonsAI Studio": "Vier Jahreszeiten, klare Preise | BonsAI Studio",
-    "Pakiety Wiosna, Lato, Jesień i Zima. Porównaj ceny stron internetowych, aplikacji i automatyzacji BonsAI Studio.": "Frühling, Sommer, Herbst und Winter. Vergleichen Sie Preise für Websites, Apps und Automatisierung bei BonsAI Studio.",
+    "Cennik stron internetowych i aplikacji | BonsAI Studio": "Preise für Websites und Apps | BonsAI Studio",
+    "Strony internetowe od 1 500 zł netto. Porównaj ceny aplikacji i automatyzacji AI, zakres pakietów oraz opiekę techniczną BonsAI Studio.": "Websites ab 1.500 PLN netto. Vergleichen Sie Preise für Apps und KI-Automatisierung, Leistungsumfang und technischen Support von BonsAI Studio.",
     "Cennik BonsAI Studio": "BonsAI Studio Preise",
     "Każdy pomysł": "Jede Idee",
     "ma swój sezon.": "hat ihre Jahreszeit.",
@@ -210,8 +210,8 @@ window.bonsaiPortfolioCopy = {
     "© 2026 BonsAI Studio": "© 2026 BonsAI Studio"
   },
   "es": {
-    "Cennik czterech pór roku | BonsAI Studio": "Precios de cuatro estaciones | BonsAI Studio",
-    "Pakiety Wiosna, Lato, Jesień i Zima. Porównaj ceny stron internetowych, aplikacji i automatyzacji BonsAI Studio.": "Planes Primavera, Verano, Otoño e Invierno. Compara precios de sitios web, aplicaciones y automatización de BonsAI Studio.",
+    "Cennik stron internetowych i aplikacji | BonsAI Studio": "Precios de sitios web y aplicaciones | BonsAI Studio",
+    "Strony internetowe od 1 500 zł netto. Porównaj ceny aplikacji i automatyzacji AI, zakres pakietów oraz opiekę techniczną BonsAI Studio.": "Sitios web desde 1.500 PLN sin IVA. Compara precios de aplicaciones y automatización con IA, alcance de los planes y soporte técnico de BonsAI Studio.",
     "Cennik BonsAI Studio": "Precios de BonsAI Studio",
     "Każdy pomysł": "Cada idea",
     "ma swój sezon.": "tiene su estación.",
@@ -280,8 +280,8 @@ window.bonsaiPortfolioCopy = {
     "© 2026 BonsAI Studio": "© 2026 BonsAI Studio"
   },
   "uk": {
-    "Cennik czterech pór roku | BonsAI Studio": "Тарифи чотирьох сезонів | BonsAI Studio",
-    "Pakiety Wiosna, Lato, Jesień i Zima. Porównaj ceny stron internetowych, aplikacji i automatyzacji BonsAI Studio.": "Пакети Весна, Літо, Осінь і Зима. Порівняйте ціни сайтів, застосунків та автоматизації BonsAI Studio.",
+    "Cennik stron internetowych i aplikacji | BonsAI Studio": "Ціни на сайти та застосунки | BonsAI Studio",
+    "Strony internetowe od 1 500 zł netto. Porównaj ceny aplikacji i automatyzacji AI, zakres pakietów oraz opiekę techniczną BonsAI Studio.": "Сайти від 1 500 PLN без ПДВ. Порівняйте ціни застосунків та автоматизації ШІ, обсяг пакетів і технічну підтримку BonsAI Studio.",
     "Cennik BonsAI Studio": "Тарифи BonsAI Studio",
     "Każdy pomysł": "Кожна ідея",
     "ma swój sezon.": "має свій сезон.",
@@ -350,8 +350,8 @@ window.bonsaiPortfolioCopy = {
     "© 2026 BonsAI Studio": "© 2026 BonsAI Studio"
   },
   "fr": {
-    "Cennik czterech pór roku | BonsAI Studio": "Tarifs des quatre saisons | BonsAI Studio",
-    "Pakiety Wiosna, Lato, Jesień i Zima. Porównaj ceny stron internetowych, aplikacji i automatyzacji BonsAI Studio.": "Offres Printemps, Été, Automne et Hiver. Comparez les tarifs des sites, applications et automatisations de BonsAI Studio.",
+    "Cennik stron internetowych i aplikacji | BonsAI Studio": "Tarifs des sites web et applications | BonsAI Studio",
+    "Strony internetowe od 1 500 zł netto. Porównaj ceny aplikacji i automatyzacji AI, zakres pakietów oraz opiekę techniczną BonsAI Studio.": "Sites web à partir de 1 500 PLN HT. Comparez les tarifs des applications et automatisations IA, le contenu des offres et le support technique de BonsAI Studio.",
     "Cennik BonsAI Studio": "Tarifs BonsAI Studio",
     "Każdy pomysł": "Chaque idée",
     "ma swój sezon.": "a sa saison.",
@@ -420,8 +420,8 @@ window.bonsaiPortfolioCopy = {
     "© 2026 BonsAI Studio": "© 2026 BonsAI Studio"
   },
   "zh": {
-    "Cennik czterech pór roku | BonsAI Studio": "四季方案与价格 | BonsAI Studio",
-    "Pakiety Wiosna, Lato, Jesień i Zima. Porównaj ceny stron internetowych, aplikacji i automatyzacji BonsAI Studio.": "春、夏、秋、冬四季方案。比较 BonsAI Studio 网站、应用与自动化服务的价格。",
+    "Cennik stron internetowych i aplikacji | BonsAI Studio": "网站与应用开发价格 | BonsAI Studio",
+    "Strony internetowe od 1 500 zł netto. Porównaj ceny aplikacji i automatyzacji AI, zakres pakietów oraz opiekę techniczną BonsAI Studio.": "网站开发起价为1,500波兰兹罗提（不含税）。比较BonsAI Studio的应用、AI自动化价格、套餐范围及技术支持。",
     "Cennik BonsAI Studio": "BonsAI Studio 价格",
     "Każdy pomysł": "每个创意，",
     "ma swój sezon.": "都有自己的季节。",
