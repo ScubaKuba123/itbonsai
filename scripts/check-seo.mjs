@@ -11,6 +11,14 @@ const origin = 'https://itbonsai.pl';
 const live = process.argv.includes('--live');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const decode = text => text.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+// Cloudflare rewrites mailto links at the edge; decode them before checking site routes.
+const normalizeEmailLinks = html => html.replace(/href="\/cdn-cgi\/l\/email-protection#([a-f0-9]+)"/gi, (_, hex) => {
+  assert(hex.length >= 4 && hex.length % 2 === 0, 'Invalid protected email encoding');
+  const bytes = Buffer.from(hex, 'hex');
+  const email = Buffer.from([...bytes.subarray(1)].map(byte => byte ^ bytes[0])).toString('utf8');
+  assert(/^[^\s@"<>]+@[^\s@"<>]+\.[^\s@"<>]+$/.test(email), 'Invalid protected email address');
+  return 'href="mailto:' + email + '"';
+});
 const attrs = tag => Object.fromEntries([...tag.matchAll(/([\w:-]+)\s*=\s*(?:"([^"]*)"|'([^']*)')/g)].map(m => [m[1].toLowerCase(), decode(m[2] ?? m[3])]));
 const tags = (html, name) => [...html.matchAll(new RegExp('<'+name+'\\b[^>]*>', 'gi'))].map(m => attrs(m[0]));
 const meta = (html, name) => tags(html, 'meta').find(t => t.name === name || t.property === name)?.content;
@@ -61,7 +69,7 @@ async function run() {
       assert.equal(meta(html,'og:url'), canonical, 'Open Graph URL mismatch');
       const assets = new Set([meta(html,'og:image'),meta(html,'twitter:image'),...JSON.stringify(schemas).matchAll(/https:\/\/itbonsai\.pl\/(assets\/[^"\\]+)/g)].map(x => typeof x === 'string' ? x : origin+'/'+x[1]));
       for (const asset of assets) {const u = new URL(asset, canonical); if(u.origin === origin) assert(fs.existsSync(path.join(root,decodeURIComponent(u.pathname))), `Missing metadata image ${u.pathname}`);}
-      for (const a of tags(html, 'a')) {
+      for (const a of tags(normalizeEmailLinks(html), 'a')) {
         if (!a.href || /^(mailto:|tel:|javascript:)/i.test(a.href)) continue;
         const u = new URL(a.href, canonical);
         if (u.origin !== origin) continue;
