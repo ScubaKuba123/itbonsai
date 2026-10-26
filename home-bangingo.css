@@ -1,0 +1,10 @@
+#home-bangingo .bangingo-preview-stage { position:relative; aspect-ratio:8/5; overflow:hidden; background:#073b43; }
+#home-bangingo .bangingo-preview-stage>img { display:block; width:100%; height:100%; object-fit:cover; }
+#home-bangingo .bangingo-live-frame { position:absolute; inset:0; pointer-events:none; opacity:0; }
+#home-bangingo[data-preview-ready] .bangingo-live-frame { opacity:1; }
+#home-bangingo .bangingo-live-frame iframe { width:1440px; height:900px; max-width:none; border:0; display:block; transform:scale(var(--bangingo-scale,0)); transform-origin:top left; pointer-events:none; }
+#home-bangingo .bangingo-preview-link { position:absolute; inset:0; z-index:1; }
+#home-bangingo .bangingo-preview-link:focus-visible { outline:3px solid #008f92; outline-offset:-4px; }
+#home-bangingo .bangingo-water-toggle { min-height:44px; border:0; background:transparent; padding:8px 12px; color:#125052; font:600 12px/1.2 'DM Sans',sans-serif; cursor:pointer; }
+#home-bangingo .bangingo-water-toggle[hidden] { display:none; }
+#home-bangingo .bangingo-water-toggle:focus-visible { outline:2px solid #008f92; outline-offset:-3px; }
