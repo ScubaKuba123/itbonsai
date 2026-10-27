@@ -5,31 +5,11 @@
   const stage = hero.querySelector('.living-stage');
   const canvas = hero.querySelector('.living-motes');
   const ctx = canvas.getContext('2d');
-  const toggle = hero.querySelector('.living-motion-toggle');
   // CSS rings also work if the browser cannot provide a canvas context.
-
-  const labels = {
-    pl: ['Wstrzymaj animację', 'Wznów animację'],
-    en: ['Pause animation', 'Resume animation'],
-    ja: ['アニメーションを一時停止', 'アニメーションを再開'],
-    de: ['Animation pausieren', 'Animation fortsetzen'],
-    es: ['Pausar animación', 'Reanudar animación'],
-    fr: ['Mettre l’animation en pause', 'Reprendre l’animation'],
-    uk: ['Призупинити анімацію', 'Відновити анімацію'],
-    zh: ['暂停动画', '继续动画']
-  };
-  // Register these two new controls with the existing page-local i18n dictionary.
-  window.bonsaiPortfolioCopy ||= {};
-  Object.entries(labels).forEach(([locale, values]) => {
-    Object.assign(window.bonsaiPortfolioCopy[locale] ||= {}, {
-      [labels.pl[0]]: values[0], [labels.pl[1]]: values[1]
-    });
-  });
 
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
-  // Autoplay unless the visitor requests reduced motion; keep manual control.
-  let paused = reduced.matches, visible = false, frame = 0, previous = 0, elapsed = 0;
+  let visible = false, frame = 0, previous = 0, elapsed = 0;
   let width = 1, height = 1, dpr = 1, rx = 0, ry = 0, targetX = 0, targetY = 0;
   const paths = [...hero.querySelectorAll('.living-veins path')].map(path => {
     const length = path.getTotalLength();
@@ -41,12 +21,7 @@
     speed: .009 + (i % 4) * .002, size: .8 + (i % 3) * .45, phase: i * 1.7
   }));
 
-  function localize() {
-    const locale = document.documentElement.lang.split('-')[0];
-    const text = (labels[locale] || labels.en)[paused ? 1 : 0];
-    toggle.setAttribute('aria-label', text);
-    toggle.title = text;
-  }
+
   function draw() {
     if (!ctx) return;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -87,15 +62,14 @@
   }
   function sync() {
     cancelAnimationFrame(frame); frame = 0; previous = 0;
-    const running = !paused && visible && !document.hidden;
-    hero.dataset.motion = paused ? 'paused' : running ? 'running' : 'idle';
+    const running = visible && !document.hidden;
+    hero.dataset.motion = running ? 'running' : 'idle';
     if (running) frame = requestAnimationFrame(tick);
     else {
       rx = ry = targetX = targetY = 0;
       stage.style.setProperty('--living-rx', '0deg');
       stage.style.setProperty('--living-ry', '0deg');
     }
-    localize();
   }
   function resize() {
     const rect = stage.getBoundingClientRect();
@@ -105,11 +79,9 @@
     canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
     draw();
   }
-  toggle.addEventListener('click', () => { paused = !paused; hero.dataset.motionOptIn = String(!paused); sync(); });
-  reduced.addEventListener('change', () => { paused = reduced.matches; delete hero.dataset.motionOptIn; sync(); });
   finePointer.addEventListener('change', () => { targetX = targetY = 0; });
   stage.addEventListener('pointermove', event => {
-    if (paused || reduced.matches || !finePointer.matches || event.pointerType === 'touch') return;
+    if (reduced.matches || !finePointer.matches || event.pointerType === 'touch') return;
     const rect = stage.getBoundingClientRect();
     targetX = -((event.clientY - rect.top) / rect.height - .5) * 3;
     targetY = ((event.clientX - rect.left) / rect.width - .5) * 4;
@@ -117,12 +89,10 @@
   stage.addEventListener('pointerleave', () => { targetX = targetY = 0; });
   document.addEventListener('visibilitychange', sync);
   window.addEventListener('pageshow', sync);
-  new MutationObserver(localize).observe(document.documentElement, {attributes: true, attributeFilter: ['lang']});
   new ResizeObserver(resize).observe(stage);
   new IntersectionObserver(entries => {
     visible = entries[0].isIntersecting; sync();
   }, {threshold: 0}).observe(stage);
   hero.dataset.livingReady = '';
-  toggle.hidden = false;
   resize(); sync();
 })();
