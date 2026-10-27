@@ -42,12 +42,12 @@ body.bonsai-dna.bonsai-shared-home .hero.hero-living .hero-copy>p:not(.hero-eyeb
 .hero-living .living-tree { display:block!important; position:relative!important; width:100%!important; height:auto!important; max-width:none!important; transform:none!important; object-fit:contain!important; }
 .hero-living .living-light { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; opacity:0; }
 .hero-living[data-living-ready] .living-light { opacity:1; }
-.hero-living .living-aureole { transform-origin:500px 500px; animation:living-orbit 28s linear infinite; animation-play-state:paused; }
+.hero-living .living-aureole { transform-origin:500px 500px; animation:living-orbit 48s linear infinite; animation-play-state:paused; }
 .hero-living .living-aureole circle { fill:none; stroke:#2eb6ad; stroke-linecap:round; }
 .hero-living .living-aureole-glow { stroke-width:12; stroke-dasharray:15 85; opacity:.13; }
 .hero-living .living-aureole-light { stroke-width:6; stroke-dasharray:25 9 12 54; opacity:.9; filter:drop-shadow(0 0 3px #70ddcf); }
 .hero-living .living-aureole .living-aureole-bead { fill:#008f92; stroke:#e9fff6; stroke-width:1.5; filter:drop-shadow(0 0 4px #27b6ad); }
-.hero-living .living-orbit { fill:none; stroke:#008f92; stroke-width:4; stroke-linecap:round; stroke-dasharray:250 150 60 420; opacity:.8; transform-origin:500px 500px; animation:living-orbit 44s linear infinite reverse; animation-play-state:paused; }
+.hero-living .living-orbit { fill:none; stroke:#008f92; stroke-width:4; stroke-linecap:round; stroke-dasharray:250 150 60 420; opacity:.8; transform-origin:500px 500px; animation:living-orbit 64s linear infinite reverse; animation-play-state:paused; }
 .hero-living .living-veins { fill:none; stroke:#6cdfd2; stroke-width:1.3; opacity:.3; stroke-linecap:round; }
 .hero-living .living-motes { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
 .hero-living .living-motion-toggle {
@@ -88,5 +88,5 @@ body.bonsai-dna.bonsai-shared-home .hero.hero-living .hero-copy>p:not(.hero-eyeb
   .hero-living .living-motion-toggle { transition:none; }
 }
 
-.hero-living .living-ring-inner { fill:none; stroke:#226b6c; stroke-width:5; stroke-dasharray:22 8 9 61; opacity:.7; transform-origin:500px 500px; animation:living-orbit 38s linear infinite reverse; animation-play-state:paused; }
+.hero-living .living-ring-inner { fill:none; stroke:#226b6c; stroke-width:5; stroke-dasharray:22 8 9 61; opacity:.7; transform-origin:500px 500px; animation:living-orbit 56s linear infinite reverse; animation-play-state:paused; }
 .hero-living[data-motion="running"] .living-ring-inner { animation-play-state:running; }
