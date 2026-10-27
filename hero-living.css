@@ -90,3 +90,16 @@ body.bonsai-dna.bonsai-shared-home .hero.hero-living .hero-copy>p:not(.hero-eyeb
 
 .hero-living .living-ring-inner { fill:none; stroke:#226b6c; stroke-width:5; stroke-dasharray:22 8 9 61; opacity:.7; transform-origin:500px 500px; animation:living-orbit 56s linear infinite reverse; animation-play-state:paused; }
 .hero-living[data-motion="running"] .living-ring-inner { animation-play-state:running; }
+
+/* Explicit visitor play action overrides global reduced-motion reset rules only here. */
+@media (prefers-reduced-motion:reduce) {
+ .hero-living[data-motion-opt-in="true"] .living-aureole { animation:living-orbit 48s linear infinite!important; }
+ .hero-living[data-motion-opt-in="true"] .living-orbit { animation:living-orbit 64s linear infinite reverse!important; }
+ .hero-living[data-motion-opt-in="true"] .living-ring-inner { animation:living-orbit 56s linear infinite reverse!important; }
+ .hero-living[data-motion-opt-in="true"] :is(.living-aureole,.living-orbit,.living-ring-inner) { animation-play-state:paused!important; }
+ .hero-living[data-motion-opt-in="true"][data-motion="running"] :is(.living-aureole,.living-orbit,.living-ring-inner) { animation-play-state:running!important; }
+}
+@media (prefers-reduced-motion:reduce) {
+ .hero-living .living-motion-toggle { width:auto;min-width:44px;grid-auto-flow:column;gap:8px;padding:10px 13px;border-radius:22px; }
+ .hero-living .living-motion-toggle::after { content:attr(aria-label);font:500 12px/1.4 var(--dna-body,sans-serif); }
+}
