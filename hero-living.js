@@ -6,7 +6,7 @@
   const canvas = hero.querySelector('.living-motes');
   const ctx = canvas.getContext('2d');
   const toggle = hero.querySelector('.living-motion-toggle');
-  if (!ctx) return; // The image and primary links remain usable without animation.
+  // CSS rings also work if the browser cannot provide a canvas context.
 
   const labels = {
     pl: ['Wstrzymaj animację', 'Wznów animację'],
@@ -48,6 +48,7 @@
     toggle.title = text;
   }
   function draw() {
+    if (!ctx) return;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, width, height);
     const count = width < 450 ? 12 : motes.length;
@@ -80,7 +81,8 @@
     rx += (targetX - rx) * ease; ry += (targetY - ry) * ease;
     stage.style.setProperty('--living-rx', `${rx.toFixed(3)}deg`);
     stage.style.setProperty('--living-ry', `${ry.toFixed(3)}deg`);
-    draw();
+    // Cap decorative canvas painting at 30 fps; CSS rings stay compositor-driven.
+    if (now - (tick.lastPaint || 0) >= 33) { draw(); tick.lastPaint = now; }
     frame = requestAnimationFrame(tick);
   }
   function sync() {
@@ -103,8 +105,8 @@
     canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
     draw();
   }
-  toggle.addEventListener('click', () => { paused = !paused; sync(); });
-  reduced.addEventListener('change', () => { paused = reduced.matches; sync(); });
+  toggle.addEventListener('click', () => { paused = !paused; hero.dataset.motionOptIn = String(!paused); sync(); });
+  reduced.addEventListener('change', () => { paused = reduced.matches; delete hero.dataset.motionOptIn; sync(); });
   finePointer.addEventListener('change', () => { targetX = targetY = 0; });
   stage.addEventListener('pointermove', event => {
     if (paused || reduced.matches || !finePointer.matches || event.pointerType === 'touch') return;
@@ -114,6 +116,7 @@
   }, {passive: true});
   stage.addEventListener('pointerleave', () => { targetX = targetY = 0; });
   document.addEventListener('visibilitychange', sync);
+  window.addEventListener('pageshow', sync);
   new MutationObserver(localize).observe(document.documentElement, {attributes: true, attributeFilter: ['lang']});
   new ResizeObserver(resize).observe(stage);
   new IntersectionObserver(entries => {
