@@ -9,13 +9,12 @@ Branch: canonical/studio-website (local only).
 reports/portfolio-editorial/publish-media-20260913 source.
 The public 2026-09-26 Cloudflare release is documented as ad09fa75.
 Fresh itbonsai.pl script/asset hashes and HTML email-obfuscation differences
-identify this release lineage. No new deployment occurred.
-The new branch starts at the preserved itbonsai a0ce95f history.
+identify this release lineage. Cleanup patches were merged to main in PR #18:
+hero CSS was extracted from index.html and the shared analytics loader was centralized.
 Older same-project files remain preserved; the 151-file manifest defines the
 current release source selection. No HQ, Garden runtime or client app ownership
 is acquired through portfolio media.
 
-Next deliverable: review and authorize a remote checkpoint of this local branch.
 Definition of Done: source safely checkpointed, site-specific release verification
 and owner authorization before any deployment.
 itbonsai.website is legacy workshop lineage. Empty itbonsai.site and itbonsai.pl
