@@ -1,0 +1,27 @@
+/* Forest clearings: readable washi surfaces over a real woodland stream. */
+body.forest-mist { --forest-photo:url('assets/forest-stream-1672.webp'); }
+body.forest-mist::before { background:linear-gradient(90deg,#eef0df45,#eef0df12),var(--forest-photo) center / cover no-repeat; }
+body.bonsai-dna.forest-mist :is(.hero-copy,.entry-copy) { position:relative;isolation:isolate; }
+body.bonsai-dna.forest-mist :is(.hero-copy,.entry-copy)::before {
+ content:'';position:absolute;inset:-34px -28px;z-index:-1;pointer-events:none;
+ background:linear-gradient(110deg,#faf8ef 25%,#f9f7edd9 80%,#faf8efb8);
+ clip-path:polygon(0 1%,16% 0,34% 1%,56% 0,78% 1%,98% 0,100% 17%,98% 39%,100% 61%,98% 82%,100% 98%,79% 100%,57% 99%,37% 100%,18% 99%,0 100%,1% 76%,0 52%,1% 28%);
+}
+body.bonsai-dna.forest-mist :is(.services,.garden-featured,.garden-projects,.cooperation-process,.about-story,.content-section,.page-section,.page-grid,.contact-section,.contact,.contact-strip,.business-system,.business-products,.season-packages,.season-included,.season-notes,.svc-promises,.svc-offer,.svc-process,.section) {
+ background:linear-gradient(110deg,#faf8eff5,#f5f3e9ed)!important;
+ margin-block:clamp(36px,6vw,90px);border-block:1px solid #fdfbf0b8;
+ box-shadow:0 12px 35px #122b2110;
+}
+body.bonsai-dna.forest-mist :is(.site-footer,.svc-footer) {background:#f6f4e9ed!important;}
+body.bonsai-dna.forest-mist :is(.footer-main,.footer-bottom) {background:transparent!important;}
+body.bonsai-dna.forest-mist .forest-divider {background:transparent!important;min-height:100px;}
+footer .temple-copy {min-width:0;flex:1;}
+footer .temple-calligraphy {display:block;width:100%;height:auto;object-fit:contain;}
+@media(max-width:700px) {
+ body.forest-mist {--forest-photo:url('assets/forest-stream-960.webp');}
+ body.forest-mist::before {background:linear-gradient(#eef0df38,#eef0df20),var(--forest-photo) 54% center / cover no-repeat;}
+ body.bonsai-dna.forest-mist :is(.hero-copy,.entry-copy)::before {inset:-20px -12px;background:#faf8efed;}
+ body.bonsai-dna.forest-mist :is(.services,.garden-featured,.garden-projects,.section,.svc-offer,.svc-process) {margin-block:40px;}
+ footer .footer-temple {gap:14px;padding:20px;}
+ footer .temple-ink {font-size:38px;padding-right:14px;}
+}
