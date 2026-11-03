@@ -16,6 +16,13 @@
   window.addEventListener('pageshow',update);update();
  }
 
+ const socials=document.createElement('div');
+ socials.className='header-socials';
+ socials.innerHTML='<a href="https://www.facebook.com/itbonsai" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-8h3l.5-4H14V7c0-1 .3-2 2-2h2V1.5A25 25 0 0 0 15 1c-3 0-5 2-5 5v3H7v4h3v8z"/></svg></a><a href="https://www.linkedin.com/in/bonsai-studio-237749201/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4M2 9h4v13H2zm7 0h4v2c1-2 3-2 4-2 4 0 5 2 5 6v7h-4v-7c0-2-1-3-2-3-2 0-3 1-3 3v7H9z"/></svg></a>';
+ header.insertBefore(socials,header.querySelector('.home-header-cta'));
+ const whatsapp=header.querySelector('.home-header-cta');
+ whatsapp.href='https://wa.me/48501476124';whatsapp.target='_blank';whatsapp.rel='noopener noreferrer';whatsapp.setAttribute('aria-label','WhatsApp');
+ const contact=document.createElement('a');contact.className='forest-contact';contact.href=whatsapp.href;contact.target='_blank';contact.rel='noopener noreferrer';contact.setAttribute('aria-label','WhatsApp — BonsAI Studio');contact.innerHTML='<img src="assets/contact-whatsapp.svg" width="25" height="25" alt=""><span>WhatsApp</span>';document.body.append(contact);
  const menu=header.querySelector('.bonsai-menu');
  const nav=header.querySelector('.bonsai-navigation');
  const close=()=>{header.classList.remove('menu-open');menu.setAttribute('aria-expanded','false');document.documentElement.classList.remove('bonsai-menu-open');};
@@ -56,6 +63,8 @@
  };
  function localizeHeader(){
   const locale=document.documentElement.lang;
+  const waLabels={pl:'Napisz na WhatsApp',en:'Message on WhatsApp',ja:'WhatsAppで相談',de:'WhatsApp schreiben',es:'Escribir por WhatsApp',uk:'Написати у WhatsApp',fr:'Écrire sur WhatsApp',zh:'WhatsApp 联系'};
+  setText(whatsapp,waLabels[locale]||waLabels.en);
   const copy=headerCopy[locale];if(!copy)return;
   header.querySelectorAll('.bonsai-navigation a,.bonsai-pricing-shortcut').forEach(a=>{
    let route=new URL(a.href,location.href).pathname.replace(/\.html$/,'').replace(/\/$/,'')||'/';
@@ -63,7 +72,7 @@
    if(route==='/index')route='/';
    const index=routes.indexOf(route);if(index>=0)setText(a,copy.nav[index]);
   });
-  setText(header.querySelector('.home-header-cta'),copy.analysis);
+  setText(header.querySelector('.home-header-cta'),locale==='pl'?'Napisz na WhatsApp':'Message on WhatsApp');
   setAttribute(header.querySelector('.bonsai-brand'),'aria-label',copy.home);
   const logo=header.querySelector('.bonsai-brand img');
   if(logo?.getAttribute('alt'))setAttribute(logo,'alt',copy.logo);
