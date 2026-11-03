@@ -22,7 +22,6 @@
  header.insertBefore(socials,header.querySelector('.home-header-cta'));
  const whatsapp=header.querySelector('.home-header-cta');
  whatsapp.href='https://wa.me/48501476124';whatsapp.target='_blank';whatsapp.rel='noopener noreferrer';whatsapp.setAttribute('aria-label','WhatsApp');
- const contact=document.createElement('a');contact.className='forest-contact';contact.href=whatsapp.href;contact.target='_blank';contact.rel='noopener noreferrer';contact.setAttribute('aria-label','WhatsApp — BonsAI Studio');contact.innerHTML='<img src="assets/contact-whatsapp.svg" width="25" height="25" alt=""><span>WhatsApp</span>';document.body.append(contact);
  const menu=header.querySelector('.bonsai-menu');
  const nav=header.querySelector('.bonsai-navigation');
  const close=()=>{header.classList.remove('menu-open');menu.setAttribute('aria-expanded','false');document.documentElement.classList.remove('bonsai-menu-open');};
@@ -63,8 +62,7 @@
  };
  function localizeHeader(){
   const locale=document.documentElement.lang;
-  const waLabels={pl:'Napisz na WhatsApp',en:'Message on WhatsApp',ja:'WhatsAppで相談',de:'WhatsApp schreiben',es:'Escribir por WhatsApp',uk:'Написати у WhatsApp',fr:'Écrire sur WhatsApp',zh:'WhatsApp 联系'};
-  setText(whatsapp,waLabels[locale]||waLabels.en);
+  setText(whatsapp,'WhatsApp');
   const copy=headerCopy[locale];if(!copy)return;
   header.querySelectorAll('.bonsai-navigation a,.bonsai-pricing-shortcut').forEach(a=>{
    let route=new URL(a.href,location.href).pathname.replace(/\.html$/,'').replace(/\/$/,'')||'/';
@@ -72,7 +70,7 @@
    if(route==='/index')route='/';
    const index=routes.indexOf(route);if(index>=0)setText(a,copy.nav[index]);
   });
-  setText(header.querySelector('.home-header-cta'),locale==='pl'?'Napisz na WhatsApp':'Message on WhatsApp');
+  setText(header.querySelector('.home-header-cta'),'WhatsApp');
   setAttribute(header.querySelector('.bonsai-brand'),'aria-label',copy.home);
   const logo=header.querySelector('.bonsai-brand img');
   if(logo?.getAttribute('alt'))setAttribute(logo,'alt',copy.logo);
