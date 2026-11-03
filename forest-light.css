@@ -59,3 +59,6 @@ body.bonsai-dna #bonsai-header .flag-cn { background-image:url("assets/flag-cn.s
 .forest-contact { position:fixed;z-index:46;left:18px;bottom:max(18px,env(safe-area-inset-bottom));display:flex;align-items:center;gap:9px;padding:12px 17px;min-height:50px;border:1px solid #acc09a;border-radius:28px;background:#294d34;color:#fff!important;box-shadow:0 5px 20px #1b392b26;text-decoration:none;font:600 14px/1.4 var(--dna-body,sans-serif); }
 .forest-contact:hover { background:#3c6844; }.forest-contact:focus-visible { outline:3px solid #85aa62;outline-offset:4px; }
 @media(max-width:600px) { body.bonsai-dna.forest-theme #bonsai-header.bonsai-header .home-header-cta::before { content:'';width:23px;height:23px;background:url('assets/contact-whatsapp.svg') center/contain no-repeat; }.forest-contact { left:12px;padding:12px; }.forest-contact span { display:none; } }
+
+/* Leave the bottom-right corner available for the Tidio conversation widget. */
+.site-statistics { right:auto;left:16px;bottom:82px; }
