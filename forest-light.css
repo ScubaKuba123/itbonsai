@@ -14,7 +14,7 @@ body.bonsai-dna.forest-mist :is(.hero.hero-living,.bonsai-entry,.season-hero) { 
 .hero-living .living-visual::before,.hero-living .living-visual::after { display:none; }
 body.bonsai-dna.forest-mist :is(.living-tree,.bonsai-brand img,.brand-logo,.svc-brand img) { background:transparent!important;border:0;box-shadow:none; }
 body.bonsai-dna.forest-mist :is(.services,.garden-featured,.garden-projects,.cooperation-process,.about-story,.content-section,.page-section,.page-grid,.contact-section,.contact,.contact-strip,.business-system,.business-products,.season-packages,.season-included,.season-notes,.svc-promises,.svc-offer,.svc-process,.site-footer,.svc-footer) {
- background:rgb(250 251 242 / 86%)!important;
+ background:rgb(228 239 215 / 62%)!important;
 }
 body.bonsai-dna.forest-mist :is(.page-card,.offer-card,.svc-card,.season-card) { background-color:rgb(255 255 250 / 90%)!important; }
 body.bonsai-dna.forest-mist #bonsai-header { background:linear-gradient(#fafbf1e8,#fafbf190)!important; }
@@ -26,3 +26,36 @@ body.bonsai-dna.forest-mist .forest-divider { background:linear-gradient(#fafbf2
  body.forest-mist::before { background:linear-gradient(180deg,#fffef6b8 0%,#fffef68c 38%,#fffef640 100%),var(--forest-photo) 56% center / cover no-repeat; }
  body.bonsai-dna.forest-mist .bonsai-entry .entry-art { opacity:.56; }
 }
+
+/* Consistent full-page woodland and accessible shared header controls. */
+body.bonsai-dna.forest-mist :is(.section,.site-footer,.footer-main,.footer-bottom) { background-color:rgb(228 239 215 / 62%)!important; }
+body.bonsai-dna.forest-theme #bonsai-header.bonsai-header { gap:16px; }
+body.bonsai-dna.forest-theme #bonsai-header.bonsai-header .bonsai-navigation { gap:16px; }
+#bonsai-header .header-socials { display:flex;align-items:center;gap:2px;flex-shrink:0; }
+#bonsai-header .header-socials a { display:grid;place-items:center;width:36px;height:44px;color:#35663f;border-radius:50%; }
+#bonsai-header .header-socials a:hover { background:#dce8ce;color:#1c452b; }
+#bonsai-header .header-socials svg { width:18px;height:18px;fill:currentColor; }
+body.bonsai-dna.forest-theme #bonsai-header.bonsai-header .language-picker-current-flag { display:block!important; }
+body.bonsai-dna #bonsai-header .language-flag { display:inline-block!important;flex:none;width:22px;height:15px;border-radius:2px;border:1px solid #536d5c50;background-size:cover!important;background-position:center!important; }
+body.bonsai-dna #bonsai-header .home-header-cta { background:#35663f!important;white-space:nowrap; }
+@media(max-width:600px) {
+ body.bonsai-dna.forest-theme #bonsai-header.bonsai-header { gap:5px;padding-inline:12px; }
+ body.bonsai-dna.forest-theme #bonsai-header.bonsai-header .bonsai-wordmark { display:none; }
+ body.bonsai-dna.forest-theme #bonsai-header.bonsai-header .home-header-cta { display:flex!important;width:44px;height:44px;padding:0;font-size:0;justify-content:center;flex-shrink:0; }
+ body.bonsai-dna.forest-theme #bonsai-header.bonsai-header .home-header-cta::before { content:'WA';font-size:12px;font-weight:700; }
+ body.bonsai-dna.forest-theme #bonsai-header.bonsai-header .home-header-cta span { display:none; }
+ #bonsai-header .header-socials a { width:34px; }
+ body.bonsai-dna.forest-theme #bonsai-header.bonsai-header .language-picker-trigger { padding:6px; }
+}
+body.bonsai-dna #bonsai-header .flag-pl { background-image:url("assets/flag-pl.svg")!important; }
+body.bonsai-dna #bonsai-header .flag-gb { background-image:url("assets/flag-gb.svg")!important; }
+body.bonsai-dna #bonsai-header .flag-jp { background-image:url("assets/flag-jp.svg")!important; }
+body.bonsai-dna #bonsai-header .flag-de { background-image:url("assets/flag-de.svg")!important; }
+body.bonsai-dna #bonsai-header .flag-es { background-image:url("assets/flag-es.svg")!important; }
+body.bonsai-dna #bonsai-header .flag-ua { background-image:url("assets/flag-ua.svg")!important; }
+body.bonsai-dna #bonsai-header .flag-fr { background-image:url("assets/flag-fr.svg")!important; }
+body.bonsai-dna #bonsai-header .flag-cn { background-image:url("assets/flag-cn.svg")!important; }
+
+.forest-contact { position:fixed;z-index:46;left:18px;bottom:max(18px,env(safe-area-inset-bottom));display:flex;align-items:center;gap:9px;padding:12px 17px;min-height:50px;border:1px solid #acc09a;border-radius:28px;background:#294d34;color:#fff!important;box-shadow:0 5px 20px #1b392b26;text-decoration:none;font:600 14px/1.4 var(--dna-body,sans-serif); }
+.forest-contact:hover { background:#3c6844; }.forest-contact:focus-visible { outline:3px solid #85aa62;outline-offset:4px; }
+@media(max-width:600px) { body.bonsai-dna.forest-theme #bonsai-header.bonsai-header .home-header-cta::before { content:'';width:23px;height:23px;background:url('assets/contact-whatsapp.svg') center/contain no-repeat; }.forest-contact { left:12px;padding:12px; }.forest-contact span { display:none; } }
