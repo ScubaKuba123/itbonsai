@@ -62,8 +62,7 @@
  };
  function localizeHeader(){
   const locale=document.documentElement.lang;
-  const waLabels={pl:'Napisz na WhatsApp',en:'Message on WhatsApp',ja:'WhatsAppで相談',de:'WhatsApp schreiben',es:'Escribir por WhatsApp',uk:'Написати у WhatsApp',fr:'Écrire sur WhatsApp',zh:'WhatsApp 联系'};
-  setText(whatsapp,waLabels[locale]||waLabels.en);
+  setText(whatsapp,'WhatsApp');
   const copy=headerCopy[locale];if(!copy)return;
   header.querySelectorAll('.bonsai-navigation a,.bonsai-pricing-shortcut').forEach(a=>{
    let route=new URL(a.href,location.href).pathname.replace(/\.html$/,'').replace(/\/$/,'')||'/';
@@ -71,7 +70,7 @@
    if(route==='/index')route='/';
    const index=routes.indexOf(route);if(index>=0)setText(a,copy.nav[index]);
   });
-  setText(header.querySelector('.home-header-cta'),locale==='pl'?'Napisz na WhatsApp':'Message on WhatsApp');
+  setText(header.querySelector('.home-header-cta'),'WhatsApp');
   setAttribute(header.querySelector('.bonsai-brand'),'aria-label',copy.home);
   const logo=header.querySelector('.bonsai-brand img');
   if(logo?.getAttribute('alt'))setAttribute(logo,'alt',copy.logo);
