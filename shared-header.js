@@ -22,7 +22,6 @@
  header.insertBefore(socials,header.querySelector('.home-header-cta'));
  const whatsapp=header.querySelector('.home-header-cta');
  whatsapp.href='https://wa.me/48501476124';whatsapp.target='_blank';whatsapp.rel='noopener noreferrer';whatsapp.setAttribute('aria-label','WhatsApp');
- const contact=document.createElement('a');contact.className='forest-contact';contact.href=whatsapp.href;contact.target='_blank';contact.rel='noopener noreferrer';contact.setAttribute('aria-label','WhatsApp — BonsAI Studio');contact.innerHTML='<img src="assets/contact-whatsapp.svg" width="25" height="25" alt=""><span>WhatsApp</span>';document.body.append(contact);
  const menu=header.querySelector('.bonsai-menu');
  const nav=header.querySelector('.bonsai-navigation');
  const close=()=>{header.classList.remove('menu-open');menu.setAttribute('aria-expanded','false');document.documentElement.classList.remove('bonsai-menu-open');};
