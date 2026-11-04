@@ -25,3 +25,5 @@ footer .temple-calligraphy {display:block;width:100%;height:auto;object-fit:cont
  footer .footer-temple {gap:14px;padding:20px;}
  footer .temple-ink {font-size:38px;padding-right:14px;}
 }
+/* Keep portfolio controls legible over the clearing. */
+body.bonsai-dna.forest-mist .editorial-toolbar {background:#faf8eff5!important;padding:20px 24px;border-radius:3px;}
