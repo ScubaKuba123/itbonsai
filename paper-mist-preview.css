@@ -1,6 +1,6 @@
 /* Preview-only v2: separate translucent kozo sheets in a sunlit vertical woodland. */
 body.forest-mist {position:relative;--forest-photo:url('assets/mist-woodland-v2.webp');}
-body.forest-mist::before {position:absolute;inset:0;background:linear-gradient(90deg,#f7f6e525,#fffef119 55%,#eef1e512),var(--forest-photo) center top/100% auto repeat-y;}
+body.forest-mist::before {position:fixed;inset:0;background:var(--forest-photo) center/cover no-repeat;filter:brightness(.86) saturate(.82);}
 body.bonsai-dna.forest-mist :is(.hero-copy,.entry-copy,.season-hero-inner) {position:relative;isolation:isolate;}
 body.bonsai-dna.forest-mist :is(.hero-copy,.entry-copy,.season-hero-inner)::before {
  content:'';position:absolute;inset:-17% -10%;z-index:-1;pointer-events:none;
@@ -12,11 +12,11 @@ body.bonsai-dna.forest-mist .hero-living .living-visual::before {
  background:radial-gradient(ellipse,#fffdecce 20%,#fbfaee8f 47%,transparent 70%);
 }
 body.bonsai-dna.forest-mist :is(.services,.garden-featured,.garden-projects,.cooperation-process,.about-story,.content-section,.page-section,.page-grid,.contact-section,.contact,.contact-strip,.business-system,.business-products,.season-packages,.season-included,.season-notes,.svc-promises,.svc-offer,.svc-process,.section) {
- position:relative;isolation:isolate;background:transparent!important;margin-block:64px;border:0;box-shadow:none;
+ position:relative;isolation:isolate;background:#f7f5eef2 url('assets/paper-grain.svg') repeat!important;margin-block:64px;border:0;box-shadow:none;
 }
 body.bonsai-dna.forest-mist :is(.services,.garden-featured,.garden-projects,.cooperation-process,.about-story,.content-section,.page-section,.page-grid,.contact-section,.contact,.contact-strip,.business-system,.business-products,.season-packages,.season-included,.season-notes,.svc-promises,.svc-offer,.svc-process,.section)::before {
- content:'';display:block;position:absolute;inset:-8% 0;z-index:-1;pointer-events:none;
- background:url('assets/washi-sheet-v2.webp') center/100% 100% no-repeat;opacity:.91;
+ content:'';display:block;position:absolute;inset:-14px 0;z-index:-1;pointer-events:none;
+ border-image:url('assets/washi-sheet-v2.webp') 200 / 28px / 0 stretch;opacity:.94;
 }
 body.bonsai-dna.forest-mist :is(.site-footer,.svc-footer,.editorial-toolbar) {background:#f8f7ece8!important;}
 body.bonsai-dna.forest-mist .editorial-toolbar {padding:20px 24px;}
@@ -64,7 +64,7 @@ body.bonsai-dna.bonsai-shared-home.forest-mist .garden-featured .garden-project-
 }
 @media(max-width:600px) {
  body.forest-mist {--forest-photo:url('assets/mist-woodland-v2-640.webp');}
- body.forest-mist::before {background:linear-gradient(#f7f6e525,#eef1e522),var(--forest-photo) center top/auto 1500px repeat-y;}
+ body.forest-mist::before {background:var(--forest-photo) center/cover no-repeat;}
  body.bonsai-dna.bonsai-shared-home.forest-mist .hero.hero-living {grid-template-columns:1fr;padding:128px 28px 28px!important;min-height:0!important;gap:32px;}
  body.bonsai-dna.bonsai-shared-home.forest-mist .hero.hero-living h1 {font-size:40px!important;}
  body.bonsai-dna.forest-mist :is(.hero-copy,.entry-copy,.season-hero-inner)::before {inset:-15% -9%;opacity:.94;}
@@ -82,7 +82,7 @@ body.bonsai-dna.bonsai-shared-home.forest-mist .garden-featured .garden-project-
  footer .temple-ink {font-size:38px;padding-right:14px;}
 }
 /* Final composition pass: remove legacy service minimum height and repeated scenery. */
-body.forest-mist::before {background-size:auto,cover;background-repeat:no-repeat;}
+body.forest-mist::before {background-size:cover;background-repeat:no-repeat;}
 body.bonsai-dna.bonsai-shared-home.forest-mist .services {min-height:0!important;}
 body.bonsai-dna.bonsai-shared-home.forest-mist .service-intro h2 {grid-row:1/4;}
 body.bonsai-dna.bonsai-shared-home.forest-mist .service-map article::before,
@@ -91,10 +91,89 @@ body.bonsai-dna.bonsai-shared-home.forest-mist .service-map h3 a::after {display
 body.bonsai-dna.forest-mist :is(.hero-copy,.entry-copy,.season-hero-inner)::before {opacity:.82;}
 body.bonsai-dna.forest-mist :is(.services,.garden-featured,.garden-projects,.cooperation-process,.about-story,.content-section,.page-section,.page-grid,.contact-section,.contact,.contact-strip,.business-system,.business-products,.season-packages,.season-included,.season-notes,.svc-promises,.svc-offer,.svc-process,.section)::before {opacity:.84;}
 @media(max-width:600px) {
- body.forest-mist::before {position:fixed;background-size:auto,cover;background-repeat:no-repeat;}
+ body.forest-mist::before {position:fixed;background-size:cover;background-repeat:no-repeat;}
  body.bonsai-dna.forest-mist :is(.hero-copy,.entry-copy,.season-hero-inner)::before {opacity:.93;}
 }
 @media(max-width:600px) {
  body.bonsai-dna.forest-mist :is(.hero-copy,.entry-copy,.season-hero-inner)::before {left:-7%;right:-7%;}
 }
 body.bonsai-dna.forest-mist #bonsai-header.bonsai-header {background:#fafaf1f5!important;backdrop-filter:none;}
+
+/* Reading surfaces remain continuous, independent of the height of a paper sheet. */
+body.bonsai-dna.forest-mist :is(.season-section-head>p,.season-order,.svc-section-head>p,.svc-process-intro>p,.svc-process li>p) {color:#31483f;font-size:16px;line-height:1.65;}
+body.bonsai-dna.forest-mist :is(.page-section,.page-grid,.content-section,.section,.season-packages,.season-included,.season-notes) {--dna-muted:#3c5149;--season-muted:#3c5149;}
+body.bonsai-dna.forest-mist .season-order {border-color:#53695140;}
+body.bonsai-dna.forest-mist :is(.page-hero,.content-hero):not(.bonsai-entry) {background:#f7f5eef2 url('assets/paper-grain.svg') repeat!important;}
+body.bonsai-dna.forest-mist :is(.contact-details,.cafe-case-detail .project-content) {background:#f7f5eef2 url('assets/paper-grain.svg') repeat;padding:32px;border-radius:8px;color:#213e35;}
+body.bonsai-dna.forest-mist :is(.page-hero,.content-hero):not(.bonsai-entry) .lead {color:#3c5149;}
+body.bonsai-dna.forest-mist .contact-details>a {color:#00666a;}
+@media(max-width:600px) {body.bonsai-dna.forest-mist :is(.contact-details,.cafe-case-detail .project-content) {padding:24px;}}
+
+/* One quiet footer: identity, contact and navigation, followed by a small signature. */
+body.bonsai-dna.forest-mist footer.site-footer.footer-compact {
+ display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:20px 64px;
+ width:100%;margin:48px 0 0;padding:36px max(32px,calc((100vw - 1220px)/2)) 12px;
+ background:#f7f7ef!important;color:#213e35;border-top:1px solid #bac7b5;box-shadow:none;
+ font:14px/1.5 var(--dna-body,sans-serif);
+}
+body.bonsai-dna .footer-compact .footer-brand-block {display:block;grid-column:auto;}
+body.bonsai-dna .footer-compact .brand {display:flex;gap:12px;align-items:center;margin:0 0 12px;}
+body.bonsai-dna .footer-compact .brand .brand-logo {width:48px;height:48px;flex:none;filter:none;}
+body.bonsai-dna .footer-compact .brand strong {font-size:20px;font-weight:600;color:#183b32;}
+body.bonsai-dna .footer-compact .footer-brand-block p {max-width:31ch;font-size:13px;line-height:1.6;color:#42564c;margin:0;}
+body.bonsai-dna .footer-compact :is(.footer-contact,.footer-nav) {display:grid;align-content:start;gap:0;}
+body.bonsai-dna .footer-compact .footer-nav {grid-template-columns:1fr 1fr;column-gap:24px;}
+body.bonsai-dna .footer-compact :is(.footer-contact,.footer-nav)>strong {grid-column:1/-1;margin:0 0 8px;color:#37583f;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;line-height:24px;}
+body.bonsai-dna .footer-compact :is(.footer-contact,.footer-nav)>a {display:flex;align-items:center;min-height:40px;max-width:100%;width:fit-content;color:#213e35;font-size:14px;line-height:1.4;overflow-wrap:anywhere;text-decoration:none;}
+body.bonsai-dna .footer-compact a:hover {color:#236a40;text-decoration:underline;text-underline-offset:4px;}
+body.bonsai-dna .footer-compact a:focus-visible {outline:2px solid #346b3b;outline-offset:4px;border-radius:2px;}
+body.bonsai-dna .footer-compact .footer-meta {display:flex;flex-wrap:nowrap;grid-column:1/-1;align-items:center;justify-content:space-between;gap:12px 24px;border-top:1px solid #cad2c4;padding-top:8px;}
+body.bonsai-dna .footer-compact .footer-legal {grid-column:auto;border:0;padding:0;margin:0;font-size:12px;color:#42564c;}
+body.bonsai-dna .footer-compact .footer-privacy {display:flex;align-items:center;min-height:44px;font-size:12px;color:#42564c;}
+body.bonsai-dna .footer-compact .footer-temple {
+ display:flex;align-items:center;gap:8px;width:auto;min-width:0;min-height:0;margin:0;padding:4px 8px;
+ border:0;background:none;box-shadow:none;color:#346b3b!important;
+}
+body.bonsai-dna .footer-compact .footer-temple::before,body.bonsai-dna .footer-compact .footer-temple::after {display:none;}
+body.bonsai-dna .footer-compact .temple-logo {display:block;width:280px;max-width:100%;height:auto;background:#09090c;border-radius:4px;mask:none;filter:none;mix-blend-mode:normal;transition:transform .3s ease;}
+@media(hover:hover) and (prefers-reduced-motion:no-preference) {.footer-temple:hover .temple-logo {transform:scale(1.035);}}
+.visits-paper {position:relative;flex:none;margin-left:auto;color:#37583f;}
+.visits-paper summary {display:flex;align-items:center;justify-content:center;gap:7px;min-width:68px;min-height:56px;padding:8px 12px;background:#f2efdf url('assets/paper-grain.svg');border:1px solid #b5bca778;border-radius:1px;box-shadow:1px 2px 3px #293a2212;cursor:pointer;list-style:none;}
+.visits-paper summary::-webkit-details-marker {display:none;}
+.visits-paper summary>span {writing-mode:vertical-rl;font:10px/1.3 serif;letter-spacing:2px;}
+.visits-paper summary>strong {font:22px/1.2 'Yu Mincho','Noto Serif JP',serif;font-weight:400;letter-spacing:2px;}
+.visits-paper summary:focus-visible {outline:2px solid #346b3b;outline-offset:4px;}
+.visits-paper>p {position:absolute;right:0;bottom:100%;z-index:3;width:250px;padding:16px;background:#f7f7ef;border:1px solid #bac7b5;box-shadow:0 4px 16px #213e351a;font:12px/1.6 var(--dna-body,sans-serif);color:#213e35;}
+#bonsai-header .bonsai-brand {margin-right:0;}
+#bonsai-header .header-core {display:flex;align-items:center;gap:5px;min-height:44px;margin-right:auto;padding:4px 12px;border-left:1px solid #486e3f45;color:#34643b;font:12px/1.3 var(--dna-body,sans-serif);text-decoration:none;white-space:nowrap;}
+#bonsai-header .header-core strong {font-weight:600;}
+#bonsai-header .header-core:hover {color:#075c44;text-decoration:underline;text-underline-offset:4px;}
+#bonsai-header .header-core:focus-visible {outline:2px solid #346b3b;outline-offset:2px;}
+@media(max-width:600px) {
+ #bonsai-header .header-core {padding:4px 6px;font-size:10px;gap:2px;}
+ #bonsai-header .header-core>span:first-child {white-space:normal;width:31px;}
+ body.bonsai-dna .footer-compact .temple-logo {width:240px;}
+ body.bonsai-dna .footer-compact .footer-meta {grid-template-columns:1fr auto;}
+ body.bonsai-dna .footer-compact .footer-temple {grid-column:1;grid-row:1;}
+ body.bonsai-dna .footer-compact .visits-paper {grid-column:2;grid-row:1/3;align-self:center;}
+ body.bonsai-dna .footer-compact .footer-legal {grid-column:1;grid-row:2;}
+ body.bonsai-dna .footer-compact .footer-privacy {grid-column:1;grid-row:3;}
+}
+@media(max-width:900px) {
+ body.bonsai-dna.forest-mist footer.site-footer.footer-compact {grid-template-columns:1fr 1fr;gap:20px 40px;padding:28px 32px 12px;}
+ body.bonsai-dna .footer-compact .footer-brand-block {grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+ body.bonsai-dna .footer-compact .brand {margin:0;flex:none;}
+ body.bonsai-dna .footer-compact .footer-brand-block p {max-width:33ch;}
+ body.bonsai-dna .footer-compact :is(.footer-contact,.footer-nav)>a {min-height:44px;}
+}
+@media(max-width:600px) {
+ body.bonsai-dna.forest-mist footer.site-footer.footer-compact {gap:20px 20px;padding:24px 24px 16px;}
+ body.bonsai-dna .footer-compact .footer-brand-block {display:block;}
+ body.bonsai-dna .footer-compact .brand {margin-bottom:8px;}
+ body.bonsai-dna .footer-compact .footer-brand-block p {max-width:none;}
+ body.bonsai-dna .footer-compact .footer-nav {column-gap:8px;}
+ body.bonsai-dna .footer-compact :is(.footer-contact,.footer-nav)>a {font-size:13px;}
+ body.bonsai-dna .footer-compact .footer-meta {display:grid;grid-template-columns:1fr auto;gap:0 12px;}
+ body.bonsai-dna .footer-compact .footer-temple {grid-column:1;grid-row:1;justify-self:start;padding-left:0;margin-bottom:4px;}
+ body.bonsai-dna .footer-compact :is(.footer-privacy,.footer-legal) {font-size:11px;}
+}

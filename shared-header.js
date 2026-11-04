@@ -2,6 +2,11 @@
  'use strict';
  const header=document.getElementById('bonsai-header');
  if(!header) return;
+ const core=document.createElement('a');
+ core.className='header-core';core.href='https://bonsai-garden.scubakuba698.chatgpt.site/';
+ core.target='_blank';core.rel='noopener noreferrer';core.setAttribute('aria-label','Bonsai Core ↗');
+ core.innerHTML='<span>Bonsai <strong>Core</strong></span><span aria-hidden="true">↗</span>';
+ header.querySelector('.bonsai-brand')?.after(core);
  // Reuse the approved homepage CTA and scroll treatment on every public page.
  if(!header.querySelector('.home-header-cta')) {
   const cta=document.createElement('a');

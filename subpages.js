@@ -44,8 +44,33 @@ if (!footer) {
   footer = document.createElement('footer');
   document.body.appendChild(footer);
 }
-footer.className = 'site-footer';
-footer.innerHTML = '<div class="footer-brand-block"><a class="brand" href="/"><img class="brand-logo" src="assets/bonsai-studio-mark-20261026.webp" alt="Logo BonsAI Studio" width="144" height="144" loading="lazy" decoding="async"></a><p>Cyfrowe rozwiązania dla firm, które chcą rosnąć spokojniej i mądrzej.</p></div><div class="footer-contact"><strong>Porozmawiajmy o Twojej firmie</strong><a href="tel:+48501476124">+48 501 476 124</a><a href="mailto:studio@itbonsai.pl">studio@itbonsai.pl</a><a href="https://wa.me/48501476124" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div><div class="footer-nav"><strong>Na skróty</strong><a href="/uslugi">Usługi</a><a href="/cennik">Cennik</a><a href="/realizacje">Portfolio</a><a href="/o-nas">O nas</a><a href="/kontakt">Kontakt</a><a href="/polityka-prywatnosci">Polityka prywatności</a></div><a class="footer-temple" href="https://itbonsai.website/" target="_blank" rel="noopener noreferrer"><span class="temple-ink" aria-hidden="true">寺</span><span class="temple-copy"><img class="temple-calligraphy" src="assets/bonsai-temple-calligraphy.webp" alt="Bonsai Temple" width="900" height="229" loading="lazy"><small>Zamów stronę lub aplikację tutaj ↗</small></span></a><p class="footer-legal">© 2026 BonsAI Studio</p>';
+footer.className = 'site-footer footer-compact';
+footer.innerHTML = `
+  <div class="footer-brand-block">
+    <a class="brand" href="/"><img class="brand-logo" src="assets/bonsai-studio-mark-20261026.webp" alt="" width="48" height="48" loading="lazy" decoding="async"><strong>BonsAI Studio</strong></a>
+    <p data-copy="footerTagline">Cyfrowe rozwiązania dla firm, które chcą rosnąć spokojniej i mądrzej.</p>
+  </div>
+  <div class="footer-contact">
+    <strong data-copy="s7">Kontakt</strong>
+    <a href="mailto:studio@itbonsai.pl">studio@itbonsai.pl</a>
+    <a href="tel:+48501476124">+48 501 476 124</a>
+    <a href="https://wa.me/48501476124" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+  </div>
+  <nav class="footer-nav" aria-label="Na skróty">
+    <strong data-copy="footerQuick">Na skróty</strong>
+    <a href="/uslugi" data-copy="s3">Usługi</a><a href="/realizacje" data-copy="s4">Portfolio</a>
+    <a href="/cennik" data-copy="navPricing">Cennik</a><a href="/o-nas" data-copy="s6">O nas</a>
+    <a href="/kontakt" data-copy="s7">Kontakt</a>
+  </nav>
+  <div class="footer-meta">
+    <p class="footer-legal">© 2026 BonsAI Studio</p>
+    <a class="footer-temple" href="https://itbonsai.website/" target="_blank" rel="noopener noreferrer" aria-label="Bonsai Temple ↗"><img class="temple-logo" src="assets/bonsai-temple-red.webp" alt="BonsAi Temple" width="1000" height="195" loading="lazy" decoding="async"></a>
+    <a class="footer-privacy" href="/polityka-prywatnosci" data-copy="footerPrivacy">Polityka prywatności</a>
+    <details class="visits-paper">
+      <summary aria-label="302 sesje GA4 — dane historyczne do 3 listopada 2026"><span lang="ja" aria-hidden="true">訪問数</span><strong lang="ja" aria-hidden="true">三百二</strong></summary>
+      <p>GA4 · 302 sesje · itbonsai.pl<br>01.01.2020–03.11.2026<br>Odczyt: 04.11.2026. Zapis historyczny, bez automatycznego odświeżania.</p>
+    </details>
+  </div>`;
 
 document.querySelectorAll('video[data-lazy-video]').forEach((video) => {
   const loadVideo = () => {
