@@ -27,3 +27,13 @@ footer .temple-calligraphy {display:block;width:100%;height:auto;object-fit:cont
 }
 /* Keep portfolio controls legible over the clearing. */
 body.bonsai-dna.forest-mist .editorial-toolbar {background:#faf8eff5!important;padding:20px 24px;border-radius:3px;}
+/* Quiet paper behind illustrations: forest remains visible between sections. */
+body.bonsai-dna.forest-mist .hero-living .living-visual {isolation:isolate;}
+body.bonsai-dna.forest-mist .hero-living .living-visual::before {
+ display:block;content:'';position:absolute;inset:0;z-index:0;pointer-events:none;border-radius:0;
+ background:linear-gradient(120deg,#faf8ef,#f0eddf);
+ clip-path:polygon(1% 1%,24% 0,47% 1%,72% 0,99% 1%,100% 26%,99% 51%,100% 76%,99% 99%,73% 100%,48% 99%,24% 100%,0 99%,1% 74%,0 48%,1% 24%);
+}
+body.bonsai-dna.forest-mist :is(.bonsai-entry.bonsai-entry,.season-hero.season-hero) {background:#f7f5eb!important;}
+body.bonsai-dna.forest-mist .bonsai-entry .entry-art {opacity:1;mix-blend-mode:normal;}
+body.bonsai-dna.forest-mist :is(.garden-window,.garden-project-media,.season-card-art) {background-color:#f7f5eb!important;}
