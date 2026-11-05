@@ -46,6 +46,15 @@ if (!footer) {
 }
 footer.className = 'site-footer footer-refined';
 footer.innerHTML = "<div class=\"footer-brand-block\"><a class=\"brand\" href=\"/\" translate=\"no\"><img class=\"brand-logo\" src=\"/assets/bonsai-studio-mark-20261026.webp\" alt=\"\" width=\"52\" height=\"52\" loading=\"lazy\" decoding=\"async\"><strong>BonsAI Studio</strong></a><p data-copy=\"footerTagline\">Cyfrowe rozwiązania dla firm, które chcą rosnąć spokojniej i mądrzej.</p></div><div class=\"footer-contact\"><strong data-copy=\"s7\">Kontakt</strong><a href=\"tel:+48501476124\">+48 501 476 124</a><a href=\"mailto:studio@itbonsai.pl\">studio@itbonsai.pl</a><a href=\"https://wa.me/48501476124\" target=\"_blank\" rel=\"noopener noreferrer\">WhatsApp ↗</a></div><a class=\"footer-temple\" href=\"https://itbonsai.website/\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"BonsAI Temple\"><img src=\"/assets/bonsai-temple-red.webp\" alt=\"BonsAI Temple\" width=\"1000\" height=\"195\" loading=\"lazy\" decoding=\"async\"></a><div class=\"footer-legal\"><span translate=\"no\">© 2026 BonsAI Studio</span><a href=\"/polityka-prywatnosci\" data-copy=\"footerPrivacy\">Polityka prywatności</a></div>";
+const temple = footer.querySelector('.footer-temple');
+const destinations = document.createElement('div');
+destinations.className = 'footer-destinations';
+temple.before(destinations);destinations.append(temple);
+const core = document.createElement('a');
+core.className='footer-core';core.href='https://itbonsai.site/';core.target='_blank';core.rel='noopener noreferrer';core.translate=false;
+core.innerHTML='<img src="/assets/bonsai-core-mark.webp" width="320" height="293" alt="" loading="lazy" decoding="async"><span>BonsAi Core <span aria-hidden="true">↗</span></span>';
+destinations.append(core);
+
 
 document.querySelectorAll('video[data-lazy-video]').forEach((video) => {
   const loadVideo = () => {

@@ -2,15 +2,6 @@
  'use strict';
  const header=document.getElementById('bonsai-header');
  if(!header) return;
- const brand=header.querySelector('.bonsai-brand');
- if(brand&&!header.querySelector('.header-core')) {
-  const core=document.createElement('a');
-  core.className='header-core';core.href='https://itbonsai.site/';
-  core.target='_blank';core.rel='noopener noreferrer';core.translate=false;
-  core.setAttribute('aria-label','BonsAi Core');core.title='BonsAi Core';
-  core.innerHTML='<img src="/assets/bonsai-core-mark.webp" width="144" height="132" alt="BonsAi Core" decoding="async">';
-  brand.after(core);
- }
  // Reuse the approved homepage CTA and scroll treatment on every public page.
  if(!header.querySelector('.home-header-cta')) {
   const cta=document.createElement('a');
