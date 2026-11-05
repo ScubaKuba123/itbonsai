@@ -131,3 +131,33 @@ body.bonsai-dna.forest-theme #bonsai-header.bonsai-header .home-header-cta:hover
  body.bonsai-dna.forest-theme #bonsai-header.bonsai-header .bonsai-menu { width:44px; flex-basis:44px; min-height:44px; }
  body.bonsai-dna.forest-theme #bonsai-header.bonsai-header .bonsai-navigation { max-height:calc(100dvh - 90px); overscroll-behavior:contain; }
 }
+
+/* A separate destination beside the Studio home link. */
+body.bonsai-dna.forest-theme #bonsai-header.bonsai-header .bonsai-brand { margin-right:0; }
+#bonsai-header .header-core {
+ display:flex; align-items:center; justify-content:center; flex:0 0 auto;
+ min-width:54px; min-height:48px; padding-left:10px; margin-right:auto;
+ border-left:1px solid #35663f38;
+}
+#bonsai-header .header-core img {
+ display:block; width:50px; height:46px; object-fit:contain; transition:transform .2s ease;
+}
+#bonsai-header .header-core:is(:hover,:focus-visible) img { transform:scale(1.06); }
+#bonsai-header .header-core:focus-visible { outline-color:#35663f; }
+@media(max-width:1250px) and (min-width:1101px) {
+ body.bonsai-dna.forest-theme #bonsai-header.bonsai-header .bonsai-wordmark { display:none; }
+}
+@media(min-width:601px) and (max-width:739px) {
+ body.bonsai-dna.forest-theme #bonsai-header.bonsai-header .bonsai-wordmark { display:none; }
+}
+@media(max-width:600px) {
+ #bonsai-header .header-core { min-width:44px; min-height:44px; padding-left:4px; }
+ #bonsai-header .header-core img { width:40px; height:37px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ #bonsai-header .header-core img { transition:none; }
+}
+@media(max-width:360px) {
+ body.bonsai-dna.forest-theme #bonsai-header.bonsai-header:has(.header-core) { gap:2px; padding-inline:6px; }
+ #bonsai-header:has(.header-core) .header-socials a { width:31px; }
+}
