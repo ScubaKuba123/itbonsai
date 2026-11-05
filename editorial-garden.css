@@ -105,3 +105,9 @@ body.editorial-portfolio .garden-recorded-link video { display:block; width:100%
 body.editorial-portfolio .garden-video-control { min-height:44px; border:0; padding:4px 8px; background:transparent; color:var(--dna-deep); font:inherit; cursor:pointer; }
 body.editorial-portfolio .garden-video-control:focus-visible { outline:2px solid var(--dna-teal); outline-offset:2px; }
 body.editorial-portfolio [data-video-preview] .garden-window-bar > span:first-child { font-size:10px; letter-spacing:normal; color:var(--dna-muted); }
+
+/* Clear project boundaries and a concise, factual scope for every portfolio item. */
+body.bonsai-dna.editorial-portfolio .garden-projects > .garden-project { border-bottom:2px solid #64806a; }
+body.bonsai-dna.editorial-portfolio .garden-project-scope { margin:0 0 28px;padding:0 0 0 20px;display:grid;gap:8px;max-width:42ch;color:#263f39;font:400 15px/1.65 var(--dna-body,sans-serif);list-style:disc; }
+body.bonsai-dna.editorial-portfolio .garden-project-scope li { padding-left:3px; }
+body.bonsai-dna.editorial-portfolio .garden-project-scope li::marker { color:#35663f; }

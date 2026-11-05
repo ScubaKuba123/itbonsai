@@ -11,7 +11,7 @@
  async function language(lang){
   const current=++requestId;
   try {
-   if(lang==='en'&&!english){const response=await fetch('services-copy.json?v=20260926');if(!response.ok)throw Error('translation');english=await response.json();}
+   if(lang==='en'&&!english){const response=await fetch('services-copy.json?v=footer-20261105');if(!response.ok)throw Error('translation');english=await response.json();}
    if(current!==requestId)return;
    const dict=lang==='en'?english:pl;
    nodes.forEach(node=>{node.innerHTML=dict[node.dataset.copy]||pl[node.dataset.copy];});
