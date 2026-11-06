@@ -17,6 +17,9 @@ database_id = "aad0a7ab-9699-46df-85fd-17c509d67a45"
 [env.production.ai]
 binding = "AI"
 
+[env.production.vars]
+KAMI_PREVIEW_ORIGIN = ""
+
 [[env.production.d1_databases]]
 binding = "KAMI_MAIL_DB"
 database_name = "kami-mail"
