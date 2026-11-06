@@ -59,3 +59,4 @@ body.bonsai-dna .footer-refined .footer-core { display:flex;flex-direction:colum
 @media(max-width:600px){body.bonsai-dna.forest-mist footer.site-footer.footer-refined {grid-template-columns:1fr;}body.bonsai-dna .footer-refined .footer-destinations {gap:24px;}.footer-core img {width:104px;height:95px;}body.bonsai-dna .footer-refined .footer-core {flex-basis:104px;}}
 @media(prefers-reduced-motion:reduce){.footer-core img {transition:none;}}
 body.bonsai-dna .footer-refined .footer-destinations { flex-wrap:nowrap; } body.bonsai-dna .footer-refined .footer-destinations .footer-temple { min-width:0; }
+.footer-core img { height:112px;border-radius:50%;background:#041421;padding:6px;border:1px solid #367780;box-shadow:0 3px 12px #16352b20; } @media(max-width:600px){.footer-core img {height:104px;}}
