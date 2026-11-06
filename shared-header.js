@@ -5,7 +5,7 @@
  if(document.body.classList.contains('bonsai-shared-home')) {
   const app=document.createElement('a');app.className='header-free-app';
   app.href='https://nihongobonsai.pl/';app.target='_blank';app.rel='noopener noreferrer';
-  app.textContent='Darmowa apka ↗';app.setAttribute('aria-label','Bonsai Office — darmowa aplikacja');
+  app.textContent='Apka webowa ↗';app.setAttribute('aria-label','Bonsai Office — darmowa aplikacja webowa');
   header.querySelector('.bonsai-brand').after(app);
  }
  // Reuse the approved homepage CTA and scroll treatment on every public page.
