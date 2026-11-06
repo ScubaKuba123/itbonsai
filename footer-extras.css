@@ -1,4 +1,7 @@
 /* Compact shared footer; the forest continues without a separate image strip. */
+.footer-kodama { display:block; margin-top:12px; flex:0 0 56px; width:56px; height:56px; border-radius:50%; }
+.footer-kodama img { display:block; width:56px; height:56px; object-fit:contain; }
+.footer-kodama:focus-visible { outline:2px solid #007f78; outline-offset:4px; }
 body.bonsai-dna.forest-mist main > .forest-divider:last-child { display:none; }
 body.bonsai-dna.forest-mist footer.site-footer.footer-refined {
  display:grid; grid-template-columns:minmax(0,1.1fr) minmax(180px,.8fr) minmax(230px,1fr);
