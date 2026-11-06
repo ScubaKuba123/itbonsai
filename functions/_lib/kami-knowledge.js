@@ -83,9 +83,9 @@ export function selectKnowledge(question) {
   const tokens = String(question).toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"").match(/[\p{L}\p{N}]{3,}/gu) || [];
   const terms = [...new Set(tokens)].filter(t=>!["jakie","jest","oraz","what","with","and","the","can","you","dla","czy","jaka","strona","strony","website","bonsai","studio"].includes(t));
   const scored = PAGES.map((p,i)=>{ const text=p.text.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"");const url=p.url.toLowerCase();let score=0;for(const t of terms){if(text.includes(t))score+=Math.min(5,text.split(t).length-1);if(url.includes(t))score+=6;}return {p,score,i};}).sort((a,b)=>b.score-a.score);
-  const core=[PAGES[3],PAGES[1],PAGES[5]];
+  const core=[PAGES[3],PAGES[2],PAGES[1],PAGES[5]];
   const selected=[...new Set([...core,...scored.filter(x=>x.score>0).slice(0,4).map(x=>x.p)])];
-  if (/(cen|koszt|price|budget|budget|料金|価格|費用|値段)/i.test(question)) selected.unshift(PAGES[2]);
+  if (/(cen|koszt|price|cost|how much|budget|quote|料金|価格|費用|値段|見積)/i.test(question)) selected.unshift(PAGES[2]);
   if (/(realizac|portfolio|作品|実績|example|case study)/i.test(question)) selected.unshift(PAGES[4]);
   const topics = [
     [/shop|ecommerce|sklep|EC|ネットショップ|通販/i, '/strony-internetowe-dla-firm'],
