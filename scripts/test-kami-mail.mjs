@@ -62,6 +62,15 @@ test('authorization failure is retryable and sends nothing',async()=>{
   assert.equal((await response.json()).retryable,true);
   assert.equal(x.sql.prepare('SELECT status FROM kami_mail').get().status,'failed');
 });
+test('Contact service is preserved in subject, labelled separately and deduplicated',async()=>{
+  const x=setup();
+  const payload={...x.payload,source:'contact',subject:'SEO i widoczność'};
+  assert.equal((await sendKamiMail(payload,x.request,x.env,x.provider)).status,200);
+  assert.equal((await sendKamiMail(payload,x.request,x.env,x.provider)).status,200);
+  assert.match(x.calls[0].subject,/^\[Kontakt\] SEO i widoczność/);
+  assert.equal(x.calls.length,1);
+  assert.equal((await sendKamiMail({...payload,source:undefined},x.request,x.env,x.provider)).status,409);
+});
 test('global daily cap bounds distributed abuse',async()=>{
   const x=setup();
   for(let i=0;i<100;i++)x.sql.prepare('INSERT INTO kami_mail VALUES (?,?,?,?,?,NULL)').run(String(i),'test','other-ip',Date.now(),'sent');

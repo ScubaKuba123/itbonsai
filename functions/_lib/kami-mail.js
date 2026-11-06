@@ -10,13 +10,14 @@ export async function sendKamiMail(input, request, env, fetcher = fetch) {
   const name = clean(input.name, 100), email = clean(input.email, 254);
   const subject = clean(input.subject, 150), message = clean(input.message, 4000);
   const id = clean(input.submissionId, 36);
+  const source = input.source === 'contact' ? 'Kontakt' : 'Kami Chat';
   if (input.approved !== true || input.website || input.to || input.from || !name || !subject || !message ||
       /[\r\n]/.test(name + email + subject) || !/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email) ||
       !/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i.test(id)) return json({error:'Invalid enquiry'},400);
   const db = env.KAMI_MAIL_DB;
   if (!db || !['ZOHO_CLIENT_ID','ZOHO_CLIENT_SECRET','ZOHO_REFRESH_TOKEN','ZOHO_ACCOUNT_ID'].every(k=>env[k])) return json({error:'Email unavailable',retryable:true},503);
   const now = Date.now();
-  const fingerprint = await hash(JSON.stringify([name,email,subject,message]));
+  const fingerprint = await hash(JSON.stringify([name,email,subject,message,...(input.source === 'contact' ? ['contact'] : [])]));
   const ipHash = await hash(env.ZOHO_CLIENT_SECRET + '\0' + (request.headers.get('CF-Connecting-IP') || 'unknown'));
   try {
     await db.prepare('DELETE FROM kami_mail WHERE created_at < ?').bind(now - 7*86400000).run();
@@ -49,8 +50,8 @@ export async function sendKamiMail(input, request, env, fetcher = fetch) {
     try {
       const result = await fetcher('https://mail.zoho.eu/api/accounts/'+encodeURIComponent(env.ZOHO_ACCOUNT_ID)+'/messages', {
         method:'POST',headers:{Authorization:'Zoho-oauthtoken '+token,'Content-Type':'application/json'},signal:AbortSignal.timeout(15000),
-        body:JSON.stringify({fromAddress:MAILBOX,toAddress:MAILBOX,subject:'[Kami Chat] '+subject+' [K:'+id+']',
-          content:'Zapytanie z Kami Chat\nImię: '+name+'\nOdpowiedz na: '+email+'\n\n'+message+'\n\nIdentyfikator: '+id,
+        body:JSON.stringify({fromAddress:MAILBOX,toAddress:MAILBOX,subject:'['+source+'] '+subject+' [K:'+id+']',
+          content:'Zapytanie z '+source+'\nImię: '+name+'\nOdpowiedz na: '+email+'\n\n'+message+'\n\nIdentyfikator: '+id,
           mailFormat:'plaintext',encoding:'UTF-8'})
       });
       // Zoho identifiers exceed JS safe integer range; never parse them as numbers.
