@@ -1,4 +1,4 @@
-// Extracted from eleven real pages on the BonsAI Studio website, 2026-11-06.
+// Extracted from 17 real pages on the BonsAI Studio website, 2026-11-06.
 // Refresh these facts when published website copy or pricing changes.
 export const PAGES = [
   {
@@ -77,7 +77,7 @@ export function selectKnowledge(question) {
   const scored = PAGES.map((p,i)=>{ const text=p.text.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"");const url=p.url.toLowerCase();let score=0;for(const t of terms){if(text.includes(t))score+=Math.min(5,text.split(t).length-1);if(url.includes(t))score+=6;}return {p,score,i};}).sort((a,b)=>b.score-a.score);
   const core=[PAGES[0],PAGES[1],PAGES[5]];
   const selected=[...new Set([...core,...scored.filter(x=>x.score>0).slice(0,4).map(x=>x.p)])];
-  if (/(cen|koszt|price|budget|budget|料金|価格|費用|値段)/i.test(question)) selected.push(PAGES[2]);
-  if (/(realizac|portfolio|作品|実績|example|case study)/i.test(question)) selected.push(PAGES[4]);
+  if (/(cen|koszt|price|budget|budget|料金|価格|費用|値段)/i.test(question)) selected.unshift(PAGES[2]);
+  if (/(realizac|portfolio|作品|実績|example|case study)/i.test(question)) selected.unshift(PAGES[4]);
   return [...new Set(selected)].slice(0,7).map(p=>`Source: ${p.url}\n${p.text.slice(0,4500)}`).join("\n\n");
 }
