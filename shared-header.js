@@ -2,6 +2,12 @@
  'use strict';
  const header=document.getElementById('bonsai-header');
  if(!header) return;
+ if(document.body.classList.contains('bonsai-shared-home')) {
+  const app=document.createElement('a');app.className='header-free-app';
+  app.href='https://nihongobonsai.pl/';app.target='_blank';app.rel='noopener noreferrer';
+  app.textContent='Darmowa apka ↗';app.setAttribute('aria-label','Bonsai Office — darmowa aplikacja');
+  header.querySelector('.bonsai-brand').after(app);
+ }
  // Reuse the approved homepage CTA and scroll treatment on every public page.
  if(!header.querySelector('.home-header-cta')) {
   const cta=document.createElement('a');
