@@ -50,7 +50,7 @@
     composer.querySelectorAll('input,textarea,button').forEach(el => el.disabled = value);
     picker.disabled = value;
   }
-  composer.addEventListener('input', () => { sent = false; composer.querySelector('[data-action="send"]').disabled = false; if (document.activeElement !== field('approved')) field('approved').checked = false; });
+  composer.addEventListener('input', () => { sent = false; setStatus('ready'); document.getElementById('kami-email-fallback').hidden = true; composer.querySelector('[data-action="send"]').disabled = false; if (document.activeElement !== field('approved')) field('approved').checked = false; });
   composer.querySelector('[data-action="draft"]').addEventListener('click', async () => {
     if (working) return;
     lock(true); setStatus('working');

@@ -9,6 +9,20 @@ function allowedOrigin(origin, env) {
   return typeof preview === "string" && /^https:\/\/[a-z0-9.-]+\.pages\.dev$/.test(preview) && origin === preview;
 }
 const limiter = new Map();
+async function readInput(request) {
+  const reader = request.body?.getReader();
+  if (!reader) throw new Error('Empty body');
+  const decoder = new TextDecoder();
+  let size = 0, text = '';
+  for (;;) {
+    const {done,value} = await reader.read();
+    if (done) break;
+    size += value.byteLength;
+    if (size > 20000) { await reader.cancel(); throw new RangeError('Request too large'); }
+    text += decoder.decode(value,{stream:true});
+  }
+  return JSON.parse(text + decoder.decode());
+}
 export async function onRequestOptions({ request, env }) {
   const origin = request.headers.get("Origin");
   if (!allowedOrigin(origin, env)) return new Response(null, { status: 403 });
@@ -30,7 +44,7 @@ export async function onRequestPost({ request, env }) {
   if (++entry.count > 6) return Response.json({ error: "Please try again in a minute." }, { status: 429, headers });
   limiter.set(ip, entry); // best-effort per isolate; configure Cloudflare WAF rate limiting for production
   let input;
-  try { input = await request.json(); } catch { return Response.json({ error: "Invalid JSON" }, { status: 400, headers }); }
+  try { input = await readInput(request); } catch (error) { return Response.json({ error: error instanceof RangeError ? "Request too large" : "Invalid JSON" }, { status: error instanceof RangeError ? 413 : 400, headers }); }
   if (input?.mode === 'email') return sendKamiMail(input, request, env);
   if (!env.AI) return Response.json({ error: "Kami is not available yet." }, { status: 503, headers });
   const message = typeof input?.message === "string" ? input.message.trim() : "";

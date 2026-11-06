@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {DatabaseSync} from 'node:sqlite';
 import fs from 'node:fs';
 import {sendKamiMail} from '../functions/_lib/kami-mail.js';
+import {onRequestPost} from '../functions/api/kami.js';
 
 function setup() {
   const sql = new DatabaseSync(':memory:');
@@ -66,4 +67,9 @@ test('global daily cap bounds distributed abuse',async()=>{
   for(let i=0;i<100;i++)x.sql.prepare('INSERT INTO kami_mail VALUES (?,?,?,?,?,NULL)').run(String(i),'test','other-ip',Date.now(),'sent');
   assert.equal((await sendKamiMail(x.payload,x.request,x.env,x.provider)).status,429);
   assert.equal(x.calls.length,0);
+});
+test('HTTP entry point rejects foreign origin and oversized body without Content-Length',async()=>{
+  const req = (origin,body) => new Request('https://itbonsai.pl/api/kami',{method:'POST',headers:{Origin:origin,Referer:origin+'/'},body});
+  assert.equal((await onRequestPost({request:req('https://other.example','{}'),env:{}})).status,403);
+  assert.equal((await onRequestPost({request:req('https://itbonsai.pl',' '.repeat(20001)),env:{}})).status,413);
 });
