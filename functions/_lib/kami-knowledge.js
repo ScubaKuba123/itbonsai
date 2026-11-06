@@ -48,12 +48,12 @@ export const PAGES = [
 ];
 export const EXPERTISE = `General advisory knowledge, not claims about particular BonsAI deliverables: A professional website process commonly involves discovery, audience and goal definition, information architecture, content planning, wireframes, visual design, accessible mobile-first implementation, performance/SEO basics, quality assurance, launch and maintenance. Redesigns should begin with an audit and migration plan, preserving essential URLs/SEO where possible. For an ecommerce website discuss product catalog, checkout, payments, shipping, taxes, privacy and maintenance. For booking or client portals discuss users, roles, confirmations, data handling and integrations. For SEO distinguish technical basics, content quality, local signals and measurement; never guarantee Google rankings. Security basics include HTTPS, minimal data collection, secure server-side APIs, anti-spam, updates and backups. Timelines and pricing depend on scope. Avoid guaranteeing results, legal compliance or specific technology before assessing requirements.`;
 export function selectKnowledge(question) {
-  const tokens = String(question).toLowerCase().normalize("NFKD").replace(/[\\u0300-\\u036f]/g,"").match(/[\\p{L}\\p{N}]{3,}/gu) || [];
+  const tokens = String(question).toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"").match(/[\p{L}\p{N}]{3,}/gu) || [];
   const terms = [...new Set(tokens)].filter(t=>!["jakie","jest","oraz","what","with","and","the","can","you","dla","czy","jaka","strona","strony","website","bonsai","studio"].includes(t));
-  const scored = PAGES.map((p,i)=>{ const text=p.text.toLowerCase().normalize("NFKD").replace(/[\\u0300-\\u036f]/g,"");const url=p.url.toLowerCase();let score=0;for(const t of terms){if(text.includes(t))score+=Math.min(5,text.split(t).length-1);if(url.includes(t))score+=6;}return {p,score,i};}).sort((a,b)=>b.score-a.score);
+  const scored = PAGES.map((p,i)=>{ const text=p.text.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"");const url=p.url.toLowerCase();let score=0;for(const t of terms){if(text.includes(t))score+=Math.min(5,text.split(t).length-1);if(url.includes(t))score+=6;}return {p,score,i};}).sort((a,b)=>b.score-a.score);
   const core=[PAGES[0],PAGES[1],PAGES[5]];
   const selected=[...new Set([...core,...scored.filter(x=>x.score>0).slice(0,4).map(x=>x.p)])];
   if (/(cen|koszt|price|budget|budget|料金|価格|費用|値段)/i.test(question)) selected.push(PAGES[2]);
   if (/(realizac|portfolio|作品|実績|example|case study)/i.test(question)) selected.push(PAGES[4]);
-  return [...new Set(selected)].slice(0,7).map(p=>`Source: ${p.url}\\n${p.text.slice(0,4500)}`).join("\\n\\n");
+  return [...new Set(selected)].slice(0,7).map(p=>`Source: ${p.url}\n${p.text.slice(0,4500)}`).join("\n\n");
 }
