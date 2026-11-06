@@ -19,8 +19,13 @@
   const field = name => composer.elements.namedItem(name);
   const status = document.getElementById('kami-email-status');
   let working = false, sent = false;
+  function setStatus(key) { status.dataset.key = key; status.textContent = t()[key]; }
   function render() {
     launch.textContent = t().open;
+    if (status.dataset.key) status.textContent = t()[status.dataset.key];
+    if (Object.values(texts).some(copy => field('subject').value === copy.subjectDefault)) field('subject').value = t().subjectDefault;
+    if (Object.values(texts).some(copy => field('message').value === copy.intro + copy.outro)) field('message').value = t().intro + t().outro;
+    document.getElementById('kami-email-fallback').textContent = t().fallback;
     composer.querySelector('h3').textContent = t().title;
     composer.querySelectorAll('[data-label]').forEach(el => el.textContent = t()[el.dataset.label]);
     composer.querySelectorAll('[data-action]').forEach(el => el.textContent = t()[el.dataset.action]);
@@ -35,7 +40,7 @@
       const userMessages = [...document.querySelectorAll('#kami-messages .user')].map(el => el.textContent);
       field('subject').value = t().subjectDefault;
       field('message').value = (t().intro + userMessages.join('\n') + t().outro).slice(0,4000);
-      status.textContent = t().ready;
+      setStatus('ready');
     }
     show(true);
   });
@@ -48,27 +53,27 @@
   composer.addEventListener('input', () => { sent = false; composer.querySelector('[data-action="send"]').disabled = false; if (document.activeElement !== field('approved')) field('approved').checked = false; });
   composer.querySelector('[data-action="draft"]').addEventListener('click', async () => {
     if (working) return;
-    lock(true); status.textContent = t().working;
+    lock(true); setStatus('working');
     try {
       const response = await fetch('/api/kami', {method:'POST',headers:{'Content-Type':'application/json'},signal:AbortSignal.timeout(20000),body:JSON.stringify({mode:'draft',lang:picker.value,message:field('message').value})});
       const data = await response.json();
       if (!response.ok || typeof data.reply !== 'string') throw Error('Draft unavailable');
       field('message').value = data.reply; field('approved').checked = false; sent = false;
-      status.textContent = t().ready;
-    } catch { status.textContent = t().draftError; }
+      setStatus('ready');
+    } catch { setStatus('draftError'); }
     finally { lock(false); }
   });
   composer.addEventListener('submit', async event => {
     event.preventDefault();
     if (working || sent || !composer.reportValidity()) return;
     const payload = {name:field('name').value.trim(),email:field('email').value.trim(),message:field('message').value.trim(),_subject:field('subject').value.trim(),_template:'table',_url:'https://itbonsai.pl/',_captcha:'false'};
-    lock(true); status.textContent = t().sending; document.getElementById('kami-email-fallback').hidden = true;
+    lock(true); setStatus('sending'); document.getElementById('kami-email-fallback').hidden = true;
     try {
       const response = await fetch('https://formsubmit.co/ajax/studio@itbonsai.pl', {method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(25000)});
       const data = await response.json();
       if (!response.ok || !(data.success === true || data.success === 'true') || /activat/i.test(data.message || '')) throw Error('Sending unconfirmed');
-      sent = true; status.textContent = t().success;
-    } catch { status.textContent = t().error; const fallback = document.getElementById('kami-email-fallback'); fallback.textContent = t().fallback; fallback.href = 'mailto:studio@itbonsai.pl?subject=' + encodeURIComponent(payload._subject) + '&body=' + encodeURIComponent(payload.message + '\n\n' + payload.name + '\n' + payload.email); fallback.hidden = false; }
+      sent = true; setStatus('success');
+    } catch { setStatus('error'); const fallback = document.getElementById('kami-email-fallback'); fallback.textContent = t().fallback; fallback.href = 'mailto:studio@itbonsai.pl?subject=' + encodeURIComponent(payload._subject) + '&body=' + encodeURIComponent(payload.message + '\n\n' + payload.name + '\n' + payload.email); fallback.hidden = false; }
     finally { lock(false); composer.querySelector('[data-action="send"]').disabled = sent; }
   });
   picker.addEventListener('change', render); render();
