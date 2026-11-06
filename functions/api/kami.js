@@ -33,7 +33,7 @@ export async function onRequestPost({ request, env }) {
   try { input = await request.json(); } catch { return Response.json({ error: "Invalid JSON" }, { status: 400, headers }); }
   const message = typeof input?.message === "string" ? input.message.trim() : "";
   const history = Array.isArray(input?.history) ? input.history : [];
-  if (!message || message.length > 1200 || history.length > 12 || history.some(m => !m || !["user","assistant"].includes(m.role) || typeof m.content !== "string" || m.content.length > 1200)) return Response.json({ error: "Invalid message" }, { status: 400, headers });
+  if (!message || message.length > 1200 || history.length > 12 || history.some(m => !m || !["user","assistant"].includes(m.role) || typeof m.content !== "string" || m.content.length > (m.role === "assistant" ? 2000 : 1200))) return Response.json({ error: "Invalid message" }, { status: 400, headers });
   const lang = ["pl","en","ja"].includes(input?.lang) ? input.lang : "pl";
   const system = BASE + "\nPreferred response language: " + ({ pl:"Polish",en:"English",ja:"Japanese" }[lang]) + "\nGeneral professional expertise: " + EXPERTISE + "\nVerified BonsAI page excerpts:\n" + selectKnowledge(message);
   const messages = [{ role: "system", content: system }, ...history.slice(-8).map(m => ({ role: m.role, content: m.content })), { role: "user", content: message }];
