@@ -54,6 +54,12 @@ const core = document.createElement('a');
 core.className='footer-core';core.href='https://itbonsai.site/';core.target='_blank';core.rel='noopener noreferrer';core.translate=false;
 core.innerHTML='<img src="/assets/bonsai-core-mark.webp" width="320" height="293" alt="" loading="lazy" decoding="async"><span>BonsAi Core <span aria-hidden="true">↗</span></span>';
 destinations.append(core);
+const templeTile=document.createElement('div');templeTile.className='footer-temple-tile';
+temple.before(templeTile);templeTile.append(temple);
+const templeInfo=document.createElement('p');templeInfo.className='footer-product-info';templeInfo.textContent='Zamów stronę lub aplikację';templeTile.append(templeInfo);
+const coreTile=document.createElement('div');coreTile.className='footer-core-tile';
+core.before(coreTile);coreTile.append(core);
+const coreInfo=document.createElement('p');coreInfo.className='footer-product-info';coreInfo.textContent='Opieka techniczna';coreTile.append(coreInfo);
 
 
 document.querySelectorAll('video[data-lazy-video]').forEach((video) => {
