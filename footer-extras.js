@@ -6,7 +6,7 @@
     if(!document.querySelector('.visitor-paper')){
       const visitors=document.createElement('details');
       visitors.className='visitor-paper';
-      visitors.innerHTML='<summary aria-label="114 aktywnych użytkowników według GA4, do 8 listopada 2026. Pokaż szczegóły"><span class="visitor-paper-label">Visitors</span><span class="visitor-paper-number" aria-hidden="true">114</span><span class="visitor-paper-date">GA4 · 08.11.2026</span></summary><div class="visitor-paper-info"><strong>114 aktywnych użytkowników</strong><p>GA4 · itbonsai.pl<br>01.01.2020–08.11.2026</p><p>Historyczny odczyt, aktualizowany ręcznie. To użytkownicy zarejestrowani przez GA4, nie liczba odsłon ani licznik na żywo.</p></div>';
+      visitors.innerHTML='<summary aria-label="114 aktywnych użytkowników według GA4, do 8 listopada 2026. Pokaż szczegóły"><span class="visitor-paper-number" aria-hidden="true">114</span></summary><div class="visitor-paper-info"><strong>114 aktywnych użytkowników</strong><p>GA4 · itbonsai.pl<br>01.01.2020–08.11.2026</p><p>Historyczny odczyt, aktualizowany ręcznie. To użytkownicy zarejestrowani przez GA4, nie liczba odsłon ani licznik na żywo.</p></div>';
       const brand=footer.querySelector('.footer-brand-block .brand');
       if(brand)brand.after(visitors);else footer.append(visitors);
     }
