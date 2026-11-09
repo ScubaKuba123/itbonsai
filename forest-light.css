@@ -62,3 +62,12 @@ body.bonsai-dna #bonsai-header .flag-cn { background-image:url("assets/flag-cn.s
 
 /* Leave the bottom-right corner available for the Tidio conversation widget. */
 .site-statistics { right:auto;left:16px;bottom:82px; }
+
+/* Reveal woodland only in the outer gutters; keep content and geometry intact. */
+@media(min-width:701px){
+ body.forest-mist::before{background:linear-gradient(90deg,#fffef635 0%,#fffef6b5 7%,#fffef670 40%,#fffef626 75%,#fffef610 100%),var(--forest-photo) center / cover no-repeat}
+ body.bonsai-dna.forest-mist :is(.services,.garden-featured,.garden-projects,.cooperation-process,.about-story,.content-section,.page-section,.page-grid,.contact-section,.contact,.contact-strip,.business-system,.business-products,.season-packages,.season-included,.season-notes,.svc-promises,.svc-offer,.svc-process,.section,.footer-main,.footer-bottom){background:linear-gradient(90deg,#e4efd71f 0%,#e4efd79e 6%,#e4efd79e 94%,#e4efd71f 100%)!important}
+}
+@media(max-width:700px){
+ body.forest-mist::before{background:linear-gradient(90deg,#fffef610,transparent 5%,transparent 95%,#fffef610),linear-gradient(180deg,#fffef6a8 0%,#fffef680 38%,#fffef640 100%),var(--forest-photo) 56% center / cover no-repeat}
+}
