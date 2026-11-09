@@ -7,7 +7,8 @@
       const visitors=document.createElement('details');
       visitors.className='visitor-paper';
       visitors.innerHTML='<summary aria-label="114 aktywnych użytkowników według GA4, do 8 listopada 2026. Pokaż szczegóły"><span class="visitor-paper-label" lang="ja">来訪者</span><span class="visitor-paper-number" lang="ja" aria-hidden="true">百十四</span><span class="visitor-paper-date">GA4 · 08.11.2026</span></summary><div class="visitor-paper-info"><strong>114 aktywnych użytkowników</strong><p>GA4 · itbonsai.pl<br>01.01.2020–08.11.2026</p><p>Historyczny odczyt, aktualizowany ręcznie. To użytkownicy zarejestrowani przez GA4, nie liczba odsłon ani licznik na żywo.</p></div>';
-      footer.append(visitors);
+      const brand=footer.querySelector('.footer-brand-block .brand');
+      if(brand)brand.after(visitors);else footer.append(visitors);
     }
     if(!footer.querySelector('.footer-kodama')){
       const kodama=document.createElement('a');
