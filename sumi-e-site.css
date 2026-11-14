@@ -26,3 +26,6 @@ body.bonsai-dna.forest-mist .garden-project{border-top:1px solid #60705c66!impor
 body.bonsai-dna.forest-mist .contact-page{background:transparent!important;}
 body.bonsai-dna.forest-mist input,body.bonsai-dna.forest-mist textarea,body.bonsai-dna.forest-mist select{color:#20372f;background:#fafbefd9;}
 body.bonsai-dna.forest-mist::before{background:linear-gradient(90deg,#eeeedb15,#eeeedbe8 11%,#eeeedbbd 25%,#eeeedbbd 75%,#eeeedbe8 89%,#eeeedb15),var(--forest-photo) center/100% 100vh no-repeat!important;}
+/* Keep the contact launcher in normal flow, clear of all reading content. */
+body.bonsai-dna.forest-mist #kami-launch{position:relative!important;inset:auto!important;margin:20px auto;display:flex;visibility:visible!important;}
+body.bonsai-dna.forest-mist #kami-launch[aria-expanded="true"]{visibility:hidden!important;}
