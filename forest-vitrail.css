@@ -56,3 +56,8 @@ body.bonsai-dna.forest-mist footer.site-footer.footer-refined,body.bonsai-dna.fo
  body.bonsai-dna.forest-mist .hero-living .living-visual{margin-top:16px;}
 }
 @media(max-width:600px){body.bonsai-dna.forest-mist .hero.hero-living .hero-copy{padding:22px 18px!important;}body.bonsai-dna.forest-mist .hero.hero-living h1{font-size:36px!important;line-height:1.12!important;}body.bonsai-dna.forest-mist .hero.hero-living .hero-copy p{font-size:15px;line-height:1.65;}}
+
+/* Portfolio uses the woodland glass alone, without a separate leaf illustration. */
+body.bonsai-dna.forest-mist .bonsai-entry--glass{min-height:0;padding-top:150px;padding-bottom:48px;margin-bottom:24px;}
+body.bonsai-dna.forest-mist .bonsai-entry--glass .entry-copy{width:100%;max-width:720px;}
+@media(max-width:600px){body.bonsai-dna.forest-mist .bonsai-entry--glass{padding:100px 14px 0;margin-bottom:24px;}}
