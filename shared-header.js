@@ -80,6 +80,9 @@
   const locale=document.documentElement.lang;
   setText(whatsapp,'WhatsApp');
   const copy=headerCopy[locale];if(!copy)return;
+  const app=header.querySelector(".header-free-app");
+  setText(app,({pl:"Apka webowa ↗",en:"Web app ↗",ja:"ウェブアプリ ↗"})[locale]);
+  setAttribute(app,"aria-label",({pl:"Bonsai Office — darmowa aplikacja webowa",en:"Bonsai Office — free web app",ja:"Bonsai Office — 無料ウェブアプリ"})[locale]);
   header.querySelectorAll('.bonsai-navigation a,.bonsai-pricing-shortcut').forEach(a=>{
    let route=new URL(a.href,location.href).pathname.replace(/\.html$/,'').replace(/\/$/,'')||'/';
    if(location.protocol==='file:')route='/'+route.split('/').pop();
