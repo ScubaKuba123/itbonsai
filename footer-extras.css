@@ -115,3 +115,12 @@ body.bonsai-dna .footer-refined .footer-contact a:focus-visible{background:#3566
 @media(max-width:700px){body.bonsai-dna .footer-refined .footer-contact{justify-self:start;width:100%;max-width:310px}body.bonsai-dna .footer-refined .footer-contact a{min-height:44px}}
 @media(prefers-reduced-motion:reduce){body.bonsai-dna .footer-refined .footer-contact a{transition:none}}
 body.bonsai-dna .footer-refined .footer-contact a{width:100%}
+
+/* Compact destinations: retain the marks, names and purpose in two lines. */
+.footer-options{width:100%;max-width:680px;justify-self:center;grid-template-columns:minmax(0,1fr) 44px minmax(0,1fr);gap:16px;margin:4px 0}
+body.bonsai-dna .footer-refined a.footer-option{display:grid;grid-template-columns:44px minmax(0,1fr);grid-template-rows:auto auto;column-gap:10px;row-gap:2px;min-height:0;padding:10px 12px;text-align:left;align-content:center}
+.footer-option>svg,.footer-option>img.core-c21-logo{grid-column:1;grid-row:1/3;align-self:center;width:44px;height:34px}
+.footer-option strong{grid-column:2;grid-row:1;font-size:16px;line-height:1.3}
+.footer-option .option-purpose{grid-column:2;grid-row:2;font-size:12px;line-height:1.4;margin:0}
+.footer-option .growth-step,.footer-option .option-detail{display:none}
+@media(max-width:700px){.footer-options{max-width:350px;grid-template-columns:1fr;gap:8px}.kodama-middle{grid-row:2}.footer-option .option-purpose{font-size:12px}body.bonsai-dna .footer-refined a.footer-option{min-height:0}}

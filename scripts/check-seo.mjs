@@ -84,7 +84,12 @@ async function run() {
   }
   const robots = live ? await response('/robots.txt') : read('robots.txt');
   assert(robots.includes('Sitemap: '+origin+'/sitemap.xml'), 'robots.txt sitemap missing');
-  assert(!/^Disallow:\s*\/\s*$/m.test(robots), 'robots.txt blocks entire site');
+  // Cloudflare adds per-bot blocks; only wildcard groups govern the default policy.
+  const groups=[];let group=null,hasRules=false;
+  for(const raw of robots.split('\n')){const line=raw.split('#')[0].trim();const m=line.match(/^([^:]+):\s*(.*)$/);if(!m)continue;const key=m[1].toLowerCase(),value=m[2].trim();if(key==='user-agent'){if(!group||hasRules){group={agents:[],rules:[]};groups.push(group);hasRules=false;}group.agents.push(value.toLowerCase());}else if(group){hasRules=true;if(key==='allow'||key==='disallow')group.rules.push({key,value});}}
+  const wildcard=groups.filter(g=>g.agents.includes('*')).flatMap(g=>g.rules);
+  assert(wildcard.some(r=>r.key==='allow'&&r.value==='/'),'Default crawling must remain allowed');
+  assert(!wildcard.some(r=>r.key==='disallow'&&r.value==='/'),'Wildcard blocks entire site');
   if (live) {
     const alias=await fetch(origin+'/koszt-strony-internetowej',{redirect:'manual'});
     assert.equal(alias.status,301); assert.equal(new URL(alias.headers.get('location'),origin).pathname,'/cennik');
