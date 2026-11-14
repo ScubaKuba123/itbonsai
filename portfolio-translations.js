@@ -181,3 +181,6 @@ window.bonsaiPortfolioCopy = {
   },
 
 };
+
+Object.assign(window.bonsaiPortfolioCopy.en,{"Katalog oporządzenia i pasmanterii":"Equipment and haberdashery catalogue","Wybór materiału i koloru produktu":"Product material and colour selection","Wyszukiwarka i podział oferty na kategorie":"Search and product categories","Koszyk i konto klienta":"Shopping cart and customer account","Ceny w PLN i EUR":"Prices in PLN and EUR","Sekcje nowości, promocji i informacji o dostawie":"New arrivals, promotions and delivery information","05 / E-commerce · Polska manufaktura":"05 / E-commerce · Polish workshop","WHIP-SPORT · strona na żywo":"WHIP-SPORT · Live website"});
+Object.assign(window.bonsaiPortfolioCopy.ja,{"Katalog oporządzenia i pasmanterii":"装備品と手芸用品のカタログ","Wybór materiału i koloru produktu":"商品の素材と色の選択","Wyszukiwarka i podział oferty na kategorie":"商品検索とカテゴリー別表示","Koszyk i konto klienta":"ショッピングカートと顧客アカウント","Ceny w PLN i EUR":"PLN・EURでの価格表示","Sekcje nowości, promocji i informacji o dostawie":"新商品・セール・配送情報のページ","05 / E-commerce · Polska manufaktura":"05 / ECサイト · ポーランドの工房","WHIP-SPORT · strona na żywo":"WHIP-SPORT · ライブサイト"});

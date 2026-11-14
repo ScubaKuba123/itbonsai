@@ -38,3 +38,21 @@ body.bonsai-dna.forest-mist .editorial-toolbar {background:#f5f7edef!important;}
 body.bonsai-dna.forest-mist :is(.useme-panel,.editorial-toolbar,.page-card,.offer-card,.svc-card,.season-card,.svc-echo){background:#f5f7edf5!important}
 body.bonsai-dna.forest-mist #bonsai-header,body.bonsai-dna.forest-mist #bonsai-header.bonsai-header.is-scrolled{background:#f1f3e7f2!important}
 body.bonsai-dna.forest-mist footer.site-footer.footer-refined,body.bonsai-dna.forest-mist footer.svc-footer.footer-refined{background:linear-gradient(135deg,#507b55,#426b48)!important}
+/* Mobile: show the complete glass artwork instead of magnifying its pale centre. */
+@media(max-width:600px){
+ body.bonsai-dna.forest-mist::before{background:linear-gradient(#f4f5e91a,#f4f5e91a),var(--forest-photo) center top / 100% auto repeat-y!important;}
+ body.bonsai-dna.forest-mist :is(.section,.services,.garden-featured,.garden-projects,.cooperation-process,.about-story,.content-section,.page-section,.page-grid,.contact-section,.contact,.contact-strip,.season-packages,.season-included,.season-notes,.svc-promises,.svc-offer,.svc-process){background:#f5f7edef!important;}
+ body.bonsai-dna.forest-mist .garden-projects{background:transparent!important;padding:0 14px;}
+ body.bonsai-dna.forest-mist .garden-project,body.bonsai-dna.forest-mist .garden-project:nth-child(even){padding:24px 16px;margin:0 0 24px;gap:20px;background:#f7f8eff5;border:1px solid #becbb8;border-radius:10px;}
+ body.bonsai-dna.forest-mist .garden-project-copy h2{font-size:30px;margin-bottom:16px;}
+ body.bonsai-dna.forest-mist .garden-project-copy li{font-size:14px;line-height:1.6;}
+ body.bonsai-dna.forest-mist .editorial-toolbar{margin:0 14px 24px;padding:14px;background:#f7f8eff5!important;border:1px solid #becbb8;border-radius:10px;}
+ body.bonsai-dna.forest-mist .bonsai-entry{padding:100px 14px 0;margin-bottom:24px;}
+ body.bonsai-dna.forest-mist .bonsai-entry .entry-copy{padding:20px 18px;background:#f7f8eff2;border:1px solid #becbb8;border-radius:10px;}
+ body.bonsai-dna.forest-mist .bonsai-entry h1{font-size:36px;margin:12px 0 16px;}
+ body.bonsai-dna.forest-mist .bonsai-entry .entry-art{width:100%;height:210px;margin:16px 0 0;border-radius:10px;mask-image:none;opacity:1;mix-blend-mode:normal;}
+ body.bonsai-dna.forest-mist .hero.hero-living .hero-copy{padding:20px 18px;background:#f7f8eff2;border:1px solid #becbb8;border-radius:10px;}
+ body.bonsai-dna.forest-mist .hero-living{padding-inline:14px;}
+ body.bonsai-dna.forest-mist .hero-living .living-visual{margin-top:16px;}
+}
+@media(max-width:600px){body.bonsai-dna.forest-mist .hero.hero-living .hero-copy{padding:22px 18px!important;}body.bonsai-dna.forest-mist .hero.hero-living h1{font-size:36px!important;line-height:1.12!important;}body.bonsai-dna.forest-mist .hero.hero-living .hero-copy p{font-size:15px;line-height:1.65;}}
