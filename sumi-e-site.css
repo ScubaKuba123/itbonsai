@@ -55,3 +55,4 @@ body.bonsai-dna.forest-mist footer.footer-refined::after{display:none!important;
 @media(max-width:600px){body.bonsai-dna h1[data-ink-title]{padding-inline-end:51px;}body.bonsai-dna h1[data-ink-title]::after{width:44px;height:54px;}}
 
 body.bonsai-dna.forest-mist footer.footer-refined :is(.footer-option,.footer-option span,.footer-option strong,.footer-option small,.footer-visitors,.footer-visitors summary){color:#183f2d!important;}
+body.bonsai-dna.forest-mist footer.footer-refined :is(.visitor-paper,.visitor-paper span,.visitor-paper p,.visitor-paper strong){color:#183f2d!important;}
