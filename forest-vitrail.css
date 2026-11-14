@@ -36,4 +36,5 @@ body.bonsai-dna.forest-mist .editorial-toolbar {background:#f5f7edef!important;}
 
 /* Quiet paper remains behind copy; darkening affects the glass image only. */
 body.bonsai-dna.forest-mist :is(.useme-panel,.editorial-toolbar,.page-card,.offer-card,.svc-card,.season-card,.svc-echo){background:#f5f7edf5!important}
-body.bonsai-dna.forest-mist #bonsai-header,body.bonsai-dna.forest-mist #bonsai-header.bonsai-header.is-scrolled,body.bonsai-dna.forest-mist footer.site-footer.footer-refined,body.bonsai-dna.forest-mist footer.svc-footer.footer-refined{background:#f1f3e7f2!important}
+body.bonsai-dna.forest-mist #bonsai-header,body.bonsai-dna.forest-mist #bonsai-header.bonsai-header.is-scrolled{background:#f1f3e7f2!important}
+body.bonsai-dna.forest-mist footer.site-footer.footer-refined,body.bonsai-dna.forest-mist footer.svc-footer.footer-refined{background:linear-gradient(135deg,#507b55,#426b48)!important}
