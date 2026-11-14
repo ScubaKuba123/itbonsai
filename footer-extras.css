@@ -107,6 +107,7 @@ body.bonsai-dna .footer-refined a.temple-option:hover .temple-torii,body.bonsai-
 
 /* Compact contact tiles, matching the woodland palette. */
 body.bonsai-dna .footer-refined .footer-contact{gap:7px;justify-self:end;width:min(100%,310px)}
+body.bonsai-dna .footer-contact .footer-contact-name{margin:0 0 3px;font:500 15px/1.4 var(--dna-body,sans-serif);color:#173c35;letter-spacing:normal;text-transform:none}
 body.bonsai-dna .footer-refined .footer-contact strong{margin:0 0 3px}
 body.bonsai-dna .footer-refined .footer-contact a{min-height:40px;padding:8px 13px;box-sizing:border-box;border:1px solid #a8bca4;border-radius:7px;background:#dce9d6;color:#173c35;font-size:13px;line-height:1.4;text-decoration:none;transition:background .15s,color .15s}
 body.bonsai-dna .footer-refined .footer-contact a:hover{background:#35663f;color:#fff;text-decoration:none}

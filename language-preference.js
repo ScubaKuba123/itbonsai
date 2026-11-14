@@ -1,0 +1,2 @@
+/* One language policy for every page. Manual choice overrides first-visit geolocation. */
+(()=>{const supported=['pl','en','ja'];function initial(){let saved;try{saved=localStorage.getItem('bonsai-language')}catch{}if(supported.includes(saved))return saved;const country=document.cookie.match(/(?:^|;\s*)bonsai-country=([^;]+)/)?.[1];return country==='PL'?'pl':country==='JP'?'ja':'en';}window.BonsaiLocale={initial};document.documentElement.lang=initial();})();

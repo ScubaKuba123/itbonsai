@@ -2,6 +2,14 @@
 
   function init(){
     const footer=document.querySelector('footer');if(!footer)return;
+    const contact=footer.querySelector('.footer-contact');
+    if(contact&&!contact.querySelector('.footer-contact-name')){
+      const name=document.createElement('p');
+      name.className='footer-contact-name';name.translate=false;
+      name.textContent='Kuba Mieroslawski';
+      const heading=contact.querySelector('strong');
+      if(heading)heading.after(name);else contact.prepend(name);
+    }
     // Verified GA4 active-user snapshot, filtered to itbonsai.pl; not realtime.
     if(!document.querySelector('.visitor-paper')){
       const visitors=document.createElement('details');

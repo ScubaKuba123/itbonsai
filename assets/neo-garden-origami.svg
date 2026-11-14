@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="340 117 862 575" fill="none">
+<defs>
+ <linearGradient id="gold" x1="650" y1="127" x2="719" y2="375" gradientUnits="userSpaceOnUse"><stop stop-color="#ffe52d"/><stop offset="1" stop-color="#edaa05"/></linearGradient>
+ <linearGradient id="sun" x1="750" y1="154" x2="1060" y2="360" gradientUnits="userSpaceOnUse"><stop stop-color="#fff544"/><stop offset="1" stop-color="#ffcf18"/></linearGradient>
+ <linearGradient id="leaf" x1="409" y1="434" x2="668" y2="333" gradientUnits="userSpaceOnUse"><stop stop-color="#fff248"/><stop offset=".5" stop-color="#ffd91e"/><stop offset="1" stop-color="#d99b06"/></linearGradient>
+ <linearGradient id="shade" x1="600" y1="393" x2="619" y2="466" gradientUnits="userSpaceOnUse"><stop stop-color="#302bdd"/><stop offset="1" stop-color="#17116b"/></linearGradient>
+ <linearGradient id="blue" x1="875" y1="296" x2="919" y2="470" gradientUnits="userSpaceOnUse"><stop stop-color="#152be7"/><stop offset="1" stop-color="#577bff"/></linearGradient>
+ <linearGradient id="fold" x1="782" y1="320" x2="735" y2="474" gradientUnits="userSpaceOnUse"><stop stop-color="#08067b"/><stop offset="1" stop-color="#3338cf"/></linearGradient>
+ <linearGradient id="trunk" x1="671" y1="404" x2="792" y2="590" gradientUnits="userSpaceOnUse"><stop stop-color="#85b4ff"/><stop offset=".45" stop-color="#5475ff"/><stop offset="1" stop-color="#778cff"/></linearGradient>
+ <linearGradient id="base" x1="584" y1="681" x2="860" y2="556" gradientUnits="userSpaceOnUse"><stop stop-color="#82b7ff"/><stop offset="1" stop-color="#5a70ff"/></linearGradient>
+ <linearGradient id="foot" x1="840" y1="605" x2="924" y2="687" gradientUnits="userSpaceOnUse"><stop stop-color="#151070"/><stop offset="1" stop-color="#3028cf"/></linearGradient>
+</defs>
+<path d="M650 127 539 314 727 376Z" fill="url(#gold)"/>
+<path d="M650 127 1192 319 819 296 727 376Z" fill="url(#sun)"/>
+<path d="M456 430 651 466 727 376Z" fill="url(#shade)"/>
+<path d="M350 454 492 298 727 376Z" fill="url(#leaf)"/>
+<path d="M819 296 1192 319 708 474Z" fill="url(#blue)"/>
+<path d="M727 376 819 296Q792 400 708 474Z" fill="url(#fold)"/>
+<path d="M727 376 637 484 736 579 864 553 708 474Z" fill="url(#trunk)"/>
+<path d="M832 613 864 612 1010 682 732 682 864 553Z" fill="url(#foot)"/>
+<path d="M528 682 736 579 864 553 732 682Z" fill="url(#base)"/>
+</svg>

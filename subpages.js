@@ -7,10 +7,10 @@ if (header) {
     nav = document.createElement('nav');
     nav.className = 'nav';
     nav.setAttribute('aria-label', 'Główna nawigacja');
-    nav.innerHTML = '<a href="/">Start</a><a href="/uslugi">Usługi</a><a href="/cennik">Cennik</a><a href="/dla-biznesu">Dla biznesu</a><a href="/realizacje">Portfolio</a><a href="/o-nas">O nas</a><a class="nav-cta" href="/kontakt">Kontakt</a>';
+    nav.innerHTML = '<a href="/">Start</a><a href="/uslugi">Usługi</a><a href="/cennik">Cennik</a><a href="/realizacje">Portfolio</a><a href="/o-nas">O nas</a><a class="nav-cta" href="/kontakt">Kontakt</a>';
     header.appendChild(nav);
   }
-  if (!nav.querySelector('a')) nav.innerHTML = '<a href="/">Start</a><a href="/uslugi">Usługi</a><a href="/cennik">Cennik</a><a href="/dla-biznesu">Dla biznesu</a><a href="/realizacje">Portfolio</a><a href="/o-nas">O nas</a><a class="nav-cta" href="/kontakt">Kontakt</a>';
+  if (!nav.querySelector('a')) nav.innerHTML = '<a href="/">Start</a><a href="/uslugi">Usługi</a><a href="/cennik">Cennik</a><a href="/realizacje">Portfolio</a><a href="/o-nas">O nas</a><a class="nav-cta" href="/kontakt">Kontakt</a>';
 
   if (!header.querySelector('.language-switcher')) {
     const languageSlot = document.createElement('div');

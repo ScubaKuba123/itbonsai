@@ -463,11 +463,6 @@
     },
   };
   const rebuiltHero = {
-    de: "Websites, Apps und Automatisierung, die Unternehmen beim Wachstum unterstützen.",
-    es: "Sitios web, aplicaciones y automatizaciones que ayudan a crecer a las empresas.",
-    uk: "Сайти, застосунки й автоматизація, які допомагають бізнесу зростати.",
-    fr: "Des sites, applications et automatisations qui font grandir les entreprises.",
-    zh: "帮助企业成长的网站、应用和自动化解决方案。",
     ja: "企業の成長を支えるウェブサイト、アプリ、業務自動化。",
   };
   try {
@@ -495,26 +490,6 @@
       "Wiemy, jak ważne są szybki kontakt, jasna oferta, wygodna obsługa klienta i systemy, które nie wymagają technicznej wiedzy. Projektujemy rozwiązania dla ludzi, którzy chcą prowadzić biznes sprawniej, wyglądać profesjonalnie i odzyskać czas.": "We know the value of fast communication, a clear offer, convenient customer service and systems that require no technical expertise. We design solutions for people who want to run their business efficiently, look professional and regain time.",
       "Przy każdym projekcie masz bezpośredni kontakt z naszym zespołem. Wspólnie poznajemy potrzeby firmy, planujemy rozwiązanie i odpowiadamy za jego wykonanie — bez anonimowych działów i obietnic bez pokrycia.": "With every project, you have direct contact with our team. Together, we understand your business, plan the solution and take responsibility for delivery—without anonymous departments or empty promises."
     },
-    de: {
-      "Jesteśmy zespołem projektantów, programistów i specjalistów od automatyzacji, którzy łączą technologię z praktycznym doświadczeniem biznesowym.": "Wir sind ein Team aus Designern, Entwicklern und Automatisierungsexperten, das Technologie mit praktischer Geschäftserfahrung verbindet.",
-      "Zespół od pomysłu do gotowego rozwiązania.": "Ein Team von der Idee bis zur fertigen Lösung."
-    },
-    es: {
-      "Jesteśmy zespołem projektantów, programistów i specjalistów od automatyzacji, którzy łączą technologię z praktycznym doświadczeniem biznesowym.": "Somos un equipo de diseñadores, desarrolladores y especialistas en automatización que combina tecnología con experiencia empresarial práctica.",
-      "Zespół od pomysłu do gotowego rozwiązania.": "Un equipo desde la idea hasta la solución final."
-    },
-    uk: {
-      "Jesteśmy zespołem projektantów, programistów i specjalistów od automatyzacji, którzy łączą technologię z praktycznym doświadczeniem biznesowym.": "Ми — команда дизайнерів, розробників і фахівців з автоматизації, яка поєднує технології з практичним бізнес-досвідом.",
-      "Zespół od pomysłu do gotowego rozwiązania.": "Команда від ідеї до готового рішення."
-    },
-    fr: {
-      "Jesteśmy zespołem projektantów, programistów i specjalistów od automatyzacji, którzy łączą technologię z praktycznym doświadczeniem biznesowym.": "Nous sommes une équipe de designers, développeurs et spécialistes de l’automatisation qui associe technologie et expérience concrète de l’entreprise.",
-      "Zespół od pomysłu do gotowego rozwiązania.": "Une équipe, de l’idée à la solution finale."
-    },
-    zh: {
-      "Jesteśmy zespołem projektantów, programistów i specjalistów od automatyzacji, którzy łączą technologię z praktycznym doświadczeniem biznesowym.": "我们是一支由设计师、开发人员和自动化专家组成的团队，将技术与实际商业经验相结合。",
-      "Zespół od pomysłu do gotowego rozwiązania.": "从创意到完整解决方案的专业团队。"
-    },
     ja: {
       "Jesteśmy zespołem projektantów, programistów i specjalistów od automatyzacji, którzy łączą technologię z praktycznym doświadczeniem biznesowym.": "私たちは、テクノロジーと実践的なビジネス経験を組み合わせるデザイナー、開発者、業務自動化の専門家チームです。",
       "Zespół od pomysłu do gotowego rozwiązania.": "アイデアから完成したソリューションまで支えるチームです。"
@@ -526,28 +501,18 @@
   });
 
   try {
-    const expanded = await fetch("translations-extra.json?v=translations-10", {
+    const expanded = await fetch("translations-extra.json?v=three-languages-20261114", {
       cache: "force-cache",
     }).then((response) => (response.ok ? response.json() : null));
     if (expanded) {
       copy.en = { ...(expanded.en || {}), ...copy.en };
       copy.ja = { ...(expanded.ja || {}), ...copy.ja };
-      copy.de = expanded.de || {};
-      copy.es = expanded.es || {};
-      copy.uk = expanded.uk || {};
-      copy.fr = expanded.fr || {};
-      copy.zh = expanded.zh || {};
     }
   } catch {
-    copy.de ||= {};
-    copy.es ||= {};
-    copy.uk ||= {};
-    copy.fr ||= {};
-    copy.zh ||= {};
   }
 
   try {
-    const businessTranslations = await fetch("dla-biznesu-translations.json?v=11", {
+    const businessTranslations = await fetch("dla-biznesu-translations.json?v=three-languages-20261114", {
       cache: "force-cache",
     }).then((response) => (response.ok ? response.json() : null));
     if (businessTranslations) {
@@ -560,7 +525,7 @@
   }
 
   try {
-    const currentTranslations = await fetch("translations-current.json?v=1", {
+    const currentTranslations = await fetch("translations-current.json?v=three-languages-20261114", {
       cache: "force-cache",
     }).then((response) => (response.ok ? response.json() : null));
     if (currentTranslations) {
@@ -573,7 +538,7 @@
   }
 
   try {
-    const seoTranslations = await fetch("seo-translations.json?v=1", {
+    const seoTranslations = await fetch("seo-translations.json?v=three-languages-20261114", {
       cache: "force-cache",
     }).then((response) => (response.ok ? response.json() : null));
     if (seoTranslations?.keys && seoTranslations?.locales) {
@@ -594,7 +559,7 @@
     window.location.pathname.includes("strony-internetowe-gdynia");
   if (needsLocalSeoTranslations) {
     try {
-      const localSeoTranslations = await fetch("local-seo-translations.json?v=1", {
+      const localSeoTranslations = await fetch("local-seo-translations.json?v=three-languages-20261114", {
         cache: "force-cache",
       }).then((response) => (response.ok ? response.json() : null));
       if (localSeoTranslations) {
@@ -610,11 +575,6 @@
   const navigationAndActions = {
     en: { Start: "Home", "Us\u0142ugi": "Services", "Dla biznesu": "For business", Portfolio: "Portfolio", "O nas": "About", Kontakt: "Contact", "Bezp\u0142atna analiza": "Free analysis", "Zobacz wszystkie us\u0142ugi": "View all services", "Zobacz projekt": "View project", "Um\u00f3w bezp\u0142atn\u0105 konsultacj\u0119": "Book a free consultation", "Napisz do nas": "Contact us", "Napisz na WhatsApp": "Message us on WhatsApp" },
     ja: { Start: "\u30db\u30fc\u30e0", "Us\u0142ugi": "\u30b5\u30fc\u30d3\u30b9", "Dla biznesu": "\u6cd5\u4eba\u5411\u3051", Portfolio: "\u5b9f\u7e3e", "O nas": "\u79c1\u305f\u3061\u306b\u3064\u3044\u3066", Kontakt: "\u304a\u554f\u3044\u5408\u308f\u305b", "Bezp\u0142atna analiza": "\u7121\u6599\u5206\u6790", "Zobacz wszystkie us\u0142ugi": "\u3059\u3079\u3066\u306e\u30b5\u30fc\u30d3\u30b9\u3092\u898b\u308b", "Zobacz projekt": "\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u3092\u898b\u308b", "Um\u00f3w bezp\u0142atn\u0105 konsultacj\u0119": "\u7121\u6599\u76f8\u8ac7\u3092\u4e88\u7d04", "Napisz do nas": "\u304a\u554f\u3044\u5408\u308f\u305b", "Napisz na WhatsApp": "WhatsApp\u3067\u9023\u7d61" },
-    de: { Start: "Startseite", "Us\u0142ugi": "Leistungen", "Dla biznesu": "F\u00fcr Unternehmen", Portfolio: "Referenzen", "O nas": "\u00dcber uns", Kontakt: "Kontakt", "Bezp\u0142atna analiza": "Kostenlose Analyse", "Zobacz wszystkie us\u0142ugi": "Alle Leistungen ansehen", "Zobacz projekt": "Projekt ansehen", "Um\u00f3w bezp\u0142atn\u0105 konsultacj\u0119": "Kostenloses Beratungsgespr\u00e4ch buchen", "Napisz do nas": "Kontaktieren Sie uns", "Napisz na WhatsApp": "Auf WhatsApp schreiben" },
-    es: { Start: "Inicio", "Us\u0142ugi": "Servicios", "Dla biznesu": "Para empresas", Portfolio: "Proyectos", "O nas": "Nosotros", Kontakt: "Contacto", "Bezp\u0142atna analiza": "An\u00e1lisis gratuito", "Zobacz wszystkie us\u0142ugi": "Ver todos los servicios", "Zobacz projekt": "Ver proyecto", "Um\u00f3w bezp\u0142atn\u0105 konsultacj\u0119": "Reservar una consulta gratuita", "Napisz do nas": "Cont\u00e1ctanos", "Napisz na WhatsApp": "Escr\u00edbenos por WhatsApp" },
-    uk: { Start: "\u0413\u043e\u043b\u043e\u0432\u043d\u0430", "Us\u0142ugi": "\u041f\u043e\u0441\u043b\u0443\u0433\u0438", "Dla biznesu": "\u0414\u043b\u044f \u0431\u0456\u0437\u043d\u0435\u0441\u0443", Portfolio: "\u041f\u0440\u043e\u0454\u043a\u0442\u0438", "O nas": "\u041f\u0440\u043e \u043d\u0430\u0441", Kontakt: "\u041a\u043e\u043d\u0442\u0430\u043a\u0442", "Bezp\u0142atna analiza": "\u0411\u0435\u0437\u043a\u043e\u0448\u0442\u043e\u0432\u043d\u0438\u0439 \u0430\u043d\u0430\u043b\u0456\u0437", "Zobacz wszystkie us\u0142ugi": "\u041f\u0435\u0440\u0435\u0433\u043b\u044f\u043d\u0443\u0442\u0438 \u0432\u0441\u0456 \u043f\u043e\u0441\u043b\u0443\u0433\u0438", "Zobacz projekt": "\u041f\u0435\u0440\u0435\u0433\u043b\u044f\u043d\u0443\u0442\u0438 \u043f\u0440\u043e\u0454\u043a\u0442", "Um\u00f3w bezp\u0142atn\u0105 konsultacj\u0119": "\u0417\u0430\u043f\u0438\u0441\u0430\u0442\u0438\u0441\u044f \u043d\u0430 \u0431\u0435\u0437\u043a\u043e\u0448\u0442\u043e\u0432\u043d\u0443 \u043a\u043e\u043d\u0441\u0443\u043b\u044c\u0442\u0430\u0446\u0456\u044e", "Napisz do nas": "\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u0438 \u043d\u0430\u043c", "Napisz na WhatsApp": "\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u0438 \u0443 WhatsApp" },
-    fr: { Start: "Accueil", "Us\u0142ugi": "Services", "Dla biznesu": "Entreprises", Portfolio: "R\u00e9alisations", "O nas": "\u00c0 propos", Kontakt: "Contact", "Bezp\u0142atna analiza": "Analyse gratuite", "Zobacz wszystkie us\u0142ugi": "Voir tous les services", "Zobacz projekt": "Voir le projet", "Um\u00f3w bezp\u0142atn\u0105 konsultacj\u0119": "R\u00e9server une consultation gratuite", "Napisz do nas": "Nous contacter", "Napisz na WhatsApp": "Nous \u00e9crire sur WhatsApp" },
-    zh: { Start: "\u9996\u9875", "Us\u0142ugi": "\u670d\u52a1", "Dla biznesu": "\u4f01\u4e1a\u670d\u52a1", Portfolio: "\u6848\u4f8b", "O nas": "\u5173\u4e8e\u6211\u4eec", Kontakt: "\u8054\u7cfb\u6211\u4eec", "Bezp\u0142atna analiza": "\u514d\u8d39\u5206\u6790", "Zobacz wszystkie us\u0142ugi": "\u67e5\u770b\u6240\u6709\u670d\u52a1", "Zobacz projekt": "\u67e5\u770b\u9879\u76ee", "Um\u00f3w bezp\u0142atn\u0105 konsultacj\u0119": "\u9884\u7ea6\u514d\u8d39\u54a8\u8be2", "Napisz do nas": "\u8054\u7cfb\u6211\u4eec", "Napisz na WhatsApp": "\u901a\u8fc7 WhatsApp \u8054\u7cfb" },
   };
   Object.entries(navigationAndActions).forEach(([locale, entries]) => {
     copy[locale] = { ...(copy[locale] || {}), ...entries };
@@ -622,11 +582,6 @@
   const commonActionSupplements = {
     en: { "Zobacz realizacje ↗": "View projects ↗" },
     ja: { "Zobacz realizacje ↗": "制作実績を見る ↗" },
-    de: { "Zobacz realizacje ↗": "Referenzen ansehen ↗" },
-    es: { "Zobacz realizacje ↗": "Ver proyectos ↗" },
-    uk: { "Zobacz realizacje ↗": "Переглянути проєкти ↗" },
-    fr: { "Zobacz realizacje ↗": "Voir les réalisations ↗" },
-    zh: { "Zobacz realizacje ↗": "查看案例 ↗" },
   };
   Object.entries(commonActionSupplements).forEach(([locale, entries]) => {
     copy[locale] = { ...(copy[locale] || {}), ...entries };
@@ -634,21 +589,11 @@
   const portfolioActions = {
     en: { "Otw\u00f3rz projekt Ocean \u2197": "Open the Ocean project \u2197", "Otw\u00f3rz projekt Mori Retreat \u2197": "Open the Mori Retreat project \u2197" },
     ja: { "Otw\u00f3rz projekt Ocean \u2197": "Ocean\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u3092\u958b\u304f \u2197", "Otw\u00f3rz projekt Mori Retreat \u2197": "Mori Retreat\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u3092\u958b\u304f \u2197" },
-    de: { "Otw\u00f3rz projekt Ocean \u2197": "Ocean-Projekt \u00f6ffnen \u2197", "Otw\u00f3rz projekt Mori Retreat \u2197": "Mori-Retreat-Projekt \u00f6ffnen \u2197" },
-    es: { "Otw\u00f3rz projekt Ocean \u2197": "Abrir el proyecto Ocean \u2197", "Otw\u00f3rz projekt Mori Retreat \u2197": "Abrir el proyecto Mori Retreat \u2197" },
-    uk: { "Otw\u00f3rz projekt Ocean \u2197": "\u0412\u0456\u0434\u043a\u0440\u0438\u0442\u0438 \u043f\u0440\u043e\u0454\u043a\u0442 Ocean \u2197", "Otw\u00f3rz projekt Mori Retreat \u2197": "\u0412\u0456\u0434\u043a\u0440\u0438\u0442\u0438 \u043f\u0440\u043e\u0454\u043a\u0442 Mori Retreat \u2197" },
-    fr: { "Otw\u00f3rz projekt Ocean \u2197": "Ouvrir le projet Ocean \u2197", "Otw\u00f3rz projekt Mori Retreat \u2197": "Ouvrir le projet Mori Retreat \u2197" },
-    zh: { "Otw\u00f3rz projekt Ocean \u2197": "\u6253\u5f00 Ocean \u9879\u76ee \u2197", "Otw\u00f3rz projekt Mori Retreat \u2197": "\u6253\u5f00 Mori Retreat \u9879\u76ee \u2197" },
   };
   Object.entries(portfolioActions).forEach(([locale, entries]) => Object.assign(copy[locale], entries));
   const oceanActionTranslations = {
     en: "Play the Ocean film ↗",
     ja: "Oceanの映像を見る ↗",
-    de: "Ocean-Film ansehen ↗",
-    es: "Ver la película de Ocean ↗",
-    uk: "Переглянути відео Ocean ↗",
-    fr: "Voir le film Ocean ↗",
-    zh: "观看 Ocean 视频 ↗",
   };
   Object.entries(oceanActionTranslations).forEach(([locale, value]) => {
     copy[locale]["Otwórz film Ocean ↗"] = value;
@@ -656,11 +601,6 @@
   const gardenFooterTranslations = {
     en: "Order a website or app here ↗",
     ja: "ウェブサイトやアプリのご注文はこちら ↗",
-    de: "Website oder App hier bestellen ↗",
-    es: "Encarga aquí tu sitio web o aplicación ↗",
-    uk: "Замовте сайт або застосунок тут ↗",
-    fr: "Commandez votre site ou application ici ↗",
-    zh: "在此订购网站或应用程序 ↗",
   };
   Object.entries(gardenFooterTranslations).forEach(([locale, value]) => {
     copy[locale]["Zamów stronę lub aplikację tutaj ↗"] = value;
@@ -708,11 +648,7 @@
   });
   const serviceDescriptionTranslations = {
     ja: ["デザイン、文章、レスポンシブ対応、フォームまで、問い合わせ獲得に必要なウェブサイトを制作します。","予約、顧客ポータル、日々の業務に合わせたツールを開発します。","フォーム、メール、データを連携し、反復作業を自動化します。","技術監査、キーワード、コンテンツ、Google Business、成果測定を支援します。","ロゴ、カラーパレット、書体、ブランド素材を一貫して設計します。"],
-    de: ["Konzept, Texte, responsives Design und Formulare – eine Website, die Anfragen gewinnt.","Buchungen, Kundenportale und Werkzeuge, die zu Ihrem Arbeitsalltag passen.","Wir verbinden Formulare, E-Mail und Daten, damit wiederkehrende Aufgaben automatisch ablaufen.","Technische Audits, Keywords, Inhalte, Google Business und Erfolgsmessung.","Logo, Farbpalette, Typografie und Materialien für einen einheitlichen Markenauftritt."],
-    es: ["Diseño, textos, adaptación responsive y formularios: un sitio preparado para generar consultas.","Reservas, portales de clientes y herramientas adaptadas al trabajo diario de tu empresa.","Conectamos formularios, correo y datos para automatizar las tareas repetitivas.","Auditoría técnica, palabras clave, contenidos, Google Business y medición de resultados.","Logo, paleta de colores, tipografía y materiales para una identidad de marca coherente."],
-    uk: ["Дизайн, тексти, адаптивність і форми — сайт, готовий залучати звернення.","Бронювання, клієнтські кабінети та інструменти для щоденної роботи компанії.","Поєднуємо форми, електронну пошту й дані, щоб повторювані завдання виконувалися автоматично.","Технічний аудит, ключові слова, контент, Google Business і вимірювання результатів.","Логотип, палітра кольорів, типографіка та матеріали для цілісного образу бренду."],
-    fr: ["Design, textes, responsive et formulaires : un site prêt à générer des demandes.","Réservations, espaces clients et outils adaptés au travail quotidien de votre entreprise.","Nous connectons formulaires, e-mails et données afin d’automatiser les tâches répétitives.","Audit technique, mots-clés, contenus, Google Business et mesure des résultats.","Logo, palette de couleurs, typographie et supports pour une identité de marque cohérente."],
-    zh: ["从设计、文案、响应式布局到表单，打造能够获取客户咨询的网站。","提供预约系统、客户门户和贴合企业日常工作的工具。","连接表单、邮件与数据，让重复任务自动完成。","提供技术审计、关键词、内容、Google Business 与效果衡量。","设计标志、配色、字体和品牌素材，保持品牌形象统一。"]
+
   };
   const serviceDescriptionKeys = [
     "Projekt, teksty, responsywność i formularze — strona gotowa do zdobywania zapytań.",
@@ -727,11 +663,7 @@
   const emberOliveTranslations = {
     en: ["Six projects. One quality standard.","Hospitality · Restaurant","An elegant Mediterranean restaurant website featuring a seasonal menu, private dining and a clear table-booking journey.","Open the Ember & Olive project ↗","Open website ↗"],
     ja: ["6つのプロジェクト。ひとつの品質基準。","ホスピタリティ · レストラン","季節のメニュー、プライベートダイニング、分かりやすい予約導線を備えた地中海レストランの上質なウェブサイト。","Ember & Oliveプロジェクトを開く ↗","サイトを開く ↗"],
-    de: ["Sechs Projekte. Ein Qualitätsstandard.","Hospitality · Restaurant","Eine elegante Website für ein mediterranes Restaurant mit saisonaler Speisekarte, Private Dining und klarer Tischreservierung.","Projekt Ember & Olive öffnen ↗","Website öffnen ↗"],
-    es: ["Seis proyectos. Un estándar de calidad.","Hostelería · Restaurante","Una elegante web para un restaurante mediterráneo con menú de temporada, eventos privados y un proceso claro de reserva.","Abrir el proyecto Ember & Olive ↗","Abrir sitio web ↗"],
-    uk: ["Шість проєктів. Один стандарт якості.","Гостинність · Ресторан","Елегантний сайт середземноморського ресторану із сезонним меню, приватними подіями та зрозумілим шляхом бронювання столика.","Відкрити проєкт Ember & Olive ↗","Відкрити сайт ↗"],
-    fr: ["Six projets. Un même niveau de qualité.","Hospitalité · Restaurant","Un site élégant pour un restaurant méditerranéen, avec menu de saison, événements privés et parcours de réservation clair.","Ouvrir le projet Ember & Olive ↗","Ouvrir le site ↗"],
-    zh: ["六个项目，同一品质标准。","餐饮 · 餐厅","优雅的地中海餐厅网站，展示时令菜单、私人宴会，并提供清晰的订桌流程。","打开 Ember & Olive 项目 ↗","打开网站 ↗"]
+
   };
   Object.entries(emberOliveTranslations).forEach(([locale, values]) => Object.assign(copy[locale], {
     "Sześć projektów. Jeden standard jakości.": values[0],
@@ -743,11 +675,7 @@
   const portfolioCategoryTranslations = {
     en: ["Tourism and Nature", "Process automation"],
     ja: ["観光と自然", "業務プロセス自動化"],
-    de: ["Tourismus und Natur", "Prozessautomatisierung"],
-    es: ["Turismo y naturaleza", "Automatización de procesos"],
-    uk: ["Туризм і природа", "Автоматизація процесів"],
-    fr: ["Tourisme et nature", "Automatisation des processus"],
-    zh: ["旅游与自然", "流程自动化"]
+
   };
   Object.entries(portfolioCategoryTranslations).forEach(([locale, values]) => Object.assign(copy[locale], {
     "Tourism and Nature": values[0],
@@ -771,7 +699,6 @@
     "termin 5–10 dni": "delivery in 5–10 days",
     "3 rundy poprawek": "3 revision rounds",
     "domena .pl na 1 rok w cenie*": ".pl domain for 1 year included*",
-    "hosting na 1 rok w cenie*": "hosting for 1 year included*",
     "pomoc w przygotowaniu tekstów": "help preparing your content",
     "zdjęcia z banku zdjęć lub materiały klienta": "stock images or client-provided materials",
     "pełna responsywność": "fully responsive design",
@@ -843,7 +770,6 @@
     "termin 5–10 dni": "制作期間 5〜10日",
     "3 rundy poprawek": "修正3回",
     "domena .pl na 1 rok w cenie*": ".plドメイン1年分込み*",
-    "hosting na 1 rok w cenie*": "ホスティング1年分込み*",
     "pomoc w przygotowaniu tekstów": "文章作成サポート",
     "zdjęcia z banku zdjęć lub materiały klienta": "ストック写真またはお客様提供素材",
     "pełna responsywność": "完全レスポンシブ対応",
@@ -927,11 +853,6 @@
   const growthSystemTranslations = {
     en: ["A digital ecosystem,", "built to work", "for your growth."],
     ja: ["デジタルエコシステムは、", "事業の成長のために", "働き続けます。"],
-    de: ["Ein digitales Ökosystem,", "das für Ihr Wachstum", "arbeitet."],
-    es: ["Un ecosistema digital,", "que trabaja", "para tu crecimiento."],
-    uk: ["Цифрова екосистема,", "що працює", "на ваше зростання."],
-    fr: ["Un écosystème numérique,", "conçu pour travailler", "pour votre croissance."],
-    zh: ["数字生态系统，", "持续助力", "您的业务增长。"],
   };
   Object.entries(growthSystemTranslations).forEach(([locale, values]) => Object.assign(copy[locale], {
     "Cyfrowy ekosystem,": values[0],
@@ -946,7 +867,7 @@
     NodeFilter.SHOW_TEXT,
     {
       acceptNode(node) {
-        return node.parentElement?.closest("script,style,canvas") ||
+        return node.parentElement?.closest("#bonsai-header,.footer-options,.visitor-paper,.footer-contact,.footer-brand-block > p,script,style,canvas,noscript,#kami-root,#privacy-dialog,[data-privacy],.useme-footer-link,[translate=no]") ||
           !node.textContent.trim()
           ? NodeFilter.FILTER_REJECT
           : NodeFilter.FILTER_ACCEPT;
@@ -962,11 +883,6 @@
     { locale: "pl", flag: "pl", emoji: "🇵🇱", code: "PL", label: "Polski" },
     { locale: "en", flag: "gb", emoji: "🇬🇧", code: "EN", label: "English" },
     { locale: "ja", flag: "jp", emoji: "🇯🇵", code: "JP", label: "日本語" },
-    { locale: "de", flag: "de", emoji: "🇩🇪", code: "DE", label: "Deutsch" },
-    { locale: "es", flag: "es", emoji: "🇪🇸", code: "ES", label: "Español" },
-    { locale: "uk", flag: "ua", emoji: "🇺🇦", code: "UA", label: "Українська" },
-    { locale: "fr", flag: "fr", emoji: "🇫🇷", code: "FR", label: "Français" },
-    { locale: "zh", flag: "cn", emoji: "🇨🇳", code: "中文", label: "中文" },
   ];
   let switcher = document.querySelector(".language-switcher, .site-language-switcher");
   if (!switcher) switcher = document.createElement("div");
@@ -1008,11 +924,7 @@
   const scaleProjectTranslations = {
     en: ["Strategy · Business scaling", "A modern website presenting a structured path from the first idea to a scalable system for sales, automation and business growth.", "Open the full project ↗"],
     ja: ["戦略 · ビジネスの拡大", "最初のアイデアから、販売・自動化・事業成長のための拡張可能な仕組みまで、整理された道筋を示す現代的なウェブサイトです。", "プロジェクト全体を開く ↗"],
-    de: ["Strategie · Unternehmensskalierung", "Eine moderne Website, die den strukturierten Weg von der ersten Idee zu einem skalierbaren System für Vertrieb, Automatisierung und Unternehmenswachstum zeigt.", "Vollständiges Projekt öffnen ↗"],
-    es: ["Estrategia · Escalado empresarial", "Un sitio moderno que presenta un camino ordenado desde la primera idea hasta un sistema escalable de ventas, automatización y crecimiento empresarial.", "Abrir el proyecto completo ↗"],
-    uk: ["Стратегія · Масштабування бізнесу", "Сучасний сайт, що показує впорядкований шлях від першої ідеї до масштабованої системи продажів, автоматизації та розвитку компанії.", "Відкрити повний проєкт ↗"],
-    fr: ["Stratégie · Développement de l’entreprise", "Un site moderne qui présente un parcours structuré, de la première idée à un système évolutif de vente, d’automatisation et de croissance.", "Ouvrir le projet complet ↗"],
-    zh: ["战略 · 业务规模化", "一个现代网站，展示从最初构想到可扩展的销售、自动化与业务增长系统的清晰路径。", "打开完整项目 ↗"]
+
   };
   Object.entries(scaleProjectTranslations).forEach(([locale, values]) => Object.assign(copy[locale], {
     "Strategia · Skalowanie biznesu": values[0],
@@ -1023,11 +935,7 @@
   const portfolioPreviewTranslations = {
     en: ["Scroll the page ↓", "Tourism and Nature · Website", "A coastal brand website with clear categories for stays, experiences and nature. Moving waves create a premium atmosphere while the navigation leads directly to the offer."],
     ja: ["ページをスクロール ↓", "観光と自然 · ウェブサイト", "滞在、体験、自然のカテゴリーが分かりやすい海辺のブランドサイト。波の動きが上質な雰囲気を生み、ナビゲーションがオファーへ直接導きます。"],
-    de: ["Seite scrollen ↓", "Tourismus und Natur · Website", "Eine Website für eine Küstenmarke mit klaren Kategorien für Aufenthalte, Erlebnisse und Natur. Bewegte Wellen schaffen eine hochwertige Atmosphäre, die Navigation führt direkt zum Angebot."],
-    es: ["Desplaza la página ↓", "Turismo y naturaleza · Sitio web", "Un sitio web para una marca costera con categorías claras de estancias, experiencias y naturaleza. El movimiento de las olas crea una atmósfera premium y la navegación conduce directamente a la oferta."],
-    uk: ["Прокручуйте сторінку ↓", "Туризм і природа · Вебсайт", "Сайт прибережного бренду з чіткими категоріями проживання, вражень і природи. Рух хвиль створює преміальну атмосферу, а навігація веде прямо до пропозиції."],
-    fr: ["Faire défiler la page ↓", "Tourisme et nature · Site web", "Un site de marque côtière avec des catégories claires pour les séjours, les expériences et la nature. Le mouvement des vagues crée une atmosphère premium et la navigation mène directement à l’offre."],
-    zh: ["滚动页面 ↓", "旅游与自然 · 网站", "一个海滨品牌网站，清晰呈现住宿、体验与自然分类。海浪动态营造高端氛围，导航直接引导访客查看服务。"]
+
   };
   Object.entries(portfolioPreviewTranslations).forEach(([locale, values]) => Object.assign(copy[locale], {
     "Przewiń stronę ↓": values[0],
@@ -1038,11 +946,7 @@
   const homepageCaseTranslations = {
     en: ["OUR WORK", "premium brand.", "e-commerce with advanced integrations,"],
     ja: ["制作実績", "プレミアムブランド。", "高度な連携機能を備えたECプラットフォームで、"],
-    de: ["UNSERE PROJEKTE", "Premium-Marke.", "E-Commerce mit umfangreichen Integrationen,"],
-    es: ["NUESTROS PROYECTOS", "marca premium.", "e-commerce con integraciones avanzadas,"],
-    uk: ["НАШІ ПРОЄКТИ", "преміального бренду.", "e-commerce із розширеними інтеграціями,"],
-    fr: ["NOS RÉALISATIONS", "marque premium.", "e-commerce avec des intégrations avancées,"],
-    zh: ["我们的项目", "高端品牌。", "配备丰富集成功能的电商平台，"]
+
   };
   Object.entries(homepageCaseTranslations).forEach(([locale, values]) => Object.assign(copy[locale], {
     "NASZE REALIZACJE": values[0],
@@ -1053,11 +957,7 @@
   const toyStoreTranslations = {
     en: ["E-commerce · Toys", "A distinctive online store for a carefully selected toy collection. Premium product presentation combines safety, natural materials and a simple path to purchase.", "Open the Toy Store project ↗", "Collections  Reviews  Safety", "EXCLUSIVE COLLECTION", "Toys with character.", "Natural materials. Timeless form."],
     ja: ["Eコマース · おもちゃ", "厳選されたおもちゃを扱う印象的なオンラインストア。上質な商品表現で、安全性、自然素材、購入までの分かりやすい導線を一つにしています。", "おもちゃストアのプロジェクトを開く ↗", "コレクション  レビュー  安全性", "限定コレクション", "個性のあるおもちゃ。", "自然素材。時代を超える形。"],
-    de: ["E-Commerce · Spielzeug", "Ein ausdrucksstarker Onlineshop für eine sorgfältig ausgewählte Spielzeugkollektion. Die hochwertige Produktpräsentation verbindet Sicherheit, natürliche Materialien und einen einfachen Weg zum Kauf.", "Projekt Spielzeugladen öffnen ↗", "Kollektionen  Bewertungen  Sicherheit", "EXKLUSIVE KOLLEKTION", "Spielzeug mit Charakter.", "Natürliche Materialien. Zeitlose Form."],
-    es: ["E-commerce · Juguetes", "Una tienda online con carácter para una colección de juguetes cuidadosamente seleccionada. La presentación premium combina seguridad, materiales naturales y un proceso de compra sencillo.", "Abrir el proyecto Tienda de Juguetes ↗", "Colecciones  Opiniones  Seguridad", "COLECCIÓN EXCLUSIVA", "Juguetes con carácter.", "Materiales naturales. Forma atemporal."],
-    uk: ["E-commerce · Іграшки", "Виразний інтернет-магазин для ретельно відібраної колекції іграшок. Преміальна презентація поєднує безпеку, натуральні матеріали та простий шлях до покупки.", "Відкрити проєкт магазину іграшок ↗", "Колекції  Відгуки  Безпека", "ЕКСКЛЮЗИВНА КОЛЕКЦІЯ", "Іграшки з характером.", "Натуральні матеріали. Позачасова форма."],
-    fr: ["E-commerce · Jouets", "Une boutique en ligne expressive pour une collection de jouets soigneusement sélectionnée. La présentation premium associe sécurité, matériaux naturels et parcours d’achat simple.", "Ouvrir le projet Boutique de Jouets ↗", "Collections  Avis  Sécurité", "COLLECTION EXCLUSIVE", "Des jouets de caractère.", "Matériaux naturels. Forme intemporelle."],
-    zh: ["电商 · 玩具", "为精选玩具系列打造的鲜明在线商店。高品质产品展示将安全、天然材料与简洁购买路径融为一体。", "打开玩具商店项目 ↗", "系列  评价  安全", "专属系列", "有个性的玩具。", "天然材料。经典造型。"]
+
   };
   Object.entries(toyStoreTranslations).forEach(([locale, values]) => Object.assign(copy[locale], {
     "Fiku Miku": "Fiku Miku",
@@ -1074,11 +974,7 @@
   const newPortfolioTranslations = {
     en: ["Hospitality · Japanese restaurant", "A distinctive sushi restaurant website combining Japanese tradition with a joyful contemporary identity. Menu, craft and booking form one simple customer journey.", "Open Kōhaku Sushi website ↗", "Industry · B2B · Redesign", "A refresh of an outdated steel company website into a bold, modern B2B service. Capabilities, projects, quality and a quick quote request form one professional journey.", "Open Forge Steel website ↗", "Scrollable preview of the refreshed Forge Steel website"],
     ja: ["ホスピタリティ · 日本料理店", "日本の伝統と明るく現代的なアイデンティティを組み合わせた、印象的な寿司レストランのサイトです。メニュー、職人技、予約までをシンプルな導線にまとめました。", "Kōhaku Sushi のサイトを開く ↗", "製造業 · B2B · リデザイン", "古い鉄鋼会社のサイトを、力強く現代的なB2Bサイトへ刷新しました。技術力、実績、品質、見積もり依頼を一つのプロフェッショナルな導線に整理しています。", "Forge Steel のサイトを開く ↗", "刷新した Forge Steel サイトのスクロールプレビュー"],
-    de: ["Hospitality · Japanisches Restaurant", "Eine ausdrucksstarke Website für ein Sushi-Restaurant, die japanische Tradition mit einer fröhlichen, modernen Identität verbindet. Menü, Handwerk und Reservierung bilden eine klare Customer Journey.", "Kōhaku-Sushi-Website öffnen ↗", "Industrie · B2B · Redesign", "Die veraltete Website eines Stahlunternehmens wurde zu einem starken, modernen B2B-Auftritt erneuert. Kompetenzen, Projekte, Qualität und schnelle Angebotsanfrage bilden einen professionellen Weg.", "Forge-Steel-Website öffnen ↗", "Scrollbare Vorschau der erneuerten Forge-Steel-Website"],
-    es: ["Hostelería · Restaurante japonés", "Un sitio distintivo para un restaurante de sushi que combina la tradición japonesa con una identidad contemporánea y alegre. Menú, oficio y reserva forman un recorrido sencillo.", "Abrir el sitio de Kōhaku Sushi ↗", "Industria · B2B · Rediseño", "Renovación de la antigua web de una empresa siderúrgica para convertirla en un sitio B2B moderno y sólido. Capacidades, proyectos, calidad y solicitud de presupuesto crean un recorrido profesional.", "Abrir el sitio de Forge Steel ↗", "Vista desplazable del sitio renovado de Forge Steel"],
-    uk: ["Гостинність · Японський ресторан", "Виразний сайт суші-ресторану, що поєднує японську традицію із сучасною життєрадісною айдентикою. Меню, майстерність і бронювання утворюють простий шлях клієнта.", "Відкрити сайт Kōhaku Sushi ↗", "Промисловість · B2B · Редизайн", "Оновлення застарілого сайту сталеливарної компанії до сильного сучасного B2B-сервісу. Компетенції, проєкти, якість і швидкий запит пропозиції утворюють професійний шлях.", "Відкрити сайт Forge Steel ↗", "Прокручуваний перегляд оновленого сайту Forge Steel"],
-    fr: ["Hospitalité · Restaurant japonais", "Un site distinctif pour un restaurant de sushi, mêlant tradition japonaise et identité contemporaine joyeuse. Menu, savoir-faire et réservation forment un parcours client simple.", "Ouvrir le site Kōhaku Sushi ↗", "Industrie · B2B · Refonte", "La refonte d’un ancien site d’entreprise sidérurgique en une présence B2B moderne et forte. Savoir-faire, projets, qualité et demande de devis rapide composent un parcours professionnel.", "Ouvrir le site Forge Steel ↗", "Aperçu défilable du site Forge Steel rénové"],
-    zh: ["餐饮 · 日式餐厅", "一个鲜明的寿司餐厅网站，将日本传统与愉悦的现代品牌形象相结合。菜单、匠心与预订形成清晰简洁的客户路径。", "打开 Kōhaku Sushi 网站 ↗", "工业 · B2B · 重新设计", "将钢铁公司的旧网站升级为有力、现代的B2B网站。能力、项目、质量与快速询价构成专业而清晰的访问路径。", "打开 Forge Steel 网站 ↗", "可滚动浏览重新设计的 Forge Steel 网站"]
+
   };
   Object.entries(newPortfolioTranslations).forEach(([locale, values]) => Object.assign(copy[locale], {
     "Hospitality · Restauracja japońska": values[0],
@@ -1095,11 +991,7 @@
   const orbitalTranslations = {
     en: ["Creative · Marketing · Japan", "A cinematic website for a Japanese creative marketing studio. A cosmic visual language, motion and bold typography lead from the brand idea to a clear invitation to collaborate.", "Open ORBITAL website ↗"],
     ja: ["クリエイティブ · マーケティング · 日本", "日本のクリエイティブマーケティングスタジオのための映画的なウェブサイト。宇宙的なビジュアル言語、動き、力強いタイポグラフィが、ブランドの着想から明確な協業の誘いへ導きます。", "ORBITAL のサイトを開く ↗"],
-    de: ["Kreation · Marketing · Japan", "Eine filmische Website für ein japanisches Kreativ- und Marketingstudio. Kosmische Bildsprache, Bewegung und starke Typografie führen von der Markenidee zu einer klaren Einladung zur Zusammenarbeit.", "ORBITAL-Website öffnen ↗"],
-    es: ["Creatividad · Marketing · Japón", "Un sitio cinematográfico para un estudio creativo de marketing japonés. El lenguaje visual cósmico, el movimiento y una tipografía potente llevan de la idea de marca a una invitación clara a colaborar.", "Abrir el sitio de ORBITAL ↗"],
-    uk: ["Креатив · Маркетинг · Японія", "Кінематографічний сайт японської креативної маркетингової студії. Космічна візуальна мова, рух і сильна типографіка ведуть від ідеї бренду до чіткого запрошення до співпраці.", "Відкрити сайт ORBITAL ↗"],
-    fr: ["Création · Marketing · Japon", "Un site cinématographique pour un studio créatif japonais. Langage visuel cosmique, mouvement et typographie forte conduisent de l’idée de marque à une invitation claire à collaborer.", "Ouvrir le site ORBITAL ↗"],
-    zh: ["创意 · 营销 · 日本", "为日本创意营销工作室打造的电影感网站。宇宙视觉语言、动态效果与有力的排版，从品牌理念清晰引导至合作邀请。", "打开 ORBITAL 网站 ↗"]
+
   };
   Object.entries(orbitalTranslations).forEach(([locale, values]) => Object.assign(copy[locale], {
     "Kreacja · Marketing · Japonia": values[0],
@@ -1111,22 +1003,14 @@
   const portfolioWelcomeTranslations = {
     en: "Welcome to the BonsAi Studio portfolio",
     ja: "BonsAi Studio のポートフォリオへようこそ",
-    de: "Willkommen im Portfolio von BonsAi Studio",
-    es: "Bienvenido al portfolio de BonsAi Studio",
-    uk: "Ласкаво просимо до портфоліо BonsAi Studio",
-    fr: "Bienvenue dans le portfolio de BonsAi Studio",
-    zh: "欢迎浏览 BonsAi Studio 作品集"
+
   };
   Object.entries(portfolioWelcomeTranslations).forEach(([locale, value]) => Object.assign(copy[locale], { "Witaj w portfolio BonsAi Studio": value }));
 
   const homepagePortfolioTranslations = {
     en: ["Japanese tradition, presented with a modern edge.", "A distinctive sushi restaurant website guides guests from atmosphere and menu straight to booking.", "View in portfolio", "Open portfolio — Kōhaku Sushi", "Kōhaku Sushi — View in portfolio"],
     ja: ["日本の伝統を、現代的な感性で。", "印象的な寿司レストランのサイトが、空間の雰囲気とメニューから予約まで自然に導きます。", "ポートフォリオを見る", "ポートフォリオを開く — Kōhaku Sushi", "Kōhaku Sushi — ポートフォリオを見る"],
-    de: ["Japanische Tradition, modern interpretiert.", "Die ausdrucksstarke Sushi-Website führt von Atmosphäre und Menü direkt zur Reservierung.", "Im Portfolio ansehen", "Portfolio öffnen — Kōhaku Sushi", "Kōhaku Sushi — Im Portfolio ansehen"],
-    es: ["Tradición japonesa con una mirada contemporánea.", "La expresiva web del restaurante de sushi lleva de la atmósfera y el menú directamente a la reserva.", "Ver en el portfolio", "Abrir portfolio — Kōhaku Sushi", "Kōhaku Sushi — Ver en el portfolio"],
-    uk: ["Японська традиція в сучасному прочитанні.", "Виразний сайт суші-ресторану веде від атмосфери й меню прямо до бронювання.", "Переглянути в портфоліо", "Відкрити портфоліо — Kōhaku Sushi", "Kōhaku Sushi — Переглянути в портфоліо"],
-    fr: ["La tradition japonaise dans une expression contemporaine.", "Le site expressif du restaurant de sushi mène de l’atmosphère et du menu directement à la réservation.", "Voir dans le portfolio", "Ouvrir le portfolio — Kōhaku Sushi", "Kōhaku Sushi — Voir dans le portfolio"],
-    zh: ["以现代方式呈现日本传统。", "鲜明的寿司餐厅网站从氛围与菜单自然引导顾客完成预订。", "在作品集中查看", "打开作品集 — Kōhaku Sushi", "Kōhaku Sushi — 在作品集中查看"]
+
   };
   Object.entries(homepagePortfolioTranslations).forEach(([locale, values]) => Object.assign(copy[locale], {
     "Japońska tradycja w nowoczesnym wydaniu.": values[0],
@@ -1139,11 +1023,7 @@
   const finalCoverageTranslations = {
     en: ["Logo and identity", "We design the structure, visual style, copy, mobile version, forms and analytics—everything needed to generate enquiries.", "We build booking systems, client portals, calculators and internal tools that organize work and save the team time.", "We audit technology and content, select keywords, improve speed, Google Business, structured data and performance measurement.", "We connect email, forms, CRM and bookings. We create automated responses, reports and AI-assisted workflows.", "Logo and brand identity", "We design logos, color palettes, typography, image direction and essential brand materials. We can also prepare copy and communication so the company looks professional in every channel.", "Digital solutions for companies that want to grow more calmly and intelligently.", "Let’s talk about your company", "Quick links", "03 / BonsAi Office", "BonsAi Office brings the key parts of the day into one simple space: tasks, calendar, notes, meetings, documents, projects and matters requiring attention.", "BonsAi Office — a calm space for daily work"],
     ja: ["ロゴとアイデンティティ", "構成、デザイン、文章、モバイル版、フォーム、分析まで、問い合わせ獲得に必要なすべてを設計します。", "予約、顧客ポータル、計算ツール、社内ツールを構築し、業務を整理してチームの時間を節約します。", "技術とコンテンツを監査し、キーワード選定、速度、Google Business、構造化データ、効果測定を改善します。", "メール、フォーム、CRM、予約を連携し、自動返信、レポート、AI支援ワークフローを構築します。", "ロゴとブランドアイデンティティ", "ロゴ、カラーパレット、タイポグラフィ、写真の方向性、基本的なブランド素材を設計します。文章やコミュニケーションも用意し、あらゆるチャネルでプロフェッショナルに見せます。", "落ち着いて賢く成長したい企業のためのデジタルソリューション。", "会社についてお話ししましょう", "クイックリンク", "03 / BonsAi Office", "BonsAi Officeは、タスク、カレンダー、メモ、会議、書類、プロジェクト、注意が必要な事項を一つのシンプルな空間にまとめます。", "BonsAi Office — 日々の仕事のための落ち着いた空間"],
-    de: ["Logo und Identität", "Wir gestalten Struktur, Erscheinungsbild, Texte, mobile Version, Formulare und Analytik—alles, was für neue Anfragen nötig ist.", "Wir entwickeln Buchungen, Kundenportale, Rechner und interne Werkzeuge, die Arbeit ordnen und dem Team Zeit sparen.", "Wir prüfen Technik und Inhalte, wählen Keywords und verbessern Geschwindigkeit, Google Business, strukturierte Daten und Erfolgsmessung.", "Wir verbinden E-Mail, Formulare, CRM und Buchungen und entwickeln automatische Antworten, Berichte sowie KI-gestützte Workflows.", "Logo und Markenidentität", "Wir gestalten Logo, Farbpalette, Typografie, Bildsprache und grundlegende Markenmaterialien. Auf Wunsch erstellen wir auch Texte und Kommunikation für einen professionellen Auftritt in jedem Kanal.", "Digitale Lösungen für Unternehmen, die ruhiger und intelligenter wachsen möchten.", "Sprechen wir über Ihr Unternehmen", "Schnellzugriff", "03 / BonsAi Office", "BonsAi Office vereint die wichtigsten Elemente des Tages in einem einfachen Raum: Aufgaben, Kalender, Notizen, Meetings, Dokumente, Projekte und offene Punkte.", "BonsAi Office — ein ruhiger Raum für die tägliche Arbeit"],
-    es: ["Logo e identidad", "Diseñamos la estructura, el aspecto visual, los textos, la versión móvil, los formularios y la analítica: todo lo necesario para generar consultas.", "Creamos reservas, portales de clientes, calculadoras y herramientas internas que organizan el trabajo y ahorran tiempo al equipo.", "Auditamos tecnología y contenidos, elegimos palabras clave y mejoramos velocidad, Google Business, datos estructurados y medición de resultados.", "Conectamos correo, formularios, CRM y reservas. Creamos respuestas automáticas, informes y flujos de trabajo asistidos por IA.", "Logo e identidad de marca", "Diseñamos logotipo, paleta de colores, tipografía, dirección fotográfica y materiales esenciales de marca. También podemos preparar textos y comunicación para que la empresa se vea profesional en cada canal.", "Soluciones digitales para empresas que quieren crecer con más calma e inteligencia.", "Hablemos de tu empresa", "Accesos rápidos", "03 / BonsAi Office", "BonsAi Office reúne los elementos más importantes del día en un espacio sencillo: tareas, calendario, notas, reuniones, documentos, proyectos y asuntos que requieren atención.", "BonsAi Office — un espacio tranquilo para el trabajo diario"],
-    uk: ["Логотип та айдентика", "Ми проєктуємо структуру, вигляд, тексти, мобільну версію, форми й аналітику—усе необхідне для отримання звернень.", "Ми створюємо бронювання, кабінети клієнтів, калькулятори та внутрішні інструменти, які впорядковують роботу й економлять час команди.", "Ми перевіряємо техніку й контент, добираємо ключові слова, покращуємо швидкість, Google Business, структуровані дані та вимірювання результатів.", "Ми поєднуємо електронну пошту, форми, CRM і бронювання та створюємо автоматичні відповіді, звіти й робочі процеси з підтримкою ШІ.", "Логотип та фірмова айдентика", "Ми розробляємо логотип, палітру кольорів, типографіку, стиль фотографій та основні матеріали бренду. Також готуємо тексти й комунікацію для професійного вигляду в кожному каналі.", "Цифрові рішення для компаній, які хочуть розвиватися спокійніше й розумніше.", "Поговорімо про вашу компанію", "Швидкі посилання", "03 / BonsAi Office", "BonsAi Office об’єднує найважливіші елементи дня в одному простому просторі: завдання, календар, нотатки, зустрічі, документи, проєкти та справи, що потребують уваги.", "BonsAi Office — спокійний простір для щоденної роботи"],
-    fr: ["Logo et identité", "Nous concevons la structure, l’univers visuel, les textes, la version mobile, les formulaires et l’analytique—tout ce qu’il faut pour générer des demandes.", "Nous créons des réservations, espaces clients, calculateurs et outils internes qui organisent le travail et font gagner du temps à l’équipe.", "Nous auditons la technique et les contenus, choisissons les mots-clés et améliorons vitesse, Google Business, données structurées et mesure des résultats.", "Nous relions e-mail, formulaires, CRM et réservations, puis créons réponses automatiques, rapports et flux de travail assistés par l’IA.", "Logo et identité de marque", "Nous concevons logo, palette de couleurs, typographie, direction photo et supports essentiels de la marque. Nous pouvons aussi préparer les textes et la communication pour une présence professionnelle sur chaque canal.", "Des solutions numériques pour les entreprises qui veulent grandir plus sereinement et intelligemment.", "Parlons de votre entreprise", "Liens rapides", "03 / BonsAi Office", "BonsAi Office réunit les éléments essentiels de la journée dans un espace simple : tâches, calendrier, notes, réunions, documents, projets et sujets demandant de l’attention.", "BonsAi Office — un espace serein pour le travail quotidien"],
-    zh: ["标志与视觉识别", "我们设计结构、视觉、文案、移动版本、表单和分析——涵盖获取客户咨询所需的一切。", "我们构建预约、客户面板、计算器和内部工具，整理工作并为团队节省时间。", "我们审查技术和内容，选择关键词，并改进速度、Google Business、结构化数据和效果衡量。", "我们连接邮件、表单、CRM和预约，创建自动回复、报告以及AI辅助工作流程。", "标志与品牌识别", "我们设计标志、配色、字体、影像方向和基础品牌材料，也可准备文案与沟通内容，让企业在每个渠道都保持专业形象。", "为希望更从容、更智慧成长的企业提供数字解决方案。", "让我们聊聊您的企业", "快捷链接", "03 / BonsAi Office", "BonsAi Office 将一天中最重要的内容汇集在一个简洁空间：任务、日历、笔记、会议、文件、项目以及需要关注的事项。", "BonsAi Office — 日常工作的宁静空间"]
+
   };
   const finalCoverageKeys = ["Logo i identyfikacja", "Projektujemy strukturę, wygląd, teksty, wersję mobilną, formularze i analitykę — wszystko, czego potrzeba do zdobywania zapytań.", "Budujemy rezerwacje, panele klienta, kalkulatory i wewnętrzne narzędzia, które porządkują pracę i oszczędzają czas zespołu.", "Audytujemy technikę i treści, dobieramy słowa kluczowe, poprawiamy szybkość, Google Business, dane strukturalne i pomiar efektów.", "Łączymy e-mail, formularze, CRM i rezerwacje. Tworzymy automatyczne odpowiedzi, raporty oraz przepływy pracy wspierane przez AI.", "Logo i identyfikacja marki", "Projektujemy logo, paletę kolorów, typografię, kierunek zdjęć i podstawowe materiały marki. Możemy też przygotować teksty oraz komunikację, aby firma wyglądała profesjonalnie w każdym kanale.", "Cyfrowe rozwiązania dla firm, które chcą rosnąć spokojniej i mądrzej.", "Porozmawiajmy o Twojej firmie", "Na skróty", "03 / BonsAi Office", "BonsAi Office łączy najważniejsze elementy dnia w jednej prostej przestrzeni: zadania, kalendarz, notatki, spotkania, dokumenty, projekty i sprawy wymagające uwagi.", "BonsAi Office — spokojna przestrzeń do codziennej pracy"];
   Object.entries(finalCoverageTranslations).forEach(([locale, values]) => finalCoverageKeys.forEach((key, index) => { copy[locale][key] = values[index]; }));
@@ -1151,11 +1031,7 @@
   const portfolioAccessibilityTranslations = {
     en: ["Selected projects gallery", "Scrollable preview of the Kōhaku Sushi website", "Kōhaku Sushi — scrollable website preview", "Ocean website preview with tourism and nature categories", "Ocean website background", "Scrollable preview of the Ember & Olive restaurant website", "Ember & Olive — scrollable website preview", "Scrollable preview of the Morscy Wojownicy website", "Morscy Wojownicy — scrollable website preview", "Scrollable preview of the Fiku Miku store", "Fiku Miku — scrollable toy-store preview", "Mori Retreat — website preview", "Forge Steel — scrollable website preview", "Ocean project video preview", "Scrollable preview of the ORBITAL Creative Marketing Studio website", "ORBITAL — scrollable website preview"],
     ja: ["制作実績ギャラリー", "Kōhaku Sushi サイトのスクロールプレビュー", "Kōhaku Sushi — スクロール可能なサイトプレビュー", "観光と自然のカテゴリーを表示する Ocean サイトのプレビュー", "Ocean サイトの背景", "Ember & Olive レストランサイトのスクロールプレビュー", "Ember & Olive — スクロール可能なサイトプレビュー", "Morscy Wojownicy サイトのスクロールプレビュー", "Morscy Wojownicy — スクロール可能なサイトプレビュー", "Fiku Miku ストアのスクロールプレビュー", "Fiku Miku — おもちゃ店のスクロールプレビュー", "Mori Retreat — サイトプレビュー", "Forge Steel — スクロール可能なサイトプレビュー", "Ocean プロジェクトの動画プレビュー", "ORBITAL Creative Marketing Studio サイトのスクロールプレビュー", "ORBITAL — スクロール可能なサイトプレビュー"],
-    de: ["Galerie ausgewählter Projekte", "Scrollbare Vorschau der Kōhaku-Sushi-Website", "Kōhaku Sushi — scrollbare Website-Vorschau", "Ocean-Website-Vorschau mit Kategorien für Tourismus und Natur", "Hintergrund der Ocean-Website", "Scrollbare Vorschau der Restaurant-Website Ember & Olive", "Ember & Olive — scrollbare Website-Vorschau", "Scrollbare Vorschau der Morscy-Wojownicy-Website", "Morscy Wojownicy — scrollbare Website-Vorschau", "Scrollbare Vorschau des Fiku-Miku-Shops", "Fiku Miku — scrollbare Spielzeugladen-Vorschau", "Mori Retreat — Website-Vorschau", "Forge Steel — scrollbare Website-Vorschau", "Video-Vorschau des Ocean-Projekts", "Scrollbare Vorschau der ORBITAL-Creative-Marketing-Studio-Website", "ORBITAL — scrollbare Website-Vorschau"],
-    es: ["Galería de proyectos seleccionados", "Vista desplazable del sitio de Kōhaku Sushi", "Kōhaku Sushi — vista desplazable del sitio", "Vista del sitio Ocean con categorías de turismo y naturaleza", "Fondo del sitio Ocean", "Vista desplazable del sitio del restaurante Ember & Olive", "Ember & Olive — vista desplazable del sitio", "Vista desplazable del sitio Morscy Wojownicy", "Morscy Wojownicy — vista desplazable del sitio", "Vista desplazable de la tienda Fiku Miku", "Fiku Miku — vista desplazable de la juguetería", "Mori Retreat — vista del sitio", "Forge Steel — vista desplazable del sitio", "Vista en vídeo del proyecto Ocean", "Vista desplazable del sitio ORBITAL Creative Marketing Studio", "ORBITAL — vista desplazable del sitio"],
-    uk: ["Галерея вибраних проєктів", "Прокручуваний перегляд сайту Kōhaku Sushi", "Kōhaku Sushi — прокручуваний перегляд сайту", "Перегляд сайту Ocean з категоріями туризму та природи", "Тло сайту Ocean", "Прокручуваний перегляд сайту ресторану Ember & Olive", "Ember & Olive — прокручуваний перегляд сайту", "Прокручуваний перегляд сайту Morscy Wojownicy", "Morscy Wojownicy — прокручуваний перегляд сайту", "Прокручуваний перегляд магазину Fiku Miku", "Fiku Miku — прокручуваний перегляд магазину іграшок", "Mori Retreat — перегляд сайту", "Forge Steel — прокручуваний перегляд сайту", "Відеоперегляд проєкту Ocean", "Прокручуваний перегляд сайту ORBITAL Creative Marketing Studio", "ORBITAL — прокручуваний перегляд сайту"],
-    fr: ["Galerie de projets sélectionnés", "Aperçu défilable du site Kōhaku Sushi", "Kōhaku Sushi — aperçu défilable du site", "Aperçu du site Ocean avec les catégories tourisme et nature", "Arrière-plan du site Ocean", "Aperçu défilable du site du restaurant Ember & Olive", "Ember & Olive — aperçu défilable du site", "Aperçu défilable du site Morscy Wojownicy", "Morscy Wojownicy — aperçu défilable du site", "Aperçu défilable de la boutique Fiku Miku", "Fiku Miku — aperçu défilable de la boutique de jouets", "Mori Retreat — aperçu du site", "Forge Steel — aperçu défilable du site", "Aperçu vidéo du projet Ocean", "Aperçu défilable du site ORBITAL Creative Marketing Studio", "ORBITAL — aperçu défilable du site"],
-    zh: ["精选项目画廊", "Kōhaku Sushi 网站滚动预览", "Kōhaku Sushi — 可滚动网站预览", "带有旅游与自然分类的 Ocean 网站预览", "Ocean 网站背景", "Ember & Olive 餐厅网站滚动预览", "Ember & Olive — 可滚动网站预览", "Morscy Wojownicy 网站滚动预览", "Morscy Wojownicy — 可滚动网站预览", "Fiku Miku 商店滚动预览", "Fiku Miku — 玩具店滚动预览", "Mori Retreat — 网站预览", "Forge Steel — 可滚动网站预览", "Ocean 项目视频预览", "ORBITAL Creative Marketing Studio 网站滚动预览", "ORBITAL — 可滚动网站预览"]
+
   };
   const portfolioAccessibilityKeys = ["Galeria wybranych realizacji", "Przewijany podgląd strony Kōhaku Sushi", "Kōhaku Sushi — przewijany podgląd strony", "Podgląd strony Ocean z kategoriami turystyki i natury", "Tło strony Ocean", "Przewijany podgląd strony restauracji Ember & Olive", "Ember & Olive — przewijany podgląd strony", "Przewijany podgląd strony Morscy Wojownicy", "Morscy Wojownicy — przewijany podgląd strony", "Przewijany podgląd sklepu Fiku Miku", "Fiku Miku — przewijany podgląd sklepu z zabawkami", "Mori Retreat — podgląd strony", "Forge Steel — przewijany podgląd strony", "Filmowy podgląd projektu Ocean", "Przewijany podgląd strony ORBITAL Creative Marketing Studio", "ORBITAL — przewijany podgląd strony"];
   Object.entries(portfolioAccessibilityTranslations).forEach(([locale, values]) => portfolioAccessibilityKeys.forEach((key, index) => { copy[locale][key] = values[index]; }));
@@ -1169,6 +1045,37 @@
     const response = await fetch('english-current.json?v=20260926', {cache:'force-cache'});
     if (response.ok) Object.assign(copy.en, await response.json());
   } catch { /* Existing translations remain available if the supplement cannot load. */ }
+  Object.assign(copy.en, {
+  "Bezpieczna współpraca i rozliczenia": "Clear collaboration and billing",
+  "BonsAI Studio to niezależna pracownia kreatywna. Projekty realizujemy bezpośrednio z klientami, a formalności i płatności rozliczamy za pośrednictwem Useme.": "BonsAI Studio is an independent creative practice. We work directly with clients, while project formalities and payments are handled through Useme.",
+  "Współpracujemy z klientami z Polski i zagranicy. Dzięki Useme klient otrzymuje fakturę, a warunki współpracy i płatności są jasno określone.": "We work with clients in Poland and abroad. Through Useme, clients receive an invoice, with clearly agreed collaboration and payment terms.",
+  "Kontakt i ustalenia mogą odbywać się poza platformą. Fakturę za zlecenie rozliczane przez Useme wystawia Useme. Aby przesłać nam zapytanie, nie potrzebujesz konta Useme.": "You can contact us and agree the project outside the platform. Useme issues the invoice for projects settled through Useme. You do not need a Useme account to send us an enquiry.",
+  "Kontakt i wycena": "Contact and quote",
+  "Omawiamy projekt, ustalamy zakres, cenę i termin.": "We discuss the project and agree its scope, price and timeline.",
+  "Ustalenie rozliczenia": "Agreeing the billing",
+  "Przygotowujemy rozliczenie przez Useme, również dla klientów pozyskanych poza platformą.": "We prepare billing through Useme, including for clients found outside the platform.",
+  "Realizacja i faktura": "Delivery and invoice",
+  "Wykonujemy projekt zgodnie z uzgodnieniami. Useme obsługuje rozliczenie i wystawia fakturę klientowi.": "We deliver the agreed project. Useme handles billing and issues the invoice to the client.",
+  "Zobacz nasz profil na Useme": "View our Useme profile",
+  "Rozliczenia przez Useme": "Billing through Useme",
+  "Opieka techniczna i rozwój strony": "Website support and development",
+  "Aktualizacje, wsparcie techniczne, SEO i dalszy rozwój strony oferujemy w ramach indywidualnie ustalonej współpracy.": "Updates, technical support, SEO and further website development are available through individually agreed collaboration.",
+  "Hosting i domena nie są wliczone w cenę projektu. Zakres i koszty ustalamy indywidualnie przed zamówieniem.": "Hosting and the domain are not included in the project price. We agree their scope and cost before the order.",
+  "Publikacja i dalsza współpraca": "Launch and ongoing collaboration",
+  "Jasny zakres od początku.": "A clear scope from the start.",
+  "Ceny są orientacyjne. Wycena jest indywidualna; przed rozpoczęciem ustalamy zakres, terminy, cenę końcową i liczbę poprawek. Opieka techniczna jest oddzielną usługą. Licencje, płatne narzędzia, API, hosting i domena mogą wymagać dodatkowych opłat, uzgadnianych przed zamówieniem. Prawa do materiałów, zakres licencji lub przeniesienia praw oraz moment ich przekazania określamy w ofercie i dokumentach rozliczenia Useme. Zmiana informacji na stronie nie zmienia wcześniej zawartych umów.": "Prices are indicative. Each quote is individual; scope, deadlines, the total price and revision rounds are agreed before work starts. Technical support is a separate service. Licences, paid tools, APIs, hosting and the domain may involve additional costs, agreed before ordering. Rights to materials, licence scope or copyright assignment and the time of transfer are specified in the offer and Useme transaction documents. Website updates do not change existing contracts.",
+  "Kwoty brutto obejmują 23% VAT dla standardowego rozliczenia w Polsce. Obok podajemy kwoty netto. Opłatę serwisową Useme pokrywa wykonawca. Przy rozliczeniu zagranicznym sposób naliczenia VAT zależy od danych klienta i zasad Useme; końcową kwotę potwierdzamy przed zamówieniem.": "Gross prices include 23% VAT for standard billing in Poland. Net prices are shown alongside. The freelancer covers the Useme service fee. For international billing, VAT treatment depends on the client details and Useme rules; we confirm the total before an order.",
+  "zł brutto": "PLN incl. VAT",
+  "Gdańsk · Polska": "Gdańsk · Poland",
+  "BonsAI Studio — marka niezależnego freelancera: Jakub Mierosławski.": "BonsAI Studio — the brand of an independent freelancer: Jakub Mierosławski.",
+  "Administratorem danych jest Jakub Mierosławski, działający pod marką BonsAI Studio. Dane służą obsłudze zapytania; formularz nie składa płatnego zamówienia. Nie wpisuj haseł ani danych wrażliwych.": "The data controller is Jakub Mierosławski, working under the BonsAI Studio brand. Your data is used to handle your enquiry; the form does not place a paid order. Do not enter passwords or sensitive data.",
+  "Informacje o przetwarzaniu danych": "How we process your data",
+  "zasady formularza i Kami": "contact form and Kami terms"
+});
+  if (document.querySelector('#zasady-uslug')) {
+    try {const res=await fetch('/privacy-translations.json?v=20261114');if(res.ok)Object.assign(copy.en,await res.json());const ja=await fetch('/privacy-translations-ja.json?v=20261114');if(ja.ok)Object.assign(copy.ja,await ja.json());} catch {}
+  }
+  try { const r=await fetch('/locale-updates.json?v=20261114');if(r.ok){const d=await r.json();for(const l of ['en','ja'])Object.assign(copy[l],d[l]||{});} }catch{}
   const titleOriginal = document.title;
   const meta = document.querySelector('meta[name="description"]');
   const metaOriginal = meta?.content || "";
@@ -1178,7 +1085,7 @@
     ...document.querySelectorAll(
       translatedAttributes.map((name) => `[${name}]`).join(","),
     ),
-  ].filter((element) => !element.closest(".language-picker"));
+  ].filter((element) => !element.closest("#bonsai-header,.footer-options,.visitor-paper,#kami-root,#privacy-dialog,[data-privacy],[translate=no]"));
   attributedElements.forEach((element) => {
     const values = {};
     translatedAttributes.forEach((name) => {
@@ -1260,11 +1167,6 @@
       pl: { choose: "Wybór języka", open: "Otwórz wybór języka", current: "Język" },
       en: { choose: "Language selection", open: "Open language selection", current: "Language" },
       ja: { choose: "言語を選択", open: "言語選択を開く", current: "言語" },
-      de: { choose: "Sprachauswahl", open: "Sprachauswahl öffnen", current: "Sprache" },
-      es: { choose: "Selección de idioma", open: "Abrir selector de idioma", current: "Idioma" },
-      uk: { choose: "Вибір мови", open: "Відкрити вибір мови", current: "Мова" },
-      fr: { choose: "Choix de la langue", open: "Ouvrir le choix de la langue", current: "Langue" },
-      zh: { choose: "语言选择", open: "打开语言选择", current: "语言" },
     }[locale];
     switcher.setAttribute("aria-label", pickerLabels.choose);
     switcher.querySelector(".language-picker-menu").setAttribute("aria-label", pickerLabels.choose);
@@ -1273,7 +1175,7 @@
     currentFlag.textContent = "";
     switcher.querySelector(".language-picker-current-code").textContent = selected.code;
     pickerTrigger.setAttribute("aria-label", `${pickerLabels.current}: ${selected.label}. ${pickerLabels.open}`);
-    if (persist) localStorage.setItem("bonsai-language", locale);
+    if (persist) { try { localStorage.setItem("bonsai-language", locale); } catch {} }
   }
   document
     .querySelectorAll("[data-lang]")
@@ -1284,20 +1186,10 @@
       }),
     );
 
-  const countryToLanguage = (country) => {
-    const code = country?.toUpperCase();
-    if (code === "PL") return "pl";
-    if (code === "JP") return "ja";
-    if (["DE", "AT", "CH", "LI"].includes(code)) return "de";
-    if (["ES", "MX", "AR", "BO", "CL", "CO", "CR", "CU", "DO", "EC", "GT", "HN", "NI", "PA", "PE", "PR", "PY", "SV", "UY", "VE"].includes(code)) return "es";
-    if (code === "UA") return "uk";
-    if (["FR", "BE", "LU", "MC", "SN", "CI", "CM", "MA", "TN"].includes(code)) return "fr";
-    if (["CN", "SG"].includes(code)) return "zh";
-    return null;
-  };
+  const countryToLanguage = country => country?.toUpperCase()==='PL'?'pl':country?.toUpperCase()==='JP'?'ja':'en';
   const country = document.cookie.match(/(?:^|;\s*)bonsai-country=([^;]+)/)?.[1];
-  const savedLanguage = localStorage.getItem("bonsai-language");
+
   // Polish is the canonical SEO language. Visitors can still explicitly select
   // any translated interface and that preference remains saved locally.
-  setLanguage(savedLanguage || countryToLanguage(country) || "pl", { persist: Boolean(savedLanguage) });
+  setLanguage(window.BonsaiLocale?.initial() || countryToLanguage(country), { persist: false });
 })();

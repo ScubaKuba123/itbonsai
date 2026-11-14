@@ -1,0 +1,39 @@
+/* Original woodland glass, gently deepened. Decorative only; no overlay on the hero logo. */
+body.bonsai-dna.forest-mist {
+ --forest-photo:url('/assets/forest-vitrail-1536.webp');
+ background:#e7eadb!important;
+}
+body.bonsai-dna.forest-mist::before {
+ background:linear-gradient(90deg,#f7f7ec12 0%,#f7f7ecd9 9%,#f7f7eca6 42%,#f7f7ec66 68%,#f7f7ec20 100%),linear-gradient(#00000014,#00000014),var(--forest-photo) center / cover no-repeat!important;
+}
+body.bonsai-dna.forest-mist :is(.section,.services,.garden-featured,.garden-projects,.cooperation-process,.about-story,.content-section,.page-section,.page-grid,.contact-section,.contact,.contact-strip,.business-system,.business-products,.season-packages,.season-included,.season-notes,.svc-promises,.svc-offer,.svc-process,.footer-main,.footer-bottom) {
+ background:linear-gradient(90deg,#f5f6eb30 0%,#f5f6ebdf 8%,#f5f6ebdf 92%,#f5f6eb30 100%)!important;
+}
+body.bonsai-dna.forest-mist :is(.site-footer,.svc-footer) {background:#f1f3e7e8!important;}
+body.bonsai-dna.forest-mist .forest-divider {
+ background:linear-gradient(#f4f5e980,#f4f5e912 45%,#f4f5e980),linear-gradient(#00000014,#00000014),var(--forest-photo) center 88% / cover no-repeat!important;
+}
+body.bonsai-dna.forest-mist .useme-panel {background:#f8faf2f2;}
+body.bonsai-dna.forest-mist .editorial-toolbar {background:#f5f7edef!important;}
+/* Reuse the existing origami mark as a real, named link. */
+#bonsai-header .header-neo-garden-link {
+ display:flex;align-items:center;justify-content:center;order:100;flex:0 0 44px;
+ width:44px;height:44px;margin-left:2px;text-decoration:none;background:none;
+}
+#bonsai-header .header-neo-garden-link img {width:36px;height:24px;object-fit:contain;display:block;}
+#bonsai-header .header-neo-garden-link:focus-visible {outline:2px solid #007f83;outline-offset:3px;border-radius:3px;}
+@media(max-width:1100px) {
+ body.bonsai-dna.forest-theme #bonsai-header.bonsai-header {gap:10px;}
+}
+@media(max-width:600px) {
+ body.bonsai-dna.forest-mist {--forest-photo:url('/assets/forest-vitrail-900.webp');}
+ body.bonsai-dna.forest-mist::before {background:linear-gradient(90deg,#f7f7ec45,#f7f7ecd0 10%,#f7f7ecd0 90%,#f7f7ec45),linear-gradient(#00000014,#00000014),var(--forest-photo) center / auto 100% no-repeat!important;}
+ #bonsai-header .header-neo-garden-link {flex-basis:40px;width:40px;margin-left:6px;}
+ #bonsai-header .header-neo-garden-link img {width:28px;height:19px;}
+ body.bonsai-dna.forest-theme #bonsai-header.bonsai-header {gap:3px;}
+ #bonsai-header .header-socials a {width:28px;}
+}
+
+/* Quiet paper remains behind copy; darkening affects the glass image only. */
+body.bonsai-dna.forest-mist :is(.useme-panel,.editorial-toolbar,.page-card,.offer-card,.svc-card,.season-card,.svc-echo){background:#f5f7edf5!important}
+body.bonsai-dna.forest-mist #bonsai-header,body.bonsai-dna.forest-mist #bonsai-header.bonsai-header.is-scrolled,body.bonsai-dna.forest-mist footer.site-footer.footer-refined,body.bonsai-dna.forest-mist footer.svc-footer.footer-refined{background:#f1f3e7f2!important}

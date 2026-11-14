@@ -2,6 +2,15 @@
  'use strict';
  const header=document.getElementById('bonsai-header');
  if(!header) return;
+ if(!header.querySelector('.header-neo-garden-link')) {
+  const neo=document.createElement('a');
+  neo.className='header-neo-garden-link';
+  neo.href='https://neobonsai-garden.scubakuba698.chatgpt.site/';
+  neo.target='_blank';neo.rel='noopener noreferrer';
+  neo.setAttribute('aria-label','Neo Garden');
+  neo.innerHTML='<img src="/assets/neo-garden-origami.svg" alt="" width="36" height="24">';
+  header.append(neo);
+ }
  if(document.body.classList.contains('bonsai-shared-home')) {
   const app=document.createElement('a');app.className='header-free-app';
   app.href='https://nihongobonsai.pl/';app.target='_blank';app.rel='noopener noreferrer';
@@ -46,7 +55,7 @@
  if(document.body.classList.contains('services-studio')){
   const slot=header.querySelector('.language-switcher');
   slot.className='site-language-switcher language-picker';
-  slot.innerHTML='<button class="language-picker-trigger" type="button" aria-expanded="false" aria-controls="language-picker-menu" aria-label="Wybór języka"><span class="language-picker-current-flag language-flag flag-pl" aria-hidden="true"></span><strong class="language-picker-current-code">PL</strong></button><div class="language-picker-menu" id="language-picker-menu" role="group" aria-label="Wybór języka"><button type="button" data-lang="pl"><span class="language-flag flag-pl" aria-hidden="true"></span><span>Polski</span><small>PL</small></button><button type="button" data-lang="en"><span class="language-flag flag-gb" aria-hidden="true"></span><span>English</span><small>EN</small></button></div>';
+  slot.innerHTML='<button class="language-picker-trigger" type="button" aria-expanded="false" aria-controls="language-picker-menu" aria-label="Wybór języka"><span class="language-picker-current-flag language-flag flag-pl" aria-hidden="true"></span><strong class="language-picker-current-code">PL</strong></button><div class="language-picker-menu" id="language-picker-menu" role="group" aria-label="Wybór języka"><button type="button" data-lang="pl"><span class="language-flag flag-pl" aria-hidden="true"></span><span>Polski</span><small>PL</small></button><button type="button" data-lang="en"><span class="language-flag flag-gb" aria-hidden="true"></span><span>English</span><small>EN</small></button><button type="button" data-lang="ja"><span class="language-flag flag-jp" aria-hidden="true"></span><span>日本語</span><small>JP</small></button></div>';
   const trigger=slot.querySelector('.language-picker-trigger');
   const closePicker=()=>{slot.classList.remove('open');trigger.setAttribute('aria-expanded','false');};
   trigger.addEventListener('click',()=>{const open=slot.classList.toggle('open');trigger.setAttribute('aria-expanded',String(open));});
@@ -56,10 +65,11 @@
  }
  // One header dictionary serves desktop, sticky and compact navigation.
  const headerCopy={
-  pl:{nav:['Start','Usługi','Cennik','Dla biznesu','Portfolio','O nas','Kontakt'],analysis:'Bezpłatna analiza',consultation:'Bezpłatna konsultacja',home:'BonsAI Studio — strona główna',navigation:'Główna nawigacja',open:'Otwórz menu',close:'Zamknij menu',language:'Wybór języka',openLanguage:'Otwórz wybór języka',closeLanguage:'Zamknij wybór języka',polish:'Polski',logo:'Logo BonsAI Studio'},
-  en:{nav:['Home','Services','Pricing','For Business','Portfolio','About','Contact'],analysis:'Free Website Analysis',consultation:'Free Consultation',home:'BonsAI Studio — home',navigation:'Main navigation',open:'Open menu',close:'Close menu',language:'Language selection',openLanguage:'Open language selection',closeLanguage:'Close language selection',polish:'Polish',logo:'BonsAI Studio logo'}
+  pl:{nav:['Start','Usługi','Cennik','Portfolio','O nas','Kontakt'],analysis:'Bezpłatna analiza',consultation:'Bezpłatna konsultacja',home:'BonsAI Studio — strona główna',navigation:'Główna nawigacja',open:'Otwórz menu',close:'Zamknij menu',language:'Wybór języka',openLanguage:'Otwórz wybór języka',closeLanguage:'Zamknij wybór języka',polish:'Polski',logo:'Logo BonsAI Studio'},
+  en:{nav:['Home','Services','Pricing','Portfolio','About','Contact'],analysis:'Free Website Analysis',consultation:'Free Consultation',home:'BonsAI Studio — home',navigation:'Main navigation',open:'Open menu',close:'Close menu',language:'Language selection',openLanguage:'Open language selection',closeLanguage:'Close language selection',polish:'Polish',logo:'BonsAI Studio logo'}
  };
- const routes=['/','/uslugi','/cennik','/dla-biznesu','/realizacje','/o-nas','/kontakt'];
+ headerCopy.ja={nav:['ホーム','サービス','料金','制作実績','私たちについて','お問い合わせ'],home:'BonsAI Studio — ホーム',navigation:'メインナビゲーション',open:'メニューを開く',close:'メニューを閉じる',language:'言語を選択',openLanguage:'言語選択を開く',closeLanguage:'言語選択を閉じる',polish:'ポーランド語',logo:'BonsAI Studio ロゴ'};
+ const routes=['/','/uslugi','/cennik','/realizacje','/o-nas','/kontakt'];
  const setAttribute=(e,key,value)=>{if(e&&e.getAttribute(key)!==value)e.setAttribute(key,value);};
  const setText=(e,value)=>{
   if(!e)return;
@@ -85,7 +95,8 @@
   setAttribute(header.querySelector('.language-picker-menu'),'aria-label',copy.language);
   const trigger=header.querySelector('.language-picker-trigger');
   setAttribute(trigger,'aria-label',trigger?.getAttribute('aria-expanded')==='true'?copy.closeLanguage:copy.openLanguage);
-  setText(header.querySelector('.language-picker-current-code'),locale.toUpperCase());
+  setText(header.querySelector('.language-picker-current-code'),locale==='ja'?'JP':locale.toUpperCase());
+  const flag=header.querySelector('.language-picker-current-flag');if(flag)flag.className='language-picker-current-flag language-flag flag-'+({pl:'pl',en:'gb',ja:'jp'}[locale]||'gb');
   const polish=header.querySelector('[data-lang="pl"]');
   setAttribute(polish,'aria-label',copy.polish);
   setText(polish?.querySelector('span:not(.language-flag)'),copy.polish);

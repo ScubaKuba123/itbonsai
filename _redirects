@@ -1,6 +1,7 @@
 /index.html / 301
 /uslugi.html /uslugi 301
-/dla-biznesu.html /dla-biznesu 301
+/dla-biznesu.html /uslugi 301
+/dla-biznesu /uslugi 301
 /realizacje.html /realizacje 301
 /o-nas.html /o-nas 301
 /kontakt.html /kontakt 301
