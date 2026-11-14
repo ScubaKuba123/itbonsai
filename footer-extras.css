@@ -104,3 +104,13 @@ body.bonsai-dna .footer-refined a.temple-option:hover .temple-torii,body.bonsai-
 
 /* Approved C21: blue bonsai and orange sun, without an enclosing circle. */
 .footer-option>img.core-c21-logo{width:126px;height:84px;object-fit:contain;border-radius:0;margin:-10px 0 -6px;background:transparent;filter:none}
+
+/* Compact contact tiles, matching the woodland palette. */
+body.bonsai-dna .footer-refined .footer-contact{gap:7px;justify-self:end;width:min(100%,310px)}
+body.bonsai-dna .footer-refined .footer-contact strong{margin:0 0 3px}
+body.bonsai-dna .footer-refined .footer-contact a{min-height:40px;padding:8px 13px;box-sizing:border-box;border:1px solid #a8bca4;border-radius:7px;background:#dce9d6;color:#173c35;font-size:13px;line-height:1.4;text-decoration:none;transition:background .15s,color .15s}
+body.bonsai-dna .footer-refined .footer-contact a:hover{background:#35663f;color:#fff;text-decoration:none}
+body.bonsai-dna .footer-refined .footer-contact a:focus-visible{background:#35663f;color:#fff;outline:2px solid #173c35;outline-offset:3px}
+@media(max-width:700px){body.bonsai-dna .footer-refined .footer-contact{justify-self:start;width:100%;max-width:310px}body.bonsai-dna .footer-refined .footer-contact a{min-height:44px}}
+@media(prefers-reduced-motion:reduce){body.bonsai-dna .footer-refined .footer-contact a{transition:none}}
+body.bonsai-dna .footer-refined .footer-contact a{width:100%}
