@@ -1,0 +1,28 @@
+/* Color ink landscape: continuous backdrop, no panel surfaces. */
+body.bonsai-dna.forest-mist{--forest-photo:url('/assets/forest-sumi-color.png');--studio-sheet:#eeeedb;--studio-text:#172f2b;background:#eeeedb!important;}
+body.bonsai-dna.forest-mist::before{background:linear-gradient(90deg,transparent,#eeeedbb8 12%,#eeeedb30 42%,#eeeedb30 80%,transparent),var(--forest-photo) center/100% 100vh no-repeat!important;}
+body.bonsai-dna.forest-mist main :is(section,article,.hero-copy,.services-grid,.contact-copy,.contact-info,.office-download,.garden-project){background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;}
+body.bonsai-dna.forest-mist main :is(section,article)::before,body.bonsai-dna.forest-mist main :is(section,article)::after{background:none!important;box-shadow:none!important;}
+body.bonsai-dna.forest-mist .hero.hero-living .hero-copy{padding:24px!important;min-width:0;}
+body.bonsai-dna.forest-mist .hero.hero-living{gap:24px;padding-inline:7%;}
+body.bonsai-dna.forest-mist main :is(p,li){color:#20372f;}
+body.bonsai-dna.forest-mist #bonsai-header{background:#eeeedbda!important;backdrop-filter:blur(12px);border-bottom:1px solid #36514322;}
+body.bonsai-dna.forest-mist .living-visual{min-width:0;isolation:isolate;}
+body.bonsai-dna.forest-mist :is(.services,.garden-featured,.office-download,.contact){border-top:1px solid #36514338!important;}
+body.bonsai-dna.forest-mist .contact-copy>div{display:flex;flex-wrap:wrap;gap:20px;align-items:center;}
+@media(max-width:600px){
+body.bonsai-dna.forest-mist::before{background:linear-gradient(90deg,#eeeedb55,#eeeedbdf 12%,#eeeedbdf 88%,#eeeedb55),var(--forest-photo) center/100% 100vh no-repeat!important;}
+body.bonsai-dna.forest-mist .hero.hero-living{display:flex;flex-direction:column;padding-inline:20px;gap:20px;}
+body.bonsai-dna.forest-mist .hero.hero-living .hero-copy{padding:20px 0!important;}
+body.bonsai-dna.forest-mist .living-visual{width:100%;margin:0;}
+}
+
+body.bonsai-dna.forest-mist{--dna-ink:#172f2b;--dna-muted:#20372f;--editorial-ink:#172f2b;--editorial-muted:#20372f;}
+body.bonsai-dna.forest-mist main :is(.entry-copy,.editorial-toolbar,.contact-details,.contact-form,.page-card,.offer-card,.svc-card,.season-card,.season-section-head,.page-grid,.editorial-ending){background:transparent!important;box-shadow:none!important;border-radius:0;border-color:#60705c55;}
+body.bonsai-dna.forest-mist main :is(h1,h2,h3,p,li,label){color:#20372f;}
+body.bonsai-dna.forest-mist .entry-copy{border:0!important;}
+body.bonsai-dna.forest-mist .editorial-toolbar{border:0;border-bottom:1px solid #60705c66;}
+body.bonsai-dna.forest-mist .garden-project{border-top:1px solid #60705c66!important;}
+body.bonsai-dna.forest-mist .contact-page{background:transparent!important;}
+body.bonsai-dna.forest-mist input,body.bonsai-dna.forest-mist textarea,body.bonsai-dna.forest-mist select{color:#20372f;background:#fafbefd9;}
+body.bonsai-dna.forest-mist::before{background:linear-gradient(90deg,#eeeedb15,#eeeedbe8 11%,#eeeedbbd 25%,#eeeedbbd 75%,#eeeedbe8 89%,#eeeedb15),var(--forest-photo) center/100% 100vh no-repeat!important;}

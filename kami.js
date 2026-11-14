@@ -13,7 +13,7 @@
     const size=launch.getBoundingClientRect();
     const header=document.querySelector('.bonsai-header');
     const topLimit=Math.max(12,header?header.getBoundingClientRect().bottom+12:12);
-    const blocks=[...document.querySelectorAll('a,button,input,select,textarea,summary,iframe,video[controls],form,[role="dialog"],[role="button"]')]
+    const blocks=[...document.querySelectorAll('a,button,input,select,textarea,summary,iframe,video[controls],.bonsai-shared-home .living-visual,.bonsai-shared-home .hero-copy,form,[role="dialog"],[role="button"]')]
       .filter(el=>!el.closest('#kami-root')&&!el.closest('[hidden]'))
       .map(el=>({el,r:el.getBoundingClientRect()}))
       .filter(({el,r})=>r.width&&r.height&&r.bottom>0&&r.top<innerHeight&&getComputedStyle(el).visibility!=='hidden');

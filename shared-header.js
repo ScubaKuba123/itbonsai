@@ -8,7 +8,7 @@
   neo.href='https://neobonsai-garden.scubakuba698.chatgpt.site/';
   neo.target='_blank';neo.rel='noopener noreferrer';
   neo.setAttribute('aria-label','Neo Garden');
-  neo.innerHTML='<img src="/assets/neo-garden-origami.svg" alt="" width="36" height="24">';
+  neo.innerHTML='<img src="/assets/neo-garden-bird.svg" alt="" width="36" height="24">';
   header.append(neo);
  }
  if(document.body.classList.contains('bonsai-shared-home')) {
