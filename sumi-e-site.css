@@ -31,3 +31,27 @@ body.bonsai-dna.forest-mist #kami-launch{position:fixed!important;right:18px;lef
 body.bonsai-dna.forest-mist #kami-launch .kami-avatar{width:32px;height:32px;}
 @media(max-width:600px){body.bonsai-dna.forest-mist #kami-launch{right:12px;width:48px;height:48px;min-width:48px;padding:8px;}}
 .echo-demos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:32px 0;}.echo-demos figure{margin:0;min-width:0;}.echo-demos figcaption{font:500 15px/1.5 'DM Sans',sans-serif;color:#20372f;margin-top:12px}.echo-demo{height:180px;position:relative;overflow:hidden;border-radius:12px;background:#243e35;isolation:isolate}.echo-light{background:linear-gradient(130deg,#24463b,#759574,#dace9b);}.echo-light i{position:absolute;inset:-50%;background:linear-gradient(110deg,transparent 30%,#fff0bba8 48%,transparent 62%);animation:echo-light 12s linear infinite}.echo-depth i{position:absolute;width:130%;height:100%;left:-15%;border-radius:45% 60% 0 0;background:#54785f;top:35%;transform:rotate(-12deg);animation:echo-depth 9s ease-in-out infinite alternate}.echo-depth i:nth-child(2){background:#87a17c;top:55%;animation-delay:-3s}.echo-depth i:nth-child(3){background:#b5c29a;top:75%;animation-delay:-6s}.echo-response{background:radial-gradient(circle at var(--x,50%) var(--y,50%),#c9dca0 0,#779b77 18%,#234c40 60%);touch-action:pan-y}.echo-response:focus-visible{outline:3px solid #007e80;outline-offset:4px}@keyframes echo-light{to{transform:translateX(40%)}}@keyframes echo-depth{to{transform:translateX(5%) rotate(6deg)}}@media(max-width:600px){.echo-demos{grid-template-columns:1fr}.echo-demo{height:150px}}@media(prefers-reduced-motion:reduce){.echo-demo i{animation:none!important}}
+
+/* Clear price rows and full-width service artwork. */
+body.bonsai-dna.forest-mist .season-service{border-top:1px solid #526d5b80;padding:22px 0;}
+body.bonsai-dna.forest-mist main .season-card{border-bottom:2px solid #526d5b80!important;}
+body.bonsai-dna.forest-mist .season-cta{margin-top:16px;}
+body.bonsai-dna.forest-mist .season-section-head{border-bottom:1px solid #526d5b80;padding-bottom:24px;}
+body.bonsai-dna.forest-mist .svc-cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;}
+body.bonsai-dna.forest-mist .svc-card>a:first-of-type{aspect-ratio:16/10;background:#e5e9dd;}
+body.bonsai-dna.forest-mist .svc-card img{width:100%;height:100%;aspect-ratio:16/10;object-fit:contain!important;padding:0;background:transparent;}
+body.bonsai-dna.forest-mist .svc-card:nth-child(5) img{padding:20px;}
+@media(max-width:800px){body.bonsai-dna.forest-mist .svc-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;}}
+@media(max-width:540px){body.bonsai-dna.forest-mist .svc-cards{grid-template-columns:1fr;}body.bonsai-dna.forest-mist .svc-card{display:flex;flex-direction:column;}body.bonsai-dna.forest-mist .svc-card>a:first-of-type{width:100%;}body.bonsai-dna.forest-mist .svc-card h3{margin-top:16px;}}
+
+/* Small ink studies alongside page titles, excluded from the home hero. */
+body.bonsai-dna h1[data-ink-title]{position:relative;padding-inline-end:76px;}
+body.bonsai-dna h1[data-ink-title]::after{content:'';position:absolute;right:0;top:.1em;width:66px;height:76px;background:var(--title-sketch) center/contain no-repeat;pointer-events:none;}
+body.bonsai-dna.forest-mist main :is(h1,h2,h3,h4){color:#183f2d;}
+body.bonsai-dna.forest-mist main :is(p,li,label,.intro-description,.lead,.season-scope,.svc-lead){color:#254632;}
+body.bonsai-dna.forest-mist :is(footer.site-footer.footer-refined,footer.svc-footer.footer-refined){background-color:#48714e!important;background-image:repeating-linear-gradient(14deg,transparent 0 7px,#edf1d909 8px,transparent 9px 19px),repeating-linear-gradient(103deg,transparent 0 13px,#193b2c0b 14px,transparent 15px 29px),linear-gradient(135deg,#668260,#365e43)!important;margin-bottom:0!important;padding-bottom:80px!important;color:#f6f3df;}
+body.bonsai-dna.forest-mist footer.footer-refined :is(p,a,span,small,h2,h3){color:#f6f3df!important;}
+body.bonsai-dna.forest-mist footer.footer-refined::after{display:none!important;}
+@media(max-width:600px){body.bonsai-dna h1[data-ink-title]{padding-inline-end:51px;}body.bonsai-dna h1[data-ink-title]::after{width:44px;height:54px;}}
+
+body.bonsai-dna.forest-mist footer.footer-refined :is(.footer-option,.footer-option span,.footer-option strong,.footer-option small,.footer-visitors,.footer-visitors summary){color:#183f2d!important;}

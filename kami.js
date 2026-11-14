@@ -9,7 +9,7 @@
     pending=false;
     const base=innerWidth<=480?12:22;
     const footer=document.querySelector('footer.footer-refined,footer.site-footer,footer.svc-footer');
-    const limit=footer?Math.min(innerHeight-base,footer.getBoundingClientRect().top-12):innerHeight-base;
+    const limit=innerHeight-base;
     const size=launch.getBoundingClientRect();
     const header=document.querySelector('.bonsai-header');
     const topLimit=Math.max(12,header?header.getBoundingClientRect().bottom+12:12);
