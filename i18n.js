@@ -484,15 +484,16 @@
 
   const teamAbout = {
     en: {
-      "Jesteśmy zespołem projektantów, programistów i specjalistów od automatyzacji, którzy łączą technologię z praktycznym doświadczeniem biznesowym.": "We are a team of designers, developers and automation specialists combining technology with practical business experience.",
-      "Zespół od pomysłu do gotowego rozwiązania.": "A team that takes you from idea to finished solution.",
-      "BonsAi Studio to zespół łączący projektowanie, programowanie, SEO, automatyzację i marketing. Wspólnie tworzymy rozwiązania, które są nie tylko estetyczne, ale przede wszystkim pomagają firmom sprawniej pracować, zdobywać klientów i rozwijać sprzedaż.": "BonsAi Studio is a team combining design, development, SEO, automation and marketing. Together, we create solutions that look great and, above all, help companies work more efficiently, win customers and grow sales.",
-      "Wiemy, jak ważne są szybki kontakt, jasna oferta, wygodna obsługa klienta i systemy, które nie wymagają technicznej wiedzy. Projektujemy rozwiązania dla ludzi, którzy chcą prowadzić biznes sprawniej, wyglądać profesjonalnie i odzyskać czas.": "We know the value of fast communication, a clear offer, convenient customer service and systems that require no technical expertise. We design solutions for people who want to run their business efficiently, look professional and regain time.",
-      "Przy każdym projekcie masz bezpośredni kontakt z naszym zespołem. Wspólnie poznajemy potrzeby firmy, planujemy rozwiązanie i odpowiadamy za jego wykonanie — bez anonimowych działów i obietnic bez pokrycia.": "With every project, you have direct contact with our team. Together, we understand your business, plan the solution and take responsibility for delivery—without anonymous departments or empty promises."
+      "Prowadzę niezależne studio projektowe, w którym łączę design, technologię i praktyczne doświadczenie biznesowe.": "I run an independent design studio combining design, technology and practical business experience.",
+      "Jeden odpowiedzialny partner od pomysłu do wdrożenia.": "One accountable partner from idea to launch.",
+      "Wiem, jak ważne są szybki kontakt, jasna oferta, wygodna obsługa klienta i systemy, które nie wymagają technicznej wiedzy. Projektuję rozwiązania dla ludzi, którzy chcą prowadzić biznes sprawniej, wyglądać profesjonalnie i odzyskać czas.": "I know the value of fast communication, a clear offer, convenient customer service and systems that require no technical expertise. I design solutions for people who want to work more efficiently, look professional and regain time.",
+      "Przy każdym projekcie masz bezpośredni kontakt ze mną. Gdy zakres wymaga dodatkowych kompetencji, dobieram sprawdzonych specjalistów i pozostaję odpowiedzialny za cały proces — bez anonimowych działów i obietnic bez pokrycia.": "You work with me directly on every project. When the scope needs additional expertise, I bring in trusted specialists and remain accountable for the whole process—without anonymous departments or empty promises.",
+      "BonsAI Studio to marka niezależnego freelancera łączącego projektowanie, programowanie, SEO, automatyzację i marketing. Tworzę rozwiązania, które pomagają sprawniej pracować, zdobywać klientów i rozwijać sprzedaż.": "BonsAI Studio is an independent freelance brand combining design, development, SEO, automation and marketing. I create solutions that help businesses work more efficiently, win customers and grow sales."
     },
     ja: {
-      "Jesteśmy zespołem projektantów, programistów i specjalistów od automatyzacji, którzy łączą technologię z praktycznym doświadczeniem biznesowym.": "私たちは、テクノロジーと実践的なビジネス経験を組み合わせるデザイナー、開発者、業務自動化の専門家チームです。",
-      "Zespół od pomysłu do gotowego rozwiązania.": "アイデアから完成したソリューションまで支えるチームです。"
+      "Prowadzę niezależne studio projektowe, w którym łączę design, technologię i praktyczne doświadczenie biznesowe.": "デザイン、テクノロジー、実践的なビジネス経験を組み合わせた独立系デザインスタジオを運営しています。",
+      "Jeden odpowiedzialny partner od pomysłu do wdrożenia.": "アイデアから公開まで、一人の責任者が伴走します。",
+      "BonsAI Studio to marka niezależnego freelancera łączącego projektowanie, programowanie, SEO, automatyzację i marketing. Tworzę rozwiązania, które pomagają sprawniej pracować, zdobywać klientów i rozwijać sprzedaż.": "BonsAI Studioは、デザイン、開発、SEO、自動化、マーケティングを組み合わせる独立系フリーランスのブランドです。"
     }
   };
   Object.entries(teamAbout).forEach(([locale, entries]) => {
@@ -631,7 +632,7 @@
     "Porozmawiajmy o rozwoju": "Let’s talk about growing",
     "Twojej firmy.": "your business.",
     "Właścicielka, SeaMonk.jp": "Owner, SeaMonk.jp",
-    "Gdynia · Polska": "Gdynia · Poland",
+    "Gdańsk · Polska": "Gdynia · Poland",
     "Gdynia · Poland": "Gdynia · Poland",
     "Cyfrowe rozwiązania dla firm, które chcą rosnąć spokojniej i mądrzej.": "Digital solutions for businesses that want to grow with clarity and confidence.",
     "Porozmawiajmy o Twojej firmie": "Let’s talk about your business",

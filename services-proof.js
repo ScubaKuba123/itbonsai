@@ -18,9 +18,8 @@
 
   const oldEcho = document.querySelector(".svc-echo");
   if (!oldEcho) return;
-  const hasLiveLandscape = Boolean(oldEcho.querySelector('[data-echo-river]'));
-  const proofMarkup = `
-    <section class="svc-proof" id="${hasLiveLandscape ? 'echo-projects' : 'echo'}" aria-labelledby="svc-proof-title">
+  oldEcho.outerHTML = `
+    <section class="svc-proof" id="echo" aria-labelledby="svc-proof-title">
       <header class="svc-proof__head">
         <p class="svc-label">DLACZEGO BONSAI STUDIO?</p>
         <h2 id="svc-proof-title">Nie opowiadamy o efektach.<br>Pokazujemy, jak pracują.</h2>
@@ -47,6 +46,4 @@
       </div>
     </section>
   `;
-  if (hasLiveLandscape) oldEcho.insertAdjacentHTML('afterend', proofMarkup);
-  else oldEcho.outerHTML = proofMarkup;
 })();
