@@ -1,0 +1,55 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for production deployment
+        run: sleep 90
+
+      - name: Submit canonical URLs to IndexNow
+        env:
+          INDEXNOW_KEY: 52e50ad4db5dfc7a1f97f491fdc8722b5bec23a974542a9eee77594ef5c4bf87
+        run: |
+          cat > payload.json <<'JSON'
+          {
+            "host": "itbonsai.pl",
+            "key": "52e50ad4db5dfc7a1f97f491fdc8722b5bec23a974542a9eee77594ef5c4bf87",
+            "keyLocation": "https://itbonsai.pl/52e50ad4db5dfc7a1f97f491fdc8722b5bec23a974542a9eee77594ef5c4bf87.txt",
+            "urlList": [
+              "https://itbonsai.pl/",
+              "https://itbonsai.pl/uslugi",
+              "https://itbonsai.pl/strony-internetowe-dla-firm",
+              "https://itbonsai.pl/strony-internetowe-gdansk",
+              "https://itbonsai.pl/strony-internetowe-gdynia",
+              "https://itbonsai.pl/strony-internetowe-trojmiasto",
+              "https://itbonsai.pl/seo-gdansk",
+              "https://itbonsai.pl/seo-techniczne",
+              "https://itbonsai.pl/automatyzacje-ai-dla-firm",
+              "https://itbonsai.pl/aplikacje-dla-firm",
+              "https://itbonsai.pl/realizacje",
+              "https://itbonsai.pl/seamonk",
+              "https://itbonsai.pl/cafe-app",
+              "https://itbonsai.pl/cennik",
+              "https://itbonsai.pl/o-nas",
+              "https://itbonsai.pl/kontakt"
+            ]
+          }
+          JSON
+          status=$(curl -sS -o response.txt -w "%{http_code}" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data-binary @payload.json \
+            https://api.indexnow.org/indexnow)
+          echo "IndexNow HTTP status: $status"
+          cat response.txt || true
+          if [ "$status" -lt 200 ] || [ "$status" -ge 300 ]; then
+            exit 1
+          fi
