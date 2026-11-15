@@ -1,0 +1,20 @@
+/* Live studies: restrained cyan drafting lines over deep blue. */
+.home-echo .echo-blueprints{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:34px 0 0;}
+.echo-blueprints figure{margin:0;min-width:0;}
+.echo-blueprint{position:relative;aspect-ratio:1.34;overflow:hidden;background:#091c2a;border:1px solid #4274806b;border-radius:4px;isolation:isolate;}
+.echo-blueprint::before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#5281910c 1px,transparent 1px),linear-gradient(#5281910c 1px,transparent 1px);background-size:24px 24px;}
+.echo-blueprint canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.echo-blueprint .bp-meta{position:absolute;inset:17px 18px auto;display:flex;justify-content:space-between;align-items:center;color:#a8c6cb;font:10px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.12em;}
+.bp-meta b{font-weight:400;color:#65ded3;}
+.bp-action{position:absolute;bottom:13px;left:16px;right:16px;border:0;border-top:1px solid #aac6cb33;border-radius:0;background:transparent;color:#dfefeb;text-align:left;display:flex;justify-content:space-between;align-items:center;min-height:44px;padding:10px 0;font:12px/1.4 'DM Sans',sans-serif;cursor:pointer;}
+.bp-action:hover{color:#8af3e3;}.bp-action:focus-visible{outline:2px solid #8af3e3;outline-offset:4px;}
+.home-echo .echo-blueprints figcaption{margin:15px 0 0;padding:0;font:500 17px/1.45 'DM Sans',sans-serif;color:#203f33;}
+.home-echo .echo-blueprints figcaption small{display:block;margin-top:6px;font:400 13px/1.65 'DM Sans',sans-serif;color:#3a5448;}
+.bp-controls{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:22px 0 30px;padding-top:16px;border-top:1px solid #52705a40;}
+.bp-controls p{font:400 12px/1.6 'DM Sans',sans-serif!important;margin:0!important;}
+.bp-motion{flex:none;font:500 12px/1.4 'DM Sans',sans-serif;color:#204839;background:transparent;border:1px solid #41664b70;border-radius:2px;min-height:44px;padding:10px 15px;cursor:pointer;}
+.bp-motion:focus-visible{outline:2px solid #007f78;outline-offset:3px;}
+.bp-fallback{position:absolute;width:68%;height:58%;inset:18% 16%;opacity:.55;stroke:#6ad5cc;fill:none;stroke-width:1;}
+.echo-blueprint.is-ready .bp-fallback{display:none;}
+@media(max-width:900px){.home-echo .echo-blueprints{gap:14px;}.echo-blueprint{aspect-ratio:1/1.1}.echo-blueprint .bp-meta{inset:13px 12px auto;font-size:9px;}.bp-action{left:12px;right:12px;font-size:11px;}.home-echo .echo-blueprints figcaption{font-size:15px;}}
+@media(max-width:600px){.home-echo .echo-blueprints{grid-template-columns:1fr;gap:28px;}.echo-blueprint{aspect-ratio:1.3;}.bp-controls{align-items:flex-start;}.bp-controls p{max-width:190px;}.home-echo .echo-blueprints figcaption{font-size:17px;}}

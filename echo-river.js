@@ -29,12 +29,28 @@
     void main(){
       vec2 p=offset+uv*crop;
       float down=1.-p.y;
-      float water=smoothstep(.57,.69,down)*smoothstep(.39,.55,p.x);
-      float ripple=sin(p.y*145.+sin(p.x*23.+time*.3)*1.8-time*1.15);
-      float detail=sin(p.y*310.+p.x*45.-time*1.8);
-      vec2 bend=vec2(ripple*.0018,detail*.00065)*water;
-      vec3 col=texture2D(image,p+bend).rgb;
-      col+=vec3(.018,.021,.012)*ripple*water;
+      float depth=clamp((down-.51)/.49,0.,1.);
+      float leftBank=mix(.63,.40,pow(depth,.65))+.18*smoothstep(.83,1.,depth);
+      float rightBank=mix(.79,1.09,pow(depth,.65));
+      float water=smoothstep(.51,.58,down)*smoothstep(leftBank,leftBank+.05,p.x)*(1.-smoothstep(rightBank-.03,rightBank,p.x));
+      // Perspective makes near waves wider and faster than distant ripples.
+      float perspective=1./(.24+depth*1.4);
+      float stream=perspective*8.+time*.9;
+      float cross=(p.x-.69)*perspective*15.;
+      float ripple=sin(stream*5.+sin(cross*1.6+time*.25))*0.62+sin(stream*9.-cross*.8-time*.7)*.38;
+      float detail=sin(stream*19.+cross*4.+time*1.3);
+      float amplitude=mix(.0007,.008,depth*depth)*water;
+      vec2 bend=vec2(ripple*amplitude,(ripple*.22+detail*.12)*amplitude);
+      // Two cross-faded current samples avoid a visible loop or a moving shoreline.
+      float phase=fract(time*.075),phase2=fract(time*.075+.5);
+      float blend=abs(phase-.5)*2.;
+      vec2 drift=vec2(.003,.024)*depth*water;
+      vec3 a=texture2D(image,p+bend+drift*(phase-.5)).rgb;
+      vec3 b=texture2D(image,p+bend+drift*(phase2-.5)).rgb;
+      vec3 col=mix(a,b,blend);
+      float reflection=max(0.,ripple*.65+detail*.35);
+      col+=vec3(.025,.043,.030)*reflection*water;
+      col-=vec3(.008,.015,.011)*max(0.,-ripple)*water;
       gl_FragColor=vec4(col,1.);
     }`;
   function compile(type, source) {
@@ -100,9 +116,26 @@
   toggle.addEventListener('click',()=>{manualPaused=!paused();if(!paused())start();sync();});
   reduced.addEventListener('change',()=>{manualPaused=null;if(visible&&!paused())start();sync();});
   new MutationObserver(renderCopy).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
-  new IntersectionObserver(([e])=>{visible=e.isIntersecting;if(visible&&!reduced.matches)start();sync();},{threshold:.05}).observe(scene);
-  new ResizeObserver(resize).observe(scene.querySelector('.river-landscape'));
+  // Use the rendered viewport as authority; embedded/resized browsers can report
+  // stale IntersectionObserver state after an anchor jump or viewport change.
+  function checkVisibility() {
+    const rect=scene.getBoundingClientRect();
+    const next=rect.bottom>0 && rect.top<innerHeight;
+    if (next===visible) return;
+    visible=next;
+    if (visible&&!paused()) start();
+    sync();
+  }
+  let visibilityFrame=0;
+  function scheduleVisibility() {
+    if (visibilityFrame) return;
+    visibilityFrame=requestAnimationFrame(()=>{visibilityFrame=0;checkVisibility();});
+  }
+  new IntersectionObserver(scheduleVisibility,{threshold:.05}).observe(scene);
+  new ResizeObserver(()=>{resize();scheduleVisibility();}).observe(scene.querySelector('.river-landscape'));
+  window.addEventListener('scroll',scheduleVisibility,{passive:true});
+  window.addEventListener('resize',scheduleVisibility,{passive:true});
   document.addEventListener('visibilitychange',sync);
   canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();failed=true;scene.classList.remove('is-rendered');sync();});
-  renderCopy();sync();
+  renderCopy();sync();checkVisibility();
 })();
