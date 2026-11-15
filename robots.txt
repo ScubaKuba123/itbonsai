@@ -1,3 +1,12 @@
+# itbonsai.pl robots policy
+# Search visibility is allowed. OpenAI search is allowed; GPTBot training crawl is opted out.
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+
 User-agent: *
 Allow: /
 
