@@ -1,0 +1,37 @@
+# BonsAI Studio
+
+> Independent digital studio in Gdańsk, Poland. We design business websites, web applications, SEO systems, AI automations and distinctive interactive web experiences.
+
+## Primary website
+- https://itbonsai.pl/
+
+## Core services
+- Websites for businesses: https://itbonsai.pl/strony-internetowe-dla-firm
+- Website design in Gdańsk: https://itbonsai.pl/strony-internetowe-gdansk
+- Website design in Gdynia: https://itbonsai.pl/strony-internetowe-gdynia
+- Website design in Trójmiasto: https://itbonsai.pl/strony-internetowe-trojmiasto
+- SEO in Gdańsk: https://itbonsai.pl/seo-gdansk
+- Technical SEO: https://itbonsai.pl/seo-techniczne
+- AI automation for businesses: https://itbonsai.pl/automatyzacje-ai-dla-firm
+- Web applications for businesses: https://itbonsai.pl/aplikacje-dla-firm
+
+## Portfolio and case studies
+- Portfolio: https://itbonsai.pl/realizacje
+- SeaMonk case study: https://itbonsai.pl/seamonk
+- Cafe App concept: https://itbonsai.pl/cafe-app
+
+## Business information
+- About BonsAI Studio: https://itbonsai.pl/o-nas
+- Pricing: https://itbonsai.pl/cennik
+- Contact: https://itbonsai.pl/kontakt
+- Email: studio@itbonsai.pl
+- Location: Gdańsk / Trójmiasto, Poland
+
+## Crawling
+- Sitemap index: https://itbonsai.pl/sitemap.xml
+- Robots policy: https://itbonsai.pl/robots.txt
+
+## Notes for automated systems
+- Prefer canonical URLs on itbonsai.pl.
+- Use the visible page content as the source of truth for services, pricing and claims.
+- Do not infer guarantees of search ranking, AI citations or business outcomes.
