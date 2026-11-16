@@ -114,30 +114,32 @@ body.bonsai-dna.editorial-portfolio .garden-project-scope li::marker { color:#35
 
 /* About page: original certificates presented as framed documents. */
 body.tree-about .about-certifications { margin-top:24px; }
-body.tree-about .certificate-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(24px,4vw,54px); margin-top:42px; }
-body.tree-about .certificate-frame { padding:clamp(14px,1.6vw,22px); border:12px solid transparent; border-image:linear-gradient(135deg,#3b2112,#9a5d2d 20%,#e0ad63 46%,#70401f 72%,#2b180e) 1; background:#442818; box-shadow:0 20px 44px #2a160d35, inset 0 0 0 1px #f1ca8566; }
-body.tree-about .certificate-preview { position:relative; display:block; padding:clamp(9px,1.4vw,18px); background:#f4ecd9; box-shadow:inset 0 0 0 1px #60422655,0 2px 0 #1a0d08; }
-body.tree-about .certificate-preview::before { content:""; position:absolute; z-index:1; inset:4px; pointer-events:none; border:1px solid #9a714866; }
+body.tree-about .certificate-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(18px,2.5vw,32px); margin-top:42px; }
+body.tree-about .certificate-frame { display:flex; flex-direction:column; padding:14px; border:1px solid #b69b73; border-left:6px solid #62401f; background:linear-gradient(135deg,#fffdf7,#f3ebde); box-shadow:0 14px 30px #173b3212; }
+body.tree-about .certificate-preview { position:relative; display:block; padding:8px; background:#fff; box-shadow:inset 0 0 0 1px #d4c2a5; }
+body.tree-about .certificate-preview::before { content:""; position:absolute; z-index:1; inset:3px; pointer-events:none; border:1px solid #9f805a66; }
 body.tree-about .certificate-preview img { display:block; width:100%; height:auto; border:0; background:#fffdf8; }
 body.tree-about .certificate-preview:focus-visible { outline:3px solid #f4cf80; outline-offset:5px; }
-body.tree-about .certificate-caption { padding:22px 8px 5px; color:#fff7e7; }
-body.tree-about .certificate-caption p { margin:0; color:#f1d4a7; font-size:14px; line-height:1.55; }
-body.tree-about .certificate-caption .certificate-provider { margin-bottom:8px; color:#f7c46e; font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
-body.tree-about .certificate-caption h3 { margin:0 0 8px; color:#fffaf0; font:600 clamp(21px,2.1vw,28px)/1.15 var(--dna-display,"Trirong",serif); }
-body.tree-about .certificate-caption a { display:inline-flex; min-height:44px; align-items:center; margin-top:14px; border-bottom:1px solid #f3c56e; color:#fff6e5; font-weight:700; }
-body.tree-about .certificate-caption a:focus-visible { outline:2px solid #f4cf80; outline-offset:5px; }
-body.tree-about .certificate-frame--credential { display:grid; place-items:center; min-height:100%; text-align:center; background:radial-gradient(circle at 50% 20%,#785333,#2d180f 68%); }
-body.tree-about .credential-mark { display:grid; place-items:center; width:min(52%,240px); aspect-ratio:1; margin:18px auto 12px; border:2px solid #f8d27c; border-radius:50%; box-shadow:inset 0 0 0 9px #8e5a2d,inset 0 0 0 11px #f4c466,0 10px 26px #160a06aa; color:#fff4d8; }
-body.tree-about .credential-mark span { margin-bottom:-20px; font:700 18px/1 var(--dna-body,sans-serif); letter-spacing:.2em; }
-body.tree-about .credential-mark strong { font:700 clamp(32px,4vw,54px)/1 var(--dna-display,"Trirong",serif); }
-body.tree-about .credential-note { margin-top:13px!important; color:#f7d891!important; }
+body.tree-about .certificate-caption { padding:19px 8px 5px; color:#163f35; }
+body.tree-about .certificate-caption p { margin:0; color:#587168; font-size:14px; line-height:1.55; }
+body.tree-about .certificate-caption .certificate-provider { margin-bottom:8px; color:#7d552f; font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+body.tree-about .certificate-caption h3 { margin:0 0 8px; color:#123e34; font:600 clamp(20px,2vw,27px)/1.15 var(--dna-display,"Trirong",serif); }
+body.tree-about .certificate-caption a { display:inline-flex; min-height:44px; align-items:center; margin-top:12px; border-bottom:1px solid #987044; color:#0b6757; font-weight:700; }
+body.tree-about .certificate-caption a:focus-visible { outline:2px solid #0b6757; outline-offset:5px; }
+body.tree-about .certificate-frame--credential,body.tree-about .certificate-frame--canva { justify-content:center; text-align:center; }
+body.tree-about .credential-mark { display:grid; place-items:center; width:min(48%,175px); aspect-ratio:1; margin:8px auto 14px; border:1px solid #a2784b; border-radius:50%; box-shadow:inset 0 0 0 7px #f6eddf,inset 0 0 0 8px #a2784b; color:#164c40; }
+body.tree-about .credential-mark span { margin-bottom:-18px; font:700 13px/1 var(--dna-body,sans-serif); letter-spacing:.16em; }
+body.tree-about .credential-mark strong { font:600 clamp(28px,3vw,43px)/1 var(--dna-display,"Trirong",serif); }
+body.tree-about .credential-mark--canva { color:#6b3c7e; border-color:#8f5ba0; box-shadow:inset 0 0 0 7px #f8f0f8,inset 0 0 0 8px #8f5ba0; }
+body.tree-about .credential-note { margin-top:13px!important; color:#7d552f!important; }
 body.tree-about .about-author-work { margin-top:28px; }
-body.tree-about .book-feature { display:grid; grid-template-columns:minmax(190px,.58fr) minmax(0,1.42fr); gap:clamp(28px,5vw,72px); align-items:center; max-width:920px; margin:40px auto 0; padding:clamp(18px,3vw,34px); border:12px solid transparent; border-image:linear-gradient(135deg,#3b2112,#9a5d2d 20%,#e0ad63 46%,#70401f 72%,#2b180e) 1; background:#4b2c1b; box-shadow:0 20px 44px #2a160d35; }
+body.tree-about .book-feature { display:grid; grid-template-columns:minmax(190px,.58fr) minmax(0,1.42fr); gap:clamp(28px,5vw,72px); align-items:center; max-width:920px; margin:40px auto 0; padding:clamp(18px,3vw,34px); border:1px solid #b69b73; border-left:6px solid #62401f; background:linear-gradient(135deg,#fffdf7,#f3ebde); box-shadow:0 14px 30px #173b3212; }
 body.tree-about .book-cover { display:block; max-width:300px; margin:auto; background:#f4ecd9; padding:10px; box-shadow:0 14px 25px #180c0880; }
 body.tree-about .book-cover img { display:block; width:100%; height:auto; }
-body.tree-about .book-copy { color:#fff8e8; }
-body.tree-about .book-copy h3 { margin:8px 0 14px; color:#fffaf0; font:600 clamp(28px,3.5vw,46px)/1.06 var(--dna-display,"Trirong",serif); }
-body.tree-about .book-copy p:not(.certificate-provider) { color:#f1d4a7; line-height:1.75; }
-body.tree-about .book-link { display:inline-flex; min-height:44px; align-items:center; margin-top:8px; border-bottom:1px solid #f3c56e; color:#fff6e5; font-weight:700; }
-body.tree-about .book-link:focus-visible { outline:2px solid #f4cf80; outline-offset:5px; }
-@media(max-width:760px) { body.tree-about .certificate-gallery,.tree-about .book-feature { grid-template-columns:1fr; gap:30px; } body.tree-about .certificate-frame,.tree-about .book-feature { border-width:9px; } body.tree-about .book-copy { text-align:center; } }
+body.tree-about .book-copy { color:#123e34; }
+body.tree-about .book-copy h3 { margin:8px 0 14px; color:#123e34; font:600 clamp(28px,3.5vw,46px)/1.06 var(--dna-display,"Trirong",serif); }
+body.tree-about .book-copy p:not(.certificate-provider) { color:#587168; line-height:1.75; }
+body.tree-about .book-link { display:inline-flex; min-height:44px; align-items:center; margin-top:8px; border-bottom:1px solid #987044; color:#0b6757; font-weight:700; }
+body.tree-about .book-link:focus-visible { outline:2px solid #0b6757; outline-offset:5px; }
+@media(max-width:960px) { body.tree-about .certificate-gallery { grid-template-columns:1fr; } }
+@media(max-width:760px) { body.tree-about .book-feature { grid-template-columns:1fr; gap:30px; } body.tree-about .certificate-frame,.tree-about .book-feature { border-left-width:5px; } body.tree-about .book-copy { text-align:center; } }
