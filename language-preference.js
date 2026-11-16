@@ -1,2 +1,17 @@
-/* One language policy for every page. Manual choice overrides first-visit geolocation. */
-(()=>{const supported=['pl','en','ja'];function initial(){let saved;try{saved=localStorage.getItem('bonsai-language')}catch{}if(supported.includes(saved))return saved;const country=document.cookie.match(/(?:^|;\s*)bonsai-country=([^;]+)/)?.[1];return country==='PL'?'pl':country==='JP'?'ja':'en';}window.BonsaiLocale={initial};document.documentElement.lang=initial();})();
+/* Stable Polish canonical content for search engines and first-time visitors.
+   Preserve explicit PL/EN/JA preferences saved in localStorage.
+   Do not pick a language from IP, country cookies or user-agent. */
+(() => {
+  const supported = new Set(['pl','en','ja']);
+  function initial() {
+    try {
+      const saved = localStorage.getItem('bonsai-language');
+      if (supported.has(saved)) return saved;
+    } catch (_) {
+      // Storage can be unavailable to bots or privacy-conscious browsers.
+    }
+    return 'pl';
+  }
+  window.BonsaiLocale={initial};
+  document.documentElement.lang=initial();
+})();
