@@ -111,3 +111,19 @@ body.bonsai-dna.editorial-portfolio .garden-projects > .garden-project { border-
 body.bonsai-dna.editorial-portfolio .garden-project-scope { margin:0 0 28px;padding:0 0 0 20px;display:grid;gap:8px;max-width:42ch;color:#263f39;font:400 15px/1.65 var(--dna-body,sans-serif);list-style:disc; }
 body.bonsai-dna.editorial-portfolio .garden-project-scope li { padding-left:3px; }
 body.bonsai-dna.editorial-portfolio .garden-project-scope li::marker { color:#35663f; }
+
+/* About page: original certificates presented as framed documents. */
+body.tree-about .about-certifications { margin-top:24px; }
+body.tree-about .certificate-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(24px,4vw,54px); margin-top:42px; }
+body.tree-about .certificate-frame { padding:clamp(14px,1.6vw,22px); border:12px solid transparent; border-image:linear-gradient(135deg,#3b2112,#9a5d2d 20%,#e0ad63 46%,#70401f 72%,#2b180e) 1; background:linear-gradient(#442818,#442818) padding-box; box-shadow:0 20px 44px #2a160d35, inset 0 0 0 1px #f1ca8566; }
+body.tree-about .certificate-preview { position:relative; display:block; padding:clamp(9px,1.4vw,18px); background:#f4ecd9; box-shadow:inset 0 0 0 1px #60422655,0 2px 0 #1a0d08; }
+body.tree-about .certificate-preview::before { content:""; position:absolute; z-index:1; inset:4px; pointer-events:none; border:1px solid #9a714866; }
+body.tree-about .certificate-preview img { display:block; width:100%; height:auto; border:0; background:#fffdf8; }
+body.tree-about .certificate-preview:focus-visible { outline:3px solid #f4cf80; outline-offset:5px; }
+body.tree-about .certificate-caption { padding:22px 8px 5px; color:#fff7e7; }
+body.tree-about .certificate-caption p { margin:0; color:#f1d4a7; font-size:14px; line-height:1.55; }
+body.tree-about .certificate-caption .certificate-provider { margin-bottom:8px; color:#f7c46e; font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+body.tree-about .certificate-caption h3 { margin:0 0 8px; color:#fffaf0; font:600 clamp(21px,2.1vw,28px)/1.15 var(--dna-display,"Trirong",serif); }
+body.tree-about .certificate-caption a { display:inline-flex; min-height:44px; align-items:center; margin-top:14px; border-bottom:1px solid #f3c56e; color:#fff6e5; font-weight:700; }
+body.tree-about .certificate-caption a:focus-visible { outline:2px solid #f4cf80; outline-offset:5px; }
+@media(max-width:760px) { body.tree-about .certificate-gallery { grid-template-columns:1fr; gap:30px; } body.tree-about .certificate-frame { border-width:9px; } }
