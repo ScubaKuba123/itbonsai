@@ -113,30 +113,35 @@ body.bonsai-dna.editorial-portfolio .garden-project-scope li { padding-left:3px;
 body.bonsai-dna.editorial-portfolio .garden-project-scope li::marker { color:#35663f; }
 
 /* About page: original certificates presented as framed documents. */
-body.tree-about .about-certifications { margin-top:24px; }
-body.tree-about .certificate-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(24px,3.5vw,42px); max-width:940px; margin:42px auto 0; }
-body.tree-about .certificate-frame { display:flex; flex-direction:column; padding:14px; border:1px solid #b69b73; border-left:6px solid #62401f; background:linear-gradient(135deg,#fffdf7,#f3ebde); box-shadow:0 14px 30px #173b3212; }
+body.tree-about .about-certifications { width:min(840px,86vw); margin:42px auto 52px; }
+body.tree-about .about-certifications .page-section-head { grid-template-columns:160px 1fr; gap:28px; }
+body.tree-about .about-certifications .page-section-head h2 { margin:0; font-size:clamp(30px,3.5vw,42px); }
+body.tree-about .about-certifications .page-section-head p { margin:10px 0 0; font-size:15px; }
+body.tree-about .certificate-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; max-width:720px; margin:28px auto 0; }
+body.tree-about .certificate-frame { display:flex; flex-direction:column; min-height:276px; padding:10px; border:1px solid #b69b73; border-left:4px solid #62401f; background:linear-gradient(135deg,#fffdf7,#f3ebde); box-shadow:0 10px 22px #173b320f; }
 body.tree-about .certificate-preview { position:relative; display:block; padding:8px; background:#fff; box-shadow:inset 0 0 0 1px #d4c2a5; }
 body.tree-about .certificate-preview::before { content:""; position:absolute; z-index:1; inset:3px; pointer-events:none; border:1px solid #9f805a66; }
-body.tree-about .certificate-preview img { display:block; width:100%; height:auto; border:0; background:#fffdf8; }
+body.tree-about .certificate-preview img { display:block; width:100%; height:158px; object-fit:contain; border:0; background:#fffdf8; }
 body.tree-about .certificate-preview:focus-visible { outline:3px solid #f4cf80; outline-offset:5px; }
-body.tree-about .certificate-caption { padding:19px 8px 5px; color:#163f35; }
-body.tree-about .certificate-caption p { margin:0; color:#587168; font-size:14px; line-height:1.55; }
+body.tree-about .certificate-caption { padding:13px 6px 3px; color:#163f35; }
+body.tree-about .certificate-caption p { margin:0; color:#587168; font-size:13px; line-height:1.45; }
 body.tree-about .certificate-caption .certificate-provider { margin-bottom:8px; color:#7d552f; font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
-body.tree-about .certificate-caption h3 { margin:0 0 8px; color:#123e34; font:600 clamp(20px,2vw,27px)/1.15 var(--dna-display,"Trirong",serif); }
-body.tree-about .certificate-caption a { display:inline-flex; min-height:44px; align-items:center; margin-top:12px; border-bottom:1px solid #987044; color:#0b6757; font-weight:700; }
+body.tree-about .certificate-caption h3 { margin:0 0 5px; color:#123e34; font:600 clamp(18px,1.8vw,23px)/1.15 var(--dna-display,"Trirong",serif); }
+body.tree-about .certificate-caption a { display:inline-flex; min-height:34px; align-items:center; margin-top:6px; border-bottom:1px solid #987044; color:#0b6757; font-size:13px; font-weight:700; }
 body.tree-about .certificate-caption a:focus-visible { outline:2px solid #0b6757; outline-offset:5px; }
 body.tree-about .certificate-frame--canva { justify-content:center; min-height:100%; text-align:center; background:#faf6ee!important; }
 body.tree-about .certificate-frame--canva .certificate-caption { max-width:31ch; margin:auto; }
 body.tree-about .certificate-frame--canva .certificate-provider { color:#6b3c7e; }
-body.tree-about .about-author-work { margin-top:28px; }
-body.tree-about .book-feature { display:grid; grid-template-columns:minmax(190px,.58fr) minmax(0,1.42fr); gap:clamp(28px,5vw,72px); align-items:center; max-width:920px; margin:40px auto 0; padding:clamp(18px,3vw,34px); border:1px solid #b69b73; border-left:6px solid #62401f; background:linear-gradient(135deg,#fffdf7,#f3ebde); box-shadow:0 14px 30px #173b3212; }
-body.tree-about .book-cover { display:block; max-width:300px; margin:auto; background:#f4ecd9; padding:10px; box-shadow:0 14px 25px #180c0880; }
+body.tree-about .about-author-work { width:min(840px,86vw); margin:24px auto 64px; }
+body.tree-about .about-author-work .page-section-head { grid-template-columns:160px 1fr; gap:28px; }
+body.tree-about .about-author-work .page-section-head h2 { margin:0; font-size:clamp(30px,3.5vw,42px); }
+body.tree-about .about-author-work .page-section-head p { margin:10px 0 0; font-size:15px; }
+body.tree-about .book-feature { display:grid; grid-template-columns:140px minmax(0,1fr); gap:26px; align-items:center; max-width:620px; margin:26px auto 0; padding:16px; border:1px solid #b69b73; border-left:4px solid #62401f; background:linear-gradient(135deg,#fffdf7,#f3ebde); box-shadow:0 10px 22px #173b320f; }
+body.tree-about .book-cover { display:block; max-width:128px; margin:auto; background:#f4ecd9; padding:6px; box-shadow:0 8px 16px #180c0833; }
 body.tree-about .book-cover img { display:block; width:100%; height:auto; }
 body.tree-about .book-copy { color:#123e34; }
-body.tree-about .book-copy h3 { margin:8px 0 14px; color:#123e34; font:600 clamp(28px,3.5vw,46px)/1.06 var(--dna-display,"Trirong",serif); }
-body.tree-about .book-copy p:not(.certificate-provider) { color:#587168; line-height:1.75; }
-body.tree-about .book-link { display:inline-flex; min-height:44px; align-items:center; margin-top:8px; border-bottom:1px solid #987044; color:#0b6757; font-weight:700; }
+body.tree-about .book-copy h3 { margin:5px 0 8px; color:#123e34; font:600 clamp(23px,2.8vw,31px)/1.12 var(--dna-display,"Trirong",serif); }
+body.tree-about .book-copy p:not(.certificate-provider) { color:#587168; font-size:14px; line-height:1.55; }
+body.tree-about .book-link { display:inline-flex; min-height:34px; align-items:center; margin-top:3px; border-bottom:1px solid #987044; color:#0b6757; font-size:13px; font-weight:700; }
 body.tree-about .book-link:focus-visible { outline:2px solid #0b6757; outline-offset:5px; }
-@media(max-width:760px) { body.tree-about .certificate-gallery { grid-template-columns:1fr; } }
-@media(max-width:760px) { body.tree-about .book-feature { grid-template-columns:1fr; gap:30px; } body.tree-about .certificate-frame,.tree-about .book-feature { border-left-width:5px; } body.tree-about .book-copy { text-align:center; } }
+@media(max-width:760px) { body.tree-about .about-certifications,.tree-about .about-author-work { width:86vw; } body.tree-about .about-certifications .page-section-head,.tree-about .about-author-work .page-section-head { grid-template-columns:1fr; gap:8px; } body.tree-about .certificate-gallery,.tree-about .book-feature { grid-template-columns:1fr; } body.tree-about .certificate-frame { min-height:0; } body.tree-about .certificate-preview img { height:auto; } body.tree-about .book-feature { gap:18px; max-width:360px; } body.tree-about .book-copy { text-align:center; } }
