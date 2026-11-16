@@ -51,6 +51,35 @@
       float reflection=max(0.,ripple*.65+detail*.35);
       col+=vec3(.025,.043,.030)*reflection*water;
       col-=vec3(.008,.015,.011)*max(0.,-ripple)*water;
+
+      // A sun outside the frame: canopy openings drift slowly across the mist.
+      // Use image coordinates so the light stays attached to the landscape when cropped.
+      float sunX=.78+.012*sin(time*.045);
+      float opening=.025*sin(time*.12)+.009*sin(time*.19);
+      float angle=(p.x-sunX)/(down+.22);
+      float rays=exp(-pow((angle+.54-opening)*14.,2.))*.62
+        +exp(-pow((angle+.28-opening*.65)*23.,2.))
+        +exp(-pow((angle+.07+opening*.4)*18.,2.))*.46;
+      float clearing=smoothstep(.43,.61,p.x)*(1.-smoothstep(.87,1.,p.x));
+      float mist=(1.-smoothstep(.51,.94,down))*(.75+.25*sin(down*8.+p.x*5.));
+      float luminance=dot(col,vec3(.2126,.7152,.0722));
+      // Bright foliage stays textured; no white veil over the trees or reading area.
+      float headroom=1.-smoothstep(.45,.88,luminance);
+      col+=(vec3(.94,.82,.53)-col)*rays*mist*clearing*headroom*.16;
+
+      // Small, soft leaf shadows on the banks; the shoreline itself never moves.
+      vec2 leaf=vec2(p.x+.004*sin(time*.17),down+.003*cos(time*.13));
+      float canopy=sin(leaf.x*63.+sin(leaf.y*39.))*sin(leaf.y*47.-sin(leaf.x*29.));
+      float shade=smoothstep(.08,.72,canopy)*(1.-water)*clearing
+        *smoothstep(.38,.58,down)*(1.-smoothstep(.84,1.,down));
+      col*=1.-shade*.075;
+
+      // A broken reflection of the same sun follows the existing perspective ripples.
+      float lightPath=.69+(sunX-.78)*1.5+.045*depth;
+      float reflectionWidth=.025+.10*depth;
+      float sunReflection=exp(-pow((p.x-lightPath)/reflectionWidth,2.));
+      float glint=smoothstep(.25,.94,ripple*.72+detail*.28);
+      col+=(vec3(1.,.86,.54)-col)*sunReflection*glint*water*.19;
       gl_FragColor=vec4(col,1.);
     }`;
   function compile(type, source) {
