@@ -117,20 +117,20 @@ body.tree-about .about-certifications { width:min(840px,86vw); margin:42px auto 
 body.tree-about .about-certifications .page-section-head { grid-template-columns:160px 1fr; gap:28px; }
 body.tree-about .about-certifications .page-section-head h2 { margin:0; font-size:clamp(30px,3.5vw,42px); }
 body.tree-about .about-certifications .page-section-head p { margin:10px 0 0; font-size:15px; }
-body.tree-about .certificate-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; max-width:720px; margin:28px auto 0; }
-body.tree-about .certificate-frame { display:flex; flex-direction:column; min-height:276px; padding:10px; border:1px solid #b69b73; border-left:4px solid #62401f; background:linear-gradient(135deg,#fffdf7,#f3ebde); box-shadow:0 10px 22px #173b320f; }
-body.tree-about .certificate-preview { position:relative; display:block; padding:8px; background:#fff; box-shadow:inset 0 0 0 1px #d4c2a5; }
-body.tree-about .certificate-preview::before { content:""; position:absolute; z-index:1; inset:3px; pointer-events:none; border:1px solid #9f805a66; }
-body.tree-about .certificate-preview img { display:block; width:100%; height:158px; object-fit:contain; border:0; background:#fffdf8; }
+body.tree-about .certificate-gallery { display:grid; grid-template-columns:1fr; gap:0; max-width:640px; margin:28px auto 0; border-top:1px solid #8a765833; }
+body.tree-about .certificate-frame { display:grid; grid-template-columns:176px minmax(0,1fr); align-items:center; gap:22px; min-height:0; padding:18px 0; border:0; border-bottom:1px solid #8a765833; background:transparent; box-shadow:none; }
+body.tree-about .certificate-preview { position:relative; display:block; overflow:hidden; background:#fff; box-shadow:0 5px 14px #173b3214; }
+body.tree-about .certificate-preview::before { content:none; }
+body.tree-about .certificate-preview img { display:block; width:100%; height:104px; object-fit:contain; border:0; background:#fffdf8; }
 body.tree-about .certificate-preview:focus-visible { outline:3px solid #f4cf80; outline-offset:5px; }
-body.tree-about .certificate-caption { padding:13px 6px 3px; color:#163f35; }
+body.tree-about .certificate-caption { padding:0; color:#163f35; }
 body.tree-about .certificate-caption p { margin:0; color:#587168; font-size:13px; line-height:1.45; }
 body.tree-about .certificate-caption .certificate-provider { margin-bottom:8px; color:#7d552f; font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
 body.tree-about .certificate-caption h3 { margin:0 0 5px; color:#123e34; font:600 clamp(18px,1.8vw,23px)/1.15 var(--dna-display,"Trirong",serif); }
 body.tree-about .certificate-caption a { display:inline-flex; min-height:34px; align-items:center; margin-top:6px; border-bottom:1px solid #987044; color:#0b6757; font-size:13px; font-weight:700; }
 body.tree-about .certificate-caption a:focus-visible { outline:2px solid #0b6757; outline-offset:5px; }
-body.tree-about .certificate-frame--canva { justify-content:center; min-height:100%; text-align:center; background:#faf6ee!important; }
-body.tree-about .certificate-frame--canva .certificate-caption { max-width:31ch; margin:auto; }
+body.tree-about .certificate-frame--canva { text-align:left; background:transparent!important; }
+body.tree-about .certificate-frame--canva .certificate-caption { max-width:31ch; margin:0; }
 body.tree-about .certificate-frame--canva .certificate-provider { color:#6b3c7e; }
 body.tree-about .about-author-work { width:min(840px,86vw); margin:24px auto 64px; }
 body.tree-about .about-author-work .page-section-head { grid-template-columns:160px 1fr; gap:28px; }
@@ -144,4 +144,4 @@ body.tree-about .book-copy h3 { margin:5px 0 8px; color:#123e34; font:600 clamp(
 body.tree-about .book-copy p:not(.certificate-provider) { color:#587168; font-size:14px; line-height:1.55; }
 body.tree-about .book-link { display:inline-flex; min-height:34px; align-items:center; margin-top:3px; border-bottom:1px solid #987044; color:#0b6757; font-size:13px; font-weight:700; }
 body.tree-about .book-link:focus-visible { outline:2px solid #0b6757; outline-offset:5px; }
-@media(max-width:760px) { body.tree-about .about-certifications,.tree-about .about-author-work { width:86vw; } body.tree-about .about-certifications .page-section-head,.tree-about .about-author-work .page-section-head { grid-template-columns:1fr; gap:8px; } body.tree-about .certificate-gallery,.tree-about .book-feature { grid-template-columns:1fr; } body.tree-about .certificate-frame { min-height:0; } body.tree-about .certificate-preview img { height:auto; } body.tree-about .book-feature { gap:18px; max-width:360px; } body.tree-about .book-copy { text-align:center; } }
+@media(max-width:760px) { body.tree-about .about-certifications,.tree-about .about-author-work { width:86vw; } body.tree-about .about-certifications .page-section-head,.tree-about .about-author-work .page-section-head { grid-template-columns:1fr; gap:8px; } body.tree-about .certificate-gallery,.tree-about .book-feature { grid-template-columns:1fr; } body.tree-about .certificate-frame { grid-template-columns:1fr; gap:12px; } body.tree-about .certificate-preview { width:min(176px,100%); } body.tree-about .certificate-preview img { height:auto; } body.tree-about .book-feature { gap:18px; max-width:360px; } body.tree-about .book-copy { text-align:center; } }
