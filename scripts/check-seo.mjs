@@ -33,10 +33,27 @@ const response = async pathname => {
 
 async function run() {
   const sitemap = live ? await response('/sitemap.xml') : read('sitemap.xml');
-  assert(/<urlset\b[^>]*xmlns="http:\/\/www.sitemaps.org\/schemas\/sitemap\/0.9"/.test(sitemap), 'Sitemap namespace missing');
-  const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => decode(m[1]));
+  assert(/<sitemapindex\b[^>]*xmlns="http:\/\/www.sitemaps.org\/schemas\/sitemap\/0.9"/.test(sitemap), 'Sitemap index namespace missing');
+  const childMaps = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => decode(m[1]));
+  assert(childMaps.includes(origin + '/sitemap-pages.xml'), 'Page sitemap missing from index');
+  assert(childMaps.includes(origin + '/sitemap-images.xml'), 'Image sitemap missing from index');
+  assert.equal(new Set(childMaps).size, childMaps.length, 'Duplicate child sitemaps');
+  const pageSitemap = live ? await response('/sitemap-pages.xml') : read('sitemap-pages.xml');
+  assert(/<urlset\b[^>]*xmlns="http:\/\/www.sitemaps.org\/schemas\/sitemap\/0.9"/.test(pageSitemap), 'Page sitemap namespace missing');
+  const urls = [...pageSitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => decode(m[1]));
   assert(urls.length > 0, 'Empty sitemap');
   assert.equal(new Set(urls).size, urls.length, 'Duplicate sitemap URLs');
+  const imageSitemap = live ? await response('/sitemap-images.xml') : read('sitemap-images.xml');
+  assert(/xmlns:image="http:\/\/www.google.com\/schemas\/sitemap-image\/1.1"/.test(imageSitemap), 'Image sitemap namespace missing');
+  const imagePageUrls = [...imageSitemap.matchAll(/<url>[\s\S]*?<loc>([^<]+)<\/loc>[\s\S]*?<\/url>/g)].map(m => decode(m[1]));
+  const imageUrls = [...imageSitemap.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)].map(m => decode(m[1]));
+  assert(imagePageUrls.length > 0 && imageUrls.length > 0, 'Empty image sitemap');
+  for (const canonical of imagePageUrls) assert(urls.includes(canonical), `Image sitemap page is absent from page sitemap: ${canonical}`);
+  for (const asset of imageUrls) {
+    const url = new URL(asset);
+    assert.equal(url.origin, origin, 'Foreign image origin');
+    if (!live) assert(fs.existsSync(path.join(root, decodeURIComponent(url.pathname))), `Missing image sitemap asset ${url.pathname}`);
+  }
   const titles = new Set(), pages = [], errors = [], warnings = [];
   for (const canonical of urls) {
     try {
@@ -96,7 +113,7 @@ async function run() {
     const missing=await fetch(origin+'/seo-audit-not-found/check',{redirect:'manual'});
     assert.equal(missing.status,404);assert(/noindex/.test(meta(await missing.text(),'robots')));
   }
-  console.log(JSON.stringify({mode:live?'production':'source',pages:pages.length,sitemapUrls:urls.length,errors,warnings:[...new Set(warnings)],details:pages},null,2));
+  console.log(JSON.stringify({mode:live?'production':'source',pages:pages.length,sitemapUrls:urls.length,imageSitemapPages:imagePageUrls.length,imageSitemapImages:imageUrls.length,errors,warnings:[...new Set(warnings)],details:pages},null,2));
   if(errors.length) process.exitCode=1;
 }
 run().catch(error=>{console.error(error.message);process.exitCode=1});
