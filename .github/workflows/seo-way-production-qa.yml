@@ -1,0 +1,94 @@
+name: SEO WAY production HTTP verification
+on:
+  push:
+    branches:
+      - seo-way/production-http-qa-20261116
+permissions:
+  contents: read
+jobs:
+  live-http:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe published URLs without changing Cloudflare
+        shell: bash
+        run: |
+          set -uo pipefail
+          mkdir -p qa-http
+          printf 'PATH\tEXPECTED\tHTTP\tCONTENT_TYPE\tFINAL_URL\tCF_RAY\n' > qa-http/results.tsv
+          failures=0
+          probe() {
+            path="$1"; expected="$2"
+            slug="$(printf '%s' "$path" | sed 's/[^a-zA-Z0-9]/_/g')"
+            if [ "$path" = "/" ]; then slug="homepage"; fi
+            body="qa-http/$slug.body"
+            header="qa-http/$slug.headers"
+            detail=$(curl -sS -L --connect-timeout 10 --max-time 25 --max-redirs 5 \
+              -D "$header" -o "$body" -w '%{http_code}|%{content_type}|%{url_effective}' \
+              "https://itbonsai.pl$path") || detail="000|network-error|https://itbonsai.pl$path"
+            IFS='|' read -r status content_type final_url <<< "$detail"
+            ray=$(grep -i '^cf-ray:' "$header" 2>/dev/null | tail -n1 | tr -d '\r' | cut -d' ' -f2-)
+            printf '%s\t%s\t%s\t%s\t%s\t%s\n' "$path" "$expected" "$status" "$content_type" "$final_url" "$ray" | tee -a qa-http/results.tsv
+            if [ "$status" != "$expected" ]; then
+              echo "::error::$path expected HTTP $expected but got $status"
+              failures=$((failures+1))
+            fi
+          }
+          probe / 200
+          probe /robots.txt 200
+          probe /sitemap.xml 200
+          probe /sitemap-pages.xml 200
+          probe /sitemap-images.xml 200
+          probe /llms.txt 200
+          probe /52e50ad4db5dfc7a1f97f491fdc8722b5bec23a974542a9eee77594ef5c4bf87.txt 200
+          probe /uslugi 200
+          probe /strony-internetowe-dla-firm 200
+          probe /strony-internetowe-gdansk 200
+          probe /strony-internetowe-gdynia 200
+          probe /strony-internetowe-trojmiasto 200
+          probe /seo-gdansk 200
+          probe /realizacje 200
+          probe /cennik 200
+          probe /kontakt 200
+          probe /language-preference.js?v=seo-way-20261116 200
+          probe /i18n.js?v=seo-way-20261116 200
+          probe /seo-test-404-xyz 404
+          echo "Checking production release fingerprint and indexing policy"
+          if ! grep -Fq 'language-preference.js?v=seo-way-20261116' qa-http/homepage.body; then
+            echo "::error::Production homepage does not contain the SEO WAY versioned script reference."
+            failures=$((failures+1))
+          fi
+          if ! grep -Fq "return 'pl';" qa-http/_language_preference_js_v_seo_way_20261116.body; then
+            echo "::error::Live locale script does not contain the stable Polish fallback."
+            failures=$((failures+1))
+          fi
+          if grep -Fq 'country===' qa-http/_language_preference_js_v_seo_way_20261116.body; then
+            echo "::error::Production is still geo-switching the canonical language."
+            failures=$((failures+1))
+          fi
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          paths=['/sitemap.xml','/sitemap-pages.xml','/sitemap-images.xml']
+          for path in paths:
+              file='qa-http/'+''.join(c if c.isalnum() and c.isascii() else '_' for c in path)+'.body'
+              try:
+                  root=ET.parse(file).getroot()
+                  print('XML OK',path,'root',root.tag,'entries',len(root))
+              except Exception as e:
+                  print('XML INVALID',path,repr(e))
+                  open('qa-http/xml-failed','w').write(str(e))
+          PY
+          if [ -f qa-http/xml-failed ]; then failures=$((failures+1)); fi
+          if ! grep -q 'Sitemap: https://itbonsai.pl/sitemap.xml' qa-http/_robots_txt.body; then
+            echo "::error::Missing sitemap reference in live robots.txt"
+            failures=$((failures+1))
+          fi
+          echo "Total failed checks: $failures"
+          [ "$failures" -eq 0 ]
+      - name: Upload HTTP evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-way-production-http-qa
+          path: qa-http/
+          if-no-files-found: ignore
