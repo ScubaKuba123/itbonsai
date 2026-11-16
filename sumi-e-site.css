@@ -1,5 +1,5 @@
 /* Color ink landscape: continuous backdrop, no panel surfaces. */
-body.bonsai-dna.forest-mist{--forest-photo:url('/assets/forest-sumi-color.png');--studio-sheet:#eeeedb;--studio-text:#172f2b;background:#eeeedb!important;}
+body.bonsai-dna.forest-mist{--forest-photo:url('/assets/forest-sumi-color.webp');--studio-sheet:#eeeedb;--studio-text:#172f2b;background:#eeeedb!important;}
 body.bonsai-dna.forest-mist::before{background:linear-gradient(90deg,transparent,#eeeedbb8 12%,#eeeedb30 42%,#eeeedb30 80%,transparent),var(--forest-photo) center/100% 100vh no-repeat!important;}
 body.bonsai-dna.forest-mist main :is(section,article,.hero-copy,.services-grid,.contact-copy,.contact-info,.office-download,.garden-project){background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;}
 body.bonsai-dna.forest-mist main :is(section,article)::before,body.bonsai-dna.forest-mist main :is(section,article)::after{background:none!important;box-shadow:none!important;}
