@@ -32,3 +32,5 @@ body.bonsai-dna.forest-mist #echo .river-invitation{font:400 13px/1.7 'DM Sans',
 @media(prefers-reduced-motion:reduce){.echo-river:not(.motion-opt-in) .river-fireflies i{animation:none;opacity:.45;}.river-water{transition:none;}}
 .echo-river.motion-opt-in .river-fireflies i{animation:river-flight var(--duration) ease-in-out var(--delay) infinite!important;}.echo-river.motion-opt-in .river-fireflies i:nth-child(3n){animation-direction:reverse!important;}#echo .echo-river:is(.is-paused,.is-offscreen) .river-fireflies i{animation-play-state:paused!important;}
 @media(max-width:600px){body.bonsai-dna.forest-mist #echo.svc-echo{width:100%;max-width:none;}.river-landscape{mask-image:linear-gradient(180deg,transparent,#000 120px);-webkit-mask-image:linear-gradient(180deg,transparent,#000 120px);}}
+body.bonsai-dna.forest-mist #echo.home-echo-landscape{margin-top:8px;margin-bottom:24px;}
+@media(max-width:600px){body.bonsai-dna.forest-mist #echo.home-echo-landscape{margin-top:0;margin-bottom:0;}}
