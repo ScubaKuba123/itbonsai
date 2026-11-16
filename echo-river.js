@@ -10,9 +10,10 @@
     en: {label:'ECHO / 01 — A LIVING LANDSCAPE',title:'More than a view.<br><em>A feeling.</em>',intro:'The river flows. Light lingers on the water. A few fireflies guide your eye. Your brand becomes a world of its own.',invite:'Imagine this atmosphere in the world of your brand.',cta:'Let’s talk about your idea',caption:'Light. Motion. Atmosphere.',pause:'Pause motion',play:'Enable motion',more:'Explore more Echo possibilities'},
     ja: {label:'ECHO / 01 — 息づく風景',title:'見るだけではなく。<br><em>感じる。</em>',intro:'川が流れ、水面に光が揺れる。数匹の蛍が視線を導く。あなたのブランドに、ひとつの世界が生まれます。',invite:'この空気感を、あなたのブランドの世界へ。',cta:'アイデアをお聞かせください',caption:'光。動き。空気感。',pause:'動きを止める',play:'動きを再開',more:'Echoの表現をもっと見る'}
   };
-  let manualPaused = null, visible = false, gl, program, texture, frame = 0;
+  let manualPaused = false, visible = false, gl, program, texture, frame = 0;
   let started = false, failed = false, last = 0, elapsed = 0;
-  const paused = () => manualPaused === null ? reduced.matches : manualPaused;
+  // Autoplay in view; reduced-motion uses a gentler scene instead of a click gate.
+  const paused = () => manualPaused;
   function renderCopy() {
     const c = copy[document.documentElement.lang] || copy.pl;
     document.querySelectorAll('[data-river-copy]').forEach(el => {
@@ -25,7 +26,7 @@
   }
   const vertex = 'attribute vec2 a;varying vec2 uv;void main(){uv=a*.5+.5;gl_Position=vec4(a,0.,1.);}';
   const fragment = `precision mediump float;
-    uniform sampler2D image;uniform float time;uniform vec2 crop;uniform vec2 offset;varying vec2 uv;
+    uniform sampler2D image;uniform float time;uniform float motion;uniform vec2 crop;uniform vec2 offset;varying vec2 uv;
     void main(){
       vec2 p=offset+uv*crop;
       float down=1.-p.y;
@@ -39,12 +40,12 @@
       float cross=(p.x-.69)*perspective*15.;
       float ripple=sin(stream*5.+sin(cross*1.6+time*.25))*0.62+sin(stream*9.-cross*.8-time*.7)*.38;
       float detail=sin(stream*19.+cross*4.+time*1.3);
-      float amplitude=mix(.0007,.008,depth*depth)*water;
+      float amplitude=mix(.0007,.008,depth*depth)*water*motion;
       vec2 bend=vec2(ripple*amplitude,(ripple*.22+detail*.12)*amplitude);
       // Two cross-faded current samples avoid a visible loop or a moving shoreline.
       float phase=fract(time*.075),phase2=fract(time*.075+.5);
       float blend=abs(phase-.5)*2.;
-      vec2 drift=vec2(.003,.024)*depth*water;
+      vec2 drift=vec2(.003,.024)*depth*water*motion;
       vec3 a=texture2D(image,p+bend+drift*(phase-.5)).rgb;
       vec3 b=texture2D(image,p+bend+drift*(phase2-.5)).rgb;
       vec3 col=mix(a,b,blend);
@@ -54,8 +55,8 @@
 
       // A sun outside the frame: canopy openings drift slowly across the mist.
       // Use image coordinates so the light stays attached to the landscape when cropped.
-      float sunX=.78+.012*sin(time*.045);
-      float opening=.025*sin(time*.12)+.009*sin(time*.19);
+      float sunX=.78+.025*sin(time*.10);
+      float opening=(.085*sin(time*.22)+.018*sin(time*.13))*mix(.65,1.,motion);
       float angle=(p.x-sunX)/(down+.22);
       float rays=exp(-pow((angle+.54-opening)*14.,2.))*.62
         +exp(-pow((angle+.28-opening*.65)*23.,2.))
@@ -65,7 +66,11 @@
       float luminance=dot(col,vec3(.2126,.7152,.0722));
       // Bright foliage stays textured; no white veil over the trees or reading area.
       float headroom=1.-smoothstep(.45,.88,luminance);
-      col+=(vec3(.94,.82,.53)-col)*rays*mist*clearing*headroom*.16;
+      // Broad canopy transmission makes the slow sunlight pass perceptible at small sizes.
+      float sunExposure=.5+.5*sin(time*.26-.6);
+      float sunHalo=exp(-pow((angle+.18-opening)*4.,2.))*clearing*mist*headroom;
+      col+=(vec3(.94,.82,.53)-col)*sunHalo*(.035+.20*sunExposure);
+      col+=(vec3(.94,.82,.53)-col)*rays*mist*clearing*headroom*.34;
 
       // Small, soft leaf shadows on the banks; the shoreline itself never moves.
       vec2 leaf=vec2(p.x+.004*sin(time*.17),down+.003*cos(time*.13));
@@ -79,7 +84,7 @@
       float reflectionWidth=.025+.10*depth;
       float sunReflection=exp(-pow((p.x-lightPath)/reflectionWidth,2.));
       float glint=smoothstep(.25,.94,ripple*.72+detail*.28);
-      col+=(vec3(1.,.86,.54)-col)*sunReflection*glint*water*.19;
+      col+=(vec3(1.,.86,.54)-col)*sunReflection*glint*water*(.16+.16*sunExposure)*mix(.6,1.,motion);
       gl_FragColor=vec4(col,1.);
     }`;
   function compile(type, source) {
@@ -103,22 +108,24 @@
   function draw() {
     if (!gl || !texture || gl.isContextLost()) return;
     gl.uniform1f(gl.getUniformLocation(program, 'time'), elapsed);
+    gl.uniform1f(gl.getUniformLocation(program, 'motion'), reduced.matches ? .3 : 1);
     gl.drawArrays(gl.TRIANGLES, 0, 6);
   }
   function tick(now) {
     frame = 0;
     if (!visible || paused() || document.hidden || failed) {last = 0; return;}
     if (!last) last = now;
-    if (now-last>=32) {elapsed += Math.min((now-last)/1000,.08); last=now; draw();}
+    if (now-last>=32) {elapsed += Math.min((now-last)/1000,.08)*(reduced.matches?.6:1); last=now; draw();}
     frame=requestAnimationFrame(tick);
   }
   function sync() {
     scene.classList.toggle('is-paused', paused());
-    scene.classList.toggle('motion-opt-in', manualPaused === false);
+    scene.classList.add('motion-opt-in');
+    scene.classList.toggle('motion-reduced', reduced.matches);
     scene.classList.toggle('is-offscreen', !visible || document.hidden);
     renderCopy();
     if (visible && !paused() && !document.hidden && texture && !frame && !failed) frame=requestAnimationFrame(tick);
-    if ((!visible || paused() || document.hidden) && frame) {cancelAnimationFrame(frame);frame=0;last=0;}
+    if ((!visible || paused() || document.hidden || failed) && frame) {cancelAnimationFrame(frame);frame=0;last=0;}
   }
   function start() {
     if (started) return; started = true;
@@ -143,7 +150,7 @@
     } catch {failed=true;scene.classList.remove('is-rendered');}
   }
   toggle.addEventListener('click',()=>{manualPaused=!paused();if(!paused())start();sync();});
-  reduced.addEventListener('change',()=>{manualPaused=null;if(visible&&!paused())start();sync();});
+  reduced.addEventListener('change',()=>{draw();sync();});
   new MutationObserver(renderCopy).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});
   // Use the rendered viewport as authority; embedded/resized browsers can report
   // stale IntersectionObserver state after an anchor jump or viewport change.
@@ -166,5 +173,6 @@
   window.addEventListener('resize',scheduleVisibility,{passive:true});
   document.addEventListener('visibilitychange',sync);
   canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();failed=true;scene.classList.remove('is-rendered');sync();});
+  canvas.addEventListener('webglcontextrestored',()=>{started=false;failed=false;texture=null;program=null;if(visible&&!paused())start();sync();});
   renderCopy();sync();checkVisibility();
 })();

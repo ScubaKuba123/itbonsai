@@ -4,8 +4,8 @@
   if (!cards.length) return;
   const button = document.querySelector('.bp-motion');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  let choice = null, frame = 0, clock = 0, last = 0;
-  const paused = () => choice === null ? reduced.matches : choice;
+  let choice = false, frame = 0, clock = 0, last = 0;
+  const paused = () => choice;
   const copy = {
     pl:{water:'Woda, która płynie',waterSub:'Nurt, odbicia i przestrzenna tafla.',solid:'Forma, która odkrywa wnętrze',solidSub:'Obrót bryły i rozdzielenie jej warstw.',terrain:'Krajobraz, który reaguje',terrainSub:'Rzeźba terenu oglądana z różnych stron.',wave:'Wywołaj falę',explode:'Rozłóż bryłę',assemble:'Złóż bryłę',view:'Zmień perspektywę',note:'Trzy działające szkice. Własny charakter dla każdej marki.',play:'Włącz ruch',pause:'Wstrzymaj ruch'},
     en:{water:'Water in motion',waterSub:'Flow, reflections and a dimensional surface.',solid:'A form that reveals its structure',solidSub:'Rotation and an exploded view of its layers.',terrain:'A landscape that responds',terrainSub:'Explore the contours from different angles.',wave:'Create a ripple',explode:'Explode the form',assemble:'Assemble the form',view:'Change perspective',note:'Three live studies. A distinct character for every brand.',play:'Enable motion',pause:'Pause motion'},
@@ -46,7 +46,7 @@
     }
     c.restore();s.el.classList.add('is-ready');
   }
-  function tick(now){frame=0;if(paused()||document.hidden||!states.some(s=>s.visible)){last=0;return;}if(!last)last=now;if(now-last>=32){const dt=Math.min(.08,(now-last)/1000);clock+=dt;last=now;for(const s of states){if(!s.visible)continue;s.split+=(Number(s.open)-s.split)*.08;s.angle+=(s.target-s.angle)*.06;paint(s);}}frame=requestAnimationFrame(tick);}
+  function tick(now){frame=0;if(paused()||document.hidden||!states.some(s=>s.visible)){last=0;return;}if(!last)last=now;if(now-last>=32){const dt=Math.min(.08,(now-last)/1000);clock+=dt*(reduced.matches?.25:1);last=now;for(const s of states){if(!s.visible)continue;s.split+=(Number(s.open)-s.split)*.08;s.angle+=(s.target-s.angle)*.06;paint(s);}}frame=requestAnimationFrame(tick);}
   function sync(){language();if(paused()||document.hidden||!states.some(s=>s.visible)){cancelAnimationFrame(frame);frame=0;last=0;}else if(!frame)frame=requestAnimationFrame(tick);}
   let visibilityFrame=0;
   function checkVisibility(){let changed=false;for(const s of states){const r=s.el.getBoundingClientRect(),next=r.bottom>0&&r.top<innerHeight;if(next!==s.visible){s.visible=next;changed=true;}}if(changed)sync();}
@@ -54,5 +54,5 @@
   window.addEventListener('scroll',scheduleVisibility,{passive:true});window.addEventListener('resize',scheduleVisibility,{passive:true});
   states.forEach(s=>{if(!s.ctx)return;resize(s);new ResizeObserver(()=>resize(s)).observe(s.el);new IntersectionObserver(scheduleVisibility,{threshold:.08}).observe(s.el);s.action.addEventListener('click',()=>{if(s.type==='water')s.ripple=clock;else if(s.type==='solid'){s.open=!s.open;s.action.setAttribute('aria-pressed',String(s.open));}else s.target+=Math.PI/3;if(paused()){if(s.type==='water'){choice=false;sync();}else{s.split=Number(s.open);s.angle=s.target;paint(s);}}language();});});
   button.addEventListener('click',()=>{choice=!paused();sync();});
-  reduced.addEventListener('change',()=>{choice=null;sync();});document.addEventListener('visibilitychange',sync);new MutationObserver(language).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});language();checkVisibility();
+  reduced.addEventListener('change',sync);document.addEventListener('visibilitychange',sync);new MutationObserver(language).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});language();checkVisibility();
 })();
