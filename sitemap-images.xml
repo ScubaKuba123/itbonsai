@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://itbonsai.pl/</loc><image:image><image:loc>https://itbonsai.pl/assets/hero-living-mist-1200.webp</image:loc><image:title>BonsAI Studio — strony internetowe, SEO i automatyzacje</image:title></image:image></url>
+  <url>
+    <loc>https://itbonsai.pl/uslugi</loc>
+    <image:image><image:loc>https://itbonsai.pl/assets/motif-flow-natural-20261020.webp</image:loc><image:title>Usługi BonsAI Studio</image:title></image:image>
+    <image:image><image:loc>https://itbonsai.pl/assets/portfolio/bangingo-home-20261026.jpg</image:loc><image:title>Echo Effect — animowana woda w projekcie Bangingo</image:title></image:image>
+    <image:image><image:loc>https://itbonsai.pl/assets/portfolio/cafe-1440.webp</image:loc><image:title>Projekt aplikacji Cafe</image:title></image:image>
+    <image:image><image:loc>https://itbonsai.pl/assets/portfolio/whip-services.jpg</image:loc><image:title>Projekt sklepu internetowego WHIP-SPORT</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://itbonsai.pl/realizacje</loc>
+    <image:image><image:loc>https://itbonsai.pl/assets/portfolio/bangingo-pearl-aurora.jpg</image:loc><image:title>Bangingo Pearl Aurora — interaktywna strona z animowaną wodą</image:title></image:image>
+    <image:image><image:loc>https://itbonsai.pl/assets/portfolio/aris-zorza.png</image:loc><image:title>ARIS — interaktywny konfigurator oprawy 3D</image:title></image:image>
+    <image:image><image:loc>https://itbonsai.pl/assets/portfolio/orbital-1440.webp</image:loc><image:title>Orbital — projekt strony studia kreatywnego</image:title></image:image>
+    <image:image><image:loc>https://itbonsai.pl/assets/portfolio/forge-1440.webp</image:loc><image:title>Steel Company — koncepcja strony B2B</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://itbonsai.pl/seamonk</loc>
+    <image:image><image:loc>https://itbonsai.pl/assets/seamonk-home.jpg</image:loc><image:title>SeaMonk.jp — strona szkoły nurkowania na Okinawie</image:title></image:image>
+    <image:image><image:loc>https://itbonsai.pl/assets/seamonk-gallery-1.webp</image:loc><image:title>SeaMonk — oferta kursów nurkowania</image:title></image:image>
+    <image:image><image:loc>https://itbonsai.pl/assets/seamonk-gallery-2.webp</image:loc><image:title>SeaMonk — wielojęzyczna strona internetowa</image:title></image:image>
+    <image:image><image:loc>https://itbonsai.pl/assets/seamonk-gallery-3.webp</image:loc><image:title>SeaMonk — miejsca nurkowe na Okinawie</image:title></image:image>
+    <image:image><image:loc>https://itbonsai.pl/assets/seamonk-gallery-4.webp</image:loc><image:title>SeaMonk — responsywny projekt strony</image:title></image:image>
+  </url>
+  <url><loc>https://itbonsai.pl/cafe-app</loc><image:image><image:loc>https://itbonsai.pl/assets/cafe-app-mockup.jpg</image:loc><image:title>Cafe App — projekt aplikacji dla kawiarni</image:title></image:image></url>
+  <url>
+    <loc>https://itbonsai.pl/cennik</loc>
+    <image:image><image:loc>https://itbonsai.pl/assets/bonsai-business-pine.webp</image:loc><image:title>Pakiet strony internetowej dla firmy</image:title></image:image>
+    <image:image><image:loc>https://itbonsai.pl/assets/bonsai-seo-spruce.webp</image:loc><image:title>Pakiet SEO i widoczności</image:title></image:image>
+    <image:image><image:loc>https://itbonsai.pl/assets/bonsai-pricing-copper-maple.webp</image:loc><image:title>Cennik usług BonsAI Studio</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://itbonsai.pl/o-nas</loc>
+    <image:image><image:loc>https://itbonsai.pl/assets/jakub-mieroslawski.jpg</image:loc><image:title>Jakub Mierosławski — założyciel BonsAI Studio</image:title></image:image>
+    <image:image><image:loc>https://itbonsai.pl/assets/motif-zen-natural-20261020.webp</image:loc><image:title>BonsAI Studio — niezależne studio projektowe</image:title></image:image>
+  </url>
+</urlset>
