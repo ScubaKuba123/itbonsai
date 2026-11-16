@@ -1187,10 +1187,7 @@
       }),
     );
 
-  const countryToLanguage = country => country?.toUpperCase()==='PL'?'pl':country?.toUpperCase()==='JP'?'ja':'en';
-  const country = document.cookie.match(/(?:^|;\s*)bonsai-country=([^;]+)/)?.[1];
-
   // Polish is the canonical SEO language. Visitors can still explicitly select
   // any translated interface and that preference remains saved locally.
-  setLanguage(window.BonsaiLocale?.initial() || countryToLanguage(country), { persist: false });
+  setLanguage(window.BonsaiLocale?.initial() || 'pl', { persist: false });
 })();

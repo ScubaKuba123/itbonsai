@@ -11,7 +11,7 @@
  async function language(lang,{persist=true}={}){
   const current=++requestId;
   try {
-   if(!['pl','en','ja'].includes(lang))lang='en';
+   if(!['pl','en','ja'].includes(lang))lang='pl';
    if(!dictionaries[lang]){const response=await fetch((lang==='ja'?'services-copy-ja.json':'services-copy.json')+'?v=20261114');if(!response.ok)throw Error('translation');dictionaries[lang]=await response.json();}
    if(current!==requestId)return;
    const dict=dictionaries[lang];
@@ -26,5 +26,5 @@
  }
  document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>language(button.dataset.lang)));
  let saved;try{saved=localStorage.getItem('bonsai-language');}catch{}
- language(window.BonsaiLocale?.initial()||'en',{persist:false});
+ language(window.BonsaiLocale?.initial()||'pl',{persist:false});
 })();

@@ -1,0 +1,33 @@
+name: SEO WAY static regression
+
+on:
+  pull_request:
+    paths:
+      - '**/*.html'
+      - 'i18n.js'
+      - 'language-preference.js'
+      - 'services-studio.js'
+      - 'sitemap*.xml'
+      - 'robots.txt'
+      - '_redirects'
+      - 'tests/seo-locale.test.cjs'
+      - '.github/workflows/seo-way.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  seo-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JS syntax
+        run: |
+          node --check language-preference.js
+          node --check i18n.js
+          node --check services-studio.js
+      - name: Check locale and SEO rules
+        run: node --test tests/seo-locale.test.cjs
