@@ -126,5 +126,33 @@
     "externalUrl": "https://steel-company-2.vercel.app/",
     "interactive": true,
     "provenance": "reports/portfolio-editorial/asset-manifest.json; real website capture"
+  },
+  {
+    "slug": "whip-sport",
+    "title": "WHIP-SPORT.PL",
+    "category": "web",
+    "type": "E-commerce · Polska manufaktura",
+    "status": "Strona internetowa",
+    "description": "Sklep polskiej manufaktury z Tarnowskich Gór. Oporządzenie i akcesoria są szyte we własnej pracowni, a przy produktach można wybrać materiał i kolor.",
+    "previewSource": "assets/portfolio/whip-sport-dsc-6129.webp",
+    "previewWidth": 1539,
+    "previewHeight": 1022,
+    "externalUrl": "https://whip-sport.pl/",
+    "interactive": true,
+    "provenance": "Genuine live product image from https://whip-sport.pl/, checked 2026-11-14."
+  },
+  {
+    "slug": "viralo",
+    "title": "Viralo",
+    "category": "web",
+    "type": "Promocja profilu · Instagram",
+    "status": "Strona informacyjna",
+    "description": "Publiczna strona prezentująca jednorazowe pakiety promocji profilu na Instagramie, analizę i raportowanie. Na stronie zaznaczono, że sprzedaż nie jest jeszcze aktywna.",
+    "previewSource": "assets/portfolio/viralo-hero-urban-refined.jpg",
+    "previewWidth": 1122,
+    "previewHeight": 1402,
+    "externalUrl": "https://viralo.help/",
+    "interactive": true,
+    "provenance": "Genuine hero image from https://viralo.help/, checked 2026-11-16."
   }
 ]
