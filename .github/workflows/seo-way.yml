@@ -11,6 +11,7 @@ on:
       - 'robots.txt'
       - '_redirects'
       - 'tests/seo-locale.test.cjs'
+      - 'tests/seo-browser.cjs'
       - '.github/workflows/seo-way.yml'
 
 permissions:
@@ -31,3 +32,17 @@ jobs:
           node --check services-studio.js
       - name: Check locale and SEO rules
         run: node --test tests/seo-locale.test.cjs
+
+      - name: Install browser test runner (no project dependency)
+        run: npm install --no-save --no-package-lock --no-audit --no-fund playwright@1.56.1
+      - name: Check system Chrome
+        run: google-chrome --version
+      - name: Run responsive browser QA
+        run: node tests/seo-browser.cjs
+      - name: Attach QA screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-way-browser-qa
+          path: artifacts/seo-browser/
+          if-no-files-found: ignore
