@@ -1,0 +1,128 @@
+name: SEO WAY R3 production verification (read-only)
+on:
+  push:
+    branches:
+      - seo-way/r3-production-qa-20261117
+permissions:
+  contents: read
+jobs:
+  live-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Production HTTP statuses and evidence
+        shell: bash
+        run: |
+          set -uo pipefail
+          mkdir -p qa-r3-evidence
+          printf 'PATH\tEXPECTED\tHTTP\tCONTENT_TYPE\tCF_RAY\tLOCATION\n' > qa-r3-evidence/http-results.tsv
+          failed=0
+          probe() {
+            url_path="$1"; expected="$2"
+            slug="$(printf '%s' "$url_path" | sed 's/[^a-zA-Z0-9]/_/g')"
+            if [ "$url_path" = "/" ]; then slug=homepage; fi
+            header="qa-r3-evidence/$slug.headers"
+            body="qa-r3-evidence/$slug.body"
+            data=$(curl -sS --connect-timeout 12 --max-time 30 --max-redirs 0 -D "$header" -o "$body" \
+                -w '%{http_code}|%{content_type}' "https://itbonsai.pl$url_path") || data="000|network-error"
+            IFS='|' read -r status content_type <<< "$data"
+            ray=$(grep -i '^cf-ray:' "$header" 2>/dev/null|tail -n1|tr -d '\r'|cut -d' ' -f2-)
+            loc=$(grep -i '^location:' "$header" 2>/dev/null|tail -n1|tr -d '\r'|cut -d' ' -f2-)
+            printf '%s\t%s\t%s\t%s\t%s\t%s\n' "$url_path" "$expected" "$status" "$content_type" "$ray" "$loc" | tee -a qa-r3-evidence/http-results.tsv
+            if [ "$status" != "$expected" ]; then
+              echo "::error::$url_path expected HTTP $expected, got $status"
+              failed=$((failed+1))
+            fi
+          }
+          probe / 200
+          probe /uslugi 200
+          probe /strony-internetowe-dla-firm 200
+          probe /strony-internetowe-gdansk 200
+          probe /strony-internetowe-gdynia 200
+          probe /strony-internetowe-trojmiasto 200
+          probe /seo-gdansk 200
+          probe /seo-techniczne 200
+          probe /automatyzacje-ai-dla-firm 200
+          probe /aplikacje-dla-firm 200
+          probe /realizacje 200
+          probe /seamonk 200
+          probe /cafe-app 200
+          probe /cennik 200
+          probe /o-nas 200
+          probe /kontakt 200
+          probe /robots.txt 200
+          probe /sitemap.xml 200
+          probe /sitemap-pages.xml 200
+          probe /sitemap-images.xml 200
+          probe /llms.txt 200
+          probe /analytics.js?v=seo-way-r3-20261117 200
+          probe /lead-events.js?v=seo-way-r3-20261117 200
+          probe /contact-form.js?v=seo-way-r3-20261117 200
+          probe /seo-way-r3.css?v=20261117 200
+          probe /seo-r3-test-404 404
+          probe /dla-biznesu 301
+          printf '%s\n' "$failed" > qa-r3-evidence/failed-count.txt
+          [ "$failed" = 0 ]
+      - name: Check live HTML, sitemap, crawler rules, and code fingerprint
+        run: |
+          python3 - <<'PY'
+          import json,re,xml.etree.ElementTree as ET
+          from pathlib import Path
+          root=Path('qa-r3-evidence')
+          def body(p):
+              slug='homepage' if p=='/' else re.sub(r'[^a-zA-Z0-9]','_',p)
+              return (root/(slug+'.body')).read_text(encoding='utf-8')
+          ns={'sm':'http://www.sitemaps.org/schemas/sitemap/0.9'}
+          pages=ET.fromstring(body('/sitemap-pages.xml'))
+          images=ET.fromstring(body('/sitemap-images.xml'))
+          siteindex=ET.fromstring(body('/sitemap.xml'))
+          urls=[item.find('sm:loc',ns).text for item in pages.findall('sm:url',ns)]
+          assert len(urls)==16 and len(set(urls))==16,'16 unique canonical sitemap URLs expected'
+          assert len(siteindex.findall('sm:sitemap',ns))==2,'Sitemap index invalid'
+          assert len(images.findall('sm:url',ns))>=1,'Image sitemap empty'
+          count=0
+          for url in urls:
+              assert url.startswith('https://itbonsai.pl/'),url
+              p=url.removeprefix('https://itbonsai.pl')
+              html=body(p)
+              assert re.search(r'<script[^>]+src=["\x27]/?analytics\.js\?[^"\x27]+["\x27]',html),p+' analytics loader missing'
+              assert 'lead-events.js?v=seo-way-r3-20261117' in html,p+' lead event loader missing'
+              assert 'privacy-controls.js' in html,p+' consent gate missing'
+              assert re.search(r'<html\b[^>]+lang=["\x27]pl["\x27]',html),p+' canonical lang missing'
+              canon=re.search(r'<link[^>]+rel=["\x27]canonical["\x27][^>]+>',html,re.I)
+              assert canon and 'href="'+url+'"' in canon.group(0),'Canonical mismatch '+p
+              count+=1
+          contact=body('/kontakt')
+          assert 'contact-form.js?v=seo-way-r3-20261117' in contact,'New contact form script not deployed'
+          assert 'seo-way-r3.css?v=20261117' in contact,'Contact style not deployed'
+          eventjs=body('/lead-events.js?v=seo-way-r3-20261117')
+          assert "analyticsAllowed()" in eventjs and "generate_lead" in eventjs and "contact_intent" in eventjs
+          analytics=body('/analytics.js?v=seo-way-r3-20261117')
+          assert "location.hostname !== 'itbonsai.pl'" in analytics
+          assert "analyticsAllowed()" in analytics
+          form=body('/contact-form.js?v=seo-way-r3-20261117')
+          assert 'response.status === 200 && data.success === true' in form
+          assert "bonsai:contact-success" in form
+          robots=body('/robots.txt')
+          assert re.search(r'User-agent:\s*OAI-SearchBot\s+Allow:\s*/',robots,re.I)
+          assert re.search(r'User-agent:\s*GPTBot\s+Disallow:\s*/',robots,re.I)
+          assert 'Sitemap: https://itbonsai.pl/sitemap.xml' in robots
+          assert 'nie znale' in body('/seo-r3-test-404').lower()
+          print('SEO WAY R3 PRODUCTION HTML PASS:',count,'canonical pages; XML sitemap x3; robots; contact funnel fingerprint; 404')
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chrome QA runner
+        run: npm install --no-save --no-package-lock --no-audit --no-fund playwright@1.56.1
+      - name: Consent and form QA using intercepted requests (zero live submissions)
+        run: node qa/r3-production-browser.cjs
+      - name: Evidence upload even after failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-way-r3-production-evidence
+          path: |
+            qa-r3-evidence/
+            qa-r3-evidence/
+          if-no-files-found: ignore
