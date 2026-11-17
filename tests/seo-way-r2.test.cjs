@@ -22,7 +22,7 @@ const textOf=html=>html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ').repla
 const pathOf=url=>new URL(url).pathname;
 
 test('Canonical pages in sitemap have unique indexable HTML',()=>{
-  assert.ok(urls.length>=16,'Unexpected sitemap shrink');
+  assert.ok(urls.length>=15,'Unexpected sitemap shrink');
   assert.equal(urls.length,new Set(urls).size,'Duplicate sitemap URLs');
   for (const url of urls) {
     const file=fileFor(url), html=read(file);
@@ -90,5 +90,5 @@ test('Sitemap lastmod reflects meaningful updates only on R2 URLs',()=>{
   }
   assert.match(read('sitemap.xml'),/sitemap-pages\.xml<\/loc><lastmod>2026-11-17<\/lastmod>/);
   assert.match(read('robots.txt'),/Sitemap:\s*https:\/\/itbonsai\.pl\/sitemap\.xml/);
-  assert.match(read('_redirects'),/^\/dla-biznesu \/uslugi 301$/m);
+  assert.match(read('_redirects'),/^\/dla-biznesu \/#services 301$/m);
 });

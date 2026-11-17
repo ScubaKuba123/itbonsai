@@ -10,7 +10,7 @@ const pages=[...read('sitemap-pages.xml').matchAll(/<loc>(https:\/\/itbonsai\.pl
  .map(m=>m[1]==='https://itbonsai.pl/'?'index.html':m[1].replace('https://itbonsai.pl/','')+'.html');
 
 test('All canonical pages use exactly one consent-aware analytics loader',()=>{
- assert.equal(pages.length,16);
+ assert.equal(pages.length,15);
  for(const page of pages){
    const html=read(page);
    const analytics=[...html.matchAll(/<script\b[^>]*\bsrc=["'][^"']*\/?analytics\.js(?:\?[^"']*)?["'][^>]*>/gi)];

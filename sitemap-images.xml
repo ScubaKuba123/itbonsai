@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url><loc>https://itbonsai.pl/</loc><image:image><image:loc>https://itbonsai.pl/assets/hero-living-mist-1200.webp</image:loc><image:title>BonsAI Studio — strony internetowe, SEO i automatyzacje</image:title></image:image></url>
   <url>
-    <loc>https://itbonsai.pl/uslugi</loc>
-    <image:image><image:loc>https://itbonsai.pl/assets/motif-flow-natural-20261020.webp</image:loc><image:title>Usługi BonsAI Studio</image:title></image:image>
-    <image:image><image:loc>https://itbonsai.pl/assets/portfolio/bangingo-home-20261026.jpg</image:loc><image:title>Echo Effect — animowana woda w projekcie Bangingo</image:title></image:image>
-    <image:image><image:loc>https://itbonsai.pl/assets/portfolio/cafe-1440.webp</image:loc><image:title>Projekt aplikacji Cafe</image:title></image:image>
-    <image:image><image:loc>https://itbonsai.pl/assets/portfolio/whip-services.jpg</image:loc><image:title>Projekt sklepu internetowego WHIP-SPORT</image:title></image:image>
-  </url>
-  <url>
     <loc>https://itbonsai.pl/realizacje</loc>
     <image:image><image:loc>https://itbonsai.pl/assets/portfolio/bangingo-pearl-aurora.jpg</image:loc><image:title>Bangingo Pearl Aurora — interaktywna strona z animowaną wodą</image:title></image:image>
     <image:image><image:loc>https://itbonsai.pl/assets/portfolio/aris-zorza.png</image:loc><image:title>ARIS — interaktywny konfigurator oprawy 3D</image:title></image:image>

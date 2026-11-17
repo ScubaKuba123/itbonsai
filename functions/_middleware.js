@@ -1,4 +1,8 @@
 export async function onRequest(context) {
+  const url = new URL(context.request.url);
+  if (["/uslugi", "/uslugi/", "/uslugi.html", "/dla-biznesu", "/dla-biznesu.html"].includes(url.pathname)) {
+    return Response.redirect(new URL("/#services", url), 301);
+  }
   const response = await context.next();
   const cookie = context.request.headers.get("Cookie") || "";
 

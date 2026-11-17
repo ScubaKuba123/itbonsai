@@ -75,3 +75,19 @@ body.bonsai-dna.forest-mist #services .local-service-note{font:400 13px/1.6 'DM 
  body.bonsai-dna.forest-mist #services .local-service-note{font-size:12px;}
 }
 @media(prefers-reduced-motion:reduce){.river-station>img,.services-river-cta{transition:none;}.river-station:is(:hover,:focus-within)>img{transform:none;}}
+
+/* Compact illustrated service directory, without the decorative river. */
+body.bonsai-dna.forest-mist main #services.services-river{max-width:1200px;padding:40px 24px;margin:24px auto 40px;}
+.services-river-scene{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;gap:0 48px;}
+.services-river-intro{grid-column:1/-1;grid-row:auto;padding:0 0 32px;}
+body.bonsai-dna.forest-mist #services .services-river-intro h2{font-size:clamp(34px,4vw,52px);max-width:760px;}
+body.bonsai-dna.forest-mist #services .river-station,body.bonsai-dna.forest-mist #services :is(.station-app,.station-seo){grid-area:auto;grid-template-columns:120px minmax(0,1fr);min-height:170px;gap:20px;padding:24px 0;border-top:1px solid #31564238;align-self:stretch;}
+.river-station>img,.station-app>img,.station-seo>img{grid-column:1;grid-row:1;width:120px;}
+.river-station>.river-station-copy,.station-app>.river-station-copy,.station-seo>.river-station-copy{grid-column:2;grid-row:1;}
+body.bonsai-dna.forest-mist #services .river-station h3{font-size:24px;margin-bottom:6px;}
+body.bonsai-dna.forest-mist #services .river-station p{font-size:16px;line-height:1.55;}
+body.bonsai-dna.forest-mist #services .river-station-number{font-size:13px;margin-bottom:4px;}
+.services-river-actions{grid-area:auto;align-self:center;padding:24px 0;}
+.services-river-end{padding-top:16px;}
+@media(max-width:800px){.services-river-scene{grid-template-columns:1fr;}.services-river-actions{padding-bottom:0;}}
+@media(max-width:600px){body.bonsai-dna.forest-mist main #services.services-river{padding:24px 20px;}body.bonsai-dna.forest-mist #services .river-station,body.bonsai-dna.forest-mist #services :is(.station-app,.station-seo){grid-template-columns:88px minmax(0,1fr);gap:14px;min-height:140px;padding:18px 0;}.river-station>img{width:88px;}body.bonsai-dna.forest-mist #services .river-station h3{font-size:21px;}.services-river-intro{padding-bottom:24px;}}

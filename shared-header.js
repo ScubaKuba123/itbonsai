@@ -69,7 +69,7 @@
   en:{nav:['Home','Services','Pricing','Portfolio','About','Contact'],analysis:'Free Website Analysis',consultation:'Free Consultation',home:'BonsAI Studio — home',navigation:'Main navigation',open:'Open menu',close:'Close menu',language:'Language selection',openLanguage:'Open language selection',closeLanguage:'Close language selection',polish:'Polish',logo:'BonsAI Studio logo'}
  };
  headerCopy.ja={nav:['ホーム','サービス','料金','制作実績','私たちについて','お問い合わせ'],home:'BonsAI Studio — ホーム',navigation:'メインナビゲーション',open:'メニューを開く',close:'メニューを閉じる',language:'言語を選択',openLanguage:'言語選択を開く',closeLanguage:'言語選択を閉じる',polish:'ポーランド語',logo:'BonsAI Studio ロゴ'};
- const routes=['/','/uslugi','/cennik','/realizacje','/o-nas','/kontakt'];
+ const routes=['/','/#services','/cennik','/realizacje','/o-nas','/kontakt'];
  const setAttribute=(e,key,value)=>{if(e&&e.getAttribute(key)!==value)e.setAttribute(key,value);};
  const setText=(e,value)=>{
   if(!e)return;
@@ -87,6 +87,7 @@
    let route=new URL(a.href,location.href).pathname.replace(/\.html$/,'').replace(/\/$/,'')||'/';
    if(location.protocol==='file:')route='/'+route.split('/').pop();
    if(route==='/index')route='/';
+   if(new URL(a.href,location.href).hash==='#services')route='/#services';
    const index=routes.indexOf(route);if(index>=0)setText(a,copy.nav[index]);
   });
   setText(header.querySelector('.home-header-cta'),'WhatsApp');
