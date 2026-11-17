@@ -17,6 +17,7 @@ on:
       - 'analytics.js'
       - 'contact-form.js'
       - 'lead-events.js'
+      - 'seo-way-r3.css'
       - 'tests/seo-way-r2-browser.cjs'
       - 'locale-updates.json'
       - 'sitemap.xml'
