@@ -49,12 +49,16 @@ async function go(){
           lang:document.documentElement.lang,
           heading:document.querySelector(selector)?.textContent?.trim(),
           overflow:Math.max(0,document.documentElement.scrollWidth-window.innerWidth),
-          canonical:document.querySelector('link[rel="canonical"]')?.href
+          canonical:document.querySelector('link[rel="canonical"]')?.href,
+          ctaTitleColor:(()=>{const t=document.querySelector('.content-cta h2');return t?getComputedStyle(t).color:null})(),
+          detailGridColumn:(()=>{const d=document.querySelector('.content-body > .seo-r2-details');return d?getComputedStyle(d).gridColumn:null})()
         }),selectorFor(url));
         assert.equal(response.status(),200,url);
         assert.equal(state.lang,'pl',url);
         assert.ok(state.heading,url+' missing expanded content');
         assert.equal(state.canonical,'https://itbonsai.pl'+url,url);
+        if(state.ctaTitleColor)assert.equal(state.ctaTitleColor,'rgb(27, 71, 58)',url+' CTA heading contrast');
+        if(state.detailGridColumn)assert.equal(state.detailGridColumn,'1 / -1',url+' R2 detail must span both grid columns');
         assert.ok(state.overflow<=2,url+' horizontal overflow at '+width+'px: '+state.overflow);
         assert.equal(errors.length,0,url+' runtime errors: '+errors.join('; '));
         const dismiss=page.getByRole('button',{name:/Odrzuć analitykę|Reject analytics|分析を拒否/i});
