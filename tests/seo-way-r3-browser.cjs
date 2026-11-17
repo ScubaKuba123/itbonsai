@@ -59,6 +59,13 @@ async function go(){
      assert.equal(calls,1,'Only one mock POST is sent');
      assert.equal(await page.locator('form.contact-form button[type="submit"]').isDisabled(),true);
      assert.deepEqual(gaRequests,[],'Local QA must never contact production GA4');
+     const contactGeometry=await page.evaluate(()=>{
+       const phone=document.querySelector('.contact-details > a[href^="tel:"]')?.getBoundingClientRect();
+       const email=document.querySelector('.contact-details > a[href^="mailto:"]')?.getBoundingClientRect();
+       return {phone:phone?{top:phone.top,bottom:phone.bottom}:null,email:email?{top:email.top,bottom:email.bottom}:null};
+     });
+     assert.ok(contactGeometry.phone&&contactGeometry.email,'Contact links must be present');
+     assert.ok(contactGeometry.email.top>=contactGeometry.phone.bottom-1,'Phone and e-mail overlap on '+width+'px');
      const overflow=await page.evaluate(()=>Math.max(0,document.documentElement.scrollWidth-innerWidth));
      assert.ok(overflow<=2,'Contact form overflow '+width);
      assert.deepEqual(pageErrors,[],'Contact page errors '+width);
