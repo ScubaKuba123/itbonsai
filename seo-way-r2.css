@@ -1,0 +1,63 @@
+/* SEO WAY R2: improve text layout and CTA contrast on the five reviewed pages only.
+   No global restyling, no new font dependencies. */
+[data-seo-r2] .content-body > p[data-seo-related] {
+  grid-column: 1 / -1 !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 24px;
+  min-height: 0;
+}
+[data-seo-r2] .content-body > p[data-seo-related] br { display: none; }
+[data-seo-r2] .content-body > p[data-seo-related] a { margin-top: 0; }
+[data-seo-r2] .content-body > .seo-r2-details {
+  grid-column: 1 / -1 !important;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: clamp(22px, 3vw, 40px);
+  margin: 0;
+  border: 1px solid #c7d9d0;
+  border-radius: 20px;
+  background: rgba(255,255,255,.78);
+  box-shadow: 0 12px 30px rgba(24,63,51,.05);
+}
+[data-seo-r2] .content-body > .seo-r2-details h2 {
+  color: #214b3d;
+  margin: 0 0 12px;
+  line-height: 1.24;
+  font-family: "Trirong", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(24px, 2.4vw, 34px);
+}
+[data-seo-r2] .content-body > .seo-r2-details h2:not(:first-child) { margin-top: 32px; }
+[data-seo-r2] .content-body > .seo-r2-details p {
+  color: #385a4e;
+  line-height: 1.75;
+  margin: 0;
+  max-width: 78ch;
+}
+[data-seo-r2] .content-body > .seo-r2-details a {
+  color: #096a59;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+[data-seo-r2] .project-content > .seo-r2-details {
+  margin: 26px 0 20px;
+  padding-top: 20px;
+  border-top: 1px solid #bdcec4;
+}
+[data-seo-r2] .project-content > .seo-r2-details h3 { margin: 20px 0 10px; color: #20493b; }
+[data-seo-r2] .project-content > .seo-r2-details p { line-height: 1.7; color: #37584e; }
+[data-seo-r2] .content-cta h2 {
+  color: #1b473a !important;
+  text-shadow: none !important;
+}
+[data-seo-r2] .content-cta p {
+  color: #36584a !important;
+}
+@media (max-width: 700px) {
+  [data-seo-r2] .content-body > .seo-r2-details { padding: 22px; }
+  [data-seo-r2] .content-body > .seo-r2-details h2 { font-size: clamp(23px, 5.8vw, 29px); }
+  [data-seo-r2] .content-body > p[data-seo-related] { gap: 10px 16px; }
+}

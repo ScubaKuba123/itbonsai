@@ -45,7 +45,11 @@ test('HTML references freshly versioned locale assets',()=>{
   for(const page of pages){
     const html=read(page);
     if(html.includes('language-preference.js'))assert.match(html,/language-preference\.js\?v=seo-way-20261116/,page);
-    if(html.includes('i18n.js'))assert.match(html,/i18n\.js\?v=seo-way-20261116/,page);
+    if(html.includes('i18n.js')){
+      const r2=new Set(['strony-internetowe-dla-firm.html','seo-techniczne.html','automatyzacje-ai-dla-firm.html','cafe-app.html','strony-internetowe-trojmiasto.html']);
+      const expected=r2.has(page)?'seo-way-r2-20261117':'seo-way-20261116';
+      assert.ok(html.includes('i18n.js?v='+expected),page+' locale version mismatch');
+    }
   }
   assert.match(read('uslugi.html'),/services-studio\.js\?v=seo-way-20261116/);
   assert.match(read('realizacje.html'),/language-preference\.js\?v=seo-way-20261116/);
