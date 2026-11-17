@@ -1,0 +1,164 @@
+name: SEO WAY R2 production QA (read-only)
+
+on:
+  push:
+    branches:
+      - seo-way/r2-production-qa-20261117
+
+permissions:
+  contents: read
+
+jobs:
+  live-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Confirm R2 release is live before probing
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3 4 5 6; do
+            if curl -fsS --connect-timeout 10 --max-time 30 https://itbonsai.pl/seo-techniczne | grep -Fq 'Co oznacza „odkryta, ale niezaindeksowana”?'; then
+              echo "Live R2 fingerprint confirmed, attempt $attempt"
+              exit 0
+            fi
+            echo "R2 release not visible yet; retry $attempt"
+            sleep 12
+          done
+          echo "::error::R2 release fingerprint is not visible on production."
+          exit 1
+
+      - name: Test live HTTP status and collect evidence
+        shell: bash
+        run: |
+          set -uo pipefail
+          mkdir -p qa-http
+          printf 'PATH\tEXPECTED\tHTTP\tCONTENT_TYPE\tFINAL_URL\tCF_RAY\n' > qa-http/results.tsv
+          failures=0
+          probe() {
+            path="$1"; expected="$2"
+            slug="$(printf '%s' "$path" | sed 's/[^a-zA-Z0-9]/_/g')"
+            if [ "$path" = "/" ]; then slug="homepage"; fi
+            body="qa-http/$slug.body"
+            header="qa-http/$slug.headers"
+            details=$(curl -sS --connect-timeout 10 --max-time 30 --max-redirs 0 \
+              -D "$header" -o "$body" -w '%{http_code}|%{content_type}|%{url_effective}' \
+              "https://itbonsai.pl$path") || details="000|network-error|https://itbonsai.pl$path"
+            IFS='|' read -r status content_type final_url <<< "$details"
+            ray=$(grep -i '^cf-ray:' "$header" 2>/dev/null | tail -n1 | tr -d '\r' | cut -d' ' -f2-)
+            printf '%s\t%s\t%s\t%s\t%s\t%s\n' "$path" "$expected" "$status" "$content_type" "$final_url" "$ray" | tee -a qa-http/results.tsv
+            if [ "$status" != "$expected" ]; then
+              echo "::error::$path expected $expected got $status"
+              failures=$((failures+1))
+            fi
+          }
+          probe / 200
+          probe /robots.txt 200
+          probe /sitemap.xml 200
+          probe /sitemap-pages.xml 200
+          probe /sitemap-images.xml 200
+          probe /llms.txt 200
+          probe /52e50ad4db5dfc7a1f97f491fdc8722b5bec23a974542a9eee77594ef5c4bf87.txt 200
+          probe /uslugi 200
+          probe /strony-internetowe-dla-firm 200
+          probe /strony-internetowe-gdansk 200
+          probe /strony-internetowe-gdynia 200
+          probe /strony-internetowe-trojmiasto 200
+          probe /seo-gdansk 200
+          probe /seo-techniczne 200
+          probe /automatyzacje-ai-dla-firm 200
+          probe /aplikacje-dla-firm 200
+          probe /realizacje 200
+          probe /seamonk 200
+          probe /cafe-app 200
+          probe /cennik 200
+          probe /o-nas 200
+          probe /kontakt 200
+          probe /language-preference.js?v=seo-way-20261116 200
+          probe /i18n.js?v=seo-way-r2-20261117 200
+          probe /seo-way-r2.css?v=20261117 200
+          probe /locale-updates.json?v=seo-way-r2-20261117 200
+          probe /seo-test-404-xyz 404
+          probe /dla-biznesu 301
+          echo "HTTP mismatches: $failures"
+          [ "$failures" -eq 0 ]
+
+      - name: Verify XML, canonicals, language assets and R2 content
+        run: |
+          python3 - <<'PY'
+          import json,re,xml.etree.ElementTree as ET
+          from pathlib import Path
+          root=Path('qa-http')
+          def body(path):
+              name='homepage' if path=='/' else re.sub('[^a-zA-Z0-9]','_',path)
+              return (root/(name+'.body')).read_text(encoding='utf-8')
+          ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
+          sitemap_index=ET.fromstring(body('/sitemap.xml'))
+          pages=ET.fromstring(body('/sitemap-pages.xml'))
+          images=ET.fromstring(body('/sitemap-images.xml'))
+          assert len(sitemap_index.findall('s:sitemap',ns))==2,'Expected two sitemap references'
+          assert len(pages.findall('s:url',ns))==16,'Canonical page sitemap should have 16 URLs'
+          assert len(images.findall('s:url',ns))>=1,'Image sitemap is empty'
+          urls=[]
+          targets={'/strony-internetowe-dla-firm','/seo-techniczne','/automatyzacje-ai-dla-firm','/cafe-app','/strony-internetowe-trojmiasto'}
+          for item in pages.findall('s:url',ns):
+              loc=item.find('s:loc',ns).text
+              lastmod=item.find('s:lastmod',ns).text
+              assert loc.startswith('https://itbonsai.pl/'),loc
+              urls.append(loc)
+              pathname=loc.removeprefix('https://itbonsai.pl')
+              if pathname in targets: assert lastmod=='2026-11-17',(pathname,lastmod)
+              html=body(pathname)
+              canonical=re.search(r'<link\b[^>]*rel=["\x27]canonical["\x27][^>]*>',html,re.I)
+              assert canonical is not None,'Missing canonical '+pathname
+              assert 'href="'+loc+'"' in canonical.group(0),'Wrong canonical '+pathname
+              assert re.search(r'<html\b[^>]*lang=["\x27]pl["\x27]',html,re.I),'Missing canonical Polish language '+pathname
+          assert len(set(urls))==16,'Duplicate canonical URLs'
+          assert 'https://itbonsai.pl/dla-biznesu' not in urls,'Old redirected URL should not be in sitemap'
+          fingerprints={
+            '/strony-internetowe-dla-firm':'Jak wybrać zakres nowej strony?',
+            '/seo-techniczne':'Co oznacza „odkryta, ale niezaindeksowana”?',
+            '/automatyzacje-ai-dla-firm':'Przykład: od formularza do przygotowanej odpowiedzi',
+            '/cafe-app':'Koncepcja projektu, nie gotowa usługa',
+            '/strony-internetowe-trojmiasto':'Jedna spójna strona dla firm działających w całym Trójmieście'
+          }
+          for pathname,text in fingerprints.items():
+              html=body(pathname)
+              assert text in html,'R2 new content missing on '+pathname
+              assert 'seo-way-r2.css?v=20261117' in html,'R2 CSS link missing '+pathname
+              assert 'i18n.js?v=seo-way-r2-20261117' in html,'R2 language version missing '+pathname
+          regional=body('/strony-internetowe-trojmiasto')
+          for path in ['/strony-internetowe-gdansk','/strony-internetowe-gdynia']:
+              assert 'href="'+path+'"' in regional,'Regional link missing '+path
+          robots=body('/robots.txt')
+          assert 'Sitemap: https://itbonsai.pl/sitemap.xml' in robots
+          assert re.search(r'User-agent:\s*OAI-SearchBot\s+Allow:\s*/',robots,re.I)
+          assert re.search(r'User-agent:\s*GPTBot\s+Disallow:\s*/',robots,re.I)
+          assert 'return \x27pl\x27;' in body('/language-preference.js?v=seo-way-20261116')
+          assert '/locale-updates.json?v=seo-way-r2-20261117' in body('/i18n.js?v=seo-way-r2-20261117')
+          assert 'data-seo-r2' in body('/seo-way-r2.css?v=20261117')
+          dictionary=json.loads(body('/locale-updates.json?v=seo-way-r2-20261117'))
+          for value in fingerprints.values():
+              assert dictionary['en'].get(value) and dictionary['ja'].get(value),'Missing EN/JA '+value
+          assert body('/seo-test-404-xyz').lower().find('nie znaleźliśmy')>=0,'404 body should explain the error'
+          print('LIVE CONTENT PASS: 16 canonical pages, 3 valid sitemap XMLs, R2 fingerprints, EN/JA, robots, 404')
+          PY
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright runner
+        run: npm install --no-save --no-package-lock --no-audit --no-fund playwright@1.56.1
+      - name: Run live Chrome checks for R2 pages
+        run: node qa/r2-production-browser.cjs
+
+      - name: Upload QA evidence (even on failure)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-way-r2-production-evidence
+          path: |
+            qa-http/
+            artifacts/r2-production-browser/
+          if-no-files-found: ignore
