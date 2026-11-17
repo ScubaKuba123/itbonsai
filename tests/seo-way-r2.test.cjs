@@ -58,6 +58,8 @@ test('R2 expansion is visible HTML with distinct service intent',()=>{
     const plain=textOf(contentOf(html));
     assert.ok(plain.split(/\s+/).length>=minWords,file+' lacks useful depth');
     assert.ok(html.includes('i18n.js?v=seo-way-r2-20261117'),file+' uses stale locale JS');
+    assert.match(html,/seo-way-r2\.css\?v=20261117/,file+' missing scoped CSS');
+    assert.match(html,/<main\b[^>]*data-seo-r2=["'](?:service|regional)["']/,file+' missing scoped layout marker');
     const section=(html.match(/<section class="seo-r2-details"[\s\S]*?<\/section>/)||html.match(/<section class="seo-longform"[\s\S]*?<\/section>/)||[])[0];
     assert.ok(section,file+' has no R2 content section');
     assert.doesNotMatch(section,/\b(reviews?\s*\d+|gwarantujemy\s+pozycj|100%\s+skuteczno)/i,'No fabricated outcomes');
