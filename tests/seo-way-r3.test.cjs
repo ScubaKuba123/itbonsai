@@ -22,6 +22,7 @@ test('All canonical pages use exactly one consent-aware analytics loader',()=>{
    assert.ok(!/on(click|submit)=/.test(lead[0][0]),page+' avoid tracking from inline HTML');
  }
  assert.ok(read('kontakt.html').includes('contact-form.js?v=seo-way-r3-20261117'));
+ assert.ok(read('kontakt.html').includes('seo-way-r3.css?v=20261117'),'Mobile contact needs scoped readability CSS');
 });
 
 function fixture({hostname='itbonsai.pl',consent=false,gtag=true}={}){
