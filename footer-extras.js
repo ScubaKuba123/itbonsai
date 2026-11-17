@@ -10,11 +10,12 @@
       const heading=contact.querySelector('strong');
       if(heading)heading.after(name);else contact.prepend(name);
     }
-    // Verified GA4 active-user snapshot, filtered to itbonsai.pl; not realtime.
+    // Aggregate page-view counter; populated only after a successful server response.
     if(!document.querySelector('.visitor-paper')){
       const visitors=document.createElement('details');
       visitors.className='visitor-paper';
-      visitors.innerHTML='<summary aria-label="114 aktywnych użytkowników według GA4, do 8 listopada 2026. Pokaż szczegóły"><span class="visitor-paper-number" aria-hidden="true">114</span></summary><div class="visitor-paper-info"><strong>114 aktywnych użytkowników</strong><p>GA4 · itbonsai.pl<br>01.01.2020–08.11.2026</p><p>Historyczny odczyt, aktualizowany ręcznie. To użytkownicy zarejestrowani przez GA4, nie liczba odsłon ani licznik na żywo.</p></div>';
+      visitors.hidden=true; visitors.translate=false;
+      visitors.innerHTML='<summary><span class="visitor-paper-number" aria-hidden="true"></span></summary><div class="visitor-paper-info"><strong></strong><p></p></div>';
       const brand=footer.querySelector('.footer-brand-block .brand');
       if(brand)brand.after(visitors);else footer.append(visitors);
     }

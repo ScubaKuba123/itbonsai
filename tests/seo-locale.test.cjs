@@ -47,7 +47,7 @@ test('HTML references freshly versioned locale assets',()=>{
     if(html.includes('language-preference.js'))assert.match(html,/language-preference\.js\?v=seo-way-20261116/,page);
     if(html.includes('i18n.js')){
       const r2=new Set(['strony-internetowe-dla-firm.html','seo-techniczne.html','automatyzacje-ai-dla-firm.html','cafe-app.html','strony-internetowe-trojmiasto.html']);
-      const expected=page==='index.html'?'services-icons-20261117':r2.has(page)?'seo-way-r2-20261117':'seo-way-20261116';
+      const expected=page==='polityka-prywatnosci.html'?'pageviews-20261117':page==='index.html'?'services-icons-20261117':r2.has(page)?'seo-way-r2-20261117':'seo-way-20261116';
       assert.ok(html.includes('i18n.js?v='+expected),page+' locale version mismatch');
     }
   }
