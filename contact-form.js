@@ -29,7 +29,7 @@
       const data = await response.json().catch(() => ({}));
       if (data.retryable) submissionId = null;
       if (response.status === 429) statusKey = 'rate';
-      else if (response.status === 200 && data.success === true) {sent = true; statusKey = 'success';}
+      else if (response.status === 200 && data.success === true) {sent = true; statusKey = 'success'; window.dispatchEvent(new Event('bonsai:contact-success'));}
       else statusKey = data.retryable ? 'error' : 'unknown';
     } catch {statusKey = 'unknown';}
     finally {
