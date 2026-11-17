@@ -1076,7 +1076,7 @@
   if (document.querySelector('#zasady-uslug')) {
     try {const res=await fetch('/privacy-translations.json?v=20261114');if(res.ok)Object.assign(copy.en,await res.json());const ja=await fetch('/privacy-translations-ja.json?v=20261114');if(ja.ok)Object.assign(copy.ja,await ja.json());} catch {}
   }
-  try { const r=await fetch('/locale-updates.json?v=legal04-20261114');if(r.ok){const d=await r.json();for(const l of ['en','ja'])Object.assign(copy[l],d[l]||{});} }catch{}
+  try { const r=await fetch('/locale-updates.json?v=seo-way-r2-20261117');if(r.ok){const d=await r.json();for(const l of ['en','ja'])Object.assign(copy[l],d[l]||{});} }catch{}
   const titleOriginal = document.title;
   const meta = document.querySelector('meta[name="description"]');
   const metaOriginal = meta?.content || "";
