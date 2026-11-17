@@ -26,8 +26,8 @@ jobs:
             data=$(curl -sS --connect-timeout 12 --max-time 30 --max-redirs 0 -D "$header" -o "$body" \
                 -w '%{http_code}|%{content_type}' "https://itbonsai.pl$url_path") || data="000|network-error"
             IFS='|' read -r status content_type <<< "$data"
-            ray=$(grep -i '^cf-ray:' "$header" 2>/dev/null|tail -n1|tr -d '\r'|cut -d' ' -f2-)
-            loc=$(grep -i '^location:' "$header" 2>/dev/null|tail -n1|tr -d '\r'|cut -d' ' -f2-)
+            ray=$(grep -i '^cf-ray:' "$header" 2>/dev/null|tail -n1|tr -d '\r'|cut -d' ' -f2- || true)
+            loc=$(grep -i '^location:' "$header" 2>/dev/null|tail -n1|tr -d '\r'|cut -d' ' -f2- || true)
             printf '%s\t%s\t%s\t%s\t%s\t%s\n' "$url_path" "$expected" "$status" "$content_type" "$ray" "$loc" | tee -a qa-r3-evidence/http-results.tsv
             if [ "$status" != "$expected" ]; then
               echo "::error::$url_path expected HTTP $expected, got $status"
