@@ -1,0 +1,77 @@
+/* River of possibilities: real text and links around separately rendered artwork. */
+body.bonsai-dna.forest-mist main #services.services-river{
+ --stream-ink:#123c30;--stream-accent:#008c8c;
+ display:block;position:relative;isolation:isolate;box-sizing:border-box;
+ width:min(1440px,100%);max-width:none;margin:40px auto 70px;padding:58px 4.5% 0;
+ background:transparent!important;scroll-margin-top:94px;
+}
+.services-river-scene{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:260px 310px 310px 84px;column-gap:32px;isolation:isolate;}
+.services-stream{position:absolute;z-index:-1;left:27%;top:0;width:47%;height:100%;pointer-events:none;overflow:hidden;mask-image:linear-gradient(transparent,#000 6%,#000 93%,transparent);}
+.services-stream>img,.services-stream>canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;}
+.services-stream>canvas{opacity:0;}
+.services-stream.is-ready>canvas{opacity:1;}
+.services-stream.is-ready>img{visibility:hidden;}
+.services-river-intro{grid-column:1;grid-row:1;position:relative;z-index:2;align-self:start;padding-top:4px;}
+body.bonsai-dna.forest-mist #services .services-river-intro h2{font:400 clamp(36px,4.5vw,66px)/1.12 'Trirong',Georgia,serif;letter-spacing:-.052em;color:var(--stream-ink);margin:0;max-width:630px;}
+.services-river-rule{display:block;width:44px;height:3px;background:var(--stream-accent);margin-top:24px;}
+body.bonsai-dna.forest-mist #services .river-station{position:relative;display:grid;grid-template-columns:46% minmax(0,1fr);align-items:center;gap:10px;min-width:0;padding:0;margin:0;z-index:1;background:none!important;}
+.river-station>img{display:block;width:100%;height:auto;object-fit:contain;pointer-events:none;transition:transform .4s ease;}
+.river-station:focus-within>img{transform:translateY(-4px);}
+.river-station-copy{min-width:0;position:relative;z-index:2;}
+body.bonsai-dna.forest-mist #services .river-station-number{display:flex;align-items:center;gap:12px;font:500 17px/1.4 'DM Sans',sans-serif;color:#007f80;margin-bottom:10px;}
+.river-station-number::after{content:'';height:1px;width:30px;background:#008c8c80;}
+body.bonsai-dna.forest-mist #services .river-station h3{font:600 clamp(22px,2.1vw,31px)/1.19 'DM Sans',sans-serif;letter-spacing:-.035em;margin:0 0 12px;color:var(--stream-ink);}
+.river-station h3 a{color:inherit;text-decoration:none;text-decoration-thickness:1px;text-underline-offset:6px;display:inline-flex;align-items:center;min-height:44px;}
+.river-station h3 a:hover{text-decoration:underline;color:#007f80;}
+.river-station a:focus-visible,.services-river-actions>a:focus-visible,.services-river-motion:focus-visible{outline:2px solid #008c8c;outline-offset:6px;border-radius:3px;}
+body.bonsai-dna.forest-mist #services .river-station p{font:400 clamp(16px,1.45vw,21px)/1.48 'DM Sans',sans-serif;margin:0;max-width:30ch;color:#203e32;}
+.station-web{grid-column:2;grid-row:1;align-self:end;}
+.station-app{grid-column:1;grid-row:2;align-self:start;}
+.station-ai{grid-column:2;grid-row:2;align-self:end;}
+.station-seo{grid-column:1;grid-row:3;align-self:start;}
+.station-brand{grid-column:2;grid-row:3;align-self:end;}
+body.bonsai-dna.forest-mist #services :is(.station-app,.station-seo){grid-template-columns:minmax(0,1fr) 48%;}
+.station-app>img,.station-seo>img{grid-column:2;grid-row:1;}
+.station-app>.river-station-copy,.station-seo>.river-station-copy{grid-column:1;grid-row:1;}
+.services-river-actions{grid-column:1;grid-row:4;align-self:center;z-index:2;}
+.services-river-cta{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:54px;padding:10px 26px;border-radius:999px;background:#008c8c;color:#fff;text-decoration:none;font:600 18px/1.4 'DM Sans',sans-serif;transition:background .2s;}
+.services-river-cta:hover{background:#006e70;}
+.services-river-cta svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.5;}
+.services-river-end{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:24px 0 0;position:relative;}
+body.bonsai-dna.forest-mist #services .local-service-note{font:400 13px/1.6 'DM Sans',sans-serif;max-width:630px;margin:0;color:#405d49;}
+.services-river-end a{color:inherit;text-underline-offset:3px;}
+.services-river-motion{flex-shrink:0;min-height:44px;border:0;border-bottom:1px solid #57715b66;padding:6px 0;background:transparent;color:#315642;font:400 13px/1.5 'DM Sans',sans-serif;cursor:pointer;}
+.services-river-motion[hidden]{display:none;}
+@media(hover:hover){.river-station:hover>img{transform:translateY(-4px);}}
+@media(max-width:1100px) and (min-width:901px){.services-river-scene{grid-template-rows:235px 280px 280px 80px;column-gap:14px;}.services-river-intro{padding-top:12px;}body.bonsai-dna.forest-mist #services .river-station{gap:5px;}}
+@media(max-width:900px){
+ body.bonsai-dna.forest-mist main #services.services-river{padding:40px 6% 0;margin:25px auto 45px;}
+ .services-river-scene{grid-template-columns:1fr;grid-template-rows:auto;gap:28px;}
+ .services-river-intro{grid-area:auto;padding:0 0 5px;}
+ body.bonsai-dna.forest-mist #services .services-river-intro h2{font-size:clamp(36px,5.6vw,50px);max-width:610px;}
+ .services-stream{top:155px;height:calc(100% - 220px);left:54%;width:46%;}
+ body.bonsai-dna.forest-mist #services .river-station,body.bonsai-dna.forest-mist #services :is(.station-app,.station-seo){grid-area:auto;grid-template-columns:54% minmax(0,1fr);align-self:stretch;gap:4px;min-height:210px;}
+ .river-station>img,.station-app>img,.station-seo>img{grid-column:2;grid-row:1;}
+ .river-station>.river-station-copy,.station-app>.river-station-copy,.station-seo>.river-station-copy{grid-column:1;grid-row:1;}
+ .services-river-actions{grid-area:auto;}
+ body.bonsai-dna.forest-mist #services .river-station h3{font-size:28px;}
+ body.bonsai-dna.forest-mist #services .river-station p{font-size:19px;}
+}
+@media(max-width:600px){
+ body.bonsai-dna.forest-mist main #services.services-river{padding:30px 20px 0;margin:16px auto 40px;}
+ .services-river-scene{gap:24px;}
+ body.bonsai-dna.forest-mist #services .services-river-intro h2{font-size:36px;letter-spacing:-.055em;line-height:1.18;}
+ .services-river-rule{margin-top:18px;}
+ .services-stream{left:54%;width:46%;top:170px;height:calc(100% - 235px);}
+ body.bonsai-dna.forest-mist #services .river-station,body.bonsai-dna.forest-mist #services :is(.station-app,.station-seo){grid-template-columns:54% minmax(0,1fr);gap:4px;min-height:170px;align-items:center;}
+ .river-station>img,.station-app>img,.station-seo>img{grid-column:2;grid-row:1;}
+ .river-station>.river-station-copy,.station-app>.river-station-copy,.station-seo>.river-station-copy{grid-column:1;grid-row:1;background:transparent;}
+ body.bonsai-dna.forest-mist #services .river-station h3{font-size:23px;line-height:1.2;margin-bottom:10px;}
+ body.bonsai-dna.forest-mist #services .river-station p{font-size:16px;line-height:1.5;}
+ body.bonsai-dna.forest-mist #services .river-station-number{font-size:14px;margin-bottom:8px;}
+ .services-river-actions{margin-top:8px;}
+ .services-river-cta{font-size:16px;min-height:50px;padding:10px 24px;}
+ .services-river-end{align-items:flex-start;gap:12px;flex-wrap:wrap;padding-top:22px;}
+ body.bonsai-dna.forest-mist #services .local-service-note{font-size:12px;}
+}
+@media(prefers-reduced-motion:reduce){.river-station>img,.services-river-cta{transition:none;}.river-station:is(:hover,:focus-within)>img{transform:none;}}

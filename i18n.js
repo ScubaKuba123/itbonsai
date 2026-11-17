@@ -861,6 +861,15 @@
     "na Twój wzrost.": values[2],
   }));
 
+  const riverServiceKeys = ["Cyfrowy ekosystem", "dla Twojej marki.", "Projekt, treści i responsywność.", "Rezerwacje, panele i narzędzia.", "Mniej powtarzalnej pracy.", "Audyt, treści i mierzenie wyników.", "Spójny charakter Twojej marki.", "Poznaj usługi"];
+  const riverServiceCopy = {
+    en: ["A digital ecosystem", "for your brand.", "Design, content and responsive layouts.", "Bookings, dashboards and tools.", "Less repetitive work.", "Audits, content and performance measurement.", "A consistent identity for your brand.", "Explore our services"],
+    ja: ["デジタルの力で、", "ブランドを育てる。", "デザイン、コンテンツ、レスポンシブ対応。", "予約システム、管理画面、業務ツール。", "繰り返し作業を減らす。", "サイト診断、コンテンツ制作、効果測定。", "ブランドに一貫した個性を。", "サービスを見る"]
+  };
+  Object.entries(riverServiceCopy).forEach(([locale, values]) => riverServiceKeys.forEach((key, i) => { copy[locale][key] = values[i]; }));
+  copy.en["Projektowanie stron, SEO i automatyzacji AI w"] = "Website design, SEO and AI automation in";
+  copy.ja["Projektowanie stron, SEO i automatyzacji AI w"] = "ウェブサイト制作、SEO、AI自動化を提供する地域：";
+
   const originals = new WeakMap();
   const nodes = [];
   const walker = document.createTreeWalker(
