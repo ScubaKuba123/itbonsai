@@ -20,11 +20,11 @@ const server=http.createServer((req,res)=>{
  fs.createReadStream(file).pipe(res);
 });
 async function completeForm(page) {
- await page.locator('input[name="name"]').fill('R3 QA test');
- await page.locator('input[name="email"]').fill('qa@example.invalid');
- await page.locator('select[name="service"]').selectOption({label:'SEO i widoczność'});
- await page.locator('textarea[name="message"]').fill('Mock request; must not send an actual email.');
- await page.locator('button[type="submit"]').click();
+ await page.locator('form.contact-form input[name="name"]').fill('R3 QA test');
+ await page.locator('form.contact-form input[name="email"]').fill('qa@example.invalid');
+ await page.locator('form.contact-form select[name="service"]').selectOption({label:'SEO i widoczność'});
+ await page.locator('form.contact-form textarea[name="message"]').fill('Mock request; must not send an actual email.');
+ await page.locator('form.contact-form button[type="submit"]').click();
 }
 async function go(){
  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
@@ -57,7 +57,7 @@ async function go(){
      const submissions=await page.evaluate(()=>window.__confirmedSubmissions);
      assert.equal(submissions,1,'Success event should fire exactly once');
      assert.equal(calls,1,'Only one mock POST is sent');
-     assert.equal(await page.locator('button[type="submit"]').isDisabled(),true);
+     assert.equal(await page.locator('form.contact-form button[type="submit"]').isDisabled(),true);
      assert.deepEqual(gaRequests,[],'Local QA must never contact production GA4');
      const overflow=await page.evaluate(()=>Math.max(0,document.documentElement.scrollWidth-innerWidth));
      assert.ok(overflow<=2,'Contact form overflow '+width);
