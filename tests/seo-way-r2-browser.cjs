@@ -57,7 +57,9 @@ async function go(){
         assert.equal(state.canonical,'https://itbonsai.pl'+url,url);
         assert.ok(state.overflow<=2,url+' horizontal overflow at '+width+'px: '+state.overflow);
         assert.equal(errors.length,0,url+' runtime errors: '+errors.join('; '));
-        await page.screenshot({path:path.join(output,url.slice(1)+'-'+width+'.png'),animations:'disabled'});
+        const dismiss=page.getByRole('button',{name:/Odrzuć analitykę|Reject analytics|分析を拒否/i});
+        if(await dismiss.count())await dismiss.first().click({timeout:7000});
+        await page.screenshot({path:path.join(output,url.slice(1)+'-'+width+'.png'),animations:'disabled',fullPage:true});
         results.push({url,width,status:200,...state,errors:0});
         await context.close();
       }
