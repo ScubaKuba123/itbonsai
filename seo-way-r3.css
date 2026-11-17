@@ -1,0 +1,13 @@
+/* SEO WAY R3: keep direct contact methods readable on narrow screens.
+   Overrides the generic inline-flex link treatment only on the contact page. */
+body.bonsai-dna.forest-theme .contact-page .contact-details > a[href^="tel:"],
+body.bonsai-dna.forest-theme .contact-page .contact-details > a[href^="mailto:"],
+body.bonsai-dna.forest-theme .contact-page .contact-details > a[href^="https://wa.me/"] {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 44px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}

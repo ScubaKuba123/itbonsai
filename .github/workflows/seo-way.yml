@@ -12,6 +12,12 @@ on:
       - '_redirects'
       - 'tests/seo-locale.test.cjs'
       - 'tests/seo-way-r2.test.cjs'
+      - 'tests/seo-way-r3.test.cjs'
+      - 'tests/seo-way-r3-browser.cjs'
+      - 'analytics.js'
+      - 'contact-form.js'
+      - 'lead-events.js'
+      - 'seo-way-r3.css'
       - 'tests/seo-way-r2-browser.cjs'
       - 'locale-updates.json'
       - 'sitemap.xml'
@@ -35,8 +41,11 @@ jobs:
           node --check language-preference.js
           node --check i18n.js
           node --check services-studio.js
+          node --check analytics.js
+          node --check lead-events.js
+          node --check contact-form.js
       - name: Check locale and SEO rules
-        run: node --test tests/seo-locale.test.cjs tests/seo-way-r2.test.cjs
+        run: node --test tests/seo-locale.test.cjs tests/seo-way-r2.test.cjs tests/seo-way-r3.test.cjs
 
       - name: Install browser test runner (no project dependency)
         run: npm install --no-save --no-package-lock --no-audit --no-fund playwright@1.56.1
@@ -46,6 +55,8 @@ jobs:
         run: node tests/seo-browser.cjs
       - name: Run R2 content and locale browser QA
         run: node tests/seo-way-r2-browser.cjs
+      - name: R3 consent and contact form browser QA
+        run: node tests/seo-way-r3-browser.cjs
       - name: Attach QA screenshots and report
         if: always()
         uses: actions/upload-artifact@v4
@@ -54,4 +65,5 @@ jobs:
           path: |
             artifacts/seo-browser/
             artifacts/seo-r2-browser/
+            artifacts/seo-r3-browser/
           if-no-files-found: ignore
