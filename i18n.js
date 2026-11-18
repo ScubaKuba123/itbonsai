@@ -1,6 +1,7 @@
 (async () => {
   const copy = {
     en: {
+      "Jestem absolwentem Wyższej Szkoły Prawa i Dyplomacji w Gdyni.": "I am a graduate of Wyższa Szkoła Prawa i Dyplomacji in Gdynia.",
       Start: "Home",
       Usługi: "Services",
       Realizacje: "Work",
@@ -237,6 +238,7 @@
       "Wróć na stronę główną": "Return to homepage",
     },
     ja: {
+      "Jestem absolwentem Wyższej Szkoły Prawa i Dyplomacji w Gdyni.": "グディニャのWyższa Szkoła Prawa i Dyplomacji（法学・外交高等学校）を卒業しました。",
       Start: "ホーム",
       Usługi: "サービス",
       Realizacje: "制作実績",
